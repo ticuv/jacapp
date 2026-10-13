@@ -29,3 +29,106 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
 }
+
+/* ==========================================================================
+   JAC — premium phone mockups (real app screenshots inside realistic frames)
+   ========================================================================== */
+.jac-phone {
+  position: relative;
+  width: 100%;
+}
+
+.jac-phone-bezel {
+  position: relative;
+  border-radius: 2.5rem;
+  padding: 0.5rem;
+  background: linear-gradient(150deg, #2b3444 0%, #0c1220 38%, #1a2331 72%, #0a1120 100%);
+  box-shadow:
+    0 50px 90px -34px rgba(2, 6, 23, 0.85),
+    0 16px 32px -18px rgba(2, 6, 23, 0.6),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.07);
+}
+
+.jac-phone-bezel::after {
+  /* subtle metallic rim */
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 2.6rem;
+  background: linear-gradient(180deg, rgba(255,255,255,0.16), rgba(255,255,255,0.02) 30%, rgba(255,255,255,0.10));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  padding: 1px;
+  pointer-events: none;
+}
+
+.jac-phone-speaker {
+  position: absolute;
+  top: 0.85rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3.2rem;
+  height: 0.3rem;
+  border-radius: 999px;
+  background: #050a12;
+  z-index: 3;
+  opacity: 0.85;
+}
+
+.jac-phone-screen {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 2.05rem;
+  background: #0B1424;
+  position: relative;
+  z-index: 2;
+}
+
+/* cropped variant — shows a specific region of a real screenshot */
+.jac-phone-viewport {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2.05rem;
+  background: #0B1424;
+  z-index: 2;
+}
+
+.jac-phone-viewport img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.jac-phone-gloss {
+  position: absolute;
+  inset: 0.5rem;
+  border-radius: 2.05rem;
+  background: linear-gradient(112deg, rgba(255, 255, 255, 0.13) 0%, rgba(255, 255, 255, 0.03) 26%, transparent 46%);
+  pointer-events: none;
+  z-index: 4;
+}
+
+.jac-phone-side {
+  position: absolute;
+  width: 2px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, #384354, #131b28);
+}
+
+.jac-float-slow {
+  animation: jac-float 7s ease-in-out infinite;
+}
+
+@keyframes jac-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-9px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .jac-float-slow { animation: none; }
+}

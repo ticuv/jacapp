@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { PageId } from './types';
 import { Header } from './components/Header';
 import { HeroSection } from './components/HeroSection';
+import { ShowcaseSection } from './components/ShowcaseSection';
 import { DisclaimerBanner } from './components/DisclaimerBanner';
 import { HowItWorksSection } from './components/HowItWorksSection';
 import { LibrarySection } from './components/LibrarySection';
@@ -69,6 +70,7 @@ export default function App() {
         {currentPage === 'home' && (
           <>
             <HeroSection onNavigate={navigateTo} />
+            <ShowcaseSection />
             <HowItWorksSection />
             <LibrarySection />
             <TiersSection />
