@@ -17,16 +17,16 @@ export const PreLaunchChecklistModal: React.FC<PreLaunchChecklistModalProps> = (
       category: 'Date de identificare (GDPR)',
       items: [
         {
-          label: 'Denumire Operator / Titular proiect',
+          label: 'Identificarea operatorului (de publicat înainte de lansare)',
           location: 'Politica de Confidențialitate (Secțiunea 1) & Termeni (Secțiunea 1)',
           why: 'GDPR impune ca utilizatorii să cunoască identitatea persoanei fizice sau a societății (PFA/SRL) care pune la dispoziție aplicația.',
-          suggested: 'Înlocuiți „[NECESITĂ CONFIRMARE: Denumire titular...]” cu numele dvs. complet sau denumirea entității.',
+          suggested: 'Textul neutru actual va fi completat cu identitatea operatorului înainte de lansare, conform cerințelor de transparență.',
         },
         {
           label: 'Adresă de e-mail oficială de contact & asistență',
           location: 'Politica de Confidențialitate (Secțiunea 1, 6) & Pagina de Contact',
           why: 'Trebuie să aveți o căsuță de e-mail activă pentru cererile GDPR și pentru rapoartele de erori legislative.',
-          suggested: 'Configurați un e-mail dedicat (ex: vladticu100@gmail.com sau o adresă verificată).',
+          suggested: 'Confirmați adresa de contact afișată pe pagina de Asistență.',
         },
       ],
     },

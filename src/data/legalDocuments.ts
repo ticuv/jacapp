@@ -9,19 +9,19 @@ export const legalDocuments: Record<'terms' | 'privacy' | 'cookies', LegalDocume
     subtitle: 'Cum sunt gestionate datele în aplicația Android JAC și pe site-ul documentelor JAC',
     lastUpdated: '13 octombrie 2026',
     confirmationChecklist: [
-      { item: 'Temeiurile juridice pentru fiecare prelucrare', details: 'Calificările art. 6 alin. (1) GDPR sunt marcate „DE CONFIRMAT — aviz juridic” în secțiunea 5.', status: 'pending' },
+      { item: 'Temeiurile juridice pentru fiecare prelucrare', details: 'Calificările art. 6 alin. (1) GDPR sunt marcate „DE CONFIRMAT — aviz juridic” în checklistul de confirmare.', status: 'pending' },
       { item: 'Rolurile Google și Cloudflare', details: 'Operator independent sau persoană împuternicită — de confirmat din contractele aplicabile conturilor reale.', status: 'pending' },
       { item: 'Mecanismele de transfer internațional', details: 'Condițiile concrete ale transferurilor — de confirmat din politicile și contractele furnizorilor.', status: 'pending' },
       { item: 'Reclame reale vs. identificatoare de test', details: 'La lansare se va decide configurația AdMob de producție.', status: 'pending' },
       { item: 'Detaliile stocărilor locale ale SDK-urilor Google', details: 'De confirmat din documentația Google (vezi Politica de cookie-uri).', status: 'pending' },
     ],
     sections: [
+
       {
         id: 'operator',
         title: '1. Operatorul datelor',
         content: [
-          'Aplicația JAC este dezvoltată și operată de o persoană fizică: Țicu Vlad-Sebastian, cunoscută public sub numele Țicu Vlad. Adresa de contact: vladticu100@gmail.com. „JAC” este numele aplicației și nu o entitate juridică distinctă.',
-          'Prezenta politică descrie prelucrările de date ale aplicației Android JAC și ale site-ului documentelor JAC, în conformitate cu Regulamentul (UE) 2016/679 și legislația națională aplicabilă.',
+          'Operatorul datelor: persoană fizică. Datele de identificare și de contact sunt disponibile la cerere, prin pagina de Asistență. „JAC” este numele aplicației și nu o entitate juridică distinctă.',
         ],
       },
       {
@@ -66,7 +66,7 @@ export const legalDocuments: Record<'terms' | 'privacy' | 'cookies', LegalDocume
         id: 'feedback',
         title: '6. Feedback',
         content: [
-          'Funcția „Trimite feedback” deschide aplicația de e-mail a utilizatorului cu subiectul „Feedback JAC” și adresa vladticu100@gmail.com. Aplicația nu trimite automat date, identificatori sau informații despre utilizator; mesajul este redactat și expediat de dumneavoastră.',
+          'Funcția „Trimite feedback” deschide aplicația de e-mail a utilizatorului cu subiectul „Feedback JAC”. Aplicația nu trimite automat date, identificatori sau informații despre utilizator; mesajul este redactat și expediat de dumneavoastră.',
           'Mesajele de feedback se păstrează până la soluționarea solicitării și apoi maximum 6 luni, cu excepția situațiilor în care păstrarea suplimentară este necesară pentru respectarea unei obligații legale sau pentru constatarea, exercitarea ori apărarea unui drept. (Regulă stabilită de operator; nu a fost validată juridic.)',
         ],
       },
@@ -83,7 +83,7 @@ export const legalDocuments: Record<'terms' | 'privacy' | 'cookies', LegalDocume
         content: [
           'Pentru datele stocate de aplicație (favorite, istoric, temă), aveți drepturile prevăzute de Regulamentul (UE) 2016/679: acces, rectificare, ștergere, restricționare și portabilitate, precum și dreptul de a depune o plângere la ANSPDCP. Întrucât aceste date sunt stocate local, ele se șterg prin dezinstalarea aplicației.',
           'Pentru datele prelucrate în legătură cu publicitatea și consimțământul (Google Mobile Ads, Google UMP), informațiile sunt descrise în Politica de confidențialitate Google, iar prelucrările se desfășoară conform condițiilor și politicilor Google.',
-          'Pentru orice solicitare, folosiți funcția „Trimite feedback” din aplicație sau scrieți la vladticu100@gmail.com.',
+          'Pentru orice solicitare, folosiți funcția „Trimite feedback” din aplicație sau canalele indicate pe pagina de Asistență.',
         ],
       },
       {
@@ -102,6 +102,7 @@ export const legalDocuments: Record<'terms' | 'privacy' | 'cookies', LegalDocume
     subtitle: 'Condițiile de utilizare a aplicației Android JAC',
     lastUpdated: '13 octombrie 2026',
     confirmationChecklist: [
+      { item: 'Cerința de transparență privind operatorul', details: 'Textul este neutru, fără date personale; modul de îndeplinire a art. 13 GDPR rămâne de rezolvat juridic înainte de lansare.', status: 'pending' },
       { item: 'Revizuirea juridică a documentelor', details: 'Acești termeni sunt un document preliminar și trebuie revizuiți juridic înainte de lansare.', status: 'pending' },
       { item: 'Abonamentul Premium', details: 'Facturarea și abonamentele Premium nu sunt implementate; condițiile de achiziție vor fi prezentate separat la implementare.', status: 'pending' },
     ],
@@ -111,7 +112,7 @@ export const legalDocuments: Record<'terms' | 'privacy' | 'cookies', LegalDocume
         title: '1. Despre JAC',
         content: [
           'JAC este o aplicație independentă de informare legislativă. Conținutul este oferit în scop informativ. JAC nu este o sursă oficială a legislației și nu oferă consultanță juridică.',
-          'Utilizarea aplicației este acordată sub o licență personală, neexclusivă și netransferabilă, pentru uz propriu, în condițiile acestor termeni.',
+          'Utilizarea aplicației este acordată sub o licență personală, neexclusivă și netransferabilă, pentru uz propriu, în condițiile acestor termeni. JAC este operată de o persoană fizică. Datele de identificare și de contact sunt disponibile pe pagina de Asistență.',
         ],
       },
       {
@@ -138,31 +139,25 @@ export const legalDocuments: Record<'terms' | 'privacy' | 'cookies', LegalDocume
           'Nimic din acești termeni nu limitează: (a) drepturile obligatorii ale consumatorilor prevăzute de lege; (b) răspunderea care nu poate fi exclusă sau limitată prin lege; (c) drepturile prevăzute de legislația aplicabilă conținutului și serviciilor digitale. Orice altă limitare a răspunderii operează numai în măsura în care legea o permite în mod expres.',
         ],
       },
-      {
-        id: 'operator',
-        title: '5. Operatorul și contactul',
-        content: [
-          'JAC este operată de o persoană fizică: Țicu Vlad-Sebastian, cunoscută public sub numele Țicu Vlad. Contact oficial: vladticu100@gmail.com. „JAC” este numele aplicației și nu o entitate juridică distinctă.',
-        ],
-      },
+
       {
         id: 'raportare',
-        title: '6. Raportarea erorilor legislative',
+        title: '5. Raportarea erorilor legislative',
         content: [
-          'Erorile sau sugestiile pot fi transmise prin funcția „Trimite feedback” din aplicație (subiect „Feedback JAC”) sau direct la vladticu100@gmail.com.',
-          'Nu este garantat un termen fix de răspuns sau de remediere; solicitările sunt analizate în funcție de disponibilitatea operatorului și de posibilitatea verificării informației în sursele oficiale. Corecțiile confirmate se distribuie prin actualizări de conținut.',
+          'Erorile sau sugestiile pot fi transmise prin funcția „Trimite feedback” din aplicație (subiect „Feedback JAC”) sau prin canalele indicate pe pagina de Asistență.',
+          'Nu este garantat un termen fix de răspuns sau de remediere; solicitările sunt analizate în funcție de disponibilitate și de posibilitatea verificării informației în sursele oficiale. Corecțiile confirmate se distribuie prin actualizări de conținut.',
         ],
       },
       {
         id: 'neafiliere',
-        title: '7. Neafiliere',
+        title: '6. Neafiliere',
         content: [
           'JAC este o aplicație independentă de informare legislativă. Nu este afiliată, aprobată, sponsorizată sau administrată de Ministerul Afacerilor Interne (MAI), Poliția Română ori de alte instituții ale statului român.',
         ],
       },
       {
         id: 'revizuire',
-        title: '8. Revizuire juridică',
+        title: '7. Revizuire juridică',
         content: [
           'Acești termeni sunt un document preliminar și trebuie revizuiți juridic înainte de publicarea în Google Play.',
         ],

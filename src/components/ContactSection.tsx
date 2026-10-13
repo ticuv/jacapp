@@ -124,7 +124,7 @@ export const ContactSection: React.FC = () => {
                   <div>
                     <span className="font-semibold text-slate-900 block text-xs">Timp de răspuns</span>
                     <p className="text-xs text-slate-600 mt-0.5">
-                      Nu este garantat un termen fix de răspuns; solicitările sunt analizate în funcție de disponibilitatea operatorului și de posibilitatea verificării informației.
+                      Nu este garantat un termen fix de răspuns; solicitările sunt analizate în funcție de disponibilitate și de posibilitatea verificării informației în sursele oficiale.
                     </p>
                   </div>
                 </div>
