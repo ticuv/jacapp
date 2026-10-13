@@ -1,8 +1,9 @@
 import React from 'react';
-import { Check, Search, Star, ShieldCheck, Crown, AlertCircle } from 'lucide-react';
+import { Check, Search, Star, ShieldCheck, Crown, AlertCircle, Library } from 'lucide-react';
+import { basicModules } from '../data/modules';
 
+const basicModuleNames = basicModules.map((m) => m.title).join(', ');
 const basicItems = [
-  '8 module incluse gratuit (Legea 61/1991, rutier de bază și altele)',
   'Căutare în cadrul modulelor',
   'Până la 5 favorite',
   'Fișe complete: faptă, încadrare, amendă, reducere 15 zile',
@@ -44,8 +45,14 @@ export const TiersSection: React.FC = () => {
             </div>
             <h3 className="text-2xl font-extrabold text-slate-900">Versiunea Basic</h3>
             <p className="text-sm text-slate-600 mt-2 leading-relaxed">
-              Acces imediat la modulele legislative de bază, susținut de publicitate.
+              Acces imediat la cele 8 module legislative de bază, susținut de publicitate.
             </p>
+            <div className="mt-4 rounded-xl bg-slate-50 border border-slate-200 p-3.5">
+              <div className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">
+                <Library className="w-3.5 h-3.5" /> Module incluse
+              </div>
+              <p className="text-xs text-slate-600 leading-relaxed">{basicModuleNames}</p>
+            </div>
             <ul className="mt-6 space-y-3 text-sm text-slate-700 flex-1">
               {basicItems.map((item) => (
                 <li key={item} className="flex items-start gap-2.5">
@@ -69,6 +76,10 @@ export const TiersSection: React.FC = () => {
             <h3 className="relative text-2xl font-extrabold">Versiunea Premium</h3>
             <p className="relative text-sm text-slate-300 mt-2 leading-relaxed">
               Experiența completă, fără reclame, cu întreaga bibliotecă legislativă.
+            </p>
+            <p className="relative mt-3 text-xs text-slate-400 leading-relaxed">
+              Biblioteca JAC este concepută să se extindă: noi acte normative și actualizări de conținut
+              vor fi adăugate în timp, iar produsul continuă să fie îmbunătățit.
             </p>
             <ul className="relative mt-6 space-y-3 text-sm text-slate-200 flex-1">
               {premiumItems.map((item) => (

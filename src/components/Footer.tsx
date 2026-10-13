@@ -1,6 +1,6 @@
 import React from 'react';
 import { PageId } from '../types';
-import { Scale, Mail } from 'lucide-react';
+import { Mail } from 'lucide-react';
 
 interface FooterProps {
   onNavigate: (page: PageId) => void;
@@ -16,9 +16,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           {/* Brand & Slogan Column */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-lg bg-amber-500 text-slate-950 flex items-center justify-center font-bold text-sm">
-                <Scale className="w-4 h-4" />
-              </div>
+              <img src="/icon-192.png" alt="Logo JAC" className="w-8 h-8 rounded-lg" />
               <span className="text-xl font-bold tracking-tight text-white">JAC</span>
             </div>
 
