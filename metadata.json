@@ -1,0 +1,6 @@
+{
+  "name": "JAC – Legislație Ordine Publică",
+  "description": "Site oficial și portal documentar pentru aplicația Android JAC (Claritate în lege. Siguranță în decizie): funcționalități, termeni, confidențialitate și asistență.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
