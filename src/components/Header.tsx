@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { PageId } from '../types';
-import { Scale, Menu, X, Mail } from 'lucide-react';
+import { Menu, X, Mail } from 'lucide-react';
 
 interface HeaderProps {
   currentPage: PageId;
@@ -28,9 +28,7 @@ export const Header: React.FC<HeaderProps> = ({
             onClick={() => handleNavClick('home')}
             className="flex items-center gap-2.5 text-left group cursor-pointer focus:outline-none"
           >
-            <div className="w-9 h-9 rounded-lg bg-slate-900 text-white flex items-center justify-center font-bold text-sm tracking-wider shadow-sm transition-transform group-hover:scale-105">
-              <Scale className="w-5 h-5 text-amber-400" />
-            </div>
+            <img src="/icon-192.png" alt="Logo JAC" className="w-9 h-9 rounded-lg shadow-sm transition-transform group-hover:scale-105" />
             <div className="flex flex-col">
               <span className="text-xl font-extrabold tracking-tight text-slate-900 whitespace-nowrap shrink-0">
                 JAC

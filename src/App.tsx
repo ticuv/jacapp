@@ -3,7 +3,8 @@ import { PageId } from './types';
 import { Header } from './components/Header';
 import { HeroSection } from './components/HeroSection';
 import { DisclaimerBanner } from './components/DisclaimerBanner';
-import { FeaturesSection } from './components/FeaturesSection';
+import { HowItWorksSection } from './components/HowItWorksSection';
+import { LibrarySection } from './components/LibrarySection';
 import { TiersSection } from './components/TiersSection';
 import { FaqSection } from './components/FaqSection';
 import { ContactSection } from './components/ContactSection';
@@ -68,9 +69,10 @@ export default function App() {
         {currentPage === 'home' && (
           <>
             <HeroSection onNavigate={navigateTo} />
-            <DisclaimerBanner />
-            <FeaturesSection />
+            <HowItWorksSection />
+            <LibrarySection />
             <TiersSection />
+            <DisclaimerBanner />
             <FaqSection />
             <ContactSection />
           </>
