@@ -61,20 +61,13 @@ export default function App() {
   return (
     <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 font-sans selection:bg-amber-100 selection:text-amber-900">
       {/* Top Bar Header */}
-      <Header
-        currentPage={currentPage}
-        onNavigate={navigateTo}
-        onOpenChecklist={() => setIsChecklistOpen(true)}
-      />
+      <Header currentPage={currentPage} onNavigate={navigateTo} />
 
       {/* Main Page Rendering */}
       <main className="flex-1">
         {currentPage === 'home' && (
           <>
-            <HeroSection
-              onNavigate={navigateTo}
-              onOpenChecklist={() => setIsChecklistOpen(true)}
-            />
+            <HeroSection onNavigate={navigateTo} />
             <DisclaimerBanner />
             <FeaturesSection />
             <TiersSection />
@@ -84,27 +77,15 @@ export default function App() {
         )}
 
         {currentPage === 'terms' && (
-          <LegalViewer
-            initialDocId="terms"
-            onNavigate={navigateTo}
-            onOpenChecklist={() => setIsChecklistOpen(true)}
-          />
+          <LegalViewer initialDocId="terms" onNavigate={navigateTo} />
         )}
 
         {currentPage === 'privacy' && (
-          <LegalViewer
-            initialDocId="privacy"
-            onNavigate={navigateTo}
-            onOpenChecklist={() => setIsChecklistOpen(true)}
-          />
+          <LegalViewer initialDocId="privacy" onNavigate={navigateTo} />
         )}
 
         {currentPage === 'cookies' && (
-          <LegalViewer
-            initialDocId="cookies"
-            onNavigate={navigateTo}
-            onOpenChecklist={() => setIsChecklistOpen(true)}
-          />
+          <LegalViewer initialDocId="cookies" onNavigate={navigateTo} />
         )}
 
         {currentPage === 'contact' && (
@@ -116,10 +97,7 @@ export default function App() {
       </main>
 
       {/* Global Quiet Professional Footer */}
-      <Footer
-        onNavigate={navigateTo}
-        onOpenChecklist={() => setIsChecklistOpen(true)}
-      />
+      <Footer onNavigate={navigateTo} />
 
       {/* Pre-launch checklist modal for developer confirmation */}
       <PreLaunchChecklistModal

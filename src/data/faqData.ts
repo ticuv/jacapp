@@ -4,41 +4,41 @@ export const faqData: FaqItem[] = [
   {
     category: 'general',
     question: 'Este aplicația JAC afiliată vreunei instituții a statului?',
-    answer: 'Nu. JAC este un proiect independent de documentare tehnică și nu este afiliat, asociat sau autorizat de Ministerul Afacerilor Interne (MAI), Poliția Română, Jandarmeria Română sau vreo altă autoritate publică. Textele legislative reproduse sunt acte normative oficiale din domeniul public, preluate din Monitorul Oficial al României.',
+    answer: 'Nu. JAC este o aplicație independentă de informare legislativă. Nu este afiliată, aprobată, sponsorizată sau administrată de Ministerul Afacerilor Interne (MAI), Poliția Română ori de alte instituții ale statului român.',
   },
   {
     category: 'general',
     question: 'Care este statusul lansării pe Google Play?',
-    answer: 'Aplicația JAC se află în etapa de finalizare tehnică și pregătire a documentației pentru publicare în magazinul Google Play. Nu afirmăm disponibilitatea descărcării până la confirmarea aprobării pe platformă. Puteți lăsa un mesaj pe pagina de contact pentru a primi o notificare la momentul publicării.',
+    answer: 'Aplicația JAC este în etapa de pregătire pentru publicare. Nu afirmăm disponibilitatea descărcării până la confirmarea aprobării în magazinul Google Play.',
   },
   {
     category: 'versiuni',
     question: 'Care este diferența dintre versiunea Basic și versiunea Premium?',
-    answer: 'Versiunea Basic oferă acces gratuit la consultarea completă a bazei legislative de ordine publică, căutare și salvare la favorite, fiind susținută de reclame discrete gestionate conform prin Google UMP. Versiunea Premium este concepută arhitectural pentru o experiență fără reclame.',
+    answer: 'Versiunea Basic (gratuită) oferă acces la modulele incluse gratuit, căutare în cadrul acestora, până la 5 favorite și afișează reclame. Versiunea Premium este concepută pentru acces complet la toate modulele, fără reclame și cu favorite nelimitate.',
   },
   {
     category: 'versiuni',
     question: 'Pot cumpăra acum un abonament Premium?',
-    answer: 'Nu. Sistemul de facturare, abonamente plătite și conturi de utilizator NU este încă implementat în JAC. La momentul lansării, toate funcționalitățile esențiale vor fi accesibile gratuit în versiunea Basic. Când sistemul Premium va fi activat tehnic, condițiile comerciale vor fi prezentate transparent.',
+    answer: 'Nu. Facturarea și abonamentele Premium nu sunt încă implementate în JAC. Condițiile de achiziție vor fi prezentate separat, înainte de orice cumpărare, atunci când mecanismul de abonament va fi disponibil.',
   },
   {
     category: 'legislatie',
-    question: 'Ce legi sunt incluse în aplicație?',
-    answer: 'Aplicația include actele normative de bază din domeniul ordinii și liniștii publice, cum ar fi Legea nr. 61/1991 (norme de conviețuire socială), Legea nr. 218/2002 (organizarea și funcționarea Poliției Române), Legea nr. 550/2004 (Jandarmeria Română), prevederi conexe din OUG nr. 195/2002 (circulația pe drumurile publice) și Legea nr. 333/2003.',
+    question: 'Ce conține aplicația?',
+    answer: 'Aplicația organizează legislația pe module tematice (de exemplu circulație rutieră, contravenții și fapte penale), cu fișe de fapte, articole și sancțiuni. O parte dintre module sunt incluse gratuit (Basic), restul sunt prevăzute pentru versiunea Premium.',
   },
   {
     category: 'legislatie',
     question: 'Funcționează consultarea articolelor fără conexiune la internet?',
-    answer: 'Da. Baza de date cu textele legislative este salvată local în aplicație pe dispozitivul dumneavoastră Android, permițând consultarea rapidă a articolelor și a cuantumului amenzilor chiar și în zone fără semnal sau fără date mobile active.',
+    answer: 'Da. Conținutul legislativ este stocat local pe dispozitiv; fără conexiune puteți căuta și citi conținutul deja descărcat. Sincronizarea actualizărilor necesită internet.',
   },
   {
     category: 'confidentialitate',
-    question: 'Ce date personale sunt colectate prin aplicația JAC?',
-    answer: 'Aplicația a fost construită pe principiul minimizării datelor: articolele favorite și istoricul căutărilor rămân exclusiv pe memoria telefonului dumneavoastră. Pentru reclamele din versiunea Basic se utilizează Google Mobile Ads și Google UMP pentru colectarea consimțământului conform normelor GDPR.',
+    question: 'Ce date colectează aplicația?',
+    answer: 'Aplicația nu are conturi de utilizator și nu colectează nume sau adrese de e-mail. Favoritele, istoricul și preferințele rămân local, pe dispozitiv. În versiunea Basic, reclamele sunt gestionate prin Google Mobile Ads, cu consimțământ gestionat prin Google UMP în SEE/Regatul Unit. Detalii: Politica de Confidențialitate.',
   },
   {
     category: 'confidentialitate',
-    question: 'Înlocuiesc informațiile din JAC asistența juridică?',
-    answer: 'Nu. Informațiile au caracter strict orientativ și documentar. Singurul text care produce efecte juridice este cel publicat în Monitorul Oficial al României. Nicio mențiune din aplicație nu constituie consultanță juridică sau sfat profesional.',
+    question: 'Site-ul folosește cookie-uri?',
+    answer: 'Nu. Site-ul documentelor JAC este static și nu utilizează cookie-uri sau tehnologii de urmărire. Detalii: Politica de Cookie-uri.',
   },
 ];

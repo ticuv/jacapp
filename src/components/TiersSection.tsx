@@ -13,7 +13,7 @@ export const TiersSection: React.FC = () => {
             Transparență deplină între Basic și planul Premium
           </h2>
           <p className="mt-4 text-slate-600 text-base leading-relaxed [text-wrap:pretty]">
-            Toți utilizatorii beneficiază de acces complet la textele legislative. Nu ascundem articole sau sancțiuni în spatele barierelor de plată.
+            Versiunea gratuită (Basic) include modulele disponibile gratuit; versiunea Premium, concepută pentru accesul complet, nu este disponibilă în prezent.
           </p>
         </div>
 
@@ -41,7 +41,7 @@ export const TiersSection: React.FC = () => {
               <div className="mt-6 space-y-3.5 text-sm text-slate-700">
                 <div className="flex items-start gap-3">
                   <Check className="w-4 h-4 text-emerald-600 mt-0.5 shrink-0" />
-                  <span>Acces integral la toate actele normative incluse</span>
+                  <span>Acces la modulele incluse gratuit în versiunea Basic</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <Check className="w-4 h-4 text-emerald-600 mt-0.5 shrink-0" />
@@ -50,6 +50,14 @@ export const TiersSection: React.FC = () => {
                 <div className="flex items-start gap-3">
                   <Check className="w-4 h-4 text-emerald-600 mt-0.5 shrink-0" />
                   <span>Salvare articole la Favorite pe dispozitivul local</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Check className="w-4 h-4 text-emerald-600 mt-0.5 shrink-0" />
+                  <span>Până la 5 favorite</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Check className="w-4 h-4 text-emerald-600 mt-0.5 shrink-0" />
+                  <span>Până la 5 favorite</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <Check className="w-4 h-4 text-emerald-600 mt-0.5 shrink-0" />
@@ -105,7 +113,11 @@ export const TiersSection: React.FC = () => {
                 </div>
                 <div className="flex items-start gap-3">
                   <Check className="w-4 h-4 text-amber-600 mt-0.5 shrink-0" />
-                  <span>Prioritate la sincronizarea bazei de date</span>
+                  <span>Acces la toate modulele (inclusiv modulele Premium)</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Check className="w-4 h-4 text-amber-600 mt-0.5 shrink-0" />
+                  <span>Favorite nelimitate</span>
                 </div>
               </div>
             </div>

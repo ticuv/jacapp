@@ -12,7 +12,7 @@ export const appFeatures: AppFeature[] = [
     number: '01',
     title: 'Organizare clară pe acte normative',
     description: 'Legislația este structurată ierarhic pe legi, capitole și articole. Găsiți textul legal exact fără să parcurgeți pagini stufoase sau fișiere PDF greoaie.',
-    highlight: 'Legea 61/1991, Legea 218/2002, Legea 550/2004 etc.',
+    highlight: 'Module tematice: rutier, contravenții, penal',
   },
   {
     number: '02',

@@ -26,7 +26,7 @@ export const PreLaunchChecklistModal: React.FC<PreLaunchChecklistModalProps> = (
           label: 'Adresă de e-mail oficială de contact & asistență',
           location: 'Politica de Confidențialitate (Secțiunea 1, 6) & Pagina de Contact',
           why: 'Trebuie să aveți o căsuță de e-mail activă pentru cererile GDPR și pentru rapoartele de erori legislative.',
-          suggested: 'Configurați un e-mail dedicat (ex: suport@jac-app.ro sau o adresă verificată).',
+          suggested: 'Configurați un e-mail dedicat (ex: vladticu100@gmail.com sau o adresă verificată).',
         },
       ],
     },

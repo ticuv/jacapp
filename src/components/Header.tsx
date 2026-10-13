@@ -1,17 +1,15 @@
 import React, { useState } from 'react';
 import { PageId } from '../types';
-import { Scale, Menu, X, ShieldAlert } from 'lucide-react';
+import { Scale, Menu, X, Mail } from 'lucide-react';
 
 interface HeaderProps {
   currentPage: PageId;
   onNavigate: (page: PageId) => void;
-  onOpenChecklist: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
   currentPage,
   onNavigate,
-  onOpenChecklist,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -109,14 +107,6 @@ export const Header: React.FC<HeaderProps> = ({
 
           {/* Zone 3: 1 primary action */}
           <div className="flex items-center gap-3 shrink-0">
-            <button
-              onClick={onOpenChecklist}
-              className="hidden lg:flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-amber-800 bg-amber-50 border border-amber-200 rounded-lg hover:bg-amber-100 transition-colors whitespace-nowrap shrink-0"
-              title="Date de confirmat înainte de publicarea pe Google Play"
-            >
-              <ShieldAlert className="w-3.5 h-3.5 text-amber-600" />
-              <span>Ghid pre-publicare</span>
-            </button>
 
             <button
               onClick={() => handleNavClick('contact')}
@@ -195,12 +185,12 @@ export const Header: React.FC<HeaderProps> = ({
           <button
             onClick={() => {
               setMobileMenuOpen(false);
-              onOpenChecklist();
+              onNavigate('contact');
             }}
             className="w-full flex items-center gap-2 px-3 py-2 text-sm font-medium text-amber-800 bg-amber-50 hover:bg-amber-100 rounded-lg"
           >
-            <ShieldAlert className="w-4 h-4 text-amber-600" />
-            Checklist de confirmare pre-publicare
+            <Mail className="w-4 h-4 text-amber-600" />
+            Asistență și contact
           </button>
         </div>
       )}

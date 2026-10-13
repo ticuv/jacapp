@@ -17,13 +17,11 @@ import {
 interface LegalViewerProps {
   initialDocId: 'terms' | 'privacy' | 'cookies';
   onNavigate: (page: PageId) => void;
-  onOpenChecklist: () => void;
 }
 
 export const LegalViewer: React.FC<LegalViewerProps> = ({
   initialDocId,
   onNavigate,
-  onOpenChecklist,
 }) => {
   const [activeDocId, setActiveDocId] = useState<'terms' | 'privacy' | 'cookies'>(initialDocId);
   const [copied, setCopied] = useState(false);
@@ -68,13 +66,7 @@ export const LegalViewer: React.FC<LegalViewerProps> = ({
             <span>Înapoi la pagina principală</span>
           </button>
 
-          <button
-            onClick={onOpenChecklist}
-            className="flex items-center gap-1 text-xs font-semibold text-amber-800 bg-amber-100/70 hover:bg-amber-100 px-2.5 py-1 rounded-md transition-colors"
-          >
-            <AlertTriangle className="w-3.5 h-3.5 text-amber-600" />
-            <span>Vezi ce trebuie confirmat ({doc.confirmationChecklist.length} puncte)</span>
-          </button>
+
         </div>
 
         {/* Tab switchers between the 3 legal documents */}

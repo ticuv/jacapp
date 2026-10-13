@@ -15,7 +15,7 @@ export const ContactSection: React.FC = () => {
   const [errorMsg, setErrorMsg] = useState('');
   const [copiedEmail, setCopiedEmail] = useState(false);
 
-  const contactEmail = 'suport@jac-app.ro'; // Placeholder marcat clar
+  const contactEmail = 'vladticu100@gmail.com'; // Adresa oficială de contact JAC
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(contactEmail);
@@ -43,6 +43,15 @@ export const ContactSection: React.FC = () => {
     }
 
     setErrorMsg('');
+    const subject = encodeURIComponent('Feedback JAC');
+    const body = encodeURIComponent(
+      'Nume: ' + formData.name + '\n' +
+      'E-mail: ' + formData.email + '\n' +
+      'Categorie: ' + formData.category + '\n' +
+      'Referință legislativă: ' + (formData.lawReference || '-') + '\n\n' +
+      formData.message
+    );
+    window.location.href = 'mailto:' + contactEmail + '?subject=' + subject + '&body=' + body;
     setSubmitted(true);
   };
 
@@ -66,7 +75,7 @@ export const ContactSection: React.FC = () => {
             Asistență & Comunicare
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight [text-wrap:balance]">
-            Contactați echipa de dezvoltare JAC
+            Asistență JAC
           </h2>
           <p className="mt-3 text-slate-600 text-sm sm:text-base leading-relaxed [text-wrap:pretty]">
             Aveți o sugestie, doriți să sesizați o neconcordanță legislativă sau aveți o întrebare despre aplicație? Trimiteți-ne un mesaj.
@@ -107,9 +116,7 @@ export const ContactSection: React.FC = () => {
                       )}
                     </button>
                   </div>
-                  <span className="text-[11px] text-amber-700 italic mt-1 block">
-                    [Notă de pre-lansare: Adresă în curs de configurare oficială]
-                  </span>
+
                 </div>
 
                 <div className="flex items-start gap-3 pt-2">
@@ -117,7 +124,7 @@ export const ContactSection: React.FC = () => {
                   <div>
                     <span className="font-semibold text-slate-900 block text-xs">Timp de răspuns</span>
                     <p className="text-xs text-slate-600 mt-0.5">
-                      Răspundem de regulă în 24-48 de ore lucrătoare pentru sesizări tehnice sau legislative.
+                      Nu este garantat un termen fix de răspuns; solicitările sunt analizate în funcție de disponibilitatea operatorului și de posibilitatea verificării informației.
                     </p>
                   </div>
                 </div>
@@ -145,10 +152,10 @@ export const ContactSection: React.FC = () => {
                     <CheckCircle2 className="w-7 h-7" />
                   </div>
                   <h4 className="text-xl font-bold text-slate-900">
-                    Mesajul a fost înregistrat cu succes
+                    Aplicația de e-mail a fost deschisă
                   </h4>
                   <p className="text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
-                    Vă mulțumim pentru mesaj, {formData.name}. Vă vom contacta la adresa <strong>{formData.email}</strong> în cel mai scurt timp posibil.
+                    Mesajul se trimite prin aplicația dumneavoastră de e-mail, la adresa oficială de contact JAC. Nu este garantat un termen fix de răspuns.
                   </p>
                   <button
                     onClick={handleReset}

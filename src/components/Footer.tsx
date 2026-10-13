@@ -1,13 +1,12 @@
 import React from 'react';
 import { PageId } from '../types';
-import { Scale, ShieldAlert, Mail } from 'lucide-react';
+import { Scale, Mail } from 'lucide-react';
 
 interface FooterProps {
   onNavigate: (page: PageId) => void;
-  onOpenChecklist: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenChecklist }) => {
+export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -119,15 +118,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenChecklist }) =
                   Politica de Cookie-uri
                 </button>
               </li>
-              <li>
-                <button
-                  onClick={onOpenChecklist}
-                  className="text-amber-400 hover:text-amber-300 font-semibold transition-colors flex items-center gap-1 mt-2"
-                >
-                  <ShieldAlert className="w-3 h-3" />
-                  <span>Checklist pre-publicare</span>
-                </button>
-              </li>
+
             </ul>
           </div>
 

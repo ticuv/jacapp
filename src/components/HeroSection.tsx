@@ -5,10 +5,9 @@ import { Scale, ShieldCheck, Database, Search, ArrowRight, Smartphone, Sparkles 
 
 interface HeroSectionProps {
   onNavigate: (page: PageId) => void;
-  onOpenChecklist: () => void;
 }
 
-export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate, onOpenChecklist }) => {
+export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
   return (
     <section className="relative pt-12 pb-20 md:pt-16 md:pb-28 overflow-hidden bg-gradient-to-b from-white via-slate-50 to-slate-100/70 border-b border-slate-200">
       {/* Subtle background architectural grid lines */}
@@ -43,7 +42,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate, onOpenChec
                 </div>
                 <div>
                   <span className="font-semibold block text-slate-900">Acte normative structurate</span>
-                  <span className="text-xs text-slate-500">Legea 61/1991, Legea 218/2002, Legea 550/2004 etc.</span>
+                  <span className="text-xs text-slate-500">Module tematice: circulație rutieră, contravenții, fapte penale</span>
                 </div>
               </div>
 
@@ -81,7 +80,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate, onOpenChec
                 onClick={() => onNavigate('contact')}
                 className="px-4 py-3 text-xs font-semibold text-amber-800 bg-amber-50 hover:bg-amber-100 border border-amber-200 rounded-lg transition-colors whitespace-nowrap shrink-0"
               >
-                Solicită informații de lansare
+                Asistență
               </button>
             </div>
 
