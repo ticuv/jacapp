@@ -68,32 +68,32 @@ export const PreLaunchChecklistModal: React.FC<PreLaunchChecklistModalProps> = (
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs">
-      <div className="relative w-full max-w-2xl max-h-[85vh] bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-slate-200">
+      <div className="relative w-full max-w-2xl max-h-[85vh] bg-[#0E1830] rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-white/10">
         {/* Header */}
-        <div className="px-6 py-4 border-b border-slate-200 flex items-center justify-between bg-amber-50/60">
+        <div className="px-6 py-4 border-b border-white/10 flex items-center justify-between bg-amber-400/10">
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center">
+            <div className="w-8 h-8 rounded-lg bg-amber-400/15 text-amber-300 flex items-center justify-center">
               <AlertTriangle className="w-4 h-4" />
             </div>
             <div>
-              <h3 className="text-base font-bold text-slate-900">
+              <h3 className="text-base font-bold text-slate-100">
                 Ghid de confirmare pre-publicare JAC
               </h3>
-              <p className="text-xs text-slate-500">
+              <p className="text-xs text-slate-400">
                 Lista informațiilor ce trebuie confirmate înainte de lansarea pe Google Play
               </p>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 text-slate-400 hover:text-slate-700 hover:bg-slate-100 rounded-lg transition-colors"
+            className="p-1.5 text-slate-400 hover:text-slate-300 hover:bg-white/10 rounded-lg transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
         {/* Content */}
-        <div className="p-6 overflow-y-auto space-y-6 text-sm text-slate-700">
+        <div className="p-6 overflow-y-auto space-y-6 text-sm text-slate-300">
           <div className="p-3.5 bg-blue-50 border border-blue-200 rounded-xl text-xs text-blue-900 leading-relaxed flex items-start gap-2.5">
             <ShieldCheck className="w-4 h-4 text-blue-700 shrink-0 mt-0.5" />
             <span>
@@ -103,28 +103,28 @@ export const PreLaunchChecklistModal: React.FC<PreLaunchChecklistModalProps> = (
 
           {checklistItems.map((group) => (
             <div key={group.category} className="space-y-3">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-900 border-b pb-1">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-100 border-b pb-1">
                 {group.category}
               </h4>
               <div className="space-y-3">
                 {group.items.map((item, idx) => (
                   <div
                     key={idx}
-                    className="p-3.5 rounded-xl border border-slate-200 bg-slate-50/60 space-y-1.5"
+                    className="p-3.5 rounded-xl border border-white/10 bg-[#0B1424]/60 space-y-1.5"
                   >
                     <div className="flex items-center justify-between gap-2">
-                      <span className="font-bold text-slate-900 text-xs">{item.label}</span>
-                      <span className="text-[10px] text-amber-700 bg-amber-100 px-2 py-0.5 rounded font-semibold">
+                      <span className="font-bold text-slate-100 text-xs">{item.label}</span>
+                      <span className="text-[10px] text-amber-300 bg-amber-400/15 px-2 py-0.5 rounded font-semibold">
                         De confirmat
                       </span>
                     </div>
-                    <p className="text-xs text-slate-500">
+                    <p className="text-xs text-slate-400">
                       <strong>Unde se află:</strong> {item.location}
                     </p>
-                    <p className="text-xs text-slate-600">
+                    <p className="text-xs text-slate-300">
                       <strong>De ce este necesar:</strong> {item.why}
                     </p>
-                    <p className="text-xs text-amber-950 bg-amber-50 p-2 rounded border border-amber-200/60">
+                    <p className="text-xs text-amber-100 bg-amber-400/10 p-2 rounded border border-amber-400/20">
                       <strong>Acțiune recomandată:</strong> {item.suggested}
                     </p>
                   </div>
@@ -135,8 +135,8 @@ export const PreLaunchChecklistModal: React.FC<PreLaunchChecklistModalProps> = (
         </div>
 
         {/* Footer */}
-        <div className="px-6 py-3 border-t border-slate-200 bg-slate-50 flex items-center justify-between text-xs">
-          <span className="text-slate-500">Aceste marcaje sunt evidențiate în textele legale.</span>
+        <div className="px-6 py-3 border-t border-white/10 bg-[#0B1424] flex items-center justify-between text-xs">
+          <span className="text-slate-400">Aceste marcaje sunt evidențiate în textele legale.</span>
           <button
             onClick={onClose}
             className="px-4 py-2 bg-slate-900 text-white font-semibold rounded-lg hover:bg-slate-800 transition-colors"

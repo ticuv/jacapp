@@ -61,7 +61,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 font-sans selection:bg-amber-100 selection:text-amber-900">
+    <div className="min-h-screen flex flex-col bg-[#080F1C] text-slate-200 font-sans selection:bg-amber-400/15 selection:text-amber-200">
       {/* Top Bar Header */}
       <Header currentPage={currentPage} onNavigate={navigateTo} />
 

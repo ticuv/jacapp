@@ -16,7 +16,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           {/* Brand & Slogan Column */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-2.5">
-              <img src="/icon-192.png" alt="Logo JAC" className="w-8 h-8 rounded-lg" />
+              <img src="/logo-jac-white.png" alt="Logo JAC" className="h-8 w-auto" />
               <span className="text-xl font-bold tracking-tight text-white">JAC</span>
             </div>
 
@@ -143,7 +143,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div className="mt-12 pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <p>
             © {currentYear} JAC. Toate drepturile asupra structurii software și mărcii sunt rezervate. Textele legislative aparțin domeniului public.
           </p>

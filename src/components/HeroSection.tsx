@@ -21,14 +21,21 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
         className="absolute inset-0 bg-[linear-gradient(to_right,rgba(245,158,11,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(245,158,11,0.06)_1px,transparent_1px)] bg-[size:56px_56px] [mask-image:radial-gradient(ellipse_75%_60%_at_50%_0%,#000_55%,transparent_100%)]"
         aria-hidden="true"
       />
-      <div className="absolute -top-40 right-0 h-[520px] w-[520px] rounded-full bg-amber-500/10 blur-3xl" aria-hidden="true" />
-      <div className="absolute bottom-0 left-1/3 h-[380px] w-[380px] rounded-full bg-sky-500/[0.07] blur-3xl" aria-hidden="true" />
+      <div className="absolute -top-40 right-0 h-[520px] w-[520px] rounded-full bg-amber-400/100/10 blur-3xl" aria-hidden="true" />
+      <div className="absolute bottom-0 left-1/3 h-[380px] w-[380px] rounded-full bg-sky-400/100/[0.07] blur-3xl" aria-hidden="true" />
 
       <div className="relative mx-auto max-w-7xl px-4 pb-24 pt-14 sm:px-6 lg:px-8 lg:pb-28 lg:pt-20">
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-10">
           {/* ── Copy ───────────────────────────────────────────── */}
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-semibold text-amber-300">
+            <img
+              src="/logo-jac-white.png"
+              alt="Logo JAC"
+              className="mb-6 h-14 w-auto sm:h-16"
+              width={454}
+              height={512}
+            />
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.06] px-3 py-1 text-[11px] font-semibold text-amber-300">
               <span className="h-1.5 w-1.5 rounded-full bg-amber-400" />
               Aplicație Android independentă de informare legislativă
             </div>
@@ -48,13 +55,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
             <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href="#interfata"
-                className="inline-flex items-center gap-2 rounded-xl bg-amber-500 px-5 py-3 text-sm font-bold text-slate-950 transition-colors hover:bg-amber-400"
+                className="inline-flex items-center gap-2 rounded-xl bg-amber-400/100 px-5 py-3 text-sm font-bold text-slate-950 transition-colors hover:bg-amber-400"
               >
                 Vezi interfața reală <ArrowRight className="h-4 w-4" />
               </a>
               <button
                 onClick={() => onNavigate('privacy')}
-                className="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold transition-colors hover:bg-white/10"
+                className="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/[0.06] px-5 py-3 text-sm font-semibold transition-colors hover:bg-white/10"
               >
                 Documentele legale
               </button>
@@ -114,11 +121,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
             </div>
 
             {/* floating trust chips */}
-            <div className="absolute -left-1 top-6 z-30 flex rotate-[-4deg] items-center gap-1.5 rounded-full border border-white/10 bg-white/95 px-3 py-1.5 shadow-xl">
-              <WifiOff className="h-3.5 w-3.5 text-slate-700" />
-              <span className="text-[10px] font-bold text-slate-800">Funcționează offline</span>
+            <div className="absolute -left-1 top-6 z-30 flex rotate-[-4deg] items-center gap-1.5 rounded-full border border-white/10 bg-[#101B2E]/95 px-3 py-1.5 shadow-xl ring-1 ring-white/10">
+              <WifiOff className="h-3.5 w-3.5 text-slate-300" />
+              <span className="text-[10px] font-bold text-slate-200">Funcționează offline</span>
             </div>
-            <div className="absolute -right-1 bottom-24 z-30 flex rotate-[4deg] items-center gap-1.5 rounded-full border border-white/10 bg-amber-500 px-3 py-1.5 shadow-xl">
+            <div className="absolute -right-1 bottom-24 z-30 flex rotate-[4deg] items-center gap-1.5 rounded-full border border-white/10 bg-amber-400/100 px-3 py-1.5 shadow-xl">
               <ShieldCheck className="h-3.5 w-3.5 text-slate-950" />
               <span className="text-[10px] font-bold text-slate-950">Bază locală • 1.268 articole</span>
             </div>

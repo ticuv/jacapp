@@ -68,16 +68,16 @@ export const ContactSection: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-slate-50 border-b border-slate-200">
+    <section id="contact" className="py-20 bg-[#0B1424] border-b border-white/10">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-12">
-          <span className="text-xs font-bold text-amber-700 uppercase tracking-widest block mb-2">
+          <span className="text-xs font-bold text-amber-300 uppercase tracking-widest block mb-2">
             Asistență & Comunicare
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight [text-wrap:balance]">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-100 tracking-tight [text-wrap:balance]">
             Asistență JAC
           </h2>
-          <p className="mt-3 text-slate-600 text-sm sm:text-base leading-relaxed [text-wrap:pretty]">
+          <p className="mt-3 text-slate-300 text-sm sm:text-base leading-relaxed [text-wrap:pretty]">
             Aveți o sugestie, doriți să sesizați o neconcordanță legislativă sau aveți o întrebare despre aplicație? Trimiteți-ne un mesaj.
           </p>
         </div>
@@ -85,28 +85,28 @@ export const ContactSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
           {/* Left: Contact Info & Guidelines */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs">
-              <h3 className="text-lg font-bold text-slate-900 tracking-tight mb-4">
+            <div className="p-6 rounded-2xl bg-[#0E1830] border border-white/10 shadow-xs">
+              <h3 className="text-lg font-bold text-slate-100 tracking-tight mb-4">
                 Canale de comunicare
               </h3>
 
               <div className="space-y-4 text-sm">
                 <div>
-                  <span className="text-xs text-slate-500 font-medium block">E-mail de asistență:</span>
-                  <div className="flex items-center justify-between gap-2 mt-1 p-2.5 bg-slate-50 border border-slate-200 rounded-lg">
+                  <span className="text-xs text-slate-400 font-medium block">E-mail de asistență:</span>
+                  <div className="flex items-center justify-between gap-2 mt-1 p-2.5 bg-[#0B1424] border border-white/10 rounded-lg">
                     <div className="flex items-center gap-2">
-                      <Mail className="w-4 h-4 text-slate-500" />
-                      <span className="font-mono text-xs font-semibold text-slate-800">{contactEmail}</span>
+                      <Mail className="w-4 h-4 text-slate-400" />
+                      <span className="font-mono text-xs font-semibold text-slate-200">{contactEmail}</span>
                     </div>
                     <button
                       onClick={handleCopyEmail}
-                      className="px-2 py-1 text-xs font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-200 rounded transition-colors flex items-center gap-1"
+                      className="px-2 py-1 text-xs font-medium text-slate-300 hover:text-white hover:bg-white/[0.14] rounded transition-colors flex items-center gap-1"
                       title="Copiază adresa de e-mail"
                     >
                       {copiedEmail ? (
                         <>
                           <Check className="w-3.5 h-3.5 text-emerald-600" />
-                          <span className="text-emerald-700 font-semibold">Copiat</span>
+                          <span className="text-emerald-300 font-semibold">Copiat</span>
                         </>
                       ) : (
                         <>
@@ -120,10 +120,10 @@ export const ContactSection: React.FC = () => {
                 </div>
 
                 <div className="flex items-start gap-3 pt-2">
-                  <Clock className="w-4 h-4 text-slate-500 mt-0.5 shrink-0" />
+                  <Clock className="w-4 h-4 text-slate-400 mt-0.5 shrink-0" />
                   <div>
-                    <span className="font-semibold text-slate-900 block text-xs">Timp de răspuns</span>
-                    <p className="text-xs text-slate-600 mt-0.5">
+                    <span className="font-semibold text-slate-100 block text-xs">Timp de răspuns</span>
+                    <p className="text-xs text-slate-300 mt-0.5">
                       Nu este garantat un termen fix de răspuns; solicitările sunt analizate în funcție de disponibilitate și de posibilitatea verificării informației în sursele oficiale.
                     </p>
                   </div>
@@ -132,12 +132,12 @@ export const ContactSection: React.FC = () => {
             </div>
 
             {/* Reporting law updates */}
-            <div className="p-6 rounded-2xl bg-amber-50/70 border border-amber-200/80 text-xs text-amber-950 space-y-2">
-              <div className="flex items-center gap-2 font-bold text-sm text-amber-900">
-                <AlertCircle className="w-4 h-4 text-amber-700 shrink-0" />
+            <div className="p-6 rounded-2xl bg-amber-400/10 border border-amber-400/25 text-xs text-amber-100 space-y-2">
+              <div className="flex items-center gap-2 font-bold text-sm text-amber-200">
+                <AlertCircle className="w-4 h-4 text-amber-300 shrink-0" />
                 <span>Raportarea erorilor legislative</span>
               </div>
-              <p className="leading-relaxed text-amber-900/90">
+              <p className="leading-relaxed text-amber-200/90">
                 Dacă ați identificat un articol modificat recent printr-o ordonanță sau lege nouă, vă rugăm să specificați numărul actului normativ și numărul articolului pentru o remediere promptă în următoarea actualizare.
               </p>
             </div>
@@ -145,21 +145,21 @@ export const ContactSection: React.FC = () => {
 
           {/* Right: Functional Form */}
           <div className="lg:col-span-7">
-            <div className="p-6 sm:p-8 rounded-2xl bg-white border border-slate-200 shadow-xs">
+            <div className="p-6 sm:p-8 rounded-2xl bg-[#0E1830] border border-white/10 shadow-xs">
               {submitted ? (
                 <div className="py-10 text-center space-y-4">
-                  <div className="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto">
+                  <div className="w-12 h-12 bg-emerald-400/15 text-emerald-300 rounded-full flex items-center justify-center mx-auto">
                     <CheckCircle2 className="w-7 h-7" />
                   </div>
-                  <h4 className="text-xl font-bold text-slate-900">
+                  <h4 className="text-xl font-bold text-slate-100">
                     Aplicația de e-mail a fost deschisă
                   </h4>
-                  <p className="text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
+                  <p className="text-sm text-slate-300 max-w-md mx-auto leading-relaxed">
                     Mesajul se trimite prin aplicația dumneavoastră de e-mail, la adresa oficială de contact JAC. Nu este garantat un termen fix de răspuns.
                   </p>
                   <button
                     onClick={handleReset}
-                    className="mt-4 px-4 py-2 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors"
+                    className="mt-4 px-4 py-2 text-xs font-semibold text-slate-300 bg-white/[0.06] hover:bg-white/[0.14] rounded-lg transition-colors"
                   >
                     Trimite un alt mesaj
                   </button>
@@ -167,7 +167,7 @@ export const ContactSection: React.FC = () => {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4 text-left">
                   {errorMsg && (
-                    <div className="p-3 bg-red-50 border border-red-200 text-red-700 rounded-lg text-xs flex items-center gap-2">
+                    <div className="p-3 bg-red-400/10 border border-red-400/25 text-red-300 rounded-lg text-xs flex items-center gap-2">
                       <AlertCircle className="w-4 h-4 shrink-0" />
                       <span>{errorMsg}</span>
                     </div>
@@ -175,7 +175,7 @@ export const ContactSection: React.FC = () => {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-semibold text-slate-700 mb-1">
+                      <label className="block text-xs font-semibold text-slate-300 mb-1">
                         Nume și prenume <span className="text-red-500">*</span>
                       </label>
                       <input
@@ -184,12 +184,12 @@ export const ContactSection: React.FC = () => {
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="ex. Ion Popescu"
-                        className="w-full px-3 py-2 text-sm border border-slate-300 rounded-lg outline-none focus:border-slate-900 focus:ring-1 focus:ring-slate-900 transition-colors"
+                        className="w-full px-3 py-2 text-sm border border-white/15 rounded-lg outline-none focus:border-slate-900 focus:ring-1 focus:ring-slate-900 transition-colors"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold text-slate-700 mb-1">
+                      <label className="block text-xs font-semibold text-slate-300 mb-1">
                         Adresă de e-mail <span className="text-red-500">*</span>
                       </label>
                       <input
@@ -198,20 +198,20 @@ export const ContactSection: React.FC = () => {
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="adresa@exemplu.ro"
-                        className="w-full px-3 py-2 text-sm border border-slate-300 rounded-lg outline-none focus:border-slate-900 focus:ring-1 focus:ring-slate-900 transition-colors"
+                        className="w-full px-3 py-2 text-sm border border-white/15 rounded-lg outline-none focus:border-slate-900 focus:ring-1 focus:ring-slate-900 transition-colors"
                       />
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-semibold text-slate-700 mb-1">
+                      <label className="block text-xs font-semibold text-slate-300 mb-1">
                         Tipul solicitării
                       </label>
                       <select
                         value={formData.category}
                         onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                        className="w-full px-3 py-2 text-sm border border-slate-300 rounded-lg outline-none focus:border-slate-900 focus:ring-1 focus:ring-slate-900 bg-white transition-colors"
+                        className="w-full px-3 py-2 text-sm border border-white/15 rounded-lg outline-none focus:border-slate-900 focus:ring-1 focus:ring-slate-900 bg-[#0E1830] transition-colors"
                       >
                         <option value="general">Întrebare generală</option>
                         <option value="law_error">Sesizare eroare text legislativ</option>
@@ -222,7 +222,7 @@ export const ContactSection: React.FC = () => {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold text-slate-700 mb-1">
+                      <label className="block text-xs font-semibold text-slate-300 mb-1">
                         Act normativ vizat (opțional)
                       </label>
                       <input
@@ -230,13 +230,13 @@ export const ContactSection: React.FC = () => {
                         value={formData.lawReference}
                         onChange={(e) => setFormData({ ...formData, lawReference: e.target.value })}
                         placeholder="ex. Legea 61/1991, Art. 2"
-                        className="w-full px-3 py-2 text-sm border border-slate-300 rounded-lg outline-none focus:border-slate-900 focus:ring-1 focus:ring-slate-900 transition-colors"
+                        className="w-full px-3 py-2 text-sm border border-white/15 rounded-lg outline-none focus:border-slate-900 focus:ring-1 focus:ring-slate-900 transition-colors"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-slate-700 mb-1">
+                    <label className="block text-xs font-semibold text-slate-300 mb-1">
                       Mesajul dumneavoastră <span className="text-red-500">*</span>
                     </label>
                     <textarea
@@ -245,7 +245,7 @@ export const ContactSection: React.FC = () => {
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="Descrieți pe scurt situația sau sugestia dumneavoastră..."
-                      className="w-full px-3 py-2 text-sm border border-slate-300 rounded-lg outline-none focus:border-slate-900 focus:ring-1 focus:ring-slate-900 transition-colors resize-none"
+                      className="w-full px-3 py-2 text-sm border border-white/15 rounded-lg outline-none focus:border-slate-900 focus:ring-1 focus:ring-slate-900 transition-colors resize-none"
                     />
                   </div>
 
@@ -255,9 +255,9 @@ export const ContactSection: React.FC = () => {
                       id="termsCheckbox"
                       checked={formData.acceptedTerms}
                       onChange={(e) => setFormData({ ...formData, acceptedTerms: e.target.checked })}
-                      className="mt-1 w-4 h-4 text-slate-900 rounded border-slate-300 focus:ring-slate-900"
+                      className="mt-1 w-4 h-4 text-slate-100 rounded border-white/15 focus:ring-slate-900"
                     />
-                    <label htmlFor="termsCheckbox" className="text-xs text-slate-600 leading-normal">
+                    <label htmlFor="termsCheckbox" className="text-xs text-slate-300 leading-normal">
                       Sunt de acord ca datele mele transmise prin acest formular să fie utilizate exclusiv pentru a primi un răspuns la solicitarea formulată, conform Politicii de Confidențialitate.
                     </label>
                   </div>

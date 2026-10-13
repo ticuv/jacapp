@@ -6,6 +6,7 @@ const SCREENS = {
   home: '/screens/jac-home.webp',
   module: '/screens/jac-module-lista.webp',
   fisa: '/screens/jac-fisa-articol.webp',
+  favorite: '/screens/jac-favorite.webp',
 };
 
 interface Block {
@@ -18,6 +19,8 @@ interface Block {
   src: string;
   alt: string;
   crop?: { aspect: string; position?: string };
+  /** slightly larger frame for full-screen captures that carry a lot of detail */
+  wide?: boolean;
   flip?: boolean;
 }
 
@@ -80,23 +83,23 @@ const blocks: Block[] = [
       'Până la 5 favorite în versiunea Basic; favorite nelimitate sunt pregătite pentru Premium',
       'Datele rămân pe telefon — fără cont și fără transmiterea favoritelor',
     ],
-    src: SCREENS.home,
-    alt: 'Ecranul principal JAC, zona de jos: cardul „Salvate” și fila „Favorite” din navigarea aplicației',
-    crop: { aspect: '4 / 3' },
+    src: SCREENS.favorite,
+    alt: 'Ecranul „Favorite” din JAC: fapta salvată, cu încadrarea legală, sancțiunea între 500 și 1.500 de lei și fila Favorite activă',
+    wide: true,
     flip: true,
   },
 ];
 
 export const ShowcaseSection: React.FC = () => {
   return (
-    <section id="interfata" className="border-b border-slate-200 bg-white py-20 sm:py-24">
+    <section id="interfata" className="border-b border-white/10 bg-[#0E1830] py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
-          <span className="text-xs font-bold uppercase tracking-widest text-amber-700">Interfața aplicației</span>
-          <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 [text-wrap:balance] sm:text-4xl lg:text-[2.7rem]">
+          <span className="text-xs font-bold uppercase tracking-widest text-amber-300">Interfața aplicației</span>
+          <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-100 [text-wrap:balance] sm:text-4xl lg:text-[2.7rem]">
             Cum arată pe telefonul tău.
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg">
+          <p className="mt-4 text-base leading-relaxed text-slate-300 sm:text-lg">
             Capturi reale din aplicația JAC — nu machete. Fiecare ecran de mai jos este preluat așa cum apare
             pe un telefon Android, încadrat într-o ramă de prezentare.
           </p>
@@ -114,17 +117,17 @@ export const ShowcaseSection: React.FC = () => {
                   <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#0B1424]">
                     <b.icon className="h-5 w-5 text-amber-400" />
                   </span>
-                  <span className="text-xs font-bold uppercase tracking-widest text-amber-700">{b.eyebrow}</span>
+                  <span className="text-xs font-bold uppercase tracking-widest text-amber-300">{b.eyebrow}</span>
                   <span className="ml-auto font-mono text-sm font-bold text-slate-300">{b.step}</span>
                 </div>
-                <h3 className="mt-5 text-2xl font-extrabold tracking-tight text-slate-900 [text-wrap:balance] sm:text-3xl">
+                <h3 className="mt-5 text-2xl font-extrabold tracking-tight text-slate-100 [text-wrap:balance] sm:text-3xl">
                   {b.title}
                 </h3>
-                <p className="mt-4 leading-relaxed text-slate-600">{b.text}</p>
+                <p className="mt-4 leading-relaxed text-slate-300">{b.text}</p>
                 <ul className="mt-6 space-y-3">
                   {b.bullets.map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-sm text-slate-700">
-                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-500" />
+                    <li key={item} className="flex items-start gap-3 text-sm text-slate-300">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-400/100" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -132,9 +135,15 @@ export const ShowcaseSection: React.FC = () => {
               </div>
 
               {/* real screenshot in a premium frame */}
-              <div className={'relative mx-auto w-full max-w-[300px] lg:max-w-[320px] ' + (b.flip ? 'lg:order-1' : 'lg:order-2')}>
+              <div
+                className={
+                  'relative mx-auto w-full ' +
+                  (b.wide ? 'max-w-[330px] lg:max-w-[356px] ' : 'max-w-[300px] lg:max-w-[320px] ') +
+                  (b.flip ? 'lg:order-1' : 'lg:order-2')
+                }
+              >
                 <div
-                  className="absolute inset-x-4 top-8 bottom-8 rounded-[2.5rem] bg-amber-300/15 blur-3xl"
+                  className="absolute inset-x-2 top-10 bottom-10 rounded-[3rem] bg-amber-300/[0.12] blur-3xl"
                   aria-hidden="true"
                 />
                 <div className="relative">
@@ -149,7 +158,7 @@ export const ShowcaseSection: React.FC = () => {
           ))}
         </div>
 
-        <p className="mt-16 text-xs text-slate-500">
+        <p className="mt-16 text-xs text-slate-400">
           Capturile provin din versiunea audiată a aplicației Android JAC. Abonamentul Premium nu este disponibil
           în prezent: facturarea și Google Play Billing nu sunt implementate.
         </p>

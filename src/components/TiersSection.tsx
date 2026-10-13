@@ -21,14 +21,14 @@ const premiumItems = [
 
 export const TiersSection: React.FC = () => {
   return (
-    <section id="versiuni" className="py-20 bg-slate-50 border-b border-slate-200">
+    <section id="versiuni" className="py-20 bg-[#0B1424] border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mb-14">
-          <span className="text-xs font-bold text-amber-700 uppercase tracking-widest">Basic &amp; Premium</span>
-          <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight [text-wrap:balance]">
+          <span className="text-xs font-bold text-amber-300 uppercase tracking-widest">Basic &amp; Premium</span>
+          <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold text-slate-100 tracking-tight [text-wrap:balance]">
             Transparență completă între versiuni
           </h2>
-          <p className="mt-4 text-slate-600 leading-relaxed">
+          <p className="mt-4 text-slate-300 leading-relaxed">
             Versiunea Basic este gratuită și include modulele de bază. Versiunea Premium este pregătită tehnic,
             dar abonamentele nu sunt disponibile în prezent.
           </p>
@@ -36,24 +36,24 @@ export const TiersSection: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {/* Basic */}
-          <div className="rounded-2xl bg-white border border-slate-200 p-8 shadow-sm flex flex-col">
+          <div className="rounded-2xl bg-[#0E1830] border border-white/10 p-8 shadow-sm flex flex-col">
             <div className="flex items-center justify-between mb-5">
-              <div className="w-11 h-11 rounded-xl bg-emerald-100 flex items-center justify-center">
-                <ShieldCheck className="w-5 h-5 text-emerald-700" />
+              <div className="w-11 h-11 rounded-xl bg-emerald-400/15 flex items-center justify-center">
+                <ShieldCheck className="w-5 h-5 text-emerald-300" />
               </div>
-              <span className="text-xs font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-md px-2.5 py-1">GRATUIT</span>
+              <span className="text-xs font-bold text-emerald-300 bg-emerald-400/10 border border-emerald-400/25 rounded-md px-2.5 py-1">GRATUIT</span>
             </div>
-            <h3 className="text-2xl font-extrabold text-slate-900">Versiunea Basic</h3>
-            <p className="text-sm text-slate-600 mt-2 leading-relaxed">
+            <h3 className="text-2xl font-extrabold text-slate-100">Versiunea Basic</h3>
+            <p className="text-sm text-slate-300 mt-2 leading-relaxed">
               Acces imediat la cele 8 module legislative de bază, susținut de publicitate.
             </p>
-            <div className="mt-4 rounded-xl bg-slate-50 border border-slate-200 p-3.5">
-              <div className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">
+            <div className="mt-4 rounded-xl bg-[#0B1424] border border-white/10 p-3.5">
+              <div className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">
                 <Library className="w-3.5 h-3.5" /> Module incluse
               </div>
-              <p className="text-xs text-slate-600 leading-relaxed">{basicModuleNames}</p>
+              <p className="text-xs text-slate-300 leading-relaxed">{basicModuleNames}</p>
             </div>
-            <ul className="mt-6 space-y-3 text-sm text-slate-700 flex-1">
+            <ul className="mt-6 space-y-3 text-sm text-slate-300 flex-1">
               {basicItems.map((item) => (
                 <li key={item} className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-emerald-600 mt-0.5 shrink-0" />
@@ -61,14 +61,14 @@ export const TiersSection: React.FC = () => {
                 </li>
               ))}
             </ul>
-            <div className="mt-8 pt-5 border-t border-slate-100 text-sm font-semibold text-slate-900">0 lei</div>
+            <div className="mt-8 pt-5 border-t border-white/[0.07] text-sm font-semibold text-slate-100">0 lei</div>
           </div>
 
           {/* Premium */}
           <div className="relative rounded-2xl bg-[#0B1424] text-white p-8 shadow-xl flex flex-col overflow-hidden">
-            <div className="absolute -top-20 -right-20 w-56 h-56 rounded-full bg-amber-500/20 blur-3xl" aria-hidden="true" />
+            <div className="absolute -top-20 -right-20 w-56 h-56 rounded-full bg-amber-400/100/20 blur-3xl" aria-hidden="true" />
             <div className="relative flex items-center justify-between mb-5">
-              <div className="w-11 h-11 rounded-xl bg-amber-500/20 flex items-center justify-center">
+              <div className="w-11 h-11 rounded-xl bg-amber-400/100/20 flex items-center justify-center">
                 <Crown className="w-5 h-5 text-amber-400" />
               </div>
               <span className="text-xs font-bold text-amber-300 bg-amber-400/10 border border-amber-400/30 rounded-md px-2.5 py-1">ÎN PREGĂTIRE</span>
@@ -89,10 +89,10 @@ export const TiersSection: React.FC = () => {
                 </li>
               ))}
             </ul>
-            <div className="relative mt-8 rounded-xl bg-amber-50/95 border border-amber-300 p-4">
+            <div className="relative mt-8 rounded-xl bg-amber-400/10 border border-amber-400/25 p-4">
               <div className="flex items-start gap-2.5">
-                <AlertCircle className="w-4 h-4 text-amber-700 mt-0.5 shrink-0" />
-                <p className="text-xs text-amber-900 leading-normal">
+                <AlertCircle className="w-4 h-4 text-amber-300 mt-0.5 shrink-0" />
+                <p className="text-xs text-amber-200 leading-normal">
                   <strong>Abonamentele Premium nu sunt disponibile în prezent.</strong> Facturarea și Google Play
                   Billing nu sunt încă implementate; nu se percep plăți și nu sunt solicitate date financiare.
                 </p>
@@ -101,7 +101,7 @@ export const TiersSection: React.FC = () => {
           </div>
         </div>
 
-        <div className="mt-8 max-w-5xl mx-auto flex items-start gap-2.5 text-xs text-slate-500">
+        <div className="mt-8 max-w-5xl mx-auto flex items-start gap-2.5 text-xs text-slate-400">
           <Search className="w-3.5 h-3.5 text-slate-400 mt-0.5 shrink-0" />
           <span>
             În versiunea Basic, câmpul de căutare globală este blocat și deschide prezentarea Premium;
