@@ -1,0 +1,97 @@
+/* JAC premium motion layer — intentionally additive, no framework overrides */
+:root {
+  color-scheme: dark;
+  --jac-gold: #fbbf24;
+  --jac-gold-soft: rgba(251,191,36,.16);
+  --jac-glass: rgba(17,29,51,.72);
+}
+html { scroll-behavior: smooth; scroll-padding-top: 5.5rem; }
+body {
+  background-image: radial-gradient(ellipse at 14% 12%, rgba(28,57,95,.18), transparent 34%),
+                    radial-gradient(ellipse at 88% 38%, rgba(180,112,20,.075), transparent 30%);
+}
+::selection { background: rgba(251,191,36,.32); color: #fff; }
+a, button { -webkit-tap-highlight-color: transparent; }
+button, a { transition-timing-function: cubic-bezier(.2,.75,.25,1); }
+button:focus-visible, a:focus-visible { outline: 2px solid var(--jac-gold); outline-offset: 4px; }
+
+/* Hero: subtle cinematic lighting and actual app screenshots in dimensional devices */
+.jac-phone { perspective: 1400px; transform-style: preserve-3d; }
+.jac-phone-bezel {
+  transform: rotateY(-5deg) rotateX(2deg);
+  transition: transform .65s cubic-bezier(.2,.75,.25,1), box-shadow .65s ease;
+  box-shadow: 0 48px 95px -38px rgba(0,0,0,.92), 0 18px 40px -20px rgba(0,0,0,.8), 0 0 0 1px rgba(255,255,255,.045);
+}
+.jac-phone:hover .jac-phone-bezel { transform: rotateY(0) rotateX(0) translateY(-5px); }
+.jac-phone-gloss { opacity: .75; transition: opacity .4s ease; }
+.jac-phone:hover .jac-phone-gloss { opacity: 1; }
+.jac-float-slow { animation: jac-premium-float 7.5s ease-in-out infinite; }
+@keyframes jac-premium-float {
+  0%,100% { transform: translate3d(0,0,0) rotateZ(0); }
+  50% { transform: translate3d(0,-11px,0) rotateZ(.35deg); }
+}
+#interfata .jac-phone-bezel { box-shadow: 0 35px 75px -35px rgba(0,0,0,.95), 0 0 0 1px rgba(255,255,255,.08); }
+
+/* Elevate cards without changing their content or layout */
+section#cum-functioneaza .group,
+section#versiuni .group,
+section#interfata .group {
+  position: relative;
+  isolation: isolate;
+  transition: transform .35s cubic-bezier(.2,.75,.25,1), border-color .35s ease, box-shadow .35s ease;
+}
+section#cum-functioneaza .group:hover,
+section#versiuni .group:hover,
+section#interfata .group:hover {
+  transform: translateY(-5px);
+  border-color: rgba(251,191,36,.3);
+  box-shadow: 0 24px 60px -38px rgba(0,0,0,.9), 0 0 28px -20px rgba(251,191,36,.38);
+}
+section#cum-functioneaza .group:before,
+section#versiuni .group:before,
+section#interfata .group:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(255,255,255,.055), transparent 38%, rgba(251,191,36,.025));
+  opacity: .7;
+  pointer-events: none;
+  z-index: -1;
+}
+section[id] { scroll-margin-top: 6rem; }
+section#cum-functioneaza, section#interfata, section#versiuni { position: relative; }
+section#cum-functioneaza:after, section#interfata:after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  left: max(1.5rem, calc((100% - 76rem)/2));
+  right: max(1.5rem, calc((100% - 76rem)/2));
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.12), rgba(251,191,36,.2), rgba(255,255,255,.12), transparent);
+  pointer-events: none;
+}
+
+/* Buttons feel tactile, while keeping the site's existing JAC palette */
+a[class*="bg-amber-400"], button[class*="bg-amber-600"] {
+  box-shadow: 0 8px 24px -14px rgba(251,191,36,.8);
+}
+a[class*="bg-amber-400"]:hover, button[class*="bg-amber-600"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px -13px rgba(251,191,36,.55);
+}
+header, nav { backdrop-filter: saturate(140%) blur(16px); -webkit-backdrop-filter: saturate(140%) blur(16px); }
+
+/* Legal pages remain content-first; the new motion layer only polishes surfaces */
+.font-serif-legal { text-wrap: pretty; }
+@media (max-width: 640px) {
+  .jac-phone-bezel { transform: rotateY(-2deg) rotateX(1deg); }
+  .jac-float-slow { animation-duration: 9s; }
+  section#cum-functioneaza .group:hover,
+  section#versiuni .group:hover,
+  section#interfata .group:hover { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}
