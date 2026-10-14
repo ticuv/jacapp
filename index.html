@@ -6,7 +6,7 @@
     <link rel="icon" type="image/png" sizes="64x64" href="./favicon-64.png">
     <link rel="icon" type="image/png" sizes="192x192" href="./favicon-192.png">
     <link rel="apple-touch-icon" href="./favicon-192.png">
-    <meta name="theme-color" content="#0B1424">
+    <meta name="theme-color" content="#071018">
     <title>JAC – Claritate în lege. Siguranță în decizie.</title>
     <meta name="description" content="Aplicația Android JAC este disponibilă pe Google Play. Consultă legislația din domeniul ordinii publice din România, cu module tematice, căutare rapidă și acces offline." />
     <meta property="og:title" content="JAC – Claritate în lege. Siguranță în decizie." />
@@ -15,12 +15,482 @@
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="./assets/index-jac-live.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BxVUI4U4.css">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,450;0,6..72,500;0,6..72,600;1,6..72,450;1,6..72,500&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/jac.css">
+    <script>document.documentElement.classList.add("js")</script>
   </head>
-  <body class="bg-[#080F1C] text-slate-200 antialiased selection:bg-amber-400/25 selection:text-amber-100">
-    <div id="root"></div>
+  <body class="home">
+    <a class="skip" href="#continut">Sari la conținut</a>
+    <header class="top">
+      <a class="brand" href="./">
+        <img src="logo-jac-white.png" alt="" width="454" height="512">
+        <span>JAC</span>
+      </a>
+      <input class="menu-check" type="checkbox" id="menu">
+      <label class="menu-btn" for="menu"><span class="sr">Meniu</span><i></i></label>
+      <nav class="nav" aria-label="Secțiuni">
+        <a href="#interfata">Funcționalități</a>
+        <a href="#cum-functioneaza">Cum funcționează</a>
+        <a href="#biblioteca">Bibliotecă</a>
+        <a href="#versiuni">Versiuni</a>
+        <a href="#intrebari">Întrebări</a>
+        <a href="#contact">Asistență</a>
+        <a href="legal/index.html">Despre JAC</a>
+      </nav>
+    </header>
+
+    <main id="continut">
+      <section class="hero">
+        <div class="hero-bg" data-parallax aria-hidden="true"></div>
+        <div class="margin-rule" aria-hidden="true"></div>
+        <div class="wrap hero-grid">
+          <div class="hero-copy rise">
+            <p class="kicker">Aplicație Android independentă</p>
+            <h1>Legislația României, <em>la îndemână</em>.</h1>
+            <p class="tagline">Claritate în lege. Siguranță în decizie.</p>
+          </div>
+          <div class="hero-rest rise">
+            <p class="lede">Fapte, articole și sancțiuni organizate pe module legislative, disponibile instantaneu pe telefon — chiar și fără semnal. Fără conturi, fără urmărire.</p>
+            <div class="actions">
+              <a class="btn btn-gold" href="#interfata">Vezi interfața reală</a>
+              <a class="btn btn-ghost" href="legal/index.html">Documentele legale</a>
+            </div>
+            <dl class="stats">
+              <div><dt>22</dt><dd>module legislative</dd></div>
+              <div><dt>1.268</dt><dd>fapte &amp; sancțiuni</dd></div>
+              <div><dt>100%</dt><dd>offline pe telefon</dd></div>
+            </dl>
+            <p class="fine">Capturile de mai jos sunt din aplicația reală. Abonamentul Premium nu este disponibil în prezent.</p>
+          </div>
+          <div class="rig" data-rig aria-hidden="false">
+            <div class="diorama">
+              <div class="floor" aria-hidden="true"></div>
+              <div class="handset left">
+                <div class="chassis">
+                  <div class="screen">
+                    <img src="screens/jac-module-lista.webp" width="587" height="1280" alt="Catalog legislativ în JAC: lista de acte normative cu numărul de fapte pentru fiecare lege">
+                  </div>
+                </div>
+              </div>
+              <div class="handset center">
+                <div class="chassis">
+                  <div class="screen">
+                    <img src="screens/jac-home.webp" width="587" height="1280" alt="Ecranul principal JAC: căutare, acces rapid la module legislative și consultate recent" fetchpriority="high">
+                    <span class="glint" aria-hidden="true"><i></i></span>
+                  </div>
+                </div>
+              </div>
+              <div class="handset right">
+                <div class="chassis">
+                  <div class="screen">
+                    <img src="screens/jac-fisa-articol.webp" width="587" height="1280" alt="Fișa unei fapte în JAC: încadrarea legală, intervalul sancțiunii și condițiile de plată">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="interfata" aria-labelledby="interfata-title">
+        <div class="wrap">
+          <div class="section-head rise">
+            <p class="kicker">Interfața aplicației</p>
+            <h2 id="interfata-title">Cum arată pe telefonul tău.</h2>
+            <p>Capturi reale din aplicația JAC — nu machete. Fiecare ecran de mai jos este preluat așa cum apare pe un telefon Android, încadrat într-o ramă de prezentare.</p>
+          </div>
+          <div class="walk">
+            <article class="rise">
+              <div class="copy">
+                <p class="step">01 · Catalog legislativ</p>
+                <h3>Legislația, organizată pe acte normative</h3>
+                <p>Fiecare grupă reunește actele normative relevante, iar în dreptul fiecărui act vezi câte fapte conține. Nu cauți prin documente întregi: intri direct în legea de care ai nevoie.</p>
+                <ul>
+                  <li>Module tematice grupate pe domenii (ordine publică, rutier, silvic, arme, penal)</li>
+                  <li>Numărul de fapte afișat pentru fiecare act normativ</li>
+                  <li>22 de module și 1.268 de fapte și sancțiuni în catalogul aplicației</li>
+                </ul>
+              </div>
+              <div class="plinth">
+                <div class="dossier" aria-hidden="true"></div>
+                <div class="handset solo">
+                  <div class="chassis">
+                    <div class="screen">
+                      <img src="screens/jac-module-lista.webp" width="587" height="1280" alt="Catalogul legislativ JAC: lista „Legi Speciale și Contravenții” cu actele normative și numărul de fapte pentru fiecare" loading="lazy">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="flip rise">
+              <div class="plinth">
+                <div class="dossier" aria-hidden="true"></div>
+                <div class="handset solo flip">
+                  <div class="chassis">
+                    <div class="screen">
+                      <img src="screens/jac-home.webp" width="587" height="1280" alt="Ecranul principal JAC cu câmpul de căutare „Caută fapte, articole, instituții, procedură” și indicatorul bazei locale offline" loading="lazy">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="copy">
+                <p class="step">02 · Căutare</p>
+                <h3>Cauți fapta, articolul sau cuvântul-cheie</h3>
+                <p>Câmpul de căutare este primul lucru de pe ecranul principal. În versiunea Basic cauți în cadrul modulului deschis; căutarea globală în toată baza legislativă face parte din versiunea Premium și deschide prezentarea acesteia.</p>
+                <ul>
+                  <li>Căutare după faptă, articol sau cuvânt-cheie în modulul deschis</li>
+                  <li>Căutare globală în întreaga bibliotecă — funcție pregătită pentru Premium</li>
+                  <li>Bara de stare indică permanent baza locală, numărul de articole și starea sincronizării</li>
+                </ul>
+              </div>
+            </article>
+            <article class="rise">
+              <div class="copy">
+                <p class="step">03 · Fișa articolului</p>
+                <h3>Încadrare, sancțiune și mod de aplicare</h3>
+                <p>Fișa unei fapte afișează încadrarea legală completă, intervalul sancțiunii, condițiile de plată și măsurile complementare sau circumstanțele agravante, atunci când legea le prevede.</p>
+                <ul>
+                  <li>Încadrare cu articolul care prevede fapta și articolul care o sancționează</li>
+                  <li>Intervalul sancțiunii (minim – maxim) și plata redusă în 15 zile, când se aplică</li>
+                  <li>Secțiune separată pentru măsuri complementare și agravante</li>
+                </ul>
+              </div>
+              <div class="plinth">
+                <div class="dossier" aria-hidden="true"></div>
+                <div class="handset solo">
+                  <div class="chassis">
+                    <div class="screen">
+                      <img src="screens/jac-fisa-articol.webp" width="587" height="1280" alt="Fișa unei fapte din JAC (Codul Aerian): încadrarea legală, sancțiunea între 2.000 și 4.000 de lei și condițiile de plată în 15 zile" loading="lazy">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="flip rise">
+              <div class="plinth">
+                <div class="dossier" aria-hidden="true"></div>
+                <div class="handset solo flip">
+                  <div class="chassis">
+                    <div class="screen">
+                      <img src="screens/jac-favorite.webp" width="587" height="1280" alt="Ecranul „Favorite” din JAC: fapta salvată, cu încadrarea legală, sancțiunea între 500 și 1.500 de lei și fila Favorite activă" loading="lazy">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="copy">
+                <p class="step">04 · Favorite</p>
+                <h3>Faptele folosite des, la un singur tap</h3>
+                <p>Cardul „Salvate” de pe ecranul principal și fila „Favorite” duc direct la faptele marcate. Favoritele sunt păstrate local, pe dispozitiv.</p>
+                <ul>
+                  <li>Acces instant la faptele salvate, din prima filă de jos</li>
+                  <li>Până la 5 favorite în versiunea Basic; favorite nelimitate sunt pregătite pentru Premium</li>
+                  <li>Datele rămân pe telefon — fără cont și fără transmiterea favoritelor</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+          <p class="fine">Capturile provin din versiunea publică a aplicației Android JAC. Abonamentul Premium nu este disponibil în prezent; versiunea Basic este gratuită și afișează reclame.</p>
+        </div>
+      </section>
+
+      <section class="section" id="cum-functioneaza" aria-labelledby="cum-title">
+        <div class="wrap">
+          <div class="section-head rise">
+            <p class="kicker">Cum funcționează</p>
+            <h2 id="cum-title">De la întrebare la răspuns, în câteva secunde</h2>
+            <p>JAC este construit pentru teren: informația corectă, structurată, fără căutări interminabile.</p>
+          </div>
+          <div class="steps">
+            <article class="rise">
+              <p class="idx">01</p>
+              <h3>Deschizi modulul potrivit</h3>
+              <p>Legislația este organizată pe module tematice — de la ordinea publică la codul rutier sau penal. Fiecare modul grupează faptele, articolele și sancțiunile relevante.</p>
+            </article>
+            <article class="rise" style="--d:80ms">
+              <p class="idx">02</p>
+              <h3>Cauți rapid</h3>
+              <p>Cauți după faptă, articol sau cuvânt-cheie direct în modul. Rezultatele apar instant, iar în căutarea globală (Premium) cauți simultan în toată baza legislativă.</p>
+            </article>
+            <article class="rise" style="--d:160ms">
+              <p class="idx">03</p>
+              <h3>Verifici încadrarea și sancțiunea</h3>
+              <p>Fiecare faptă vine cu încadrarea legală exactă, amenda între minim și maxim și detaliile de aplicare — inclusiv reducerea la jumătate în 15 zile.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="biblioteca" aria-labelledby="bib-title">
+        <div class="wrap">
+          <div class="section-head rise">
+            <p class="kicker">Biblioteca legislativă</p>
+            <h2 id="bib-title">22 module, 1.268 fapte și sancțiuni</h2>
+            <p>Conținutul aplicației, așa cum este inclus în versiunea auditată — modulele Basic vin gratuit, modulele Premium sunt pregătite pentru accesul complet.</p>
+          </div>
+          <div class="ledger">
+            <div class="rise">
+              <h3>Basic — incluse gratuit <span class="tier">Basic</span></h3>
+              <ol class="acts">
+                <li class="act"><span class="act-no">01</span><span><strong>Legea 61/1991</strong><em>Ordine &amp; liniște publică</em></span><span class="act-count">40 <small>fapte</small></span></li>
+                <li class="act"><span class="act-no">02</span><span><strong>Legea 60/1991</strong><em>Adunări publice &amp; proteste</em></span><span class="act-count">10 <small>fapte</small></span></li>
+                <li class="act"><span class="act-no">03</span><span><strong>Legea 4/2008</strong><em>Violență în sport &amp; arene</em></span><span class="act-count">40 <small>fapte</small></span></li>
+                <li class="act"><span class="act-no">04</span><span><strong>OUG 55/2002</strong><em>Câini periculoși &amp; agresivi</em></span><span class="act-count">10 <small>fapte</small></span></li>
+                <li class="act"><span class="act-no">05</span><span><strong>Legea 349/2002</strong><em>Regimul tutunului &amp; fumat</em></span><span class="act-count">11 <small>fapte</small></span></li>
+                <li class="act"><span class="act-no">06</span><span><strong>Legea 217/2003</strong><em>Violență domestică</em></span><span class="act-count">8 <small>fapte</small></span></li>
+                <li class="act"><span class="act-no">07</span><span><strong>Legea 54/2012</strong><em>Regimul picnicului &amp; grătare</em></span><span class="act-count">18 <small>fapte</small></span></li>
+                <li class="act"><span class="act-no">08</span><span><strong>OUG 97/2005</strong><em>Evidența persoanelor &amp; acte</em></span><span class="act-count">14 <small>fapte</small></span></li>
+              </ol>
+            </div>
+            <div class="rise" style="--d:80ms">
+              <h3>Premium — acces complet <span class="tier premium">Premium</span></h3>
+              <ol class="acts">
+                <li class="act"><span class="act-no">09</span><span><strong>Sancțiuni rutiere</strong><em>Cod rutier • OUG 195/2002</em></span><span class="act-count">60 <small>fapte</small></span></li>
+                <li class="act"><span class="act-no">10</span><span><strong>Proceduri rutiere</strong><em>Cod rutier • măsuri operative</em></span><span class="act-count">15 <small>fapte</small></span></li>
+                <li class="act"><span class="act-no">11</span><span><strong>Codul Penal — Infracțiuni</strong><em>Partea specială • infracțiuni și pedepse</em></span><span class="act-count">477 <small>fapte</small></span></li>
+                <li class="act"><span class="act-no">12</span><span><strong>Codul Penal — Partea Generală</strong><em>Instituții &amp; reguli de bază</em></span><span class="act-count">187 <small>fapte</small></span></li>
+                <li class="act"><span class="act-no">13</span><span><strong>Procedură Penală — Operativ</strong><em>Măsuri procesuale, percheziții &amp; flagrant</em></span><span class="act-count">15 <small>fapte</small></span></li>
+                <li class="act"><span class="act-no">14</span><span><strong>Domeniul Silvic</strong><em>Legea 171/2010 &amp; Codul Silvic (L331/2024)</em></span><span class="act-count">129 <small>fapte</small></span></li>
+                <li class="act"><span class="act-no">15</span><span><strong>Regimul Armelor</strong><em>Legea 295/2004 &amp; HG 11/2018</em></span><span class="act-count">62 <small>fapte</small></span></li>
+                <li class="act"><span class="act-no">16</span><span><strong>OUG 34/2008</strong><em>Sistemul Național Unic 112</em></span><span class="act-count">6 <small>fapte</small></span></li>
+                <li class="act"><span class="act-no">17</span><span><strong>Codul Aerian (L21/2020)</strong><em>Aviație civilă &amp; drone (UAS)</em></span><span class="act-count">23 <small>fapte</small></span></li>
+                <li class="act"><span class="act-no">18</span><span><strong>Legea 176/2024</strong><em>Pescuit &amp; resurse acvatice vii</em></span><span class="act-count">67 <small>fapte</small></span></li>
+                <li class="act"><span class="act-no">19</span><span><strong>Legea 407/2006</strong><em>Vânătoare &amp; fond cinegetic</em></span><span class="act-count">37 <small>fapte</small></span></li>
+                <li class="act"><span class="act-no">20</span><span><strong>Legea 365/2002</strong><em>Comerț electronic &amp; plăți digitale</em></span><span class="act-count">8 <small>fapte</small></span></li>
+                <li class="act"><span class="act-no">21</span><span><strong>Legea 333/2003</strong><em>Paza obiectivelor &amp; sisteme de alarmă</em></span><span class="act-count">20 <small>fapte</small></span></li>
+                <li class="act"><span class="act-no">22</span><span><strong>Legea 145/2014</strong><em>Piață agricolă &amp; atestate producător</em></span><span class="act-count">11 <small>fapte</small></span></li>
+              </ol>
+            </div>
+          </div>
+          <p class="fine">Numerele reflectă catalogul de conținut inclus în versiunea auditată a aplicației (v3, octombrie 2026).</p>
+        </div>
+      </section>
+
+      <section class="section" id="versiuni" aria-labelledby="ver-title">
+        <div class="wrap">
+          <div class="section-head rise">
+            <p class="kicker">Basic &amp; Premium</p>
+            <h2 id="ver-title">Transparență completă între versiuni</h2>
+            <p>Versiunea Basic este gratuită și include modulele de bază. Versiunea Premium este pregătită tehnic; prețul planificat este de 5 lei/lună. Abonamentele nu sunt disponibile în prezent.</p>
+          </div>
+          <div class="plans">
+            <article class="plan rise">
+              <header>
+                <p class="kicker">Versiunea de lucru</p>
+                <span class="tier">Gratuit</span>
+              </header>
+              <h3>Versiunea Basic</h3>
+              <p class="desc">Acces imediat la cele 8 module legislative de bază, susținut de publicitate.</p>
+              <p class="modules"><strong>Module incluse.</strong> Legea 61/1991, Legea 60/1991, Legea 4/2008, OUG 55/2002, Legea 349/2002, Legea 217/2003, Legea 54/2012, OUG 97/2005.</p>
+              <ul>
+                <li>Căutare în cadrul modulelor</li>
+                <li>Până la 5 favorite</li>
+                <li>Fișe complete: faptă, încadrare, amendă, reducere 15 zile</li>
+                <li>Sincronizarea actualizărilor de conținut</li>
+                <li class="limit">Fără reclame (disponibil doar în Premium)</li>
+              </ul>
+              <p class="price"><b>0 lei</b></p>
+            </article>
+            <article class="plan featured rise" style="--d:90ms">
+              <header>
+                <p class="kicker">Pregătit tehnic</p>
+                <span class="tier premium">În pregătire</span>
+              </header>
+              <h3>Versiunea Premium</h3>
+              <p class="desc">Experiența completă, fără reclame, cu întreaga bibliotecă legislativă. Preț planificat: 5 lei/lună.</p>
+              <ul>
+                <li>Toate cele 22 de module — inclusiv Codul Penal, silvic, arme, rutier complet</li>
+                <li>Căutare globală în întreaga bază legislativă</li>
+                <li>Favorite nelimitate</li>
+                <li>Fără reclame</li>
+                <li>Actualizări și completări periodice ale bibliotecii legislative</li>
+                <li>Acces la modulele Premium pregătite tehnic</li>
+              </ul>
+              <p class="desc">Premium oferă acces la întreaga bibliotecă legislativă, fără reclame, cu actualizări și completări periodice ale conținutului legislativ.</p>
+              <p class="price"><b>5 lei</b><span>/lună, planificat</span></p>
+            </article>
+          </div>
+          <div class="notice rise">
+            <p><strong>Abonamentele Premium nu sunt disponibile în prezent.</strong> Prețul planificat pentru Premium este de 5 lei/lună. Facturarea și Google Play Billing nu sunt încă implementate; nu se percep plăți și nu sunt solicitate date financiare.</p>
+            <p>În versiunea Basic, câmpul de căutare globală este blocat și deschide prezentarea Premium; căutarea rămâne disponibilă în cadrul fiecărui modul. Favoritele Basic sunt limitate la 5.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="independenta" aria-labelledby="ind-title">
+        <div class="wrap">
+          <div class="independence rise">
+            <p class="kicker">Transparență juridică</p>
+            <h2 id="ind-title">Independență instituțională</h2>
+            <p><strong>JAC este un proiect tehnic independent.</strong> Aplicația mobilă JAC și acest site web nu sunt afiliate, asociate, autorizate sau susținute oficial de nicio instituție publică sau autoritate de stat din România (inclusiv Ministerul Afacerilor Interne, Poliția Română, Jandarmeria Română sau Poliția Locală).</p>
+            <div class="split-note">
+              <p><strong>Sursa textelor legale:</strong> Reproduceri ale actelor normative din domeniul public, publicate în Monitorul Oficial al României și pe portalul legislatie.just.ro.</p>
+              <p><strong>Fără valoare de consultanță:</strong> Informațiile au scop strict documentar și metodologic. Singurul text care produce efecte juridice este cel din Monitorul Oficial.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="intrebari" aria-labelledby="faq-title">
+        <div class="wrap">
+          <div class="section-head rise">
+            <p class="kicker">Întrebări frecvente</p>
+            <h2 id="faq-title">Răspunsuri directe despre JAC</h2>
+            <p>Informații clare despre funcționare, legislație, reclame și planurile de dezvoltare.</p>
+            <div class="filters" role="group" aria-label="Filtrează întrebările">
+              <button type="button" data-filter="all" aria-pressed="true">Toate</button>
+              <button type="button" data-filter="general" aria-pressed="false">General &amp; statut</button>
+              <button type="button" data-filter="versiuni" aria-pressed="false">Basic &amp; Premium</button>
+              <button type="button" data-filter="legislatie" aria-pressed="false">Legislație</button>
+              <button type="button" data-filter="confidentialitate" aria-pressed="false">Confidențialitate</button>
+            </div>
+          </div>
+          <div class="faq-list">
+            <details class="faq rise" data-cat="general">
+              <summary>Este aplicația JAC afiliată vreunei instituții a statului?</summary>
+              <p>Nu. JAC este o aplicație independentă de informare legislativă. Nu este afiliată, aprobată, sponsorizată sau administrată de Ministerul Afacerilor Interne (MAI), Poliția Română ori de alte instituții ale statului român.</p>
+            </details>
+            <details class="faq rise" data-cat="general">
+              <summary>Care este statusul lansării pe Google Play?</summary>
+              <p>Aplicația JAC este publicată și disponibilă pentru descărcare prin Google Play.</p>
+            </details>
+            <details class="faq rise" data-cat="versiuni">
+              <summary>Care este diferența dintre versiunea Basic și versiunea Premium?</summary>
+              <p>Versiunea Basic (gratuită) oferă acces la modulele incluse gratuit, căutare în cadrul acestora, până la 5 favorite și afișează reclame. Versiunea Premium este concepută pentru acces complet la toate modulele, fără reclame și cu favorite nelimitate.</p>
+            </details>
+            <details class="faq rise" data-cat="versiuni">
+              <summary>Pot cumpăra acum un abonament Premium?</summary>
+              <p>Nu. Prețul planificat pentru Premium este de 5 lei/lună. Facturarea și abonamentele Premium nu sunt încă implementate în JAC. Prețul final și condițiile de achiziție vor fi afișate înainte de orice cumpărare, când abonamentul va deveni disponibil.</p>
+            </details>
+            <details class="faq rise" data-cat="legislatie">
+              <summary>Ce conține aplicația?</summary>
+              <p>Aplicația organizează legislația pe module tematice (de exemplu circulație rutieră, contravenții și fapte penale), cu fișe de fapte, articole și sancțiuni. O parte dintre module sunt incluse gratuit (Basic), restul sunt prevăzute pentru versiunea Premium.</p>
+            </details>
+            <details class="faq rise" data-cat="legislatie">
+              <summary>Funcționează consultarea articolelor fără conexiune la internet?</summary>
+              <p>Da. Conținutul legislativ este stocat local pe dispozitiv; fără conexiune puteți căuta și citi conținutul deja descărcat. Sincronizarea actualizărilor necesită internet.</p>
+            </details>
+            <details class="faq rise" data-cat="confidentialitate">
+              <summary>Ce date colectează aplicația?</summary>
+              <p>Aplicația nu are conturi de utilizator și nu colectează nume sau adrese de e-mail. Favoritele, istoricul și preferințele rămân local, pe dispozitiv. În versiunea Basic, reclamele sunt furnizate prin Google Mobile Ads (AdMob), iar opțiunile de consimțământ pentru utilizatorii din SEE/Regatul Unit sunt gestionate prin Google UMP. Detalii: <a href="legal/privacy.html">Politica de Confidențialitate</a>.</p>
+            </details>
+            <details class="faq rise" data-cat="confidentialitate">
+              <summary>Site-ul folosește cookie-uri?</summary>
+              <p>Nu. Site-ul documentelor JAC este static și nu utilizează cookie-uri sau tehnologii de urmărire. Detalii: <a href="legal/cookies.html">Politica de Cookie-uri</a>.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact" aria-labelledby="contact-title">
+        <div class="wrap">
+          <div class="section-head rise">
+            <p class="kicker">Asistență &amp; comunicare</p>
+            <h2 id="contact-title">Asistență JAC</h2>
+            <p>Aveți o sugestie, doriți să sesizați o neconcordanță legislativă sau aveți o întrebare despre aplicație? Trimiteți-ne un mesaj.</p>
+          </div>
+          <div class="contact">
+            <div class="rise">
+              <div class="panel">
+                <h3>Canale de comunicare</h3>
+                <span class="meta-label">E-mail de asistență:</span>
+                <div class="email-row">
+                  <a href="mailto:vladticu100@gmail.com">vladticu100@gmail.com</a>
+                  <button class="copy" type="button" data-copy="vladticu100@gmail.com">Copiază</button>
+                </div>
+                <span class="meta-label">Timp de răspuns</span>
+                <p>Nu este garantat un termen fix de răspuns; solicitările sunt analizate în funcție de disponibilitate și de posibilitatea verificării informației în sursele oficiale.</p>
+              </div>
+              <div class="callout">
+                <p><strong>Raportarea erorilor legislative.</strong> Dacă ați identificat un articol modificat recent printr-o ordonanță sau lege nouă, vă rugăm să specificați numărul actului normativ și numărul articolului pentru o remediere promptă în următoarea actualizare.</p>
+              </div>
+            </div>
+            <div class="panel rise" style="--d:80ms">
+              <div class="form-success" data-success hidden>
+                <h3>Aplicația de e-mail a fost deschisă</h3>
+                <p>Mesajul se trimite prin aplicația dumneavoastră de e-mail, la adresa oficială de contact JAC. Nu este garantat un termen fix de răspuns.</p>
+                <button class="btn btn-ghost" type="button" data-again>Trimite un alt mesaj</button>
+              </div>
+              <form data-contact novalidate>
+                <p class="form-error" data-error hidden role="alert"></p>
+                <div class="fields">
+                  <label>Nume și prenume <em>*</em>
+                    <input name="name" type="text" autocomplete="name" required placeholder="ex. Ion Popescu">
+                  </label>
+                  <label>Adresă de e-mail <em>*</em>
+                    <input name="email" type="email" autocomplete="email" required placeholder="adresa@exemplu.ro">
+                  </label>
+                </div>
+                <div class="fields">
+                  <label>Tipul solicitării
+                    <select name="category">
+                      <option value="general">Întrebare generală</option>
+                      <option value="law_error">Sesizare eroare text legislativ</option>
+                      <option value="feature">Sugestie de funcționalitate</option>
+                      <option value="pre_launch">Întrebare privind lansarea pe Google Play</option>
+                      <option value="gdpr">Solicitare date personale / GDPR</option>
+                    </select>
+                  </label>
+                  <label>Act normativ vizat (opțional)
+                    <input name="law" type="text" placeholder="ex. Legea 61/1991, Art. 2">
+                  </label>
+                </div>
+                <label>Mesajul dumneavoastră <em>*</em>
+                  <textarea name="message" required placeholder="Descrieți pe scurt situația sau sugestia dumneavoastră..."></textarea>
+                </label>
+                <label class="consent">
+                  <input id="consent" name="consent" type="checkbox">
+                  <span>Sunt de acord ca datele mele transmise prin acest formular să fie utilizate exclusiv pentru a primi un răspuns la solicitarea formulată, conform Politicii de Confidențialitate.</span>
+                </label>
+                <button class="btn btn-gold" type="submit">Trimite solicitarea</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap foot-grid">
+        <div>
+          <a class="brand" href="./">
+            <img src="logo-jac-white.png" alt="" width="454" height="512">
+            <span>JAC</span>
+          </a>
+          <h2>„Claritate în lege. Siguranță în decizie.”</h2>
+          <p>Aplicație mobilă Android pentru consultarea rapidă și structurată a legislației din domeniul ordinii publice din România.</p>
+          <p>Proiect independent, fără asociere sau afiliere cu Ministerul Afacerilor Interne (MAI), Poliția Română sau alte autorități publice.</p>
+        </div>
+        <div>
+          <h3>Navigare</h3>
+          <ul>
+            <li><a href="./">Pagina principală</a></li>
+            <li><a href="#interfata">Funcționalități</a></li>
+            <li><a href="#versiuni">Versiuni Basic &amp; Premium</a></li>
+            <li><a href="#contact">Asistență &amp; suport</a></li>
+            <li><a href="legal/asistenta.html">Asistență</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Documente legale</h3>
+          <ul>
+            <li><a href="legal/index.html">Despre JAC</a></li>
+            <li><a href="legal/terms.html">Termeni și condiții</a></li>
+            <li><a href="legal/privacy.html">Politica de confidențialitate</a></li>
+            <li><a href="legal/cookies.html">Politica de cookie-uri</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Disponibilitate &amp; contact</h3>
+          <p>Platformă: <strong>Android</strong></p>
+          <p>Status: <strong>Disponibilă pe Google Play</strong></p>
+          <p>Format date: Stocare locală SQLite</p>
+          <p><a href="mailto:vladticu100@gmail.com">Contactează dezvoltatorul</a></p>
+        </div>
+      </div>
+      <div class="wrap legal-line">
+        <p>© 2026 JAC. Toate drepturile asupra structurii software și mărcii sunt rezervate. Textele legislative aparțin domeniului public.</p>
+      </div>
+    </footer>
+    <script src="./assets/jac.js"></script>
   </body>
 </html>
-
