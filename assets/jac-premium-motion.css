@@ -64,3 +64,17 @@ footer img{filter:drop-shadow(0 0 22px #ffc62918)}
  section#cum-functioneaza .group:hover,section#versiuni .group:hover,section#biblioteca .group:hover,section#interfata .group:hover{transform:translateY(-2px)}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+
+/* Fix: keep each screenshot physically attached to its own 3D phone shell.
+   Earlier global image rules could leave the screen layer visually behind during transforms. */
+.jac-phone{position:relative!important;display:block;isolation:isolate;transform:translateZ(0);overflow:visible!important}
+.jac-phone-bezel{position:relative!important;display:block!important;overflow:hidden!important;isolation:isolate;contain:paint;will-change:transform;backface-visibility:hidden}
+.jac-phone-bezel>.jac-phone-screen{position:relative!important;display:block!important;inset:auto!important;top:auto!important;right:auto!important;bottom:auto!important;left:auto!important;width:100%!important;height:auto!important;max-width:100%!important;object-fit:contain!important;transform:none!important;z-index:0}
+.jac-phone-bezel>.jac-phone-viewport{position:relative!important;display:block!important;width:100%!important;overflow:hidden!important;isolation:isolate}
+.jac-phone-bezel>.jac-phone-viewport>img{position:relative!important;display:block!important;inset:auto!important;top:auto!important;right:auto!important;bottom:auto!important;left:auto!important;width:100%!important;height:auto!important;max-width:100%!important;object-fit:cover!important;transform:none!important;z-index:0}
+.jac-phone-speaker,.jac-phone-gloss{position:absolute!important;z-index:2!important;pointer-events:none!important}
+.jac-phone-speaker{top:12px!important;left:50%!important;transform:translateX(-50%)!important}
+.jac-phone-gloss{inset:0!important}
+.jac-phone-bezel>img,.jac-phone-bezel>.jac-phone-viewport{border-radius:inherit}
+@media(max-width:700px){.jac-phone-bezel{transform:rotateY(-5deg) rotateX(1.5deg) rotateZ(-.6deg)}}
