@@ -1,26 +1,291 @@
 <!doctype html>
-<html lang="ro">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" sizes="64x64" href="./favicon-64.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="./favicon-192.png">
-    <link rel="apple-touch-icon" href="./favicon-192.png">
-    <meta name="theme-color" content="#0B1424">
-    <title>JAC – Claritate în lege. Siguranță în decizie.</title>
-    <meta name="description" content="Aplicația Android JAC este disponibilă pe Google Play. Consultă legislația din domeniul ordinii publice din România, cu module tematice, căutare rapidă și acces offline." />
-    <meta property="og:title" content="JAC – Claritate în lege. Siguranță în decizie." />
-    <meta property="og:description" content="JAC este disponibilă pe Google Play: aplicație Android independentă pentru consultarea legislației din domeniul ordinii publice din România." />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="./assets/index-jac-live.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BxVUI4U4.css">
-  </head>
-  <body class="bg-[#080F1C] text-slate-200 antialiased selection:bg-amber-400/25 selection:text-amber-100">
-    <div id="root"></div>
-  </body>
-</html>
+<html lang="ro" class="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JAC — Claritate în lege. Siguranță în decizie.</title>
+<meta name="description" content="JAC — ghidul legislativ operativ pentru personalul MAI (Poliție, Jandarmerie, Poliție de Frontieră). Legislație integrală gratuită pentru totdeauna, 25 de module operaționale, 100% offline. Acces PRO gratuit în Open Beta.">
+<meta property="og:title" content="JAC — Claritate în lege. Siguranță în decizie.">
+<meta property="og:description" content="Ghidul legislativ operativ pentru personalul MAI. Legislație integrală gratuită, module operaționale, 100% offline.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="./screens/beta-home.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="64x64" href="./favicon-64.png">
+<link rel="icon" type="image/png" sizes="192x192" href="./favicon-192.png">
+<link rel="apple-touch-icon" href="./favicon-192.png">
+<meta name="theme-color" content="#060B14">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        colors: {
+          ink: '#060B14',
+          navy: '#0A1424',
+          electric: '#3B82F6'
+        },
+        fontFamily: { sans: ['Inter', 'system-ui', 'Segoe UI', 'Roboto', 'sans-serif'] },
+        boxShadow: { glow: '0 0 80px -20px rgba(59,130,246,.55)' }
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { -webkit-font-smoothing: antialiased; }
+  .grid-bg { background-image: radial-gradient(circle at 1px 1px, rgba(148,163,184,.12) 1px, transparent 0); background-size: 28px 28px; }
+  .phone { border-radius: 2.2rem; border: 1px solid rgba(148,163,184,.25); box-shadow: 0 30px 80px -30px rgba(0,0,0,.9), 0 0 0 6px rgba(15,23,42,.6); overflow: hidden; background: #0A1424; }
+  .phone img { display: block; width: 100%; height: auto; }
+  .mini-phone { border-radius: 1.1rem; border: 1px solid rgba(148,163,184,.22); overflow: hidden; background: #0A1424; }
+  .mini-phone img { display: block; width: 100%; height: auto; }
+  .gradient-text { background: linear-gradient(90deg,#93C5FD,#3B82F6 45%,#22D3EE); -webkit-background-clip: text; background-clip: text; color: transparent; }
+</style>
+</head>
+<body class="bg-ink font-sans text-slate-300 selection:bg-electric/30 selection:text-white">
 
+<!-- ============ NAV ============ -->
+<header class="sticky top-0 z-50 border-b border-white/5 bg-ink/85 backdrop-blur-xl">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
+    <a href="#top" class="flex items-center gap-2.5">
+      <img src="./logo-jac-white.png" alt="JAC" class="h-9 w-9 object-contain">
+      <span class="text-lg font-extrabold tracking-tight text-white">JAC</span>
+    </a>
+    <nav class="hidden items-center gap-7 text-sm font-medium text-slate-400 md:flex">
+      <a href="#despre" class="transition hover:text-white">Despre</a>
+      <a href="#module" class="transition hover:text-white">Module</a>
+      <a href="#pachete" class="transition hover:text-white">Basic vs PRO</a>
+      <a href="#beta" class="transition hover:text-white">Open Beta</a>
+    </nav>
+    <a href="#beta" class="rounded-xl bg-electric px-4 py-2 text-sm font-semibold text-white shadow-glow transition hover:bg-blue-500">Acces PRO gratuit</a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section id="top" class="relative overflow-hidden">
+  <div class="absolute inset-0 grid-bg opacity-60"></div>
+  <div class="absolute -top-40 left-1/2 h-[520px] w-[900px] -translate-x-1/2 rounded-full bg-electric/20 blur-[140px]"></div>
+  <div class="relative mx-auto grid max-w-6xl items-center gap-14 px-5 pb-20 pt-16 md:grid-cols-2 md:pt-24">
+    <div>
+      <span class="inline-flex items-center gap-2 rounded-full border border-electric/30 bg-electric/10 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-sky-300">
+        <span class="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400"></span> Open Beta · PRO 100% gratuit
+      </span>
+      <h1 class="mt-6 text-4xl font-black leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl">
+        JAC — <span class="gradient-text">Claritate în lege.</span><br>Siguranță în decizie.
+      </h1>
+      <p class="mt-6 max-w-xl text-lg leading-relaxed text-slate-400">
+        Ghidul legislativ operativ creat special pentru personalul MAI
+        (<strong class="font-semibold text-slate-200">Poliție, Jandarmerie, Poliție de Frontieră</strong>).
+        Articolele, sancțiunile și procedurile — la un tap, direct de pe telefon.
+      </p>
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+        <a href="#beta" class="inline-flex items-center justify-center gap-2 rounded-2xl bg-electric px-7 py-4 text-base font-bold text-white shadow-glow transition hover:-translate-y-0.5 hover:bg-blue-500">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
+          Descarcă JAC (Acces PRO Gratuit în Open Beta)
+        </a>
+        <a href="#despre" class="inline-flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-7 py-4 text-base font-semibold text-slate-200 transition hover:bg-white/10">Vezi cum funcționează</a>
+      </div>
+      <div class="mt-10 grid grid-cols-2 gap-x-8 gap-y-4 sm:grid-cols-4">
+        <div><div class="text-2xl font-extrabold text-white">25</div><div class="text-sm text-slate-500">module operaționale</div></div>
+        <div><div class="text-2xl font-extrabold text-white">1.691</div><div class="text-sm text-slate-500">fapte cu sancțiuni</div></div>
+        <div><div class="text-2xl font-extrabold text-white">27</div><div class="text-sm text-slate-500">acte · 2.696 articole</div></div>
+        <div><div class="text-2xl font-extrabold text-white">100%</div><div class="text-sm text-slate-500">offline</div></div>
+      </div>
+    </div>
+    <div class="relative mx-auto w-full max-w-[300px]">
+      <div class="phone"><img src="./screens/beta-home.png" alt="Ecranul principal JAC — căutare și acces rapid" loading="eager"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DESPRE ============ -->
+<section id="despre" class="border-t border-white/5 bg-navy/40 py-20">
+  <div class="mx-auto grid max-w-6xl items-center gap-14 px-5 md:grid-cols-2">
+    <div>
+      <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">Ce este JAC?</h2>
+      <p class="mt-5 text-lg leading-relaxed text-slate-400">
+        Un instrument digital de informare și căutare rapidă, gândit pentru ritmul din teren.
+        În locul căutării prin zeci de fișiere, alegi domeniul, găsești fapta și vezi imediat
+        <strong class="text-slate-200">încadrarea juridică, sancțiunea și măsurile complementare</strong>.
+      </p>
+      <ul class="mt-8 grid gap-4 sm:grid-cols-2">
+        <li class="flex gap-3 rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+          <svg class="mt-0.5 h-6 w-6 shrink-0 text-electric" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M8.288 15.038a5.25 5.25 0 0 1 7.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12.53 18.22l-.53.53-.53-.53a.75.75 0 0 1 1.06 0Z"/></svg>
+          <div><div class="font-semibold text-white">100% offline</div><div class="text-sm text-slate-400">Baza legislativă e pe telefon — funcționează fără semnal.</div></div>
+        </li>
+        <li class="flex gap-3 rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+          <svg class="mt-0.5 h-6 w-6 shrink-0 text-electric" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="m21 21-4.35-4.35M17 10.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0Z"/></svg>
+          <div><div class="font-semibold text-white">Căutare instant</div><div class="text-sm text-slate-400">Găsești fapta sau articolul în câteva secunde.</div></div>
+        </li>
+        <li class="flex gap-3 rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+          <svg class="mt-0.5 h-6 w-6 shrink-0 text-electric" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z"/></svg>
+          <div><div class="font-semibold text-white">Sancțiuni clare</div><div class="text-sm text-slate-400">Amenda, alternativele și măsurile — într-o fișă.</div></div>
+        </li>
+        <li class="flex gap-3 rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+          <svg class="mt-0.5 h-6 w-6 shrink-0 text-electric" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25Z"/></svg>
+          <div><div class="font-semibold text-white">Proceduri operative</div><div class="text-sm text-slate-400">Pașii procedurali, pe scurt, fără căutare în coduri.</div></div>
+        </li>
+      </ul>
+    </div>
+    <div class="mx-auto w-full max-w-[300px]">
+      <div class="phone"><img src="./screens/beta-fisa-fapta.png" alt="Fișa faptei în JAC — încadrare juridică și sancțiune" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MODULE ============ -->
+<section id="module" class="py-20">
+  <div class="mx-auto max-w-6xl px-5">
+    <div class="max-w-2xl">
+      <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">Modulele aplicației</h2>
+      <p class="mt-4 text-lg text-slate-400">
+        25 de module operaționale și 1.691 de fapte, împărțite pe domenii — plus legislația integrală.
+      </p>
+    </div>
+    <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <article class="group rounded-3xl border border-emerald-400/20 bg-emerald-400/[0.04] p-5 transition hover:border-emerald-400/50">
+        <div class="mx-auto w-[130px] mini-phone"><img src="./screens/beta-legislatie-integrala.png" alt="Legislație integrală" loading="lazy"></div>
+        <h3 class="mt-5 text-lg font-bold text-white">Legislație integrală</h3>
+        <p class="mt-1 text-sm text-slate-400">27 acte normative · 2.696 articole</p>
+        <span class="mt-3 inline-block rounded-full bg-emerald-500/15 px-3 py-1 text-xs font-semibold text-emerald-300">GRATUIT pentru totdeauna</span>
+      </article>
+      <article class="group rounded-3xl border border-white/10 bg-white/[0.03] p-5 transition hover:border-electric/40">
+        <div class="mx-auto w-[130px] mini-phone"><img src="./screens/beta-legi-speciale.png" alt="Legi speciale și contravenții" loading="lazy"></div>
+        <h3 class="mt-5 text-lg font-bold text-white">Legi speciale &amp; contravenții</h3>
+        <p class="mt-1 text-sm text-slate-400">22 pachete legislative · 1.012 fapte</p>
+      </article>
+      <article class="group rounded-3xl border border-white/10 bg-white/[0.03] p-5 transition hover:border-electric/40">
+        <div class="mx-auto w-[130px] mini-phone"><img src="./screens/beta-cod-rutier.png" alt="Cod rutier" loading="lazy"></div>
+        <h3 class="mt-5 text-lg font-bold text-white">Cod rutier</h3>
+        <p class="mt-1 text-sm text-slate-400">2 module operaționale · 75 fapte</p>
+        <p class="mt-2 text-xs text-slate-500">+ valoarea punctului-amendă, actualizată</p>
+      </article>
+      <article class="group rounded-3xl border border-white/10 bg-white/[0.03] p-5 transition hover:border-electric/40">
+        <div class="mx-auto w-[130px] mini-phone"><img src="./screens/beta-legislatie-penala.png" alt="Legislație penală" loading="lazy"></div>
+        <h3 class="mt-5 text-lg font-bold text-white">Legislație penală</h3>
+        <p class="mt-1 text-sm text-slate-400">3 module operative · 679 fapte</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BASIC vs PRO ============ -->
+<section id="pachete" class="border-t border-white/5 bg-navy/40 py-20">
+  <div class="mx-auto max-w-6xl px-5">
+    <div class="max-w-2xl">
+      <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">Pachetul BASIC vs. Pachetul PRO</h2>
+      <p class="mt-4 text-lg text-slate-400">O parte din aplicație rămâne gratuită pentru totdeauna. PRO deblochează tot restul.</p>
+    </div>
+    <div class="mt-12 grid gap-6 lg:grid-cols-2">
+      <!-- BASIC -->
+      <div class="rounded-3xl border border-emerald-400/25 bg-emerald-400/[0.04] p-8">
+        <div class="flex items-center justify-between">
+          <h3 class="text-2xl font-extrabold text-white">BASIC</h3>
+          <span class="rounded-full bg-emerald-500/15 px-3 py-1 text-xs font-bold uppercase tracking-wider text-emerald-300">Gratuit mereu</span>
+        </div>
+        <p class="mt-3 text-slate-400">Tot ce e esențial, fără cont și fără costuri.</p>
+        <ul class="mt-6 space-y-3 text-sm">
+          <li class="flex gap-3"><span class="mt-0.5 text-emerald-400">✓</span><span><strong class="text-white">Legislația integrală</strong> — toate cele <strong class="text-white">27 de acte normative (2.696 articole)</strong>, cu căutare în textul articolelor. <span class="font-semibold text-emerald-300">Va rămâne gratuită pentru totdeauna.</span></span></li>
+          <li class="flex gap-3"><span class="mt-0.5 text-emerald-400">✓</span><span><strong class="text-white">8 module operaționale</strong>: Legile 61/1991, 60/1991, 4/2008, OUG 55/2002, Legea 349/2002, Legea 217/2003, Legea 54/2012, OUG 97/2005</span></li>
+          <li class="flex gap-3"><span class="mt-0.5 text-emerald-400">✓</span><span>Căutare în modulele BASIC + favorite (5 fapte) + istoric</span></li>
+          <li class="flex gap-3"><span class="mt-0.5 text-emerald-400">✓</span><span>Funcționare <strong class="text-white">100% offline</strong></span></li>
+        </ul>
+      </div>
+      <!-- PRO -->
+      <div class="relative rounded-3xl border border-electric/40 bg-electric/[0.06] p-8 shadow-glow">
+        <div class="flex items-center justify-between">
+          <h3 class="text-2xl font-extrabold text-white">PRO</h3>
+          <span class="rounded-full bg-electric/20 px-3 py-1 text-xs font-bold uppercase tracking-wider text-sky-300">Toate funcțiile</span>
+        </div>
+        <p class="mt-3 text-slate-400">Pentru cine lucrează în teren zilnic.</p>
+        <ul class="mt-6 space-y-3 text-sm">
+          <li class="flex gap-3"><span class="mt-0.5 text-sky-400">✓</span><span><strong class="text-white">Toate cele 25 de module</strong> (17 în plus față de BASIC): Cod penal (3 module, 679 fapte), Cod rutier (2 module, 75 fapte), domeniul silvic, regimul armelor, codul aerian, regimul drogurilor, nomenclatorul de substanțe și altele</span></li>
+          <li class="flex gap-3"><span class="mt-0.5 text-sky-400">✓</span><span><strong class="text-white">Căutare globală</strong> în toate faptele și articolele</span></li>
+          <li class="flex gap-3"><span class="mt-0.5 text-sky-400">✓</span><span>Favorite nelimitate</span></li>
+          <li class="flex gap-3"><span class="mt-0.5 text-sky-400">✓</span><span><strong class="text-white">Zero reclame</strong></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OPEN BETA & CREW ============ -->
+<section id="beta" class="relative overflow-hidden py-20">
+  <div class="absolute -top-32 right-0 h-[420px] w-[620px] rounded-full bg-electric/10 blur-[120px]"></div>
+  <div class="relative mx-auto grid max-w-6xl items-start gap-14 px-5 md:grid-cols-2">
+    <div>
+      <span class="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-emerald-300">
+        <span class="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400"></span> Oferta momentului
+      </span>
+      <h2 class="mt-5 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">Open Beta &amp; JAC Crew</h2>
+      <div class="mt-8 space-y-4">
+        <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+          <div class="font-bold text-white">În Open Beta: totul e gratuit</div>
+          <p class="mt-1 text-sm text-slate-400">Toate funcțiile PRO sunt <strong class="text-slate-200">100% gratuite</strong>, iar reclamele sunt <strong class="text-slate-200">oprite complet</strong>.</p>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+          <div class="font-bold text-white">Statutul de Fondator: 30 de zile PRO</div>
+          <p class="mt-1 text-sm text-slate-400">Instalează aplicația acum, creează cont și ai garantat <strong class="text-slate-200">30 de zile PRO gratuit</strong> după terminarea Beta-ului.</p>
+        </div>
+        <div class="rounded-2xl border border-electric/30 bg-electric/[0.06] p-5">
+          <div class="font-bold text-white">JAC Crew — echipajul de 5: 60 de zile PRO</div>
+          <p class="mt-1 text-sm text-slate-400">Nu patrula singur! Dacă aduni minim <strong class="text-slate-200">3 colegi (din max. 5)</strong> în echipajul tău, folosind codul tău, <strong class="text-slate-200">TOȚI primiți 60 de zile PRO gratuit</strong> la lansarea oficială!</p>
+        </div>
+      </div>
+      <div class="mt-8 overflow-hidden rounded-3xl border border-white/10">
+        <table class="w-full text-left text-sm">
+          <thead class="bg-white/[0.04] text-xs uppercase tracking-wider text-slate-400">
+            <tr><th class="px-5 py-3 font-semibold">Plan</th><th class="px-5 py-3 font-semibold">Preț</th></tr>
+          </thead>
+          <tbody class="divide-y divide-white/5">
+            <tr><td class="px-5 py-4"><div class="font-semibold text-white">Individual</div><div class="text-xs text-slate-500">un singur cont</div></td><td class="px-5 py-4 text-white">10 lei/lună</td></tr>
+            <tr><td class="px-5 py-4"><div class="font-semibold text-white">Echipaj (5 colegi) — lunar</div><div class="text-xs text-slate-500">6 lei/lună/om</div></td><td class="px-5 py-4 text-white">30 lei/lună</td></tr>
+            <tr class="bg-electric/[0.06]"><td class="px-5 py-4"><div class="font-semibold text-white">Echipaj (5 colegi) — anual <span class="ml-2 rounded-full bg-electric/20 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-sky-300">Recomandat</span></div><div class="text-xs text-slate-500">~3,3 lei/lună/om</div></td><td class="px-5 py-4 text-white">40 lei/an/om<br><span class="text-xs text-slate-400">200 lei/an / echipaj</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="mx-auto w-full max-w-[300px]">
+      <div class="phone"><img src="./screens/beta-crew.png" alt="JAC Crew — echipajul tău" loading="lazy"></div>
+      <div class="mx-auto mt-8 w-max mini-phone"><img src="./screens/beta-favorite.png" alt="Favorite JAC" loading="lazy" class="w-[180px]"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA FINAL ============ -->
+<section class="border-t border-white/5 bg-navy/40 py-16">
+  <div class="mx-auto flex max-w-4xl flex-col items-center px-5 text-center">
+    <h2 class="text-2xl font-extrabold tracking-tight text-white sm:text-3xl">Gata să ai legea la un tap?</h2>
+    <p class="mt-3 max-w-xl text-slate-400">Instalează JAC acum, în Open Beta: PRO gratuit, fără reclame, plus bonusurile de Fondator și JAC Crew.</p>
+    <a href="#beta" class="mt-7 inline-flex items-center gap-2 rounded-2xl bg-electric px-8 py-4 text-base font-bold text-white shadow-glow transition hover:-translate-y-0.5 hover:bg-blue-500">
+      <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
+      Descarcă JAC
+    </a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="border-t border-white/5 py-12">
+  <div class="mx-auto flex max-w-6xl flex-col gap-8 px-5 md:flex-row md:items-center md:justify-between">
+    <div class="flex items-center gap-2.5">
+      <img src="./logo-jac-white.png" alt="JAC" class="h-8 w-8 object-contain">
+      <span class="font-extrabold text-white">JAC</span>
+      <span class="text-sm text-slate-500">— Ghid legislativ operativ</span>
+    </div>
+    <nav class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-400">
+      <a href="legal/terms.html" class="transition hover:text-white">Termeni și condiții</a>
+      <a href="legal/privacy.html" class="transition hover:text-white">Confidențialitate</a>
+      <a href="legal/asistenta.html" class="transition hover:text-white">Asistență</a>
+      <a href="legal/cookies.html" class="transition hover:text-white">Cookie-uri</a>
+    </nav>
+  </div>
+  <div class="mx-auto mt-8 max-w-6xl px-5 text-xs text-slate-600">
+    © 2026 JAC. Aplicație independentă de informare legislativă — nu este afiliată MAI sau altor instituții. Verificați întotdeauna forma oficială a legislației.
+  </div>
+</footer>
+
+</body>
+</html>
