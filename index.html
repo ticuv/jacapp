@@ -390,6 +390,12 @@
       });
     });
     closeBtn.addEventListener('click', closeLegal);
+    try {
+      var qp = new URLSearchParams(window.location.search);
+      var doc = qp.get('legal');
+      if (doc === 'privacy') openLegal('legal/privacy.html', 'Confidențialitate');
+      else if (doc === 'terms') openLegal('legal/terms.html', 'Termeni și condiții');
+    } catch (err) {}
     modal.addEventListener('click', function (e) { if (e.target === modal) closeLegal(); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeLegal(); });
   })();
