@@ -391,12 +391,38 @@
       });
     });
     closeBtn.addEventListener('click', closeLegal);
+
+    // Harta ancorelor (#confidentialitate, #termeni, ...) și a query-ului (?legal=...)
+    var legalTargets = {
+      confidentialitate: ['legal/privacy.html', 'Confidențialitate'],
+      privacy: ['legal/privacy.html', 'Confidențialitate'],
+      termeni: ['legal/terms.html', 'Termeni și condiții'],
+      terms: ['legal/terms.html', 'Termeni și condiții'],
+      cookies: ['legal/cookies.html', 'Cookie-uri'],
+      cookie: ['legal/cookies.html', 'Cookie-uri'],
+      asistenta: ['legal/asistenta.html', 'Asistență'],
+      contact: ['legal/asistenta.html', 'Asistență și contact']
+    };
+
+    function openFromTarget(target) {
+      var t = legalTargets[target];
+      if (t) openLegal(t[0], t[1]);
+    }
+
+    function handleHash() {
+      var h = (location.hash || '').replace('#', '');
+      if (h) openFromTarget(h);
+    }
+
     try {
       var qp = new URLSearchParams(window.location.search);
       var doc = qp.get('legal');
-      if (doc === 'privacy') openLegal('legal/privacy.html', 'Confidențialitate');
-      else if (doc === 'terms') openLegal('legal/terms.html', 'Termeni și condiții');
+      if (doc) openFromTarget(doc);
     } catch (err) {}
+
+    handleHash();
+    window.addEventListener('hashchange', handleHash);
+
     modal.addEventListener('click', function (e) { if (e.target === modal) closeLegal(); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeLegal(); });
   })();
