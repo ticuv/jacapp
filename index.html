@@ -98,8 +98,8 @@
       <a href="#module" class="rounded-lg px-3 py-2.5 transition hover:bg-white/5 hover:text-white">Module</a>
       <a href="#pachete" class="rounded-lg px-3 py-2.5 transition hover:bg-white/5 hover:text-white">Basic vs PRO</a>
       <a href="#beta" class="rounded-lg px-3 py-2.5 transition hover:bg-white/5 hover:text-white">Open Beta</a>
-      <a href="legal/terms.html" class="rounded-lg px-3 py-2.5 transition hover:bg-white/5 hover:text-white">Termeni</a>
-      <a href="legal/privacy.html" class="rounded-lg px-3 py-2.5 transition hover:bg-white/5 hover:text-white">Confidențialitate</a>
+      <a href="legal/terms.html" data-legal="Termeni și condiții" class="rounded-lg px-3 py-2.5 transition hover:bg-white/5 hover:text-white">Termeni</a>
+      <a href="legal/privacy.html" data-legal="Confidențialitate" class="rounded-lg px-3 py-2.5 transition hover:bg-white/5 hover:text-white">Confidențialitate</a>
     </nav>
   </div>
 </header>
@@ -315,8 +315,8 @@
       <span class="text-sm text-slate-500">— Ghid legislativ operativ</span>
     </div>
     <nav class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-400">
-      <a href="legal/terms.html" class="transition hover:text-white">Termeni și condiții</a>
-      <a href="legal/privacy.html" class="transition hover:text-white">Confidențialitate</a>
+      <a href="legal/terms.html" data-legal="Termeni și condiții" class="transition hover:text-white">Termeni și condiții</a>
+      <a href="legal/privacy.html" data-legal="Confidențialitate" class="transition hover:text-white">Confidențialitate</a>
       <a href="legal/asistenta.html" class="transition hover:text-white">Asistență</a>
       <a href="legal/cookies.html" class="transition hover:text-white">Cookie-uri</a>
     </nav>
@@ -341,6 +341,51 @@
         btn.setAttribute('aria-expanded', 'false');
       });
     });
+  })();
+</script>
+
+<!-- ===== Modal documente legale (fără părăsirea paginii) ===== -->
+<div id="legalModal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/80 p-3 backdrop-blur-sm sm:p-6">
+  <div class="relative flex h-[92vh] w-full max-w-3xl flex-col overflow-hidden rounded-3xl border border-white/10 bg-ink shadow-2xl">
+    <div class="flex shrink-0 items-center justify-between border-b border-white/10 px-5 py-3">
+      <span id="legalModalTitle" class="text-sm font-semibold text-white">Document</span>
+      <button id="legalModalClose" type="button" class="rounded-lg p-1.5 text-slate-400 transition hover:bg-white/10 hover:text-white" aria-label="Închide">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <iframe id="legalModalFrame" title="Document legal" class="h-full w-full flex-1 border-0 bg-ink"></iframe>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var modal = document.getElementById('legalModal');
+    var frame = document.getElementById('legalModalFrame');
+    var title = document.getElementById('legalModalTitle');
+    var closeBtn = document.getElementById('legalModalClose');
+    if (!modal || !frame) return;
+    function openLegal(url, label) {
+      frame.src = url;
+      title.textContent = label;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLegal() {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      frame.src = 'about:blank';
+      document.body.style.overflow = '';
+    }
+    document.querySelectorAll('a[data-legal]').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        openLegal(a.getAttribute('href'), a.getAttribute('data-legal'));
+      });
+    });
+    closeBtn.addEventListener('click', closeLegal);
+    modal.addEventListener('click', function (e) { if (e.target === modal) closeLegal(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeLegal(); });
   })();
 </script>
 </body>
