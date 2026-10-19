@@ -60,7 +60,22 @@
       <a href="#pachete" class="transition hover:text-white">Basic vs PRO</a>
       <a href="#beta" class="transition hover:text-white">Open Beta</a>
     </nav>
-    <a href="#beta" class="rounded-xl bg-electric px-4 py-2 text-sm font-semibold text-white shadow-glow transition hover:bg-blue-500">Acces PRO gratuit</a>
+    <div class="flex items-center gap-2">
+      <a href="#beta" class="rounded-xl bg-electric px-4 py-2 text-sm font-semibold text-white shadow-glow transition hover:bg-blue-500">Acces PRO gratuit</a>
+      <button id="menuToggle" type="button" class="md:hidden rounded-xl border border-white/10 bg-white/5 p-2 text-slate-300 transition hover:bg-white/10" aria-label="Deschide meniul" aria-expanded="false" aria-controls="mobileMenu">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobileMenu" class="hidden md:hidden border-t border-white/5 bg-ink/95 backdrop-blur-xl">
+    <nav class="mx-auto flex max-w-6xl flex-col gap-1 px-5 py-3 text-sm font-medium text-slate-300">
+      <a href="#despre" class="rounded-lg px-3 py-2.5 transition hover:bg-white/5 hover:text-white">Despre</a>
+      <a href="#module" class="rounded-lg px-3 py-2.5 transition hover:bg-white/5 hover:text-white">Module</a>
+      <a href="#pachete" class="rounded-lg px-3 py-2.5 transition hover:bg-white/5 hover:text-white">Basic vs PRO</a>
+      <a href="#beta" class="rounded-lg px-3 py-2.5 transition hover:bg-white/5 hover:text-white">Open Beta</a>
+      <a href="legal/terms.html" class="rounded-lg px-3 py-2.5 transition hover:bg-white/5 hover:text-white">Termeni</a>
+      <a href="legal/privacy.html" class="rounded-lg px-3 py-2.5 transition hover:bg-white/5 hover:text-white">Confidențialitate</a>
+    </nav>
   </div>
 </header>
 
@@ -250,7 +265,6 @@
     </div>
     <div class="mx-auto w-full max-w-[300px]">
       <div class="phone"><img src="./screens/beta-crew.png" alt="JAC Crew — echipajul tău" loading="lazy"></div>
-      <div class="mx-auto mt-8 w-max mini-phone"><img src="./screens/beta-favorite.png" alt="Favorite JAC" loading="lazy" class="w-[180px]"></div>
     </div>
   </div>
 </section>
@@ -287,5 +301,22 @@
   </div>
 </footer>
 
+<script>
+  (function () {
+    var btn = document.getElementById('menuToggle');
+    var menu = document.getElementById('mobileMenu');
+    if (!btn || !menu) return;
+    btn.addEventListener('click', function () {
+      var nowHidden = menu.classList.toggle('hidden');
+      btn.setAttribute('aria-expanded', nowHidden ? 'false' : 'true');
+    });
+    menu.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        menu.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+</script>
 </body>
 </html>
