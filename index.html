@@ -423,6 +423,9 @@
     handleHash();
     window.addEventListener('hashchange', handleHash);
 
+    window.addEventListener('message', function (e) {
+      if (e.data === 'jac:close-legal') closeLegal();
+    });
     modal.addEventListener('click', function (e) { if (e.target === modal) closeLegal(); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeLegal(); });
   })();
