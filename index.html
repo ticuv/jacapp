@@ -86,10 +86,6 @@
       linear-gradient(to bottom, rgba(148,163,184,.055) 1px, transparent 1px);
     background-size: auto, auto, 72px 72px, 72px 72px;
   }
-  .hero-fade {
-    -webkit-mask-image: radial-gradient(ellipse 82% 76% at 50% 46%, #000 58%, transparent 80%);
-    mask-image: radial-gradient(ellipse 82% 76% at 50% 46%, #000 58%, transparent 80%);
-  }
   .logo-crop { object-fit: cover; object-position: center 46%; transform: scale(1.28); }
   .bento {
     transition: transform .35s cubic-bezier(.2,.7,.2,1), border-color .35s, box-shadow .35s;
@@ -190,7 +186,7 @@
 
       <div class="relative lg:col-span-7">
         <div class="pointer-events-none absolute inset-8 -z-10 rounded-full bg-cyan-400/15 blur-3xl"></div>
-        <img src="assets/hero-dual.png" alt="Două telefoane cu aplicația JAC: ghidul legislativ pe ecranul principal și calendarul de ture Shiftr" width="1280" height="720" class="hero-fade relative w-full" fetchpriority="high">
+        <img src="assets/hero-dual.png" alt="Două telefoane cu aplicația JAC: ghidul legislativ pe ecranul principal și calendarul de ture Shiftr" width="1280" height="720" class="relative w-full" fetchpriority="high">
       </div>
     </div>
   </section>
