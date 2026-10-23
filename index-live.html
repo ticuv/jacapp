@@ -49,12 +49,13 @@
   --bg: #070b12;
   --elev: #101826;
   --ink: #e8eef6;
-  --muted: #b4c0d0;
-  --line: rgba(168, 190, 220, .16);
+  --muted: #b7c3d2;
+  --line: rgba(176, 198, 224, .18);
   --accent: #4c9af0;
   --accent-ink: #061018;
-  --max: 1120px;
-  --serif-none: "Inter", "Segoe UI", Roboto, sans-serif;
+  --max: 1180px;
+  --mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --sans: "Inter", "Segoe UI", Roboto, sans-serif;
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -62,15 +63,14 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--muted);
-  font-family: var(--serif-none);
-  font-size: 1.0625rem;
-  line-height: 1.65;
+  font-family: var(--sans);
+  font-size: 1.02rem;
+  line-height: 1.55;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
 img { max-width: 100%; height: auto; }
-figure picture, .logo-frame picture { display: block; }
-.logo-frame picture { width: 3.05rem; height: 3.05rem; }
+picture { display: block; }
 a { color: inherit; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 .skip {
@@ -79,182 +79,242 @@ a { color: inherit; }
   padding: .6rem 1rem; border-radius: .6rem; font-weight: 700;
 }
 .skip:focus { top: 1rem; }
-.wrap { width: min(var(--max), calc(100% - 2.5rem)); margin-inline: auto; }
+.wrap { width: min(var(--max), calc(100% - 2rem)); margin-inline: auto; }
 .eyebrow {
   margin: 0;
   color: var(--accent);
-  font-size: .75rem;
+  font-size: .72rem;
   font-weight: 700;
   letter-spacing: .16em;
 }
-h1, h2, h3 { color: var(--ink); letter-spacing: -.03em; line-height: 1.08; }
-h1 { margin: .7rem 0 0; font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 800; }
-h2 { margin: .65rem 0 0; font-size: clamp(2rem, 4vw, 3.15rem); font-weight: 700; }
-h3 { margin: 0; font-size: 1.2rem; font-weight: 700; letter-spacing: -.02em; }
-.lede { margin: 1.15rem 0 0; max-width: 40rem; font-size: 1.08rem; }
-.note { margin: .85rem 0 0; max-width: 40rem; color: #93a2b6; font-size: .95rem; }
+.kicker { display: flex; align-items: center; gap: .7rem; }
+.idx {
+  font-family: var(--mono);
+  font-size: .72rem;
+  color: #d5e4f5;
+  border: 1px solid var(--line);
+  padding: .15rem .4rem;
+  letter-spacing: .08em;
+}
+h1, h2, h3 { color: var(--ink); letter-spacing: -.03em; line-height: 1.05; }
+h1 { margin: .55rem 0 0; font-size: clamp(2.45rem, 5.4vw, 4.35rem); font-weight: 800; }
+h2 { margin: .45rem 0 0; font-size: clamp(1.85rem, 3.4vw, 2.85rem); font-weight: 750; }
+h3 { margin: 0 0 .2rem; font-size: 1rem; font-weight: 700; }
+.lede { margin: .8rem 0 0; max-width: 38rem; }
+.note { margin: .7rem 0 0; max-width: 38rem; color: #93a3b6; font-size: .92rem; }
+.mono {
+  font-family: var(--mono);
+  font-size: .68rem;
+  line-height: 1.4;
+  letter-spacing: .01em;
+  color: #93a6bb;
+}
 header.site {
   position: sticky; top: 0; z-index: 40;
-  background: rgba(7, 11, 18, .86);
+  background: rgba(7, 11, 18, .9);
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(16px);
 }
-.bar {
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 1rem; min-height: 4.25rem;
-}
-.brand { display: inline-flex; align-items: center; gap: .65rem; text-decoration: none; color: var(--ink); font-weight: 800; }
-.brand picture, .brand img { width: 2.4rem; height: 2.4rem; }
+.bar { display: flex; align-items: center; justify-content: space-between; gap: .8rem; min-height: 4rem; }
+.brand { display: inline-flex; align-items: center; gap: .6rem; text-decoration: none; color: var(--ink); font-weight: 800; }
 .logo-frame {
-  width: 2.4rem; height: 2.4rem; overflow: hidden; border-radius: .7rem;
-  display: grid; place-items: center;
+  width: 2.35rem; height: 2.35rem; overflow: hidden; border-radius: .65rem;
+  display: grid; place-items: center; border: 1px solid var(--line);
 }
-.logo-frame img { width: 3.05rem; height: 3.05rem; max-width: none; object-fit: cover; object-position: center 46%; }
-nav.primary { display: flex; align-items: center; gap: 1.35rem; }
-nav.primary a { text-decoration: none; color: #c5d0de; font-size: .94rem; font-weight: 600; }
+.logo-frame picture { width: 3rem; height: 3rem; }
+.logo-frame img { width: 3rem; height: 3rem; max-width: none; object-fit: cover; object-position: center 46%; }
+nav.primary { display: flex; align-items: center; gap: 1.15rem; }
+nav.primary a { text-decoration: none; color: #c9d5e3; font-size: .92rem; font-weight: 600; }
 nav.primary a:hover { color: white; }
-.actions { display: flex; align-items: center; gap: .6rem; }
+.actions { display: flex; align-items: center; gap: .55rem; }
 .badge {
-  display: inline-flex; align-items: center; gap: .45rem;
+  display: inline-flex; align-items: center; gap: .4rem;
   border: 1px solid rgba(52, 211, 153, .35);
   background: rgba(16, 185, 129, .1);
-  color: #a7f3d0;
-  border-radius: 999px;
-  padding: .28rem .7rem;
-  font-size: .72rem;
-  font-weight: 700;
-  letter-spacing: .04em;
-  text-transform: uppercase;
+  color: #a7f3d0; border-radius: 999px;
+  padding: .25rem .65rem; font-size: .68rem; font-weight: 700;
+  letter-spacing: .06em; text-transform: uppercase;
 }
-.dot { width: .45rem; height: .45rem; border-radius: 50%; background: #34d399; }
+.dot { width: .42rem; height: .42rem; border-radius: 50%; background: #34d399; }
+.short { display: none; }
 .btn {
   display: inline-flex; align-items: center; justify-content: center;
-  min-height: 2.9rem; padding: .7rem 1.15rem;
-  border-radius: 999px; text-decoration: none; font-weight: 750; font-size: .95rem;
-  border: 1px solid transparent;
+  min-height: 2.75rem; padding: .65rem 1.05rem;
+  border-radius: 999px; text-decoration: none; font-weight: 700; font-size: .92rem;
+  border: 1px solid transparent; cursor: pointer; font-family: inherit;
 }
 .btn-primary { background: var(--accent); color: var(--accent-ink); }
-.btn-primary:hover { background: #6aaff5; }
+.btn-primary:hover { background: #79b6f6; }
 .btn-ghost { border-color: var(--line); color: var(--ink); background: transparent; }
-.btn-ghost:hover { border-color: rgba(76, 154, 240, .55); }
+.btn-ghost:hover { border-color: rgba(76, 154, 240, .6); }
 .menu-btn {
-  display: none; width: 2.7rem; height: 2.7rem; border-radius: .8rem;
-  border: 1px solid var(--line); background: transparent; color: var(--ink); cursor: pointer;
+  display: none; width: 2.6rem; height: 2.6rem; border-radius: .7rem;
+  border: 1px solid var(--line); background: transparent; color: var(--ink); cursor: pointer; font-size: 1.2rem;
 }
-.mobile {
-  display: none; border-top: 1px solid var(--line); padding: .4rem 0 1rem;
-}
-.mobile a { display: block; padding: .8rem .2rem; text-decoration: none; color: var(--ink); font-weight: 600; }
-.hero { position: relative; overflow: hidden; padding: 4.2rem 0 3.2rem; }
-.hero-bg {
-  position: absolute; inset: 0; pointer-events: none;
-  background-image:
-    linear-gradient(to right, rgba(168,190,220,.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(168,190,220,.05) 1px, transparent 1px);
-  background-size: 72px 72px;
-  mask-image: radial-gradient(ellipse at 70% 30%, #000 10%, transparent 72%);
-}
-.hero-grid {
+.mobile { display: none; border-top: 1px solid var(--line); padding: .25rem 0 .8rem; }
+.mobile a { display: block; padding: .75rem .1rem; text-decoration: none; color: var(--ink); font-weight: 600; }
+.hero {
   position: relative;
-  display: grid; gap: 2.2rem; align-items: center;
+  padding: 1.6rem 0 1.2rem;
+  background-image:
+    linear-gradient(to right, rgba(176,198,224,.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(176,198,224,.045) 1px, transparent 1px);
+  background-size: 64px 64px;
 }
-.cta-row { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.6rem; }
+.hero-grid { display: grid; gap: 1rem; align-items: center; }
+.cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: .65rem; margin-top: 1.15rem; }
 .store { display: inline-flex; line-height: 0; }
-.store img { height: 4.6rem; width: auto; }
-.split { display: grid; gap: 2rem; align-items: center; }
-figure { margin: 0; }
-figcaption { margin-top: .75rem; max-width: 36rem; color: #93a2b6; font-size: .92rem; }
-.phone {
-  width: min(100%, 340px); display: block; margin-inline: auto;
-  border-radius: 1.7rem; border: 1px solid var(--line);
-  background: #0b1018;
+.store img { height: 4.35rem; width: auto; }
+.hero-visual { min-width: 0; }
+.hero-shot {
+  width: 100%;
+  height: auto;
+  display: block;
 }
-.section { padding: 4.5rem 0; border-top: 1px solid var(--line); }
-.highlights { display: grid; gap: 0; }
-.highlight { padding: 1.4rem 0; border-top: 1px solid var(--line); }
-.highlight h2 { font-size: clamp(1.55rem, 2vw, 1.9rem); }
-.highlight p { margin: .55rem 0 0; }
-.features { display: grid; gap: 1.15rem; margin-top: 1.8rem; }
-.feature h3 { margin-bottom: .3rem; }
-.feature p { margin: 0; }
-.stack { display: grid; gap: 2.6rem; margin-top: 2.8rem; }
-.pair { display: grid; gap: 1.4rem; align-items: center; }
-.trio { display: grid; gap: 1.6rem; margin-top: 2.4rem; }
-.labels { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.2rem; padding: 0; list-style: none; }
-.labels li {
-  border: 1px solid var(--line); border-radius: 999px;
-  padding: .35rem .75rem; color: var(--ink); font-size: .88rem; font-weight: 650;
+.hero-visual .mono { margin-top: .45rem; max-width: 36rem; }
+.section { padding: 2.3rem 0; border-top: 1px solid var(--line); }
+.highlights { display: grid; }
+.highlight { padding: .95rem 0; border-top: 1px solid var(--line); }
+.highlight:first-child { border-top: 0; padding-top: 0; }
+.highlight h2 { font-size: clamp(1.35rem, 2vw, 1.7rem); }
+.highlight p { margin: .35rem 0 0; font-size: .95rem; }
+.layout {
+  display: grid;
+  gap: 1.1rem;
+  align-items: center;
 }
+.flist {
+  display: grid;
+  margin-top: .9rem;
+  border-top: 1px solid var(--line);
+}
+.flist article { padding: .75rem 0; border-bottom: 1px solid var(--line); }
+.flist p { margin: 0; font-size: .92rem; }
+.board { margin: 0; }
+.cluster {
+  position: relative;
+  height: 34rem;
+  border: 1px solid var(--line);
+  background-color: #0a1019;
+  background-image:
+    linear-gradient(rgba(176,198,224,.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(176,198,224,.07) 1px, transparent 1px);
+  background-size: 42px 42px;
+}
+.cluster .ph {
+  position: absolute;
+  margin: 0;
+  filter: drop-shadow(0 22px 28px rgba(0,0,0,.45));
+}
+.shot-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 1.35rem;
+  border: 1px solid rgba(226, 236, 248, .2);
+  background: #0c121c;
+}
+.caps {
+  display: grid;
+  gap: .45rem .8rem;
+  margin-top: .55rem;
+}
+.caps p { margin: 0; }
+.c-shift .a { left: 3%; top: .8rem; width: 48%; z-index: 1; }
+.c-shift .b { right: 3%; top: 4.2rem; width: 44%; z-index: 2; }
+.c-find .a { left: 2%; top: 1rem; width: 40%; z-index: 1; }
+.c-find .b { left: 29%; top: 3.4rem; width: 40%; z-index: 3; }
+.c-find .c { right: 2%; top: 1.3rem; width: 36%; z-index: 2; }
+.c-mod .a { left: 2%; top: 1.5rem; width: 38%; z-index: 1; }
+.c-mod .b { left: 31%; top: .7rem; width: 38%; z-index: 3; }
+.c-mod .c { right: 2%; top: 2.6rem; width: 36%; z-index: 2; }
+.c-one .a { left: 18%; top: .9rem; width: 58%; z-index: 1; }
 .callout {
-  margin-top: 1.3rem; padding: 1rem 1.1rem;
+  margin: .9rem 0 0;
+  padding: .75rem .9rem;
   border-left: 2px solid var(--accent);
   color: #d5deea;
+  font-size: .95rem;
 }
-.final { text-align: left; }
-footer.site { border-top: 1px solid var(--line); padding: 2.4rem 0 3rem; }
-.foot {
-  display: flex; flex-wrap: wrap; gap: 1.4rem 2rem; justify-content: space-between; align-items: flex-start;
-}
-.foot nav { display: flex; flex-wrap: wrap; gap: .7rem 1.2rem; }
-.foot nav a { color: #d5deea; text-decoration: none; font-weight: 600; }
+footer.site { border-top: 1px solid var(--line); padding: 1.6rem 0 2.2rem; }
+.foot { display: flex; flex-wrap: wrap; gap: 1rem 1.5rem; justify-content: space-between; align-items: flex-start; }
+.foot nav { display: flex; flex-wrap: wrap; gap: .55rem 1rem; }
+.foot nav a { color: #d5deea; text-decoration: none; font-weight: 600; font-size: .92rem; }
 .foot nav a:hover { color: white; }
-.disclaimer { max-width: 46rem; margin: 1.4rem 0 0; }
-.copy { margin: .8rem 0 0; color: #7f8da0; font-size: .85rem; }
+.disclaimer { max-width: 46rem; margin: 1rem 0 0; font-size: .92rem; }
+.copy { margin: .55rem 0 0; color: #7f8da0; font-size: .82rem; }
 form.access {
-  margin-top: 1.6rem; display: grid; gap: .9rem;
-  padding: 1.2rem; border: 1px solid var(--line); border-radius: 1.1rem; background: var(--elev);
+  margin-top: 1rem; display: grid; gap: .75rem;
+  padding: 1rem; border: 1px solid var(--line); background: var(--elev);
 }
-label span { display: block; color: var(--ink); font-weight: 650; font-size: .92rem; margin-bottom: .3rem; }
+label span { display: block; color: var(--ink); font-weight: 650; font-size: .9rem; margin-bottom: .28rem; }
 input, select, textarea {
   width: 100%; border: 1px solid var(--line); background: #0c121c; color: var(--ink);
-  border-radius: .75rem; padding: .75rem .85rem; font: inherit;
+  border-radius: .7rem; padding: .7rem .8rem; font: inherit;
 }
 textarea { resize: vertical; }
-.form-grid { display: grid; gap: .9rem; }
+.form-grid { display: grid; gap: .75rem; }
 .error { color: #fda4af; margin: 0; }
 .hidden { display: none; }
-.fine { margin: .4rem 0 0; color: #8b9aaf; font-size: .85rem; }
-@media (min-width: 720px) {
+.fine { margin: .2rem 0 0; color: #8b9aaf; font-size: .82rem; }
+html.motion .reveal { animation: rise .65s ease both; }
+@keyframes rise {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+@media (min-width: 760px) {
   .form-grid { grid-template-columns: 1fr 1fr; }
   .span-2 { grid-column: span 2; }
   .highlights { grid-template-columns: repeat(3, 1fr); }
-  .highlight { padding: 0 1.3rem; border-top: 0; border-left: 1px solid var(--line); }
+  .highlight { padding: 0 1rem; border-top: 0; border-left: 1px solid var(--line); }
   .highlight:first-child { padding-left: 0; border-left: 0; }
-  .trio { grid-template-columns: 1fr 1fr; }
+  .flist { grid-template-columns: 1fr 1fr; }
+  .flist article:nth-child(odd) { padding-right: .9rem; border-right: 1px solid var(--line); }
+  .flist article:nth-child(even) { padding-left: .9rem; }
+  .caps.two, .caps.three { grid-template-columns: 1fr 1fr; }
+  .caps.three { grid-template-columns: 1fr 1fr 1fr; }
 }
-@media (min-width: 980px) {
-  .menu-btn, .mobile { display: none !important; }
+@media (min-width: 1040px) {
+  .menu-btn { display: none; }
   nav.primary { display: flex; }
-  .hero { padding: 5.2rem 0 4rem; }
-  .hero-grid { grid-template-columns: minmax(0, .9fr) minmax(0, 1.15fr); gap: 2.5rem; }
-  .split, .pair { grid-template-columns: minmax(0, 1fr) minmax(0, .9fr); gap: 3rem; }
-  .pair.flip > :first-child { order: 2; }
-  .trio { grid-template-columns: repeat(3, 1fr); }
-  .store img { height: 5.4rem; }
-  .section { padding: 5.6rem 0; }
+  .hero { padding: 1.1rem 0 .4rem; }
+  .hero .wrap { width: min(1400px, calc(100% - 2.5rem)); }
+  .hero-grid { grid-template-columns: minmax(17rem, 26rem) minmax(0, 1fr); gap: 1rem 1.4rem; align-items: center; }
+  .hero-shot { width: 100%; max-width: none; }
+  .store img { height: 5.1rem; }
+  .layout { grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr); gap: 1.4rem; }
+  .layout.flip > :first-child { order: 2; }
+  .cluster { height: 38rem; }
+  .section { padding: 2.8rem 0; }
 }
-@media (max-width: 979px) {
+@media (max-width: 1039px) {
   nav.primary, .actions .btn { display: none; }
   .menu-btn { display: inline-grid; place-items: center; }
   .mobile.open { display: block; }
-  .badge span.long { display: none; }
-}
-@media (prefers-reduced-motion: no-preference) {
-  .reveal { animation: rise .6s ease both; }
-}
-@keyframes rise {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: none; }
+  .short { display: inline; }
+  .badge .long { display: none; }
+  .cluster { height: auto; display: grid; justify-items: center; padding: 1rem .6rem 1.1rem; }
+  .cluster .ph { position: relative; left: auto; right: auto; top: auto; width: min(74%, 270px); }
+  .cluster .ph + .ph { margin-top: -9.5rem; }
+  .cluster .ph:nth-child(even) { justify-self: end; margin-right: 2%; }
+  .cluster .ph:nth-child(odd) { justify-self: start; margin-left: 2%; }
+  .hero-shot { width: 100%; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .reveal { animation: none; }
+  html.motion .reveal { animation: none; }
 }
 
-.hero-shot { width: 100%; height: auto; display: block; }
-.short { display: none; }
-@media (max-width: 979px) { .short { display: inline; } }
 </style>
+<script>
+(function () {
+  try {
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      document.documentElement.classList.add("motion");
+    }
+  } catch (err) {}
+})();
+</script>
 </head>
 <body>
 <a class="skip" href="#continut">Sari la conținut</a>
@@ -263,7 +323,7 @@ textarea { resize: vertical; }
     <a class="brand" href="#top">
       <span class="logo-frame"><picture>
   <source srcset="assets/landing/logo.webp" type="image/webp">
-  <img src="assets/logo.png" alt="Logo JAC" width="1254" height="1254" class="logo-img" fetchpriority="high" decoding="async">
+  <img src="assets/logo.png" alt="Logo JAC" width="1254" height="1254" class="logo-img" decoding="async">
 </picture></span>
       <span>JAC</span>
     </a>
@@ -292,7 +352,6 @@ textarea { resize: vertical; }
 </header>
 <main id="continut">
   <section id="top" class="hero">
-    <div class="hero-bg" aria-hidden="true"></div>
     <div class="wrap hero-grid">
       <div class="reveal">
         <p class="eyebrow">LEGISLAȚIE • ORGANIZARE • CONSULTARE OFFLINE</p>
@@ -305,12 +364,12 @@ textarea { resize: vertical; }
         <p class="note">Creată pentru acces rapid la informații și organizare practică.</p>
         
       </div>
-      <figure>
+      <figure class="hero-visual">
         <picture>
   <source srcset="assets/landing/hero-dual.webp" type="image/webp">
-  <img src="assets/hero-dual.png" alt="Două telefoane care afișează interfața JAC și calendarul de ture Shiftr." width="1280" height="720" class="hero-shot" fetchpriority="high" decoding="async">
+  <img src="assets/hero-dual.png" alt="Două telefoane care afișează interfața JAC și calendarul de ture Shiftr." width="1280" height="720" class="hero-shot" decoding="async" fetchpriority="high">
 </picture>
-        <figcaption>JAC reunește consultarea informațiilor juridice și organizarea turelor într-o singură aplicație.</figcaption>
+        <figcaption class="mono">JAC reunește consultarea informațiilor juridice și organizarea turelor într-o singură aplicație.</figcaption>
       </figure>
     </div>
   </section>
@@ -333,186 +392,178 @@ textarea { resize: vertical; }
   </section>
 
   <section id="shiftr" class="section">
-    <div class="wrap split">
+    <div class="wrap layout">
       <div>
-        <p class="eyebrow">ORGANIZAREA PROGRAMULUI</p>
+        <div class="kicker"><span class="idx">01</span><p class="eyebrow">ORGANIZAREA PROGRAMULUI</p></div>
         <h2>Organizează-ți turele. Controlează-ți timpul.</h2>
         <p class="lede">Planifică-ți programul de lucru, înregistrează turele și urmărește orele lucrate. Shiftr reunește calendarul și sumarul lunar într-o interfață ușor de consultat.</p>
         <p class="note">Programul de ture pe care îl introduci în Shiftr este stocat local, pe dispozitiv.</p>
-        <div class="features">
-          <div class="feature">
+        <div class="flist">
+          <article>
             <h3>Calendar de ture</h3>
             <p>Vizualizează programul lunar și identifică rapid tipul fiecărei ture.</p>
-          </div>
-          <div class="feature">
+          </article>
+          <article>
             <h3>Sumar lunar</h3>
             <p>Consultă numărul de ture, orele lucrate, norma legală și diferența calculată de aplicație.</p>
-          </div>
-          <div class="feature">
+          </article>
+          <article>
             <h3>Șabloane de ture</h3>
             <p>Organizează-ți programul folosind șabloanele disponibile în aplicație.</p>
-          </div>
-          <div class="feature">
+          </article>
+          <article>
             <h3>Export și instrumente suplimentare</h3>
             <p>Descoperă funcțiile de export și celelalte instrumente disponibile în Shiftr.</p>
-          </div>
+          </article>
         </div>
       </div>
-      <figure>
-<picture>
+      <figure class="board">
+        <div class="cluster c-shift">
+          <div class="ph a"><picture>
   <source srcset="assets/landing/photo_5971895843633697205_y.webp" type="image/webp">
-  <img src="assets/landing/photo_5971895843633697205_y.jpg" alt="Calendar Shiftr pentru octombrie 2026, cu ture zilnice și sumarul lunar al orelor lucrate." width="587" height="1280" class="phone" loading="lazy" decoding="async">
-</picture>
-  <figcaption>Calendarul lunar Shiftr, cu tipurile de ture, intervalele orare și sumarul orelor lucrate.</figcaption>
-</figure>
-    </div>
-    <div class="wrap pair" style="margin-top:3rem">
-      <figure>
-<picture>
+  <img src="assets/landing/photo_5971895843633697205_y.jpg" alt="Calendar Shiftr pentru octombrie 2026, cu ture zilnice și sumarul lunar al orelor lucrate." width="587" height="1280" class="shot-img" decoding="async">
+</picture></div>
+          <div class="ph b"><picture>
   <source srcset="assets/landing/photo_5971895843633697207_y.webp" type="image/webp">
-  <img src="assets/landing/photo_5971895843633697207_y.jpg" alt="Sumar lunar Shiftr cu numărul de ture, orele lucrate, norma legală și orele suplimentare calculate." width="587" height="1280" class="phone" loading="lazy" decoding="async">
-</picture>
-  <figcaption>Sumarul lunar prezintă orele lucrate, norma legală calculată și diferența dintre acestea.</figcaption>
-</figure>
+  <img src="assets/landing/photo_5971895843633697207_y.jpg" alt="Sumar lunar Shiftr cu numărul de ture, orele lucrate, norma legală și orele suplimentare calculate." width="587" height="1280" class="shot-img" decoding="async">
+</picture></div>
+        </div>
+        <figcaption class="caps two">
+          <p class="mono">Calendarul lunar Shiftr, cu tipurile de ture, intervalele orare și sumarul orelor lucrate.</p>
+          <p class="mono">Sumarul lunar prezintă orele lucrate, norma legală calculată și diferența dintre acestea.</p>
+        </figcaption>
+      </figure>
+    </div>
+    <div class="wrap">
       <p class="note">Valorile din capturi sunt un exemplu de program introdus în aplicație și depind de regulile de calcul ale aplicației. Nu sunt un rezultat valabil pentru orice utilizator.</p>
     </div>
   </section>
 
   <section id="functionalitati" class="section">
-    <div class="wrap split">
+    <div class="wrap layout">
       <div>
-        <p class="eyebrow">INFORMAȚII JURIDICE LA ÎNDEMÂNĂ</p>
+        <div class="kicker"><span class="idx">02</span><p class="eyebrow">INFORMAȚII JURIDICE LA ÎNDEMÂNĂ</p></div>
         <h2>Informațiile relevante, mai ușor de găsit.</h2>
         <p class="lede">Caută în conținutul juridic disponibil în aplicație și navighează între categorii, articole și acte normative. Salvează rezultatele utile pentru a reveni rapid la ele.</p>
-        <div class="features">
-          <div class="feature">
+        <div class="flist">
+          <article>
             <h3>Căutare rapidă</h3>
             <p>Introdu un termen sau o expresie și consultă rezultatele relevante din baza disponibilă.</p>
-          </div>
-          <div class="feature">
+          </article>
+          <article>
             <h3>Conținut organizat</h3>
             <p>Navighează prin categoriile și modulele juridice disponibile în aplicație.</p>
-          </div>
-          <div class="feature">
+          </article>
+          <article>
             <h3>Favorite</h3>
             <p>Păstrează la îndemână informațiile pe care vrei să le consulți din nou.</p>
-          </div>
-          <div class="feature">
+          </article>
+          <article>
             <h3>Legislație integrală</h3>
             <p>Consultă actele normative disponibile în format integral și verifică sursa oficială atunci când ai nevoie de textul de referință.</p>
-          </div>
+          </article>
         </div>
       </div>
-      <figure>
-<picture>
+      <figure class="board">
+        <div class="cluster c-find">
+          <div class="ph a"><picture>
   <source srcset="assets/landing/photo_5971895843633697206_y.webp" type="image/webp">
-  <img src="assets/landing/photo_5971895843633697206_y.jpg" alt="Ecranul principal JAC, cu bara de căutare, categoriile juridice și secțiunea de articole consultate recent." width="587" height="1280" class="phone" loading="lazy" decoding="async">
-</picture>
-  <figcaption>Ecranul principal JAC oferă acces rapid la căutare, categorii juridice, legislație integrală și articole consultate recent.</figcaption>
-</figure>
-    </div>
-    <div class="wrap stack">
-      <div class="pair">
-        <div class="feature">
-          <h3>Căutare rapidă</h3>
-          <p>Introdu un termen sau o expresie și consultă rezultatele relevante din baza disponibilă.</p>
-        </div>
-        <figure>
-<picture>
+  <img src="assets/landing/photo_5971895843633697206_y.jpg" alt="Ecranul principal JAC, cu bara de căutare, categoriile juridice și secțiunea de articole consultate recent." width="587" height="1280" class="shot-img" decoding="async">
+</picture></div>
+          <div class="ph b"><picture>
   <source srcset="assets/landing/photo_5971895843633697214_y.webp" type="image/webp">
-  <img src="assets/landing/photo_5971895843633697214_y.jpg" alt="Ecran JAC cu rezultate pentru căutarea «consumul», incluzând articole din legislația contravențională." width="587" height="1280" class="phone" loading="lazy" decoding="async">
-</picture>
-  <figcaption>Căutarea afișează rezultate juridice relevante pentru termenul introdus, inclusiv actul normativ și articolul asociat.</figcaption>
-</figure>
-      </div>
-      <div class="pair flip">
-        <div class="feature">
-          <h3>Favorite</h3>
-          <p>Păstrează la îndemână informațiile pe care vrei să le consulți din nou.</p>
-        </div>
-        <figure>
-<picture>
+  <img src="assets/landing/photo_5971895843633697214_y.jpg" alt="Ecran JAC cu rezultate pentru căutarea «consumul», incluzând articole din legislația contravențională." width="587" height="1280" class="shot-img" decoding="async">
+</picture></div>
+          <div class="ph c"><picture>
   <source srcset="assets/landing/photo_5971895843633697212_y.webp" type="image/webp">
-  <img src="assets/landing/photo_5971895843633697212_y.jpg" alt="Ecranul Favorite din JAC, cu un rezultat juridic salvat pentru consultare ulterioară." width="587" height="1280" class="phone" loading="lazy" decoding="async">
-</picture>
-  <figcaption>Salvează informațiile relevante și revino la ele din secțiunea Favorite.</figcaption>
-</figure>
-      </div>
-      <div>
-        <h3>Conținut organizat</h3>
-        <p>Navighează prin categoriile și modulele juridice disponibile în aplicație.</p>
-        <div class="trio">
-          <figure>
-<picture>
-  <source srcset="assets/landing/photo_5971895843633697210_y.webp" type="image/webp">
-  <img src="assets/landing/photo_5971895843633697210_y.jpg" alt="Ecran JAC cu modulele de legislație penală și procedură penală." width="587" height="1280" class="phone" loading="lazy" decoding="async">
-</picture>
-  <figcaption>Navighează prin modulele disponibile pentru legislație penală și procedură penală.</figcaption>
-</figure>
-          <figure>
-<picture>
-  <source srcset="assets/landing/photo_5971895843633697211_y.webp" type="image/webp">
-  <img src="assets/landing/photo_5971895843633697211_y.jpg" alt="Ecran JAC pentru sancțiuni rutiere, proceduri rutiere și informații despre punctul-amendă." width="587" height="1280" class="phone" loading="lazy" decoding="async">
-</picture>
-  <figcaption>Consultă modulele dedicate sancțiunilor și procedurilor rutiere.</figcaption>
-</figure>
-          <figure>
-<picture>
-  <source srcset="assets/landing/photo_5971895843633697209_y.webp" type="image/webp">
-  <img src="assets/landing/photo_5971895843633697209_y.jpg" alt="Ecran JAC pentru reordonarea modulelor juridice." width="587" height="1280" class="phone" loading="lazy" decoding="async">
-</picture>
-  <figcaption>Personalizează ordinea modulelor juridice pentru a ajunge mai repede la cele pe care le folosești frecvent.</figcaption>
-</figure>
+  <img src="assets/landing/photo_5971895843633697212_y.jpg" alt="Ecranul Favorite din JAC, cu un rezultat juridic salvat pentru consultare ulterioară." width="587" height="1280" class="shot-img" decoding="async">
+</picture></div>
         </div>
-      </div>
+        <figcaption class="caps three">
+          <p class="mono">Ecranul principal JAC oferă acces rapid la căutare, categorii juridice, legislație integrală și articole consultate recent.</p>
+          <p class="mono">Căutarea afișează rezultate juridice relevante pentru termenul introdus, inclusiv actul normativ și articolul asociat.</p>
+          <p class="mono">Salvează informațiile relevante și revino la ele din secțiunea Favorite.</p>
+        </figcaption>
+      </figure>
+    </div>
+    <div class="wrap" style="margin-top:1rem">
+      <figure class="board">
+        <div class="cluster c-mod">
+          <div class="ph a"><picture>
+  <source srcset="assets/landing/photo_5971895843633697210_y.webp" type="image/webp">
+  <img src="assets/landing/photo_5971895843633697210_y.jpg" alt="Ecran JAC cu modulele de legislație penală și procedură penală." width="587" height="1280" class="shot-img" decoding="async">
+</picture></div>
+          <div class="ph b"><picture>
+  <source srcset="assets/landing/photo_5971895843633697211_y.webp" type="image/webp">
+  <img src="assets/landing/photo_5971895843633697211_y.jpg" alt="Ecran JAC pentru sancțiuni rutiere, proceduri rutiere și informații despre punctul-amendă." width="587" height="1280" class="shot-img" decoding="async">
+</picture></div>
+          <div class="ph c"><picture>
+  <source srcset="assets/landing/photo_5971895843633697209_y.webp" type="image/webp">
+  <img src="assets/landing/photo_5971895843633697209_y.jpg" alt="Ecran JAC pentru reordonarea modulelor juridice." width="587" height="1280" class="shot-img" decoding="async">
+</picture></div>
+        </div>
+        <figcaption class="caps three">
+          <p class="mono">Navighează prin modulele disponibile pentru legislație penală și procedură penală.</p>
+          <p class="mono">Consultă modulele dedicate sancțiunilor și procedurilor rutiere.</p>
+          <p class="mono">Personalizează ordinea modulelor juridice pentru a ajunge mai repede la cele pe care le folosești frecvent.</p>
+        </figcaption>
+      </figure>
     </div>
   </section>
 
   <section id="echipaj" class="section">
-    <div class="wrap split">
+    <div class="wrap layout flip">
       <div>
-        <p class="eyebrow">COLABORARE</p>
+        <div class="kicker"><span class="idx">03</span><p class="eyebrow">COLABORARE</p></div>
         <h2>Coordonare mai simplă cu JAC Crew.</h2>
         <p class="lede">Funcțiile JAC Crew disponibile în aplicație îți permit să gestionezi echipa și să folosești instrumentele de colaborare oferite de modul.</p>
         <p class="note">Gestionarea echipajului ține de contul JAC și de funcțiile online ale aplicației. Este separată de consultarea offline a bazei locale.</p>
-        <ul class="labels">
-          <li>Invită colegi</li>
-          <li>Gestionează membrii echipei</li>
-          <li>Consultă funcțiile disponibile în modul</li>
-        </ul>
+        <div class="flist">
+          <article><h3>Invită colegi</h3></article>
+          <article><h3>Gestionează membrii echipei</h3></article>
+          <article><h3>Consultă funcțiile disponibile în modul</h3></article>
+        </div>
       </div>
-      <figure>
-        <picture>
+      <figure class="board">
+        <div class="cluster c-one">
+          <div class="ph a"><picture>
   <source srcset="assets/landing/jac-crew-masked.webp" type="image/webp">
-  <img src="assets/landing/jac-crew-masked.jpg" alt="Ecranul JAC Crew pentru gestionarea echipei și a membrilor." width="587" height="1280" class="phone" loading="lazy" decoding="async">
-</picture>
-        <figcaption>JAC Crew oferă instrumente pentru gestionarea membrilor unei echipe și funcțiile de colaborare disponibile.</figcaption>
+  <img src="assets/landing/jac-crew-masked.jpg" alt="Ecranul JAC Crew pentru gestionarea echipei și a membrilor." width="587" height="1280" class="shot-img" decoding="async">
+</picture></div>
+        </div>
+        <figcaption class="caps">
+          <p class="mono">JAC Crew oferă instrumente pentru gestionarea membrilor unei echipe și funcțiile de colaborare disponibile.</p>
+        </figcaption>
       </figure>
     </div>
   </section>
 
   <section id="transparenta" class="section">
-    <div class="wrap split">
+    <div class="wrap layout">
       <div>
-        <p class="eyebrow">TRANSPARENȚĂ</p>
+        <div class="kicker"><span class="idx">04</span><p class="eyebrow">TRANSPARENȚĂ</p></div>
         <h2>Informația juridică trebuie verificată.</h2>
         <p class="lede">JAC facilitează consultarea conținutului disponibil în aplicație. Pentru aplicarea unei norme într-o situație concretă, verifică forma oficială și actualizată a actului normativ.</p>
         <p class="callout">JAC este o aplicație independentă și nu reprezintă o instituție publică. Disponibilitatea locală a conținutului nu garantează că acesta reflectă automat toate modificările legislative ulterioare.</p>
         <p class="note"><a href="https://legislatie.just.ro/" target="_blank" rel="noopener noreferrer">Consultă Portalul Legislativ oficial</a></p>
       </div>
-      <figure>
-<picture>
+      <figure class="board">
+        <div class="cluster c-one">
+          <div class="ph a"><picture>
   <source srcset="assets/landing/photo_5971895843633697213_y.webp" type="image/webp">
-  <img src="assets/landing/photo_5971895843633697213_y.jpg" alt="Ecran JAC cu lista codurilor și actelor normative disponibile în modulul Legislație integrală." width="587" height="1280" class="phone" loading="lazy" decoding="async">
-</picture>
-  <figcaption>Accesează actele normative disponibile în format integral, organizate pe categorii.</figcaption>
-</figure>
+  <img src="assets/landing/photo_5971895843633697213_y.jpg" alt="Ecran JAC cu lista codurilor și actelor normative disponibile în modulul Legislație integrală." width="587" height="1280" class="shot-img" decoding="async">
+</picture></div>
+        </div>
+        <figcaption class="caps">
+          <p class="mono">Accesează actele normative disponibile în format integral, organizate pe categorii.</p>
+        </figcaption>
+      </figure>
     </div>
   </section>
 
-  <section id="descarca" class="section final">
+  <section id="descarca" class="section">
     <div class="wrap">
-      <p class="eyebrow">JAC • INFORMAȚII ȘI ORGANIZARE</p>
+      <div class="kicker"><span class="idx">05</span><p class="eyebrow">JAC • INFORMAȚII ȘI ORGANIZARE</p></div>
       <h2>Mai multă claritate. Mai puțin timp pierdut.</h2>
       <p class="lede">Descoperă instrumentele JAC pentru consultarea informațiilor juridice și organizarea programului de lucru.</p>
       <div class="cta-row"><a class="store" href="https://play.google.com/store/apps/details?id=com.ticuv.jac" target="_blank" rel="noopener noreferrer"><img src="https://play.google.com/intl/ro_ro/badges/static/images/badges/ro_badge_web_generic.png" alt="Disponibil pe Google Play" width="646" height="250"></a></div>
@@ -525,7 +576,7 @@ textarea { resize: vertical; }
     <div class="foot">
       <a class="brand" href="#top"><span class="logo-frame"><picture>
   <source srcset="assets/landing/logo.webp" type="image/webp">
-  <img src="assets/logo.png" alt="Logo JAC" width="1254" height="1254" class="logo-img" fetchpriority="high" decoding="async">
+  <img src="assets/logo.png" alt="Logo JAC" width="1254" height="1254" class="logo-img" decoding="async">
 </picture></span><span>JAC</span></a>
       <nav aria-label="Documente și contact">
         <a href="legal/terms.html">Termeni și condiții</a>
