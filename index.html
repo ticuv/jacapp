@@ -3,600 +3,662 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JAC — Ghid Legislativ Operativ | Closed Beta</title>
-<meta name="description" content="Ghidul legislativ complet offline și planificatorul inteligent de ture Shiftr. Construit pentru structurile operative din România. Closed Beta — solicită acces.">
+<title>JAC — Informații juridice și organizarea turelor</title>
+<meta name="description" content="Descoperă JAC: acces la informații juridice, căutare în conținutul disponibil și instrumente pentru organizarea turelor cu Shiftr. Testare închisă: accesul se acordă pe bază de solicitare.">
 <link rel="canonical" href="https://aplicatiajac.ro/">
 <meta name="robots" content="index, follow">
 <meta name="author" content="JAC">
-<meta name="theme-color" content="#020617">
+<meta name="theme-color" content="#070b12">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="JAC">
 <meta property="og:locale" content="ro_RO">
 <meta property="og:url" content="https://aplicatiajac.ro/">
-<meta property="og:title" content="JAC — Claritate în lege. Siguranță în decizie.">
-<meta property="og:description" content="Ghidul legislativ complet offline și planificatorul inteligent de ture. Closed Beta pentru structurile operative din România.">
+<meta property="og:title" content="JAC — Informații juridice și organizarea turelor">
+<meta property="og:description" content="Descoperă JAC: acces la informații juridice, căutare în conținutul disponibil și instrumente pentru organizarea turelor cu Shiftr. Testare închisă: accesul se acordă pe bază de solicitare.">
 <meta property="og:image" content="https://aplicatiajac.ro/assets/hero-dual.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1280">
 <meta property="og:image:height" content="720">
-<meta property="og:image:alt" content="Două telefoane cu aplicația JAC: ghidul legislativ și calendarul de ture Shiftr">
+<meta property="og:image:alt" content="Două telefoane care afișează interfața JAC și calendarul de ture Shiftr.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="JAC — Claritate în lege. Siguranță în decizie.">
-<meta name="twitter:description" content="Ghid legislativ offline și planificator de ture. Closed Beta — solicită acces.">
+<meta name="twitter:title" content="JAC — Informații juridice și organizarea turelor">
+<meta name="twitter:description" content="Descoperă JAC: acces la informații juridice, căutare în conținutul disponibil și instrumente pentru organizarea turelor cu Shiftr. Testare închisă: accesul se acordă pe bază de solicitare.">
 <meta name="twitter:image" content="https://aplicatiajac.ro/assets/hero-dual.png">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "JAC - Ghid Legislativ Operativ",
+  "name": "JAC",
   "operatingSystem": "Android",
   "applicationCategory": "ReferenceApplication",
-  "description": "Ghid legislativ complet offline și planificator de ture Shiftr, pentru structurile operative din România. Disponibil în Closed Beta.",
+  "description": "Descoperă JAC: acces la informații juridice, căutare în conținutul disponibil și instrumente pentru organizarea turelor cu Shiftr. Testare închisă: accesul se acordă pe bază de solicitare.",
   "url": "https://aplicatiajac.ro/",
   "inLanguage": "ro-RO",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "RON",
-    "availability": "https://schema.org/LimitedAvailability",
-    "description": "Gratuit în Closed Beta. Acces pe bază de aplicație."
-  }
+  "offers": {"@type": "Offer", "availability": "https://schema.org/LimitedAvailability", "description": "Testare închisă. Acces pe bază de solicitare."}
 }
 </script>
 <link rel="icon" type="image/png" href="assets/logo.png">
 <link rel="apple-touch-icon" href="assets/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/style.css">
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          ink: '#020617',
-          panel: '#0b1220'
-        },
-        fontFamily: {
-          sans: ['Inter', 'Roboto', 'system-ui', 'Segoe UI', 'sans-serif']
-        },
-        boxShadow: {
-          glow: '0 0 48px -12px rgba(34,211,238,0.55)'
-        }
-      }
-    }
-  }
-</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
 <style>
-  html { scroll-behavior: smooth; }
-  body {
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-    background: #020617;
-  }
-  ::selection { background: rgba(34,211,238,.28); color: #fff; }
-  :focus-visible { outline: 2px solid #22d3ee; outline-offset: 3px; }
-  .grid-fade {
-    background-image:
-      radial-gradient(ellipse 90% 55% at 70% -10%, rgba(34,211,238,.16), transparent 55%),
-      radial-gradient(ellipse 50% 40% at 0% 20%, rgba(37,99,235,.18), transparent 50%),
-      linear-gradient(to right, rgba(148,163,184,.055) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(148,163,184,.055) 1px, transparent 1px);
-    background-size: auto, auto, 72px 72px, 72px 72px;
-  }
-  .logo-crop { object-fit: cover; object-position: center 46%; transform: scale(1.28); }
-  .bento {
-    transition: transform .35s cubic-bezier(.2,.7,.2,1), border-color .35s, box-shadow .35s;
-  }
-  .bento:hover {
-    transform: translateY(-3px);
-    border-color: rgba(34,211,238,.45);
-    box-shadow: 0 0 42px -14px rgba(34,211,238,.55);
-  }
-  .shot {
-    transition: transform .5s cubic-bezier(.2,.7,.2,1);
-  }
-  .bento:hover .shot { transform: scale(1.025); }
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    .bento, .shot, .ping { transition: none !important; animation: none !important; }
-    .bento:hover, .bento:hover .shot { transform: none; }
-  }
+
+:root {
+  --bg: #070b12;
+  --elev: #101826;
+  --ink: #e8eef6;
+  --muted: #b4c0d0;
+  --line: rgba(168, 190, 220, .16);
+  --accent: #4c9af0;
+  --accent-ink: #061018;
+  --max: 1120px;
+  --serif-none: "Inter", "Segoe UI", Roboto, sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--muted);
+  font-family: var(--serif-none);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; height: auto; }
+figure picture, .logo-frame picture { display: block; }
+.logo-frame picture { width: 3.05rem; height: 3.05rem; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.skip {
+  position: absolute; left: 1rem; top: -4rem; z-index: 80;
+  background: var(--accent); color: var(--accent-ink);
+  padding: .6rem 1rem; border-radius: .6rem; font-weight: 700;
+}
+.skip:focus { top: 1rem; }
+.wrap { width: min(var(--max), calc(100% - 2.5rem)); margin-inline: auto; }
+.eyebrow {
+  margin: 0;
+  color: var(--accent);
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+}
+h1, h2, h3 { color: var(--ink); letter-spacing: -.03em; line-height: 1.08; }
+h1 { margin: .7rem 0 0; font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 800; }
+h2 { margin: .65rem 0 0; font-size: clamp(2rem, 4vw, 3.15rem); font-weight: 700; }
+h3 { margin: 0; font-size: 1.2rem; font-weight: 700; letter-spacing: -.02em; }
+.lede { margin: 1.15rem 0 0; max-width: 40rem; font-size: 1.08rem; }
+.note { margin: .85rem 0 0; max-width: 40rem; color: #93a2b6; font-size: .95rem; }
+header.site {
+  position: sticky; top: 0; z-index: 40;
+  background: rgba(7, 11, 18, .86);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(16px);
+}
+.bar {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem; min-height: 4.25rem;
+}
+.brand { display: inline-flex; align-items: center; gap: .65rem; text-decoration: none; color: var(--ink); font-weight: 800; }
+.brand picture, .brand img { width: 2.4rem; height: 2.4rem; }
+.logo-frame {
+  width: 2.4rem; height: 2.4rem; overflow: hidden; border-radius: .7rem;
+  display: grid; place-items: center;
+}
+.logo-frame img { width: 3.05rem; height: 3.05rem; max-width: none; object-fit: cover; object-position: center 46%; }
+nav.primary { display: flex; align-items: center; gap: 1.35rem; }
+nav.primary a { text-decoration: none; color: #c5d0de; font-size: .94rem; font-weight: 600; }
+nav.primary a:hover { color: white; }
+.actions { display: flex; align-items: center; gap: .6rem; }
+.badge {
+  display: inline-flex; align-items: center; gap: .45rem;
+  border: 1px solid rgba(52, 211, 153, .35);
+  background: rgba(16, 185, 129, .1);
+  color: #a7f3d0;
+  border-radius: 999px;
+  padding: .28rem .7rem;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.dot { width: .45rem; height: .45rem; border-radius: 50%; background: #34d399; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 2.9rem; padding: .7rem 1.15rem;
+  border-radius: 999px; text-decoration: none; font-weight: 750; font-size: .95rem;
+  border: 1px solid transparent;
+}
+.btn-primary { background: var(--accent); color: var(--accent-ink); }
+.btn-primary:hover { background: #6aaff5; }
+.btn-ghost { border-color: var(--line); color: var(--ink); background: transparent; }
+.btn-ghost:hover { border-color: rgba(76, 154, 240, .55); }
+.menu-btn {
+  display: none; width: 2.7rem; height: 2.7rem; border-radius: .8rem;
+  border: 1px solid var(--line); background: transparent; color: var(--ink); cursor: pointer;
+}
+.mobile {
+  display: none; border-top: 1px solid var(--line); padding: .4rem 0 1rem;
+}
+.mobile a { display: block; padding: .8rem .2rem; text-decoration: none; color: var(--ink); font-weight: 600; }
+.hero { position: relative; overflow: hidden; padding: 4.2rem 0 3.2rem; }
+.hero-bg {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(to right, rgba(168,190,220,.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(168,190,220,.05) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(ellipse at 70% 30%, #000 10%, transparent 72%);
+}
+.hero-grid {
+  position: relative;
+  display: grid; gap: 2.2rem; align-items: center;
+}
+.cta-row { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.6rem; }
+.store { display: inline-flex; line-height: 0; }
+.store img { height: 4.6rem; width: auto; }
+.split { display: grid; gap: 2rem; align-items: center; }
+figure { margin: 0; }
+figcaption { margin-top: .75rem; max-width: 36rem; color: #93a2b6; font-size: .92rem; }
+.phone {
+  width: min(100%, 340px); display: block; margin-inline: auto;
+  border-radius: 1.7rem; border: 1px solid var(--line);
+  background: #0b1018;
+}
+.section { padding: 4.5rem 0; border-top: 1px solid var(--line); }
+.highlights { display: grid; gap: 0; }
+.highlight { padding: 1.4rem 0; border-top: 1px solid var(--line); }
+.highlight h2 { font-size: clamp(1.55rem, 2vw, 1.9rem); }
+.highlight p { margin: .55rem 0 0; }
+.features { display: grid; gap: 1.15rem; margin-top: 1.8rem; }
+.feature h3 { margin-bottom: .3rem; }
+.feature p { margin: 0; }
+.stack { display: grid; gap: 2.6rem; margin-top: 2.8rem; }
+.pair { display: grid; gap: 1.4rem; align-items: center; }
+.trio { display: grid; gap: 1.6rem; margin-top: 2.4rem; }
+.labels { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.2rem; padding: 0; list-style: none; }
+.labels li {
+  border: 1px solid var(--line); border-radius: 999px;
+  padding: .35rem .75rem; color: var(--ink); font-size: .88rem; font-weight: 650;
+}
+.callout {
+  margin-top: 1.3rem; padding: 1rem 1.1rem;
+  border-left: 2px solid var(--accent);
+  color: #d5deea;
+}
+.final { text-align: left; }
+footer.site { border-top: 1px solid var(--line); padding: 2.4rem 0 3rem; }
+.foot {
+  display: flex; flex-wrap: wrap; gap: 1.4rem 2rem; justify-content: space-between; align-items: flex-start;
+}
+.foot nav { display: flex; flex-wrap: wrap; gap: .7rem 1.2rem; }
+.foot nav a { color: #d5deea; text-decoration: none; font-weight: 600; }
+.foot nav a:hover { color: white; }
+.disclaimer { max-width: 46rem; margin: 1.4rem 0 0; }
+.copy { margin: .8rem 0 0; color: #7f8da0; font-size: .85rem; }
+form.access {
+  margin-top: 1.6rem; display: grid; gap: .9rem;
+  padding: 1.2rem; border: 1px solid var(--line); border-radius: 1.1rem; background: var(--elev);
+}
+label span { display: block; color: var(--ink); font-weight: 650; font-size: .92rem; margin-bottom: .3rem; }
+input, select, textarea {
+  width: 100%; border: 1px solid var(--line); background: #0c121c; color: var(--ink);
+  border-radius: .75rem; padding: .75rem .85rem; font: inherit;
+}
+textarea { resize: vertical; }
+.form-grid { display: grid; gap: .9rem; }
+.error { color: #fda4af; margin: 0; }
+.hidden { display: none; }
+.fine { margin: .4rem 0 0; color: #8b9aaf; font-size: .85rem; }
+@media (min-width: 720px) {
+  .form-grid { grid-template-columns: 1fr 1fr; }
+  .span-2 { grid-column: span 2; }
+  .highlights { grid-template-columns: repeat(3, 1fr); }
+  .highlight { padding: 0 1.3rem; border-top: 0; border-left: 1px solid var(--line); }
+  .highlight:first-child { padding-left: 0; border-left: 0; }
+  .trio { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 980px) {
+  .menu-btn, .mobile { display: none !important; }
+  nav.primary { display: flex; }
+  .hero { padding: 5.2rem 0 4rem; }
+  .hero-grid { grid-template-columns: minmax(0, .9fr) minmax(0, 1.15fr); gap: 2.5rem; }
+  .split, .pair { grid-template-columns: minmax(0, 1fr) minmax(0, .9fr); gap: 3rem; }
+  .pair.flip > :first-child { order: 2; }
+  .trio { grid-template-columns: repeat(3, 1fr); }
+  .store img { height: 5.4rem; }
+  .section { padding: 5.6rem 0; }
+}
+@media (max-width: 979px) {
+  nav.primary, .actions .btn { display: none; }
+  .menu-btn { display: inline-grid; place-items: center; }
+  .mobile.open { display: block; }
+  .badge span.long { display: none; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .reveal { animation: rise .6s ease both; }
+}
+@keyframes rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { animation: none; }
+}
+
+.hero-shot { width: 100%; height: auto; display: block; }
+.short { display: none; }
+@media (max-width: 979px) { .short { display: inline; } }
 </style>
 </head>
-<body class="bg-ink font-sans text-slate-300 antialiased">
-
-<a href="#continut" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[80] focus:rounded-lg focus:bg-cyan-400 focus:px-3 focus:py-2 focus:text-slate-950">Sari la conținut</a>
-
-<header class="sticky top-0 z-50 border-b border-white/10 bg-ink/80 backdrop-blur-xl">
-  <div class="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
-    <a href="#top" class="flex items-center gap-2.5">
-      <span class="inline-flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-white/5 ring-1 ring-white/10">
-        <img src="assets/logo.png" alt="" class="logo-crop h-9 w-9 max-w-none" width="1254" height="1254">
-      </span>
-      <span class="text-lg font-extrabold tracking-tight text-white">JAC</span>
+<body>
+<a class="skip" href="#continut">Sari la conținut</a>
+<header class="site">
+  <div class="wrap bar">
+    <a class="brand" href="#top">
+      <span class="logo-frame"><picture>
+  <source srcset="assets/landing/logo.webp" type="image/webp">
+  <img src="assets/logo.png" alt="Logo JAC" width="1254" height="1254" class="logo-img" fetchpriority="high" decoding="async">
+</picture></span>
+      <span>JAC</span>
     </a>
-
-    <nav class="hidden items-center gap-7 text-sm font-medium text-slate-400 lg:flex" aria-label="Secțiuni">
-      <a href="#shiftr" class="transition hover:text-white">Shiftr</a>
-      <a href="#legislatie" class="transition hover:text-white">Legislație</a>
-      <a href="#echipaj" class="transition hover:text-white">Echipaj</a>
-      <a href="#aplica" class="transition hover:text-white">Acces</a>
+    <nav class="primary" aria-label="Secțiuni">
+      <a href="#aplicatia">Aplicația</a>
+      <a href="#functionalitati">Funcționalități</a>
+      <a href="#shiftr">Shiftr</a>
+      <a href="#echipaj">JAC Crew</a>
+      <a href="#aplica">Acces</a>
     </nav>
-
-    <div class="flex items-center gap-2 sm:gap-3">
-      <span class="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-emerald-300 sm:px-3 sm:text-xs">
-        <span class="relative flex h-2 w-2" aria-hidden="true">
-          <span class="ping absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-70"></span>
-          <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_12px_2px_rgba(52,211,153,.85)]"></span>
-        </span>
-        <span class="hidden sm:inline">Closed Beta Live</span>
-        <span class="sm:hidden">Beta Live</span>
-      </span>
-      <a href="mailto:vladticu100@gmail.com?subject=Solicitare%20acces%20JAC%20-%20Closed%20Beta" class="hidden rounded-full bg-cyan-400 px-4 py-2 text-sm font-semibold text-slate-950 shadow-glow transition hover:bg-cyan-300 sm:inline-flex">Solicită Acces</a>
-      <button id="menuToggle" type="button" class="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-slate-200 lg:hidden" aria-expanded="false" aria-controls="mobileMenu" aria-label="Deschide meniul">
-        <i class="ph-bold ph-list text-xl" aria-hidden="true"></i>
-      </button>
+    <div class="actions">
+      <span class="badge"><span class="dot" aria-hidden="true"></span><span class="long">Testare închisă</span><span class="short">Testare</span></span>
+      <a class="btn btn-primary" href="mailto:vladticu100@gmail.com?subject=Solicitare%20acces%20JAC%20-%20Closed%20Beta">Solicită acces</a>
+      <button id="menuToggle" class="menu-btn" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Deschide meniul">☰</button>
     </div>
   </div>
-  <div id="mobileMenu" class="hidden border-t border-white/10 bg-ink/95 lg:hidden">
-    <nav class="mx-auto flex max-w-6xl flex-col px-4 py-3 text-sm font-medium sm:px-6" aria-label="Meniu mobil">
-      <a href="#shiftr" class="rounded-xl px-3 py-3 text-slate-200 hover:bg-white/5">Shiftr</a>
-      <a href="#legislatie" class="rounded-xl px-3 py-3 text-slate-200 hover:bg-white/5">Legislație</a>
-      <a href="#echipaj" class="rounded-xl px-3 py-3 text-slate-200 hover:bg-white/5">Echipaj</a>
-      <a href="#aplica" class="rounded-xl px-3 py-3 text-slate-200 hover:bg-white/5">Solicită acces</a>
-      <a href="legal/terms.html" class="rounded-xl px-3 py-3 text-slate-400 hover:bg-white/5 hover:text-white">Termeni</a>
-      <a href="legal/privacy.html" class="rounded-xl px-3 py-3 text-slate-400 hover:bg-white/5 hover:text-white">Confidențialitate</a>
+  <div id="mobileMenu" class="mobile">
+    <nav class="wrap" aria-label="Meniu mobil">
+      <a href="#aplicatia">Aplicația</a>
+      <a href="#functionalitati">Funcționalități</a>
+      <a href="#shiftr">Shiftr</a>
+      <a href="#echipaj">JAC Crew</a>
+      <a href="#aplica">Acces</a>
     </nav>
   </div>
 </header>
-
 <main id="continut">
-
-  <section id="top" class="relative overflow-hidden">
-    <div class="pointer-events-none absolute inset-0 grid-fade"></div>
-    <div class="pointer-events-none absolute -left-24 top-10 h-[140%] w-24 rotate-[18deg] bg-gradient-to-b from-transparent via-cyan-400/15 to-transparent blur-2xl"></div>
-    <div class="pointer-events-none absolute -right-16 top-0 h-[120%] w-24 -rotate-[14deg] bg-gradient-to-b from-transparent via-blue-500/20 to-transparent blur-2xl"></div>
-
-    <div class="relative mx-auto grid max-w-6xl items-center gap-10 px-4 pb-16 pt-14 sm:px-6 lg:grid-cols-12 lg:gap-6 lg:pb-20 lg:pt-20">
-      <div class="lg:col-span-5">
-        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300">Poliție · Jandarmerie · Structuri militare</p>
-        <h1 class="mt-4 text-4xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-[3.35rem]">
-          Claritate în lege.<br>
-          <span class="bg-gradient-to-r from-cyan-200 via-cyan-400 to-sky-500 bg-clip-text text-transparent">Siguranță în decizie.</span>
-        </h1>
-        <p class="mt-5 max-w-xl text-base leading-relaxed text-slate-300 sm:text-lg">
-          Ghidul legislativ complet offline și planificatorul inteligent de ture. Construit special pentru structurile operative din România.
-        </p>
-        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-          <a href="mailto:vladticu100@gmail.com?subject=Solicitare%20acces%20JAC%20-%20Closed%20Beta" class="inline-flex items-center justify-center gap-2 rounded-full bg-cyan-400 px-6 py-3.5 text-sm font-bold text-slate-950 shadow-glow transition hover:bg-cyan-300">
-            Solicită Acces în Closed Beta
-            <i class="ph-bold ph-arrow-right" aria-hidden="true"></i>
-          </a>
-          <a href="#echipaj" class="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white transition hover:border-cyan-300/40 hover:bg-white/10">
-            Alătură-te Echipajului
-          </a>
+  <section id="top" class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="wrap hero-grid">
+      <div class="reveal">
+        <p class="eyebrow">LEGISLAȚIE • ORGANIZARE • CONSULTARE OFFLINE</p>
+        <h1>Claritate în lege. Siguranță în decizie.</h1>
+        <p class="lede">JAC reunește informații juridice pentru consultare rapidă și instrumente practice pentru organizarea activității. Consultă baza locală de legislație și gestionează-ți turele într-o singură aplicație.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="mailto:vladticu100@gmail.com?subject=Solicitare%20acces%20JAC%20-%20Closed%20Beta">Solicită Acces în Closed Beta</a>
+          <a class="btn btn-ghost" href="#functionalitati">Descoperă funcționalitățile</a>
         </div>
-        <p class="mt-4 max-w-md text-sm leading-relaxed text-slate-400">
-          Testare închisă. Accesul se acordă pe bază de aplicație — nu există descărcare publică.
-        </p>
+        <p class="note">Creată pentru acces rapid la informații și organizare practică.</p>
+        <p class="note">Testare închisă. Aplicația nu este disponibilă pentru descărcare publică. Accesul se acordă pe bază de solicitare.</p>
       </div>
-
-      <div class="relative lg:col-span-7">
-        <div class="pointer-events-none absolute inset-8 -z-10 rounded-full bg-cyan-400/15 blur-3xl"></div>
-        <img src="assets/hero-dual.png" alt="Două telefoane cu aplicația JAC: ghidul legislativ pe ecranul principal și calendarul de ture Shiftr" width="1280" height="720" class="relative w-full" fetchpriority="high">
-      </div>
+      <figure>
+        <picture>
+  <source srcset="assets/landing/hero-dual.webp" type="image/webp">
+  <img src="assets/hero-dual.png" alt="Două telefoane care afișează interfața JAC și calendarul de ture Shiftr." width="1280" height="720" class="hero-shot" fetchpriority="high" decoding="async">
+</picture>
+        <figcaption>JAC reunește consultarea informațiilor juridice și organizarea turelor într-o singură aplicație.</figcaption>
+      </figure>
     </div>
   </section>
 
-  <section class="border-y border-white/10 bg-white/[0.02]" aria-label="Date din aplicație">
-    <div class="mx-auto grid max-w-6xl gap-px bg-white/10 sm:grid-cols-3">
-      <div class="bg-ink px-6 py-6">
-        <div class="text-2xl font-extrabold tracking-tight text-white">1.691</div>
-        <div class="mt-1 text-sm text-slate-400">fapte în baza locală, pe telefon</div>
-      </div>
-      <div class="bg-ink px-6 py-6">
-        <div class="text-2xl font-extrabold tracking-tight text-white">100% offline</div>
-        <div class="mt-1 text-sm text-slate-400">căutare și lectură fără semnal, în teren</div>
-      </div>
-      <div class="bg-ink px-6 py-6">
-        <div class="text-2xl font-extrabold tracking-tight text-white">Shiftr</div>
-        <div class="mt-1 text-sm text-slate-400">normă legală, ore lucrate, ore suplimentare</div>
-      </div>
+  <section id="aplicatia" class="section" aria-label="Repere">
+    <div class="wrap highlights">
+      <article class="highlight">
+        <h2>1.691 de articole</h2>
+        <p>Consultă rapid articolele disponibile în baza locală a aplicației.</p>
+      </article>
+      <article class="highlight">
+        <h2>Consultare offline</h2>
+        <p>Accesează conținutul juridic disponibil local, inclusiv fără conexiune la internet.</p>
+      </article>
+      <article class="highlight">
+        <h2>Shiftr</h2>
+        <p>Organizează turele, urmărește orele lucrate și consultă sumarul programului.</p>
+      </article>
     </div>
   </section>
 
-  <section id="shiftr" class="relative py-16 sm:py-24">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6">
-      <div class="max-w-2xl">
-        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300">Planificatorul de ture</p>
-        <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">Organizează-ți turele. Controlează-ți timpul.</h2>
-        <p class="mt-4 text-base leading-relaxed text-slate-400 sm:text-lg">
-          Înainte de tură știi programul. La final de lună știi orele. Shiftr pune schimbul pe calendar și calculează norma legală față de orele lucrate — ca să nu le numeri tu după serviciu.
-        </p>
-      </div>
-
-      <div class="mt-10 grid gap-4 lg:grid-cols-12">
-        <article class="bento overflow-hidden rounded-3xl border border-white/10 bg-panel lg:col-span-7">
-          <div class="grid items-center gap-2 lg:grid-cols-2">
-            <div class="p-6 sm:p-8">
-              <div class="inline-flex items-center gap-2 text-sm font-semibold text-cyan-300">
-                <i class="ph ph-calendar-blank text-lg" aria-hidden="true"></i>
-                Utilizare zilnică
-              </div>
-              <ul class="mt-5 space-y-4 text-sm leading-relaxed">
-                <li class="flex gap-3">
-                  <i class="ph-bold ph-clock mt-0.5 text-cyan-300" aria-hidden="true"></i>
-                  <span><strong class="text-white">Șabloane Z, N și L.</strong> Zi, noapte, liber — plus schimburile 1, 2 și 3, direct pe calendar.</span>
-                </li>
-                <li class="flex gap-3">
-                  <i class="ph-bold ph-scales mt-0.5 text-cyan-300" aria-hidden="true"></i>
-                  <span><strong class="text-white">Norma, nu estimarea.</strong> Ore lucrate față de norma legală și orele suplimentare, calculate în aplicație.</span>
-                </li>
-                <li class="flex gap-3">
-                  <i class="ph-bold ph-file-pdf mt-0.5 text-cyan-300" aria-hidden="true"></i>
-                  <span><strong class="text-white">Export PDF.</strong> Programul de ture, scos din aplicație când trebuie predat.</span>
-                </li>
-                <li class="flex gap-3">
-                  <i class="ph-bold ph-device-mobile mt-0.5 text-cyan-300" aria-hidden="true"></i>
-                  <span><strong class="text-white">Pe telefon.</strong> Turele, orele și șabloanele rămân stocate local, pe dispozitiv.</span>
-                </li>
-              </ul>
-              <div class="mt-6 flex flex-wrap gap-2 text-[11px] font-semibold uppercase tracking-wide">
-                <span class="rounded-full bg-blue-500/15 px-2.5 py-1 text-blue-300">Concediu</span>
-                <span class="rounded-full bg-teal-400/15 px-2.5 py-1 text-teal-300">Recuperare</span>
-                <span class="rounded-full bg-emerald-400/15 px-2.5 py-1 text-emerald-300">Schimbul 1</span>
-                <span class="rounded-full bg-orange-400/15 px-2.5 py-1 text-orange-300">Schimbul 2</span>
-                <span class="rounded-full bg-cyan-400/15 px-2.5 py-1 text-cyan-300">Liber</span>
-                <span class="rounded-full bg-lime-400/15 px-2.5 py-1 text-lime-300">Zi</span>
-                <span class="rounded-full bg-violet-400/15 px-2.5 py-1 text-violet-300">Noapte</span>
-                <span class="rounded-full bg-red-400/15 px-2.5 py-1 text-red-300">Schimbul 3</span>
-                <span class="rounded-full bg-rose-400/15 px-2.5 py-1 text-rose-200">Zonă școlară</span>
-              </div>
-            </div>
-            <div class="flex justify-center px-6 pb-8 lg:py-8 lg:pr-8">
-              <img src="assets/shiftr-bento.png" alt="Shiftr, octombrie 2026: calendar de ture și sumarul cu 198 de ore lucrate, 176 de ore normă legală și 22 de ore suplimentare" width="587" height="1280" class="shot w-full max-w-[280px] rounded-[1.75rem] border border-white/10 shadow-2xl" loading="lazy">
-            </div>
+  <section id="shiftr" class="section">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">ORGANIZAREA PROGRAMULUI</p>
+        <h2>Organizează-ți turele. Controlează-ți timpul.</h2>
+        <p class="lede">Planifică-ți programul de lucru, înregistrează turele și urmărește orele lucrate. Shiftr reunește calendarul și sumarul lunar într-o interfață ușor de consultat.</p>
+        <p class="note">Programul de ture pe care îl introduci în Shiftr este stocat local, pe dispozitiv.</p>
+        <div class="features">
+          <div class="feature">
+            <h3>Calendar de ture</h3>
+            <p>Vizualizează programul lunar și identifică rapid tipul fiecărei ture.</p>
           </div>
-        </article>
-
-        <div class="grid gap-4 lg:col-span-5">
-          <article class="bento rounded-3xl border border-white/10 bg-gradient-to-br from-cyan-400/10 to-panel p-6">
-            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300">Exemplu din aplicație · Octombrie 2026</p>
-            <div class="mt-4 grid grid-cols-3 gap-3">
-              <div>
-                <div class="text-2xl font-extrabold text-white sm:text-3xl">21</div>
-                <div class="mt-1 text-xs text-slate-400">ture</div>
-              </div>
-              <div>
-                <div class="text-2xl font-extrabold text-white sm:text-3xl">198h</div>
-                <div class="mt-1 text-xs text-slate-400">lucrate</div>
-              </div>
-              <div>
-                <div class="text-2xl font-extrabold text-cyan-300 sm:text-3xl">+22h</div>
-                <div class="mt-1 text-xs text-slate-400">suplimentare</div>
-              </div>
-            </div>
-            <p class="mt-4 text-sm leading-relaxed text-slate-300">
-              Normă legală: <strong class="text-white">176h</strong>. Formula din ecran: 22 zile lucrătoare × 8h − 0 sărbători legale în zile lucrătoare × 8h = 176h.
-            </p>
-            <p class="mt-2 text-xs text-slate-500">2 C/M în weekend (0h) · 8 Liber (0h)</p>
-          </article>
-
-          <article class="bento rounded-3xl border border-white/10 bg-panel p-6">
-            <div class="flex items-start justify-between gap-4">
-              <div>
-                <h3 class="text-lg font-bold text-white">Z / N / L</h3>
-                <p class="mt-2 text-sm leading-relaxed text-slate-400">Zi, noapte, liber. Șabloanele de bază ale turei, alături de schimburile marcate S2 și S3 pe calendar.</p>
-              </div>
-              <i class="ph ph-arrows-clockwise text-2xl text-cyan-300" aria-hidden="true"></i>
-            </div>
-          </article>
-
-          <article class="bento rounded-3xl border border-white/10 bg-panel p-6">
-            <div class="flex items-start justify-between gap-4">
-              <div>
-                <h3 class="text-lg font-bold text-white">Export PDF</h3>
-                <p class="mt-2 text-sm leading-relaxed text-slate-400">Programul lunar iese din telefon când trebuie atașat la un raport, nu reconstruit din memorie.</p>
-              </div>
-              <i class="ph ph-file-pdf text-2xl text-cyan-300" aria-hidden="true"></i>
-            </div>
-          </article>
+          <div class="feature">
+            <h3>Sumar lunar</h3>
+            <p>Consultă numărul de ture, orele lucrate, norma legală și diferența calculată de aplicație.</p>
+          </div>
+          <div class="feature">
+            <h3>Șabloane de ture</h3>
+            <p>Organizează-ți programul folosind șabloanele disponibile în aplicație.</p>
+          </div>
+          <div class="feature">
+            <h3>Export și instrumente suplimentare</h3>
+            <p>Descoperă funcțiile de export și celelalte instrumente disponibile în Shiftr.</p>
+          </div>
         </div>
       </div>
+      <figure>
+<picture>
+  <source srcset="assets/landing/photo_5971895843633697205_y.webp" type="image/webp">
+  <img src="assets/landing/photo_5971895843633697205_y.jpg" alt="Calendar Shiftr pentru octombrie 2026, cu ture zilnice și sumarul lunar al orelor lucrate." width="587" height="1280" class="phone" loading="lazy" decoding="async">
+</picture>
+  <figcaption>Calendarul lunar Shiftr, cu tipurile de ture, intervalele orare și sumarul orelor lucrate.</figcaption>
+</figure>
+    </div>
+    <div class="wrap pair" style="margin-top:3rem">
+      <figure>
+<picture>
+  <source srcset="assets/landing/photo_5971895843633697207_y.webp" type="image/webp">
+  <img src="assets/landing/photo_5971895843633697207_y.jpg" alt="Sumar lunar Shiftr cu numărul de ture, orele lucrate, norma legală și orele suplimentare calculate." width="587" height="1280" class="phone" loading="lazy" decoding="async">
+</picture>
+  <figcaption>Sumarul lunar prezintă orele lucrate, norma legală calculată și diferența dintre acestea.</figcaption>
+</figure>
+      <p class="note">Valorile din capturi sunt un exemplu de program introdus în aplicație și depind de regulile de calcul ale aplicației. Nu sunt un rezultat valabil pentru orice utilizator.</p>
     </div>
   </section>
 
-  <section id="legislatie" class="border-t border-white/10 bg-white/[0.02] py-16 sm:py-24">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6">
-      <div class="max-w-3xl">
-        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300">Modulul legislativ</p>
-        <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">1.691 de articole la un tap distanță. 100% Offline.</h2>
-        <p class="mt-4 text-base leading-relaxed text-slate-400 sm:text-lg">
-          Baza stă pe telefon. Cauți instant, pui legile în ordinea în care lucrezi și deschizi fișa — încadrare, sancțiune, atenționări speciale — fără semnal.
-        </p>
-      </div>
-
-      <div class="mt-10 grid gap-4 lg:grid-cols-12">
-        <article class="bento rounded-3xl border border-white/10 bg-panel p-6 sm:p-8 lg:col-span-7">
-          <ul class="grid gap-4 sm:grid-cols-2">
-            <li class="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-              <i class="ph ph-magnifying-glass text-xl text-cyan-300" aria-hidden="true"></i>
-              <h3 class="mt-3 font-bold text-white">Căutare instantanee</h3>
-              <p class="mt-1 text-sm leading-relaxed text-slate-400">Caută după cuvinte cheie (ex: „consumul”). Vezi imediat natura faptei (contravenție/infracțiune), cuantumul amenzii și încadrarea juridică exactă (Prevăzut de / Sancționat de), fără să răsfoiești manual codurile.</p>
-            </li>
-            <li class="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-              <i class="ph ph-arrows-down-up text-xl text-cyan-300" aria-hidden="true"></i>
-              <h3 class="mt-3 font-bold text-white">Reordonează legile</h3>
-              <p class="mt-1 text-sm leading-relaxed text-slate-400">Personalizează-ți fluxul operativ. Trage și fixează legile pe care le aplici cel mai des (ex: Legea 61/1991, Legea 4/2008, Regimul Drogurilor) în capul listei pentru acces rapid.</p>
-            </li>
-            <li class="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-              <i class="ph ph-warning text-xl text-cyan-300" aria-hidden="true"></i>
-              <h3 class="mt-3 font-bold text-white">Atenționări Speciale</h3>
-              <p class="mt-1 text-sm leading-relaxed text-slate-400">Fișele faptelor includ module de atenționări operative. Primești clarificări vitale direct pe fișă, cum ar fi reținerea permisului cu dovadă înlocuitoare, termene de predare sau condiții de majorare a suspendării.</p>
-            </li>
-            <li class="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-              <i class="ph ph-wifi-slash text-xl text-cyan-300" aria-hidden="true"></i>
-              <h3 class="mt-3 font-bold text-white">1.691 articole. 100% Offline.</h3>
-              <p class="mt-1 text-sm leading-relaxed text-slate-400">Baza de date conține 1.691 de articole din coduri și legi speciale și funcționează complet offline. Totul este stocat local, decizia ta în teren nu așteaptă după semnal.</p>
-            </li>
-          </ul>
-          <div class="mt-6">
-            <h3 class="font-bold text-white">Pachet legislativ structurat</h3>
-            <p class="mt-1 text-sm leading-relaxed text-slate-400">Secțiuni organizate operativ: Cod Rutier (sancțiuni, proceduri rutiere și valoarea punctului-amendă actualizată), Legislație Penală (infracțiuni, parte generală, procedură) și Legi Speciale.</p>
+  <section id="functionalitati" class="section">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">INFORMAȚII JURIDICE LA ÎNDEMÂNĂ</p>
+        <h2>Informațiile relevante, mai ușor de găsit.</h2>
+        <p class="lede">Caută în conținutul juridic disponibil în aplicație și navighează între categorii, articole și acte normative. Salvează rezultatele utile pentru a reveni rapid la ele.</p>
+        <div class="features">
+          <div class="feature">
+            <h3>Căutare rapidă</h3>
+            <p>Introdu un termen sau o expresie și consultă rezultatele relevante din baza disponibilă.</p>
           </div>
-        </article>
-
-        <article class="bento flex items-center justify-center overflow-hidden rounded-3xl border border-white/10 bg-panel p-6 lg:col-span-5">
-          <img src="assets/jac-reorder.png" alt="Ecranul Reordonează legile: 1.691 articole, listă cu ordine personalizată, butoane Renunță, Implicit și Salvează" width="587" height="1280" class="shot w-full max-w-[280px] rounded-[1.75rem] border border-white/10 shadow-2xl" loading="lazy">
-        </article>
-
-        <article class="bento overflow-hidden rounded-3xl border border-white/10 bg-panel lg:col-span-4">
-          <img src="assets/search-results.png" alt="Căutare „consumul”: 10 rezultate, cu sancțiunea la vedere — consumul de băuturi alcoolice, amendă 500–1.500 lei, și incidența pe baze sportive, amendă 100–1.500 lei" width="587" height="1280" class="shot h-72 w-full object-cover object-top sm:h-80" loading="lazy">
-          <div class="p-5">
-            <h3 class="font-bold text-white">Căutare · „consumul”</h3>
-            <p class="mt-2 text-sm leading-relaxed text-slate-400">Rezultate cu sancțiunea la vedere. Exemplu din aplicație: consumul de băuturi alcoolice (Legea 61/1991, amendă 500–1.500 lei) sau incidența pe baze sportive (Legea 4/2008, amendă 100–1.500 lei).</p>
+          <div class="feature">
+            <h3>Conținut organizat</h3>
+            <p>Navighează prin categoriile și modulele juridice disponibile în aplicație.</p>
           </div>
-        </article>
-
-        <article class="bento overflow-hidden rounded-3xl border border-white/10 bg-panel lg:col-span-4">
-          <img src="assets/favorite-card.png" alt="Fișă salvată pentru tulburarea ordinii și liniștii publice, Legea 61/1991, cu Atenționări speciale: armă, sub 18, sub 16, sub 14, zonă școlară, militar și agent" width="587" height="1280" class="shot h-72 w-full object-cover object-top sm:h-80" loading="lazy">
-          <div class="p-5">
-            <h3 class="font-bold text-white">Fapta salvată</h3>
-            <p class="mt-2 text-sm leading-relaxed text-slate-400">Tulburarea ordinii și liniștii publice, Legea 61/1991. Pe fișă: armă, sub 18, sub 16, sub 14 ani, zonă școlară, militar, agent.</p>
+          <div class="feature">
+            <h3>Favorite</h3>
+            <p>Păstrează la îndemână informațiile pe care vrei să le consulți din nou.</p>
           </div>
-        </article>
-
-        <article class="bento overflow-hidden rounded-3xl border border-white/10 bg-panel lg:col-span-4">
-          <img src="assets/cod-rutier.png" alt="Cod rutier: 2 module, 75 articole, punct-amendă 216,25 lei — Amenzi, sancțiuni și Legislație circulație" width="587" height="1280" class="shot h-72 w-full object-cover object-top sm:h-80" loading="lazy">
-        </article>
-
-        <article class="bento overflow-hidden rounded-3xl border border-white/10 bg-panel lg:col-span-6">
-          <img src="assets/legislatie-integrala.png" alt="Legislație integrală: Codul Penal 446 art., Codul de procedură penală 602 art., Codul Silvic și Codul Aerian" width="587" height="1280" class="shot h-64 w-full object-cover object-top sm:h-80" loading="lazy">
-        </article>
-
-        <article class="bento overflow-hidden rounded-3xl border border-white/10 bg-panel lg:col-span-6">
-          <img src="assets/legislatie-penala.png" alt="Legislație penală: 3 module, 679 articole — Codul Penal, procedură penală și infracțiuni" width="587" height="1280" class="shot h-64 w-full object-cover object-top sm:h-80" loading="lazy">
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="echipaj" class="relative py-16 sm:py-24">
-    <div class="pointer-events-none absolute inset-x-0 top-0 h-64 bg-gradient-to-b from-cyan-400/10 to-transparent"></div>
-    <div class="relative mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-12">
-      <div class="order-2 flex justify-center lg:order-1 lg:col-span-5">
-        <img src="assets/crew-pro.png" alt="Ecranul Echipajul tău JAC Crew: cod de invitație, progres 3 din 5 membri și bonusul de 60 de zile PRO după lansare" width="587" height="1280" class="w-full max-w-[300px] rounded-[1.75rem] border border-white/10 shadow-2xl shadow-cyan-500/10" loading="lazy">
-      </div>
-      <div class="order-1 lg:order-2 lg:col-span-7">
-        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300">JAC Crew</p>
-        <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">Formează un Echipaj. Deblochează modul PRO.</h2>
-        <p class="mt-4 text-base leading-relaxed text-slate-300 sm:text-lg">
-          Aplicația este gratuită. Invită până la 4 colegi și formați un JAC Crew de 5. În Closed Beta, PRO este gratuit pentru membri: statistici avansate și exporturi.
-        </p>
-        <p class="mt-3 text-base leading-relaxed text-slate-400">
-          În aplicație, bonusul de echipaj este afișat explicit: toți membrii au 60 de zile PRO gratuit după lansare. Ecranul arată codul de invitație și câți oameni sunt deja în echipaj, din 5.
-        </p>
-
-        <ol class="mt-8 grid gap-3 sm:grid-cols-2">
-          <li class="rounded-2xl border border-white/10 bg-panel p-4">
-            <span class="text-xs font-bold uppercase tracking-wider text-cyan-300">01</span>
-            <p class="mt-2 text-sm font-semibold text-white">Aplici pentru Closed Beta</p>
-          </li>
-          <li class="rounded-2xl border border-white/10 bg-panel p-4">
-            <span class="text-xs font-bold uppercase tracking-wider text-cyan-300">02</span>
-            <p class="mt-2 text-sm font-semibold text-white">Inviți până la 4 colegi</p>
-          </li>
-          <li class="rounded-2xl border border-white/10 bg-panel p-4">
-            <span class="text-xs font-bold uppercase tracking-wider text-cyan-300">03</span>
-            <p class="mt-2 text-sm font-semibold text-white">PRO gratuit pe durata Beta</p>
-          </li>
-          <li class="rounded-2xl border border-cyan-400/30 bg-cyan-400/10 p-4">
-            <span class="text-xs font-bold uppercase tracking-wider text-cyan-200">04</span>
-            <p class="mt-2 text-sm font-semibold text-white">60 de zile PRO după lansare</p>
-          </li>
-        </ol>
-
-        <a href="mailto:vladticu100@gmail.com?subject=Alaturare%20JAC%20Crew%20-%20Closed%20Beta" class="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-cyan-400 px-6 py-3.5 text-sm font-bold text-slate-950 shadow-glow transition hover:bg-cyan-300">
-          <i class="ph-bold ph-users-three" aria-hidden="true"></i>
-          Alătură-te Echipajului
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section id="aplica" class="border-t border-white/10 bg-panel py-16 sm:py-24">
-    <div class="mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:items-start">
-      <div class="lg:col-span-5">
-        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300">Closed Beta</p>
-        <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">Aplică pentru Acces</h2>
-        <p class="mt-4 text-base leading-relaxed text-slate-400">
-          JAC este în testare închisă. Spune cine ești și din ce structură vii. Mesajul se deschide în aplicația ta de e-mail, către <a class="font-semibold text-cyan-300 underline decoration-cyan-400/40 underline-offset-4 hover:text-cyan-200" href="mailto:vladticu100@gmail.com">vladticu100@gmail.com</a>. Nu există server în spatele formularului.
-        </p>
-        <dl class="mt-8 space-y-4 text-sm">
-          <div class="flex gap-3">
-            <i class="ph ph-shield-check mt-0.5 text-lg text-cyan-300" aria-hidden="true"></i>
-            <div>
-              <dt class="font-semibold text-white">Instrument de teren, nu portal instituțional</dt>
-              <dd class="mt-1 text-slate-400">Independent. Nu reprezintă un organ al statului român.</dd>
-            </div>
+          <div class="feature">
+            <h3>Legislație integrală</h3>
+            <p>Consultă actele normative disponibile în format integral și verifică sursa oficială atunci când ai nevoie de textul de referință.</p>
           </div>
-          <div class="flex gap-3">
-            <i class="ph ph-wifi-slash mt-0.5 text-lg text-cyan-300" aria-hidden="true"></i>
-            <div>
-              <dt class="font-semibold text-white">Legislația, offline</dt>
-              <dd class="mt-1 text-slate-400">1.691 de fapte în baza locală. Semnalul nu e o condiție.</dd>
-            </div>
-          </div>
-        </dl>
-      </div>
-
-      <form id="applyForm" class="rounded-3xl border border-white/10 bg-ink p-6 shadow-glow sm:p-8 lg:col-span-7" novalidate>
-        <div class="grid gap-4 sm:grid-cols-2">
-          <label class="block text-sm">
-            <span class="font-medium text-slate-200">Nume</span>
-            <input name="nume" required autocomplete="name" class="mt-1.5 w-full rounded-xl border border-white/10 bg-white/5 px-3.5 py-3 text-white outline-none ring-cyan-400/0 transition placeholder:text-slate-500 focus:border-cyan-400/50 focus:ring-2" placeholder="Nume și prenume">
-          </label>
-          <label class="block text-sm">
-            <span class="font-medium text-slate-200">E-mail</span>
-            <input name="email" type="email" required autocomplete="email" class="mt-1.5 w-full rounded-xl border border-white/10 bg-white/5 px-3.5 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-400/50 focus:ring-2 focus:ring-cyan-400/30" placeholder="adresa@exemplu.ro">
-          </label>
-          <label class="block text-sm sm:col-span-2">
-            <span class="font-medium text-slate-200">Structură</span>
-            <select name="structura" required class="mt-1.5 w-full rounded-xl border border-white/10 bg-slate-950 px-3.5 py-3 text-white outline-none focus:border-cyan-400/50 focus:ring-2 focus:ring-cyan-400/30">
-              <option value="" disabled selected>Alege structura</option>
-              <option>Poliție</option>
-              <option>Jandarmerie</option>
-              <option>Structură militară</option>
-              <option>Altă structură operativă</option>
-            </select>
-          </label>
-          <label class="block text-sm sm:col-span-2">
-            <span class="font-medium text-slate-200">Funcție <span class="font-normal text-slate-500">(opțional)</span></span>
-            <input name="functie" class="mt-1.5 w-full rounded-xl border border-white/10 bg-white/5 px-3.5 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-400/50 focus:ring-2 focus:ring-cyan-400/30" placeholder="Ex. agent, subofițer, cadru militar">
-          </label>
-          <label class="block text-sm sm:col-span-2">
-            <span class="font-medium text-slate-200">De ce vrei acces <span class="font-normal text-slate-500">(opțional)</span></span>
-            <textarea name="mesaj" rows="4" class="mt-1.5 w-full resize-y rounded-xl border border-white/10 bg-white/5 px-3.5 py-3 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-400/50 focus:ring-2 focus:ring-cyan-400/30" placeholder="Structura, județul, dacă vii singur sau cu un echipaj."></textarea>
-          </label>
         </div>
-        <button type="submit" class="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-cyan-400 px-6 py-3.5 text-sm font-bold text-slate-950 shadow-glow transition hover:bg-cyan-300 sm:w-auto">
-          <i class="ph-bold ph-paper-plane-tilt" aria-hidden="true"></i>
-          Aplică pentru Acces
-        </button>
-        <p id="applyError" class="mt-3 hidden text-sm text-rose-300" role="alert"></p>
-        <p class="mt-3 text-xs leading-relaxed text-slate-500">Subiect: „Solicitare acces JAC - Closed Beta”. Dacă e-mailul nu se deschide, scrie direct la vladticu100@gmail.com.</p>
-      </form>
+      </div>
+      <figure>
+<picture>
+  <source srcset="assets/landing/photo_5971895843633697206_y.webp" type="image/webp">
+  <img src="assets/landing/photo_5971895843633697206_y.jpg" alt="Ecranul principal JAC, cu bara de căutare, categoriile juridice și secțiunea de articole consultate recent." width="587" height="1280" class="phone" loading="lazy" decoding="async">
+</picture>
+  <figcaption>Ecranul principal JAC oferă acces rapid la căutare, categorii juridice, legislație integrală și articole consultate recent.</figcaption>
+</figure>
+    </div>
+    <div class="wrap stack">
+      <div class="pair">
+        <div class="feature">
+          <h3>Căutare rapidă</h3>
+          <p>Introdu un termen sau o expresie și consultă rezultatele relevante din baza disponibilă.</p>
+        </div>
+        <figure>
+<picture>
+  <source srcset="assets/landing/photo_5971895843633697214_y.webp" type="image/webp">
+  <img src="assets/landing/photo_5971895843633697214_y.jpg" alt="Ecran JAC cu rezultate pentru căutarea «consumul», incluzând articole din legislația contravențională." width="587" height="1280" class="phone" loading="lazy" decoding="async">
+</picture>
+  <figcaption>Căutarea afișează rezultate juridice relevante pentru termenul introdus, inclusiv actul normativ și articolul asociat.</figcaption>
+</figure>
+      </div>
+      <div class="pair flip">
+        <div class="feature">
+          <h3>Favorite</h3>
+          <p>Păstrează la îndemână informațiile pe care vrei să le consulți din nou.</p>
+        </div>
+        <figure>
+<picture>
+  <source srcset="assets/landing/photo_5971895843633697212_y.webp" type="image/webp">
+  <img src="assets/landing/photo_5971895843633697212_y.jpg" alt="Ecranul Favorite din JAC, cu un rezultat juridic salvat pentru consultare ulterioară." width="587" height="1280" class="phone" loading="lazy" decoding="async">
+</picture>
+  <figcaption>Salvează informațiile relevante și revino la ele din secțiunea Favorite.</figcaption>
+</figure>
+      </div>
+      <div>
+        <h3>Conținut organizat</h3>
+        <p>Navighează prin categoriile și modulele juridice disponibile în aplicație.</p>
+        <div class="trio">
+          <figure>
+<picture>
+  <source srcset="assets/landing/photo_5971895843633697210_y.webp" type="image/webp">
+  <img src="assets/landing/photo_5971895843633697210_y.jpg" alt="Ecran JAC cu modulele de legislație penală și procedură penală." width="587" height="1280" class="phone" loading="lazy" decoding="async">
+</picture>
+  <figcaption>Navighează prin modulele disponibile pentru legislație penală și procedură penală.</figcaption>
+</figure>
+          <figure>
+<picture>
+  <source srcset="assets/landing/photo_5971895843633697211_y.webp" type="image/webp">
+  <img src="assets/landing/photo_5971895843633697211_y.jpg" alt="Ecran JAC pentru sancțiuni rutiere, proceduri rutiere și informații despre punctul-amendă." width="587" height="1280" class="phone" loading="lazy" decoding="async">
+</picture>
+  <figcaption>Consultă modulele dedicate sancțiunilor și procedurilor rutiere.</figcaption>
+</figure>
+          <figure>
+<picture>
+  <source srcset="assets/landing/photo_5971895843633697209_y.webp" type="image/webp">
+  <img src="assets/landing/photo_5971895843633697209_y.jpg" alt="Ecran JAC pentru reordonarea modulelor juridice." width="587" height="1280" class="phone" loading="lazy" decoding="async">
+</picture>
+  <figcaption>Personalizează ordinea modulelor juridice pentru a ajunge mai repede la cele pe care le folosești frecvent.</figcaption>
+</figure>
+        </div>
+      </div>
     </div>
   </section>
+
+  <section id="echipaj" class="section">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">COLABORARE</p>
+        <h2>Coordonare mai simplă cu JAC Crew.</h2>
+        <p class="lede">Funcțiile JAC Crew disponibile în aplicație îți permit să gestionezi echipa și să folosești instrumentele de colaborare oferite de modul.</p>
+        <p class="note">Gestionarea echipajului ține de contul JAC și de funcțiile online ale aplicației. Este separată de consultarea offline a bazei locale.</p>
+        <ul class="labels">
+          <li>Invită colegi</li>
+          <li>Gestionează membrii echipei</li>
+          <li>Consultă funcțiile disponibile în modul</li>
+        </ul>
+      </div>
+      <figure>
+        <picture>
+  <source srcset="assets/landing/jac-crew-masked.webp" type="image/webp">
+  <img src="assets/landing/jac-crew-masked.jpg" alt="Ecranul JAC Crew pentru gestionarea echipei și a membrilor." width="587" height="1280" class="phone" loading="lazy" decoding="async">
+</picture>
+        <figcaption>JAC Crew oferă instrumente pentru gestionarea membrilor unei echipe și funcțiile de colaborare disponibile.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="transparenta" class="section">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">TRANSPARENȚĂ</p>
+        <h2>Informația juridică trebuie verificată.</h2>
+        <p class="lede">JAC facilitează consultarea conținutului disponibil în aplicație. Pentru aplicarea unei norme într-o situație concretă, verifică forma oficială și actualizată a actului normativ.</p>
+        <p class="callout">JAC este o aplicație independentă și nu reprezintă o instituție publică. Disponibilitatea locală a conținutului nu garantează că acesta reflectă automat toate modificările legislative ulterioare.</p>
+        <p class="note"><a href="https://legislatie.just.ro/" target="_blank" rel="noopener noreferrer">Consultă Portalul Legislativ oficial</a></p>
+      </div>
+      <figure>
+<picture>
+  <source srcset="assets/landing/photo_5971895843633697213_y.webp" type="image/webp">
+  <img src="assets/landing/photo_5971895843633697213_y.jpg" alt="Ecran JAC cu lista codurilor și actelor normative disponibile în modulul Legislație integrală." width="587" height="1280" class="phone" loading="lazy" decoding="async">
+</picture>
+  <figcaption>Accesează actele normative disponibile în format integral, organizate pe categorii.</figcaption>
+</figure>
+    </div>
+  </section>
+
+  <section id="descarca" class="section final">
+    <div class="wrap">
+      <p class="eyebrow">JAC • INFORMAȚII ȘI ORGANIZARE</p>
+      <h2>Mai multă claritate. Mai puțin timp pierdut.</h2>
+      <p class="lede">Descoperă instrumentele JAC pentru consultarea informațiilor juridice și organizarea programului de lucru.</p>
+      <div class="cta-row"><a class="btn btn-primary" href="#aplica">Solicită Acces în Closed Beta</a></div>
+    </div>
+  </section>
+  
+    <section id="aplica" class="section">
+      <div class="wrap">
+        <p class="eyebrow">Testare închisă</p>
+        <h2>Solicită acces</h2>
+        <p class="lede">JAC este în testare închisă și nu este disponibil pentru descărcare publică. Spune cine ești și din ce structură vii. Mesajul se deschide în aplicația ta de e-mail, către <a href="mailto:vladticu100@gmail.com">vladticu100@gmail.com</a>. Nu există server în spatele formularului.</p>
+        <form id="applyForm" class="access" novalidate>
+          <div class="form-grid">
+            <label>
+              <span>Nume</span>
+              <input name="nume" required autocomplete="name" placeholder="Nume și prenume">
+            </label>
+            <label>
+              <span>E-mail</span>
+              <input name="email" type="email" required autocomplete="email" placeholder="adresa@exemplu.ro">
+            </label>
+            <label class="span-2">
+              <span>Structură</span>
+              <select name="structura" required>
+                <option value="" disabled selected>Alege structura</option>
+                <option>Poliție</option>
+                <option>Jandarmerie</option>
+                <option>Structură militară</option>
+                <option>Altă structură operativă</option>
+              </select>
+            </label>
+            <label class="span-2">
+              <span>Funcție <span style="font-weight:500;color:#8b9aaf">(opțional)</span></span>
+              <input name="functie" placeholder="Ex. agent, subofițer, cadru militar">
+            </label>
+            <label class="span-2">
+              <span>De ce vrei acces <span style="font-weight:500;color:#8b9aaf">(opțional)</span></span>
+              <textarea name="mesaj" rows="4" placeholder="Structura, județul, dacă vii singur sau cu un echipaj."></textarea>
+            </label>
+          </div>
+          <button class="btn btn-primary" type="submit">Solicită Acces în Closed Beta</button>
+          <p id="applyError" class="error hidden" role="alert"></p>
+          <p class="fine">Subiect: „Solicitare acces JAC - Closed Beta”. Dacă e-mailul nu se deschide, scrie direct la vladticu100@gmail.com.</p>
+        </form>
+      </div>
+    </section>
+
 </main>
-
-<footer class="border-t border-white/10 py-12">
-  <div class="mx-auto flex max-w-6xl flex-col gap-8 px-4 sm:px-6 md:flex-row md:items-start md:justify-between">
-    <div>
-      <a href="#top" class="inline-flex items-center gap-2.5">
-        <span class="inline-flex h-8 w-8 items-center justify-center overflow-hidden rounded-lg bg-white/5 ring-1 ring-white/10">
-          <img src="assets/logo.png" alt="" class="logo-crop h-8 w-8 max-w-none" width="1254" height="1254">
-        </span>
-        <span class="font-extrabold text-white">JAC</span>
-      </a>
-      <p class="mt-3 max-w-xs text-sm text-slate-500">Ghid Legislativ Operativ. Closed Beta.</p>
+<footer class="site">
+  <div class="wrap">
+    <div class="foot">
+      <a class="brand" href="#top"><span class="logo-frame"><picture>
+  <source srcset="assets/landing/logo.webp" type="image/webp">
+  <img src="assets/logo.png" alt="Logo JAC" width="1254" height="1254" class="logo-img" fetchpriority="high" decoding="async">
+</picture></span><span>JAC</span></a>
+      <nav aria-label="Documente și contact">
+        <a href="legal/terms.html">Termeni și condiții</a>
+        <a href="legal/privacy.html">Politica de confidențialitate</a>
+        <a href="legal/cookies.html">Cookie-uri</a>
+        <a href="legal/asistenta.html">Asistență</a>
+        <a href="mailto:vladticu100@gmail.com">Contact</a>
+        <a href="https://legislatie.just.ro/" target="_blank" rel="noopener noreferrer">Portalul Legislativ oficial</a>
+      </nav>
     </div>
-    <nav class="flex flex-wrap gap-x-6 gap-y-3 text-sm" aria-label="Documente și contact">
-      <a href="legal/terms.html" class="text-slate-300 transition hover:text-white">Termeni</a>
-      <a href="legal/privacy.html" class="text-slate-300 transition hover:text-white">Confidențialitate</a>
-      <a href="legal/cookies.html" class="text-slate-400 transition hover:text-white">Cookie-uri</a>
-      <a href="legal/asistenta.html" class="text-slate-400 transition hover:text-white">Asistență</a>
-      <a href="mailto:vladticu100@gmail.com" class="text-slate-300 transition hover:text-white">Contact: vladticu100@gmail.com</a>
-    </nav>
-  </div>
-  <div class="mx-auto mt-8 max-w-6xl px-4 sm:px-6">
-    <p class="max-w-3xl text-sm leading-relaxed text-slate-400">JAC este o aplicație independentă și nu reprezintă un organ oficial al statului român.</p>
-    <p class="mt-3 text-xs text-slate-600">© 2026 JAC</p>
+    <p class="disclaimer">JAC este o aplicație independentă, destinată consultării informațiilor juridice. Nu este afiliată și nu reprezintă Guvernul României, Ministerul Afacerilor Interne, Poliția Română sau Jandarmeria Română.</p>
+    <p class="copy">© <span id="an">2026</span> JAC</p>
   </div>
 </footer>
-
 <script>
-  (function () {
-    var btn = document.getElementById('menuToggle');
-    var menu = document.getElementById('mobileMenu');
-    if (btn && menu) {
-      btn.addEventListener('click', function () {
-        var open = menu.classList.toggle('hidden') === false;
-        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-        btn.setAttribute('aria-label', open ? 'Închide meniul' : 'Deschide meniul');
-        btn.innerHTML = open
-          ? '<i class="ph-bold ph-x text-xl" aria-hidden="true"></i>'
-          : '<i class="ph-bold ph-list text-xl" aria-hidden="true"></i>';
-      });
-      menu.querySelectorAll('a').forEach(function (a) {
-        a.addEventListener('click', function () {
-          menu.classList.add('hidden');
-          btn.setAttribute('aria-expanded', 'false');
-          btn.setAttribute('aria-label', 'Deschide meniul');
-          btn.innerHTML = '<i class="ph-bold ph-list text-xl" aria-hidden="true"></i>';
-        });
-      });
-    }
 
-    var form = document.getElementById('applyForm');
-    var error = document.getElementById('applyError');
-    if (form) {
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        var data = new FormData(form);
-        var nume = (data.get('nume') || '').toString().trim();
-        var email = (data.get('email') || '').toString().trim();
-        var structura = (data.get('structura') || '').toString().trim();
-        var functie = (data.get('functie') || '').toString().trim();
-        var mesaj = (data.get('mesaj') || '').toString().trim();
-        if (!nume || !email || !structura || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-          error.textContent = 'Completează numele, un e-mail valid și structura.';
-          error.classList.remove('hidden');
-          return;
-        }
-        error.classList.add('hidden');
-        var body = [
-          'Solicitare de acces în Closed Beta — JAC',
-          '',
-          'Nume: ' + nume,
-          'E-mail: ' + email,
-          'Structură: ' + structura,
-          'Funcție: ' + (functie || '—'),
-          '',
-          'Mesaj:',
-          mesaj || '—'
-        ].join('\n');
-        window.location.href = 'mailto:vladticu100@gmail.com?subject=' +
-          encodeURIComponent('Solicitare acces JAC - Closed Beta') +
-          '&body=' + encodeURIComponent(body);
+(function () {
+  var btn = document.getElementById('menuToggle');
+  var menu = document.getElementById('mobileMenu');
+  if (btn && menu) {
+    btn.addEventListener('click', function () {
+      var open = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.setAttribute('aria-label', open ? 'Închide meniul' : 'Deschide meniul');
+      btn.textContent = open ? '×' : '☰';
+    });
+    menu.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        menu.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.setAttribute('aria-label', 'Deschide meniul');
+        btn.textContent = '☰';
       });
-    }
+    });
+  }
+  var year = document.getElementById('an');
+  if (year) year.textContent = String(new Date().getFullYear());
 
-    var legalTargets = {
-      confidentialitate: 'legal/privacy.html',
-      privacy: 'legal/privacy.html',
-      termeni: 'legal/terms.html',
-      terms: 'legal/terms.html',
-      cookies: 'legal/cookies.html',
-      cookie: 'legal/cookies.html',
-      asistenta: 'legal/asistenta.html',
-      contact: 'legal/asistenta.html'
-    };
-    function routeLegal() {
-      var key = '';
-      try {
-        key = new URLSearchParams(window.location.search).get('legal') || '';
-      } catch (err) {}
-      if (!key && window.location.hash) key = window.location.hash.replace('#', '');
-      var dest = legalTargets[(key || '').toLowerCase()];
-      if (dest) window.location.replace(dest);
-    }
-    routeLegal();
-    window.addEventListener('hashchange', routeLegal);
-  })();
+  var form = document.getElementById('applyForm');
+  var error = document.getElementById('applyError');
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var data = new FormData(form);
+      var nume = (data.get('nume') || '').toString().trim();
+      var email = (data.get('email') || '').toString().trim();
+      var structura = (data.get('structura') || '').toString().trim();
+      var functie = (data.get('functie') || '').toString().trim();
+      var mesaj = (data.get('mesaj') || '').toString().trim();
+      if (!nume || !email || !structura || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        error.textContent = 'Completează numele, un e-mail valid și structura.';
+        error.classList.remove('hidden');
+        return;
+      }
+      error.classList.add('hidden');
+      var body = [
+        'Solicitare de acces în Closed Beta — JAC',
+        '',
+        'Nume: ' + nume,
+        'E-mail: ' + email,
+        'Structură: ' + structura,
+        'Funcție: ' + (functie || '—'),
+        '',
+        'Mesaj:',
+        mesaj || '—'
+      ].join('\n');
+      window.location.href = 'mailto:vladticu100@gmail.com?subject=' +
+        encodeURIComponent('Solicitare acces JAC - Closed Beta') +
+        '&body=' + encodeURIComponent(body);
+    });
+  }
+
+  var legalTargets = {
+    confidentialitate: 'legal/privacy.html',
+    privacy: 'legal/privacy.html',
+    termeni: 'legal/terms.html',
+    terms: 'legal/terms.html',
+    cookies: 'legal/cookies.html',
+    cookie: 'legal/cookies.html',
+    asistenta: 'legal/asistenta.html',
+    contact: 'legal/asistenta.html'
+  };
+  function routeLegal() {
+    var key = '';
+    try { key = new URLSearchParams(window.location.search).get('legal') || ''; } catch (err) {}
+    if (!key && window.location.hash) key = window.location.hash.replace('#', '');
+    var dest = legalTargets[(key || '').toLowerCase()];
+    if (dest) window.location.replace(dest);
+  }
+  routeLegal();
+  window.addEventListener('hashchange', routeLegal);
+})();
+
 </script>
 </body>
 </html>
