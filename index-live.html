@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JAC — Ghid Legislativ Operativ</title>
+<meta name="description" content="Descarcă JAC: ghidul legislativ complet offline și planificatorul inteligent de ture Shiftr. Pentru structurile operative din România.">
+<link rel="canonical" href="https://aplicatiajac.ro/index-live.html">
+<meta name="robots" content="index, follow">
+<meta name="author" content="JAC">
+<meta name="theme-color" content="#020617">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="JAC">
+<meta property="og:locale" content="ro_RO">
+<meta property="og:url" content="https://aplicatiajac.ro/">
+<meta property="og:title" content="JAC — Claritate în lege. Siguranță în decizie.">
+<meta property="og:description" content="Descarcă acum ghidul legislativ offline și planificatorul de ture Shiftr. Pentru structurile operative din România.">
+<meta property="og:image" content="https://aplicatiajac.ro/assets/hero-dual.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta property="og:image:alt" content="Două telefoane cu aplicația JAC: ghidul legislativ și calendarul de ture Shiftr">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="JAC — Claritate în lege. Siguranță în decizie.">
+<meta name="twitter:description" content="Descarcă acum ghidul legislativ offline și planificatorul de ture Shiftr.">
+<meta name="twitter:image" content="https://aplicatiajac.ro/assets/hero-dual.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "JAC - Ghid Legislativ Operativ",
+  "operatingSystem": "Android",
+  "applicationCategory": "ReferenceApplication",
+  "description": "Ghid legislativ complet offline și planificator de ture Shiftr, pentru structurile operative din România.",
+  "url": "https://aplicatiajac.ro/index-live.html",
+  "inLanguage": "ro-RO",
+  "downloadUrl": "https://play.google.com/store/apps/details?id=com.ticuv.jac",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "RON",
+    "availability": "https://schema.org/InStock",
+    "description": "Gratuit. Descărcare de pe Google Play."
+  }
+}
+</script>
+<link rel="icon" type="image/png" href="assets/logo.png">
+<link rel="apple-touch-icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/style.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: '#020617',
+          panel: '#0b1220'
+        },
+        fontFamily: {
+          sans: ['Inter', 'Roboto', 'system-ui', 'Segoe UI', 'sans-serif']
+        },
+        boxShadow: {
+          glow: '0 0 48px -12px rgba(34,211,238,0.55)'
+        }
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    background: #020617;
+  }
+  ::selection { background: rgba(34,211,238,.28); color: #fff; }
+  :focus-visible { outline: 2px solid #22d3ee; outline-offset: 3px; }
+  .grid-fade {
+    background-image:
+      radial-gradient(ellipse 90% 55% at 70% -10%, rgba(34,211,238,.16), transparent 55%),
+      radial-gradient(ellipse 50% 40% at 0% 20%, rgba(37,99,235,.18), transparent 50%),
+      linear-gradient(to right, rgba(148,163,184,.055) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(148,163,184,.055) 1px, transparent 1px);
+    background-size: auto, auto, 72px 72px, 72px 72px;
+  }
+  .logo-crop { object-fit: cover; object-position: center 46%; transform: scale(1.28); }
+  .bento {
+    transition: transform .35s cubic-bezier(.2,.7,.2,1), border-color .35s, box-shadow .35s;
+  }
+  .bento:hover {
+    transform: translateY(-3px);
+    border-color: rgba(34,211,238,.45);
+    box-shadow: 0 0 42px -14px rgba(34,211,238,.55);
+  }
+  .shot {
+    transition: transform .5s cubic-bezier(.2,.7,.2,1);
+  }
+  .bento:hover .shot { transform: scale(1.025); }
+  .play-badge { height: 4.75rem; width: auto; max-width: 100%; }
+  .play-badge-lg { height: 5.75rem; width: auto; max-width: 100%; }
+  @media (min-width: 640px) {
+    .play-badge { height: 6.25rem; }
+    .play-badge-lg { height: 7.75rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .bento, .shot, .ping { transition: none !important; animation: none !important; }
+    .bento:hover, .bento:hover .shot { transform: none; }
+  }
+</style>
+</head>
+<body class="bg-ink font-sans text-slate-300 antialiased">
+
+<a href="#continut" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[80] focus:rounded-lg focus:bg-cyan-400 focus:px-3 focus:py-2 focus:text-slate-950">Sari la conținut</a>
+
+<header class="sticky top-0 z-50 border-b border-white/10 bg-ink/80 backdrop-blur-xl">
+  <div class="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
+    <a href="#top" class="flex items-center gap-2.5">
+      <span class="inline-flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-white/5 ring-1 ring-white/10">
+        <img src="assets/logo.png" alt="" class="logo-crop h-9 w-9 max-w-none" width="1254" height="1254">
+      </span>
+      <span class="text-lg font-extrabold tracking-tight text-white">JAC</span>
+    </a>
+
+    <nav class="hidden items-center gap-7 text-sm font-medium text-slate-400 lg:flex" aria-label="Secțiuni">
+      <a href="#shiftr" class="transition hover:text-white">Shiftr</a>
+      <a href="#legislatie" class="transition hover:text-white">Legislație</a>
+      <a href="#echipaj" class="transition hover:text-white">Echipaj</a>
+      <a href="#descarca" class="transition hover:text-white">Descarcă</a>
+    </nav>
+
+    <div class="flex items-center gap-2 sm:gap-3">
+      <span class="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-emerald-300 sm:px-3 sm:text-xs">
+        <span class="relative flex h-2 w-2" aria-hidden="true">
+          <span class="ping absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-70"></span>
+          <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_12px_2px_rgba(52,211,153,.85)]"></span>
+        </span>
+        Disponibil acum
+      </span>
+      <button id="menuToggle" type="button" class="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-slate-200 lg:hidden" aria-expanded="false" aria-controls="mobileMenu" aria-label="Deschide meniul">
+        <i class="ph-bold ph-list text-xl" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+  <div id="mobileMenu" class="hidden border-t border-white/10 bg-ink/95 lg:hidden">
+    <nav class="mx-auto flex max-w-6xl flex-col px-4 py-3 text-sm font-medium sm:px-6" aria-label="Meniu mobil">
+      <a href="#shiftr" class="rounded-xl px-3 py-3 text-slate-200 hover:bg-white/5">Shiftr</a>
+      <a href="#legislatie" class="rounded-xl px-3 py-3 text-slate-200 hover:bg-white/5">Legislație</a>
+      <a href="#echipaj" class="rounded-xl px-3 py-3 text-slate-200 hover:bg-white/5">Echipaj</a>
+      <a href="#descarca" class="rounded-xl px-3 py-3 text-slate-200 hover:bg-white/5">Descarcă</a>
+      <a href="legal/terms.html" class="rounded-xl px-3 py-3 text-slate-400 hover:bg-white/5 hover:text-white">Termeni</a>
+      <a href="legal/privacy.html" class="rounded-xl px-3 py-3 text-slate-400 hover:bg-white/5 hover:text-white">Confidențialitate</a>
+    </nav>
+  </div>
+</header>
+
+<main id="continut">
+
+  <section id="top" class="relative overflow-hidden">
+    <div class="pointer-events-none absolute inset-0 grid-fade"></div>
+    <div class="pointer-events-none absolute -left-24 top-10 h-[140%] w-24 rotate-[18deg] bg-gradient-to-b from-transparent via-cyan-400/15 to-transparent blur-2xl"></div>
+    <div class="pointer-events-none absolute -right-16 top-0 h-[120%] w-24 -rotate-[14deg] bg-gradient-to-b from-transparent via-blue-500/20 to-transparent blur-2xl"></div>
+
+    <div class="relative mx-auto grid max-w-6xl items-center gap-10 px-4 pb-16 pt-14 sm:px-6 lg:grid-cols-12 lg:gap-6 lg:pb-20 lg:pt-20">
+      <div class="lg:col-span-5">
+        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300">Poliție · Jandarmerie · Structuri militare</p>
+        <h1 class="mt-4 text-4xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-[3.35rem]">
+          Claritate în lege.<br>
+          <span class="bg-gradient-to-r from-cyan-200 via-cyan-400 to-sky-500 bg-clip-text text-transparent">Siguranță în decizie.</span>
+        </h1>
+        <p class="mt-5 max-w-xl text-base leading-relaxed text-slate-300 sm:text-lg">
+          Ghidul legislativ complet offline și planificatorul inteligent de ture. Construit special pentru structurile operative din România.
+        </p>
+        <div class="mt-8 flex flex-col items-start gap-3 sm:flex-row sm:items-center">
+          <a href="https://play.google.com/store/apps/details?id=com.ticuv.jac" target="_blank" rel="noopener" class="inline-flex">
+            <img src="https://play.google.com/intl/ro_ro/badges/static/images/badges/ro_badge_web_generic.png" alt="Disponibil pe Google Play" width="646" height="250" class="play-badge">
+          </a>
+          <a href="#echipaj" class="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white transition hover:border-cyan-300/40 hover:bg-white/10">
+            Invită-ți colegii
+          </a>
+        </div>
+        <p class="mt-4 max-w-md text-sm leading-relaxed text-slate-400">
+          Descarcă acum și începe să-ți organizezi turele de azi.
+        </p>
+      </div>
+
+      <div class="relative lg:col-span-7">
+        <div class="pointer-events-none absolute inset-8 -z-10 rounded-full bg-cyan-400/15 blur-3xl"></div>
+        <img src="assets/hero-dual.png" alt="Două telefoane cu aplicația JAC: ghidul legislativ pe ecranul principal și calendarul de ture Shiftr" width="1280" height="720" class="relative w-full" fetchpriority="high">
+      </div>
+    </div>
+  </section>
+
+  <section class="border-y border-white/10 bg-white/[0.02]" aria-label="Date din aplicație">
+    <div class="mx-auto grid max-w-6xl gap-px bg-white/10 sm:grid-cols-3">
+      <div class="bg-ink px-6 py-6">
+        <div class="text-2xl font-extrabold tracking-tight text-white">1.691</div>
+        <div class="mt-1 text-sm text-slate-400">fapte în baza locală, pe telefon</div>
+      </div>
+      <div class="bg-ink px-6 py-6">
+        <div class="text-2xl font-extrabold tracking-tight text-white">100% offline</div>
+        <div class="mt-1 text-sm text-slate-400">căutare și lectură fără semnal, în teren</div>
+      </div>
+      <div class="bg-ink px-6 py-6">
+        <div class="text-2xl font-extrabold tracking-tight text-white">Shiftr</div>
+        <div class="mt-1 text-sm text-slate-400">normă legală, ore lucrate, ore suplimentare</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="shiftr" class="relative py-16 sm:py-24">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6">
+      <div class="max-w-2xl">
+        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300">Planificatorul de ture</p>
+        <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">Organizează-ți turele. Controlează-ți timpul.</h2>
+        <p class="mt-4 text-base leading-relaxed text-slate-400 sm:text-lg">
+          Înainte de tură știi programul. La final de lună știi orele. Shiftr pune schimbul pe calendar și calculează norma legală față de orele lucrate — ca să nu le numeri tu după serviciu.
+        </p>
+      </div>
+
+      <div class="mt-10 grid gap-4 lg:grid-cols-12">
+        <article class="bento overflow-hidden rounded-3xl border border-white/10 bg-panel lg:col-span-7">
+          <div class="grid items-center gap-2 lg:grid-cols-2">
+            <div class="p-6 sm:p-8">
+              <div class="inline-flex items-center gap-2 text-sm font-semibold text-cyan-300">
+                <i class="ph ph-calendar-blank text-lg" aria-hidden="true"></i>
+                Utilizare zilnică
+              </div>
+              <ul class="mt-5 space-y-4 text-sm leading-relaxed">
+                <li class="flex gap-3">
+                  <i class="ph-bold ph-clock mt-0.5 text-cyan-300" aria-hidden="true"></i>
+                  <span><strong class="text-white">Șabloane Z, N și L.</strong> Zi, noapte, liber — plus schimburile 1, 2 și 3, direct pe calendar.</span>
+                </li>
+                <li class="flex gap-3">
+                  <i class="ph-bold ph-scales mt-0.5 text-cyan-300" aria-hidden="true"></i>
+                  <span><strong class="text-white">Norma, nu estimarea.</strong> Ore lucrate față de norma legală și orele suplimentare, calculate în aplicație.</span>
+                </li>
+                <li class="flex gap-3">
+                  <i class="ph-bold ph-file-pdf mt-0.5 text-cyan-300" aria-hidden="true"></i>
+                  <span><strong class="text-white">Export PDF.</strong> Programul de ture, scos din aplicație când trebuie predat.</span>
+                </li>
+                <li class="flex gap-3">
+                  <i class="ph-bold ph-device-mobile mt-0.5 text-cyan-300" aria-hidden="true"></i>
+                  <span><strong class="text-white">Pe telefon.</strong> Turele, orele și șabloanele rămân stocate local, pe dispozitiv.</span>
+                </li>
+              </ul>
+              <div class="mt-6 flex flex-wrap gap-2 text-[11px] font-semibold uppercase tracking-wide">
+                <span class="rounded-full bg-blue-500/15 px-2.5 py-1 text-blue-300">Concediu</span>
+                <span class="rounded-full bg-teal-400/15 px-2.5 py-1 text-teal-300">Recuperare</span>
+                <span class="rounded-full bg-emerald-400/15 px-2.5 py-1 text-emerald-300">Schimbul 1</span>
+                <span class="rounded-full bg-orange-400/15 px-2.5 py-1 text-orange-300">Schimbul 2</span>
+                <span class="rounded-full bg-cyan-400/15 px-2.5 py-1 text-cyan-300">Liber</span>
+                <span class="rounded-full bg-lime-400/15 px-2.5 py-1 text-lime-300">Zi</span>
+                <span class="rounded-full bg-violet-400/15 px-2.5 py-1 text-violet-300">Noapte</span>
+                <span class="rounded-full bg-red-400/15 px-2.5 py-1 text-red-300">Schimbul 3</span>
+                <span class="rounded-full bg-rose-400/15 px-2.5 py-1 text-rose-200">Zonă școlară</span>
+              </div>
+            </div>
+            <div class="flex justify-center px-6 pb-8 lg:py-8 lg:pr-8">
+              <img src="assets/shiftr-bento.png" alt="Shiftr, octombrie 2026: calendar de ture și sumarul cu 198 de ore lucrate, 176 de ore normă legală și 22 de ore suplimentare" width="587" height="1280" class="shot w-full max-w-[280px] rounded-[1.75rem] border border-white/10 shadow-2xl" loading="lazy">
+            </div>
+          </div>
+        </article>
+
+        <div class="grid gap-4 lg:col-span-5">
+          <article class="bento rounded-3xl border border-white/10 bg-gradient-to-br from-cyan-400/10 to-panel p-6">
+            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-300">Exemplu din aplicație · Octombrie 2026</p>
+            <div class="mt-4 grid grid-cols-3 gap-3">
+              <div>
+                <div class="text-2xl font-extrabold text-white sm:text-3xl">21</div>
+                <div class="mt-1 text-xs text-slate-400">ture</div>
+              </div>
+              <div>
+                <div class="text-2xl font-extrabold text-white sm:text-3xl">198h</div>
+                <div class="mt-1 text-xs text-slate-400">lucrate</div>
+              </div>
+              <div>
+                <div class="text-2xl font-extrabold text-cyan-300 sm:text-3xl">+22h</div>
+                <div class="mt-1 text-xs text-slate-400">suplimentare</div>
+              </div>
+            </div>
+            <p class="mt-4 text-sm leading-relaxed text-slate-300">
+              Normă legală: <strong class="text-white">176h</strong>. Formula din ecran: 22 zile lucrătoare × 8h − 0 sărbători legale în zile lucrătoare × 8h = 176h.
+            </p>
+            <p class="mt-2 text-xs text-slate-500">2 C/M în weekend (0h) · 8 Liber (0h)</p>
+          </article>
+
+          <article class="bento rounded-3xl border border-white/10 bg-panel p-6">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <h3 class="text-lg font-bold text-white">Z / N / L</h3>
+                <p class="mt-2 text-sm leading-relaxed text-slate-400">Zi, noapte, liber. Șabloanele de bază ale turei, alături de schimburile marcate S2 și S3 pe calendar.</p>
+              </div>
+              <i class="ph ph-arrows-clockwise text-2xl text-cyan-300" aria-hidden="true"></i>
+            </div>
+          </article>
+
+          <article class="bento rounded-3xl border border-white/10 bg-panel p-6">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <h3 class="text-lg font-bold text-white">Export PDF</h3>
+                <p class="mt-2 text-sm leading-relaxed text-slate-400">Programul lunar iese din telefon când trebuie atașat la un raport, nu reconstruit din memorie.</p>
+              </div>
+              <i class="ph ph-file-pdf text-2xl text-cyan-300" aria-hidden="true"></i>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="legislatie" class="border-t border-white/10 bg-white/[0.02] py-16 sm:py-24">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6">
+      <div class="max-w-3xl">
+        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300">Modulul legislativ</p>
+        <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">1.691 de fapte la un tap distanță. 100% Offline.</h2>
+        <p class="mt-4 text-base leading-relaxed text-slate-400 sm:text-lg">
+          Baza stă pe telefon. Cauți instant, pui legile în ordinea în care lucrezi și deschizi fișa — încadrare, sancțiune, avertismente — fără semnal.
+        </p>
+      </div>
+
+      <div class="mt-10 grid gap-4 lg:grid-cols-12">
+        <article class="bento rounded-3xl border border-white/10 bg-panel p-6 sm:p-8 lg:col-span-7">
+          <ul class="grid gap-4 sm:grid-cols-2">
+            <li class="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+              <i class="ph ph-magnifying-glass text-xl text-cyan-300" aria-hidden="true"></i>
+              <h3 class="mt-3 font-bold text-white">Căutare instant</h3>
+              <p class="mt-1 text-sm leading-relaxed text-slate-400">„consumul” întoarce faptele pe loc, cu sancțiunea în dreptul fiecărui rezultat. Amendă sau închisoare, fără să sapi prin cod.</p>
+            </li>
+            <li class="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+              <i class="ph ph-arrows-down-up text-xl text-cyan-300" aria-hidden="true"></i>
+              <h3 class="mt-3 font-bold text-white">Ordinea ta</h3>
+              <p class="mt-1 text-sm leading-relaxed text-slate-400">Lista de legi se trage, urcă sau coboară. Salvezi ordinea de lucru. Implicit o readuce la cea din aplicație.</p>
+            </li>
+            <li class="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+              <i class="ph ph-warning text-xl text-cyan-300" aria-hidden="true"></i>
+              <h3 class="mt-3 font-bold text-white">Avertismente pe fișă</h3>
+              <p class="mt-1 text-sm leading-relaxed text-slate-400">Armă, sub 18 / 16 / 14 ani, zonă școlară, militar, agent, măsuri complementare — vizibile pe fapta salvată.</p>
+            </li>
+            <li class="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+              <i class="ph ph-wifi-slash text-xl text-cyan-300" aria-hidden="true"></i>
+              <h3 class="mt-3 font-bold text-white">Zero semnal</h3>
+              <p class="mt-1 text-sm leading-relaxed text-slate-400">Bază locală. În teren, decizia nu așteaptă rețeaua.</p>
+            </li>
+          </ul>
+          <p class="mt-6 text-sm leading-relaxed text-slate-500">
+            În listă, printre altele: Legea 61/1991, Legea 60/1991, Legea 4/2008, Regimul drogurilor, OUG 55/2002, Legea 333/2003, Legea 349/2002, Legea 126/1995, Legea 176/2024, Legea 54/2012.
+          </p>
+        </article>
+
+        <article class="bento flex items-center justify-center overflow-hidden rounded-3xl border border-white/10 bg-panel p-6 lg:col-span-5">
+          <img src="assets/jac-reorder.png" alt="Ecranul Reordonează legile: listă cu ordine personalizată, butoane Renunță, Implicit și Salvează" width="587" height="1280" class="shot w-full max-w-[280px] rounded-[1.75rem] border border-white/10 shadow-2xl" loading="lazy">
+        </article>
+
+        <article class="bento overflow-hidden rounded-3xl border border-white/10 bg-panel lg:col-span-4">
+          <img src="assets/search-results.png" alt="Căutare instant pentru consumul: rezultate cu sancțiuni, printre care consumul de alcool pe domeniul public, Legea 61/1991" width="587" height="1280" class="shot h-72 w-full object-cover object-top sm:h-80" loading="lazy">
+          <div class="p-5">
+            <h3 class="font-bold text-white">Căutare · „consumul”</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-400">Rezultate cu sancțiunea la vedere. Exemplu din aplicație: consumul de băuturi alcoolice pe domeniul public, Legea 61/1991, amendă 200–400 lei.</p>
+          </div>
+        </article>
+
+        <article class="bento overflow-hidden rounded-3xl border border-white/10 bg-panel lg:col-span-4">
+          <img src="assets/favorite-card.png" alt="Fișă salvată pentru tulburarea ordinii și liniștii publice, cu avertismente armă, minori, zonă școlară, militar și agent" width="587" height="1280" class="shot h-72 w-full object-cover object-top sm:h-80" loading="lazy">
+          <div class="p-5">
+            <h3 class="font-bold text-white">Fapta salvată</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-400">Tulburarea ordinii și liniștii publice, Legea 61/1991. Pe fișă: armă, sub 18, sub 16, sub 14 ani, zonă școlară, militar, agent.</p>
+          </div>
+        </article>
+
+        <article class="bento overflow-hidden rounded-3xl border border-white/10 bg-panel lg:col-span-4">
+          <img src="assets/cod-rutier.png" alt="Modulul Cod rutier: punct-amendă 216,25 lei, 75 de fapte și modulele de amenzi, sancțiuni și circulație" width="587" height="1280" class="shot h-72 w-full object-cover object-top sm:h-80" loading="lazy">
+          <div class="p-5">
+            <h3 class="font-bold text-white">Cod rutier</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-400">OUG 195/2002. 75 de fapte. Punct-amendă afișat: <strong class="font-semibold text-white">216,25 lei</strong>. Marcat gratuit în aplicație.</p>
+          </div>
+        </article>
+
+        <article class="bento overflow-hidden rounded-3xl border border-white/10 bg-panel lg:col-span-6">
+          <div class="grid sm:grid-cols-2">
+            <img src="assets/legislatie-integrala.png" alt="Legislație integrală: Codul Penal 446 de articole, Codul de procedură penală 602 articole, Codul Silvic și Codul Aerian" width="587" height="1280" class="shot h-64 w-full object-cover object-top sm:h-full sm:min-h-[280px]" loading="lazy">
+            <div class="p-5 sm:p-6">
+              <h3 class="font-bold text-white">Legislație integrală</h3>
+              <p class="mt-2 text-sm leading-relaxed text-slate-400">Actele, în format integral, pe telefon.</p>
+              <ul class="mt-4 space-y-2 text-sm text-slate-300">
+                <li class="flex justify-between gap-3 border-b border-white/5 pb-2"><span>Codul Penal</span><span class="font-semibold text-white">446 art.</span></li>
+                <li class="flex justify-between gap-3 border-b border-white/5 pb-2"><span>Procedură penală</span><span class="font-semibold text-white">602 art.</span></li>
+                <li class="flex justify-between gap-3 border-b border-white/5 pb-2"><span>Codul Silvic</span><span class="font-semibold text-white">148 art.</span></li>
+                <li class="flex justify-between gap-3"><span>Codul Aerian</span><span class="font-semibold text-white">113 art.</span></li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="bento overflow-hidden rounded-3xl border border-white/10 bg-panel lg:col-span-6">
+          <div class="grid sm:grid-cols-2">
+            <img src="assets/legislatie-penala.png" alt="Modulul de legislație penală: Codul Penal, procedură penală și infracțiuni, cu marcaje pentru minori și armă" width="587" height="1280" class="shot h-64 w-full object-cover object-top sm:h-full sm:min-h-[280px]" loading="lazy">
+            <div class="flex flex-col justify-center p-5 sm:p-6">
+              <h3 class="font-bold text-white">Legislație penală</h3>
+              <p class="mt-2 text-sm leading-relaxed text-slate-400">Trei intrări operative: Codul Penal, procedură penală, infracțiuni. Fișele marchează minor, armă și sub 14 ani acolo unde e cazul.</p>
+              <div class="mt-4 flex flex-wrap gap-2 text-[11px] font-bold uppercase tracking-wide">
+                <span class="rounded-md bg-rose-500/15 px-2 py-1 text-rose-300">Minor</span>
+                <span class="rounded-md bg-amber-400/15 px-2 py-1 text-amber-200">Armă</span>
+                <span class="rounded-md bg-orange-400/15 px-2 py-1 text-orange-200">Sub 14 ani</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="echipaj" class="relative py-16 sm:py-24">
+    <div class="pointer-events-none absolute inset-x-0 top-0 h-64 bg-gradient-to-b from-cyan-400/10 to-transparent"></div>
+    <div class="relative mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-12">
+      <div class="order-2 flex justify-center lg:order-1 lg:col-span-5">
+        <img src="assets/crew-pro.png" alt="Ecranul Echipajul tău JAC Crew: cod de invitație și progres 3 din 5 membri" width="587" height="1280" class="w-full max-w-[300px] rounded-[1.75rem] border border-white/10 shadow-2xl shadow-cyan-500/10" loading="lazy">
+      </div>
+      <div class="order-1 lg:order-2 lg:col-span-7">
+        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300">JAC Crew</p>
+        <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">Formează un Echipaj. Deblochează modul PRO.</h2>
+        <p class="mt-4 text-base leading-relaxed text-slate-300 sm:text-lg">
+          Invită-ți colegii. Aplicația este gratuită: inviți până la 4 oameni și formați un JAC Crew de 5. Toți membrii deblochează PRO — statistici avansate și exporturi.
+        </p>
+        <p class="mt-3 text-base leading-relaxed text-slate-400">
+          În aplicație, echipajul are un cod de invitație și arată câți membri sunt deja, din 5.
+        </p>
+
+        <ol class="mt-8 grid gap-3 sm:grid-cols-2">
+          <li class="rounded-2xl border border-white/10 bg-panel p-4">
+            <span class="text-xs font-bold uppercase tracking-wider text-cyan-300">01</span>
+            <p class="mt-2 text-sm font-semibold text-white">Descarcă aplicația</p>
+          </li>
+          <li class="rounded-2xl border border-white/10 bg-panel p-4">
+            <span class="text-xs font-bold uppercase tracking-wider text-cyan-300">02</span>
+            <p class="mt-2 text-sm font-semibold text-white">Invită până la 4 colegi</p>
+          </li>
+          <li class="rounded-2xl border border-white/10 bg-panel p-4">
+            <span class="text-xs font-bold uppercase tracking-wider text-cyan-300">03</span>
+            <p class="mt-2 text-sm font-semibold text-white">Echipajul de 5 deblochează PRO</p>
+          </li>
+          <li class="rounded-2xl border border-cyan-400/30 bg-cyan-400/10 p-4">
+            <span class="text-xs font-bold uppercase tracking-wider text-cyan-200">04</span>
+            <p class="mt-2 text-sm font-semibold text-white">Statistici și exporturi, pentru toți</p>
+          </li>
+        </ol>
+
+        <a href="https://play.google.com/store/apps/details?id=com.ticuv.jac" target="_blank" rel="noopener" class="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-cyan-400 px-6 py-3.5 text-sm font-bold text-slate-950 shadow-glow transition hover:bg-cyan-300">
+          <i class="ph-bold ph-users-three" aria-hidden="true"></i>
+          Invită-ți colegii
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="descarca" class="border-t border-white/10 bg-panel py-20 sm:py-28">
+    <div class="mx-auto max-w-3xl px-4 text-center sm:px-6">
+      <p class="text-xs font-semibold uppercase tracking-[0.22em] text-emerald-300">Disponibil acum</p>
+      <h2 class="mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-5xl">Descarcă acum și începe să-ți organizezi turele de azi.</h2>
+      <p class="mx-auto mt-5 max-w-xl text-base leading-relaxed text-slate-400 sm:text-lg">
+        Ghidul legislativ offline și planificatorul Shiftr, pe telefon. Gratuit. Invită până la 4 colegi și deblocați PRO împreună.
+      </p>
+      <a href="https://play.google.com/store/apps/details?id=com.ticuv.jac" target="_blank" rel="noopener" class="mt-8 inline-flex">
+        <img src="https://play.google.com/intl/ro_ro/badges/static/images/badges/ro_badge_web_generic.png" alt="Disponibil pe Google Play" width="646" height="250" class="play-badge-lg">
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer class="border-t border-white/10 py-12">
+  <div class="mx-auto flex max-w-6xl flex-col gap-8 px-4 sm:px-6 md:flex-row md:items-start md:justify-between">
+    <div>
+      <a href="#top" class="inline-flex items-center gap-2.5">
+        <span class="inline-flex h-8 w-8 items-center justify-center overflow-hidden rounded-lg bg-white/5 ring-1 ring-white/10">
+          <img src="assets/logo.png" alt="" class="logo-crop h-8 w-8 max-w-none" width="1254" height="1254">
+        </span>
+        <span class="font-extrabold text-white">JAC</span>
+      </a>
+      <p class="mt-3 max-w-xs text-sm text-slate-500">Ghid Legislativ Operativ.</p>
+    </div>
+    <nav class="flex flex-wrap gap-x-6 gap-y-3 text-sm" aria-label="Documente și contact">
+      <a href="legal/terms.html" class="text-slate-300 transition hover:text-white">Termeni</a>
+      <a href="legal/privacy.html" class="text-slate-300 transition hover:text-white">Confidențialitate</a>
+      <a href="legal/cookies.html" class="text-slate-400 transition hover:text-white">Cookie-uri</a>
+      <a href="legal/asistenta.html" class="text-slate-400 transition hover:text-white">Asistență</a>
+      <a href="mailto:vladticu100@gmail.com" class="text-slate-300 transition hover:text-white">Contact: vladticu100@gmail.com</a>
+    </nav>
+  </div>
+  <div class="mx-auto mt-8 max-w-6xl px-4 sm:px-6">
+    <p class="max-w-3xl text-sm leading-relaxed text-slate-400">JAC este o aplicație independentă și nu reprezintă un organ oficial al statului român.</p>
+    <p class="mt-3 text-xs text-slate-600">© 2026 JAC</p>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var btn = document.getElementById('menuToggle');
+    var menu = document.getElementById('mobileMenu');
+    if (btn && menu) {
+      btn.addEventListener('click', function () {
+        var open = menu.classList.toggle('hidden') === false;
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        btn.setAttribute('aria-label', open ? 'Închide meniul' : 'Deschide meniul');
+        btn.innerHTML = open
+          ? '<i class="ph-bold ph-x text-xl" aria-hidden="true"></i>'
+          : '<i class="ph-bold ph-list text-xl" aria-hidden="true"></i>';
+      });
+      menu.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          menu.classList.add('hidden');
+          btn.setAttribute('aria-expanded', 'false');
+          btn.setAttribute('aria-label', 'Deschide meniul');
+          btn.innerHTML = '<i class="ph-bold ph-list text-xl" aria-hidden="true"></i>';
+        });
+      });
+    }
+
+    var legalTargets = {
+      confidentialitate: 'legal/privacy.html',
+      privacy: 'legal/privacy.html',
+      termeni: 'legal/terms.html',
+      terms: 'legal/terms.html',
+      cookies: 'legal/cookies.html',
+      cookie: 'legal/cookies.html',
+      asistenta: 'legal/asistenta.html',
+      contact: 'legal/asistenta.html'
+    };
+    function routeLegal() {
+      var key = '';
+      try {
+        key = new URLSearchParams(window.location.search).get('legal') || '';
+      } catch (err) {}
+      if (!key && window.location.hash) key = window.location.hash.replace('#', '');
+      var dest = legalTargets[(key || '').toLowerCase()];
+      if (dest) window.location.replace(dest);
+    }
+    routeLegal();
+    window.addEventListener('hashchange', routeLegal);
+  })();
+</script>
+</body>
+</html>
