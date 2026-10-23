@@ -96,7 +96,7 @@ a { color: inherit; }
   letter-spacing: .08em;
 }
 h1, h2, h3 { color: var(--ink); letter-spacing: -.03em; line-height: 1.05; }
-h1 { margin: .55rem 0 0; font-size: clamp(2.45rem, 5.4vw, 4.35rem); font-weight: 800; }
+h1 { margin: .55rem 0 0; max-width: 11.5em; font-size: clamp(1.85rem, 2.45vw, 2.25rem); font-weight: 800; }
 h2 { margin: .45rem 0 0; font-size: clamp(1.85rem, 3.4vw, 2.85rem); font-weight: 750; }
 h3 { margin: 0 0 .2rem; font-size: 1rem; font-weight: 700; }
 .lede { margin: .8rem 0 0; max-width: 38rem; }
@@ -193,6 +193,7 @@ nav.primary a:hover { color: white; }
 .cluster {
   position: relative;
   height: 34rem;
+  overflow: hidden;
   border: 1px solid var(--line);
   background-color: #0a1019;
   background-image:
@@ -224,10 +225,11 @@ nav.primary a:hover { color: white; }
 .c-find .a { left: 2%; top: 1rem; width: 40%; z-index: 1; }
 .c-find .b { left: 29%; top: 3.4rem; width: 40%; z-index: 3; }
 .c-find .c { right: 2%; top: 1.3rem; width: 36%; z-index: 2; }
+.c-mod { width: min(100%, 39rem); margin-inline: auto; }
 .c-mod .a { left: 2%; top: 1.5rem; width: 38%; z-index: 1; }
 .c-mod .b { left: 31%; top: .7rem; width: 38%; z-index: 3; }
 .c-mod .c { right: 2%; top: 2.6rem; width: 36%; z-index: 2; }
-.c-one .a { left: 18%; top: .9rem; width: 58%; z-index: 1; }
+.c-one .a { left: 50%; top: .9rem; width: min(58%, 15.5rem); transform: translateX(-50%); z-index: 1; }
 .callout {
   margin: .9rem 0 0;
   padding: .75rem .9rem;
@@ -277,13 +279,13 @@ html.motion .reveal { animation: rise .65s ease both; }
   .menu-btn { display: none; }
   nav.primary { display: flex; }
   .hero { padding: 1.1rem 0 .4rem; }
-  .hero .wrap { width: min(1400px, calc(100% - 2.5rem)); }
-  .hero-grid { grid-template-columns: minmax(17rem, 26rem) minmax(0, 1fr); gap: 1rem 1.4rem; align-items: center; }
+  .hero-grid { grid-template-columns: minmax(16rem, 22.5rem) minmax(0, 1fr); gap: 1rem 1.5rem; align-items: center; }
   .hero-shot { width: 100%; max-width: none; }
   .store img { height: 5.1rem; }
   .layout { grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr); gap: 1.4rem; }
   .layout.flip > :first-child { order: 2; }
-  .cluster { height: 38rem; }
+  .cluster { height: 40rem; }
+  .cluster .ph { max-width: 15.5rem; }
   .section { padding: 2.8rem 0; }
 }
 @media (max-width: 1039px) {
@@ -293,7 +295,9 @@ html.motion .reveal { animation: rise .65s ease both; }
   .short { display: inline; }
   .badge .long { display: none; }
   .cluster { height: auto; display: grid; justify-items: center; padding: 1rem .6rem 1.1rem; }
-  .cluster .ph { position: relative; left: auto; right: auto; top: auto; width: min(74%, 270px); }
+  .c-mod { width: auto; margin-inline: 0; }
+  .c-one .a { left: auto; width: min(74%, 270px); transform: none; }
+  .cluster .ph { position: relative; left: auto; right: auto; top: auto; width: min(74%, 270px); max-width: none; }
   .cluster .ph + .ph { margin-top: -9.5rem; }
   .cluster .ph:nth-child(even) { justify-self: end; margin-right: 2%; }
   .cluster .ph:nth-child(odd) { justify-self: start; margin-left: 2%; }
