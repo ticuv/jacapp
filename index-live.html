@@ -4,27 +4,28 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>JAC — legislație offline și Shiftr, pe Google Play</title>
-<meta name="description" content="1.691 de articole legislative și calendarul de ture Shiftr, 100% offline, pentru ritmul din teren. Aplicație Android independentă, disponibilă pe Google Play.">
+<meta name="description" content="1.691 de articole legislative stocate local și calendarul de ture Shiftr, pentru ritmul din teren. Aplicație Android independentă, disponibilă pe Google Play.">
 <link rel="canonical" href="https://aplicatiajac.ro/index-live.html">
 <!-- Nu este pagina de la /. Rămâne noindex cât timp index.html este varianta publicată. La lansare, mută acest conținut în index.html și setează canonical https://aplicatiajac.ro/ cu robots index,follow. -->
 <meta name="robots" content="noindex, follow">
 <meta name="author" content="JAC">
-<meta name="theme-color" content="#06090F">
+<meta name="theme-color" content="#07090D">
+<meta name="color-scheme" content="dark">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="JAC">
 <meta property="og:locale" content="ro_RO">
 <meta property="og:url" content="https://aplicatiajac.ro/index-live.html">
 <meta property="og:title" content="JAC — legislație offline și Shiftr, pe Google Play">
-<meta property="og:description" content="1.691 de articole legislative și calendarul de ture Shiftr, 100% offline, pentru ritmul din teren. Aplicație Android independentă, disponibilă pe Google Play.">
-<meta property="og:image" content="https://aplicatiajac.ro/assets/hero-dual.png">
-<meta property="og:image:type" content="image/png">
-<meta property="og:image:width" content="1280">
-<meta property="og:image:height" content="720">
-<meta property="og:image:alt" content="Două telefoane care afișează interfața JAC și calendarul de ture Shiftr.">
+<meta property="og:description" content="1.691 de articole legislative stocate local și calendarul de ture Shiftr, pentru ritmul din teren. Aplicație Android independentă, disponibilă pe Google Play.">
+<meta property="og:image" content="https://aplicatiajac.ro/assets/landing/og-jac.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Aplicația JAC: ecranul principal cu baza legislativă locală și calendarul de ture Shiftr.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="JAC — legislație offline și Shiftr, pe Google Play">
-<meta name="twitter:description" content="1.691 de articole legislative și calendarul de ture Shiftr, 100% offline, pentru ritmul din teren. Aplicație Android independentă, disponibilă pe Google Play.">
-<meta name="twitter:image" content="https://aplicatiajac.ro/assets/hero-dual.png">
+<meta name="twitter:description" content="1.691 de articole legislative stocate local și calendarul de ture Shiftr, pentru ritmul din teren. Aplicație Android independentă, disponibilă pe Google Play.">
+<meta name="twitter:image" content="https://aplicatiajac.ro/assets/landing/og-jac.jpg">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -49,432 +50,480 @@
   ]
 }
 </script>
-<link rel="icon" type="image/png" href="assets/logo.png">
-<link rel="apple-touch-icon" href="assets/logo.png">
+<link rel="icon" type="image/png" sizes="48x48" href="assets/landing/favicon-48.png">
+<link rel="apple-touch-icon" href="assets/landing/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/newsreader-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/landing/photo_5971895843633697206_y.webp" as="image" type="image/webp" fetchpriority="high">
 <link rel="stylesheet" href="assets/fonts/inter.css">
-<link rel="stylesheet" href="assets/css/site.css?v=4">
+<link rel="stylesheet" href="assets/css/site.css?v=6">
 <script>
 (function () {
-  try { if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) document.documentElement.classList.add("motion"); } catch (err) {}
+  var d = document.documentElement;
+  d.classList.add("js");
+  try { if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return; } catch (err) { return; }
+  d.classList.add("motion");
+  ["assets/vendor/gsap.min.js", "assets/vendor/ScrollTrigger.min.js"].forEach(function (src) {
+    var s = document.createElement("script"); s.src = src; s.async = false; document.head.appendChild(s);
+  });
 })();
 </script>
+<script src="assets/js/site.js?v=6" defer></script>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
-  <symbol id="i-alert" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></symbol>
-  <symbol id="i-sort" viewBox="0 0 24 24"><path d="m21 16-4 4-4-4"/><path d="M17 20V4"/><path d="m3 8 4-4 4 4"/><path d="M7 4v16"/></symbol>
-  <symbol id="i-offline" viewBox="0 0 24 24"><path d="M12 20h.01"/><path d="M8.5 16.43a5 5 0 0 1 7 0"/><path d="M5 12.86a10 10 0 0 1 5.17-2.69"/><path d="M19 12.86a10 10 0 0 0-2-1.52"/><path d="M2 8.82a15 15 0 0 1 4.18-2.64"/><path d="M22 8.82a15 15 0 0 0-11.29-3.76"/><path d="m2 2 20 20"/></symbol>
-  <symbol id="i-calendar" viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></symbol>
-  <symbol id="i-calc" viewBox="0 0 24 24"><rect width="16" height="20" x="4" y="2" rx="2"/><path d="M8 6h8"/><path d="M16 14v4"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></symbol>
-  <symbol id="i-trend" viewBox="0 0 24 24"><path d="M22 7 13.5 15.5 8.5 10.5 2 17"/><path d="M16 7h6v6"/></symbol>
-  <symbol id="i-share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.59 13.51 6.83 3.98"/><path d="m15.41 6.51-6.82 3.98"/></symbol>
-  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 0 0-16 0"/></symbol>
-  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
-  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m6 13 6 6 6-6"/></symbol>
   <symbol id="i-out" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
-  <symbol id="i-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
-  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></symbol>
-  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
-  <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></symbol>
-  <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></symbol>
-  <symbol id="i-coffee" viewBox="0 0 24 24"><path d="M10 2v2"/><path d="M14 2v2"/><path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"/><path d="M6 2v2"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></symbol>
   <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
   <symbol id="i-play" viewBox="0 0 24 24"><path d="M4.2 2.6c-.3.3-.5.8-.5 1.4v16c0 .6.2 1.1.5 1.4l9-9.4-9-9.4Zm10.4 8 2.7-2.8L6.3 1.6c-.5-.3-1-.3-1.4-.2l9.7 9.2Zm0 2.8-9.7 9.2c.4.1.9.1 1.4-.2l11-6.2-2.7-2.8Zm4.2-4.5-3 3.1 3 3.1 2.5-1.4c.9-.5.9-1.9 0-2.4l-2.5-1.4Z"/></symbol>
 </svg>
 
 <a class="skip" href="#continut">Sari la conținut</a>
 
-<header class="site-header">
-  <div class="wrap bar">
+<header class="masthead" id="masthead">
+  <div class="masthead-bar">
     <a class="brand" href="#aplicatia" aria-label="JAC — începutul paginii">
-      <span class="brand-logo"><picture>
-        <source srcset="assets/landing/logo-192.webp" type="image/webp">
-        <img src="assets/logo.png" alt="Logo JAC" width="1254" height="1254" decoding="async">
-      </picture></span>
+      <img src="assets/landing/jac-mark-96.webp" alt="" width="85" height="96" decoding="async">
       <span>JAC</span>
     </a>
-    <nav class="nav-desktop" aria-label="Secțiuni">
-      <a href="#aplicatia">Aplicația</a>
+    <nav class="nav" aria-label="Secțiuni">
       <a href="#legislatie">Legislație</a>
       <a href="#shiftr">Shiftr</a>
       <a href="#crew">JAC Crew</a>
       <a href="#abonamente">Abonamente</a>
     </nav>
-    <div class="header-actions">
-      <a class="btn btn-primary header-cta" href="https://play.google.com/store/apps/details?id=com.ticuv.jac" target="_blank" rel="noopener noreferrer">Descarcă aplicația</a>
-      <button id="menuToggle" class="menu-btn" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Deschide meniul">
-        <svg class="ic ic-menu" aria-hidden="true"><use href="#i-menu"/></svg>
-        <svg class="ic ic-x" aria-hidden="true"><use href="#i-x"/></svg>
-      </button>
-    </div>
+    <a class="btn btn-solid btn-sm masthead-cta" href="https://play.google.com/store/apps/details?id=com.ticuv.jac" target="_blank" rel="noopener noreferrer">Descarcă aplicația</a>
+    <button id="menuToggle" class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Deschide meniul">
+      <span></span><span></span>
+    </button>
   </div>
-  <div id="mobileMenu" class="drawer">
-    <div>
-      <nav class="wrap" aria-label="Meniu mobil">
-        <a href="#aplicatia">Aplicația <svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></a>
-        <a href="#legislatie">Legislație <svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></a>
-        <a href="#shiftr">Shiftr <svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></a>
-        <a href="#crew">JAC Crew <svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></a>
-        <a href="#abonamente">Abonamente <svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></a>
-        <a class="btn btn-primary btn-lg" href="https://play.google.com/store/apps/details?id=com.ticuv.jac" target="_blank" rel="noopener noreferrer"><svg class="ic ic-fill" aria-hidden="true"><use href="#i-play"/></svg>Descarcă de pe Google Play</a>
-      </nav>
-    </div>
+  <div id="menu" class="menu" hidden>
+    <nav aria-label="Meniu mobil">
+      <a href="#aplicatia"><i>—</i>Aplicația</a>
+      <a href="#legislatie"><i>I</i>Legislație</a>
+      <a href="#shiftr"><i>II</i>Shiftr</a>
+      <a href="#crew"><i>III</i>JAC Crew</a>
+      <a href="#abonamente"><i>IV</i>Abonamente</a>
+    </nav>
+    <a class="btn btn-solid btn-lg" href="https://play.google.com/store/apps/details?id=com.ticuv.jac" target="_blank" rel="noopener noreferrer"><svg class="ic" aria-hidden="true" style="fill:currentColor;stroke:none"><use href="#i-play"/></svg>Descarcă de pe Google Play</a>
+    <p class="menu-foot">Aplicație Android independentă · Google Play</p>
   </div>
 </header>
 
 <main id="continut">
 
-  <!-- 1. HERO -->
-  <section id="aplicatia" class="hero bg-grid" aria-labelledby="hero-title">
-    <div class="wrap hero-inner">
+  <!-- ═══ HERO ═══ -->
+  <section id="aplicatia" class="hero" aria-labelledby="hero-title">
+    <div class="hero-light" aria-hidden="true"></div>
+    <div class="frame hero-grid">
+      <p class="docket" data-hero>
+        <span>JAC · Ghid legislativ operativ pentru Android</span>
+        <span class="docket-r">Bază locală · 1.691 articole · funcționează offline</span>
+      </p>
+
+      <h1 id="hero-title" class="hero-title">
+        <span class="line"><span class="line-in" data-hero-line>Claritate în lege.</span></span>
+        <span class="line"><span class="line-in it" data-hero-line>Siguranță în decizie.</span></span>
+      </h1>
+
       <div class="hero-copy">
-        <p class="pill" data-reveal><span class="dot" aria-hidden="true"></span>Legislație offline • Planificator ture</p>
-        <h1 id="hero-title" data-reveal style="--d:1">Claritate în lege. <span class="accent">Siguranță în decizie.</span></h1>
-        <p class="lede" data-reveal style="--d:2"><strong class="num">1.691</strong> de articole legislative și calendarul de ture <strong>Shiftr</strong>. Totul <strong>100% offline</strong>, gândit pentru ritmul din teren.</p>
-        <div class="cta-row" data-reveal style="--d:3">
-          <a class="btn btn-primary btn-lg shimmer" href="https://play.google.com/store/apps/details?id=com.ticuv.jac" target="_blank" rel="noopener noreferrer"><svg class="ic ic-fill" aria-hidden="true"><use href="#i-play"/></svg>Descarcă de pe Google Play</a>
-          <a class="btn btn-ghost btn-lg" href="#legislatie">Vezi funcționalitățile</a>
+        <p class="lede" data-hero>Baza legislativă cu <strong>1.691 de articole</strong> stocate în telefon, căutare care îți arată încadrarea și amenda, plus calendarul de ture <strong>Shiftr</strong> cu norma lunară și orele suplimentare.</p>
+        <div class="cta-row" data-hero>
+          <a class="btn btn-solid btn-lg" href="https://play.google.com/store/apps/details?id=com.ticuv.jac" target="_blank" rel="noopener noreferrer" id="heroCta"><svg class="ic" aria-hidden="true" style="fill:currentColor;stroke:none"><use href="#i-play"/></svg>Descarcă de pe Google Play</a>
+          <a class="btn btn-line btn-lg" href="#legislatie">Vezi aplicația <svg class="ic" aria-hidden="true"><use href="#i-down"/></svg></a>
         </div>
-        <p class="trust" data-reveal style="--d:4">
-          <span><svg class="ic" aria-hidden="true"><use href="#i-offline"/></svg>Bază locală 100% offline</span>
-          <span><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Fără reclame în PRO</span>
-          <span><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg>Creată pentru uz operativ</span>
-        </p>
+        <ul class="facts" data-hero>
+          <li><b>Offline</b>Legislația și Shiftr rulează pe dispozitiv, fără semnal.</li>
+          <li><b>Independent</b>Nu este o aplicație oficială a statului.</li>
+        </ul>
       </div>
-      <figure class="stage" data-reveal style="--d:2">
-        <div class="stage-aura" aria-hidden="true"></div>
-        <div class="stage-float">
-          <picture>
-            <source srcset="assets/landing/hero-dual-800.webp 800w, assets/landing/hero-dual.webp 1280w" sizes="(min-width: 1024px) 680px, 100vw" type="image/webp">
-            <img src="assets/hero-dual.png" alt="Două telefoane cu aplicația JAC: ecranul principal cu căutare și module legislative, și calendarul de ture Shiftr pentru octombrie 2026." width="1280" height="720" loading="eager" decoding="async" fetchpriority="high">
-          </picture>
+
+      <figure class="hero-stage" id="heroStage">
+        <div class="hero-rig" id="heroRig">
+          <div class="device device-back" data-depth="-1">
+            <picture>
+              <source srcset="assets/landing/photo_5971895843633697205_y.webp" type="image/webp">
+              <img src="assets/landing/photo_5971895843633697205_y.jpg" alt="Calendarul Shiftr pentru octombrie 2026, cu ture de zi, noapte, schimburi, concediu și zile libere, colorate pe tipuri." width="587" height="1280" loading="eager" decoding="async">
+            </picture>
+          </div>
+          <div class="device device-front" data-depth="1">
+            <picture>
+              <source srcset="assets/landing/photo_5971895843633697206_y.webp" type="image/webp">
+              <img src="assets/landing/photo_5971895843633697206_y.jpg" alt="Ecranul principal JAC: bază locală cu 1.691 de articole care funcționează offline, căutare globală, acces rapid la Cod penal, Legi speciale, Cod rutier, Salvate și Legislație integrală." width="587" height="1280" loading="eager" decoding="async" fetchpriority="high">
+            </picture>
+          </div>
+          <div class="hero-floor" aria-hidden="true"></div>
         </div>
-        <div class="stage-floor" aria-hidden="true"></div>
+        <figcaption class="cap">Capturi reale din aplicație · Ecranul principal și Shiftr</figcaption>
       </figure>
     </div>
   </section>
 
-  <!-- 2. BENTO LEGISLATIV -->
-  <section id="legislatie" class="section" aria-labelledby="leg-title">
-    <div class="wrap">
-      <header class="section-head">
-        <p class="eyebrow" data-reveal><span class="num">01</span> • Modulul legislativ</p>
-        <h2 id="leg-title" data-reveal style="--d:1">Fapta, încadrarea și amenda. În câteva secunde.</h2>
-      </header>
+  <!-- ═══ BANDĂ ACTE NORMATIVE ═══ -->
+  <div class="band" aria-hidden="true">
+    <p class="band-track" id="bandTrack">
+      <span>Legea 61/1991</span><i>§</i><span>OUG 195/2002</span><i>§</i><span>Legea 4/2008</span><i>§</i><span>Codul Penal</span><i>§</i><span>Legea 60/1991</span><i>§</i><span>Legea 143/2000</span><i>§</i><span>Codul Silvic</span><i>§</i><span>Legea 126/1995</span><i>§</i><span>Codul Aerian</span><i>§</i><span>OUG 55/2002</span><i>§</i><span>Legea 333/2003</span><i>§</i>
+    </p>
+  </div>
 
-      <div class="bento">
-        <article class="card tilt b-search" data-tilt="4" data-reveal>
-          <div class="card-body">
-            <p class="card-tag"><span class="ic-box"><svg class="ic" aria-hidden="true"><use href="#i-search"/></svg></span>Căutare instantanee</p>
-            <h3>Găsești fapta pe loc.</h3>
-            <p>Caută <strong>„consumul”</strong> și vezi direct încadrarea (<strong>Prevăzut de / Sancționat de</strong>) și amenda:</p>
-            <div class="chips">
-              <span class="chip law">Legea 61/1991 <b class="num">500–1.500 lei</b></span>
-              <span class="chip law">Legea 4/2008 <b class="num">100–1.500 lei</b></span>
-            </div>
-          </div>
-          <div class="shot crop">
+  <!-- ═══ CAPITOLUL I — LEGISLAȚIE ═══ -->
+  <section id="legislatie" class="chapter" aria-labelledby="leg-title">
+    <header class="frame chapter-head">
+      <p class="kicker" data-reveal><span class="roman">I</span>Modulul legislativ</p>
+      <h2 id="leg-title" class="display" data-reveal>Fapta, încadrarea și amenda. <em>În câteva secunde.</em></h2>
+    </header>
+
+    <!-- Scena 1: căutare (Asset J) -->
+    <div class="annot-scene" id="annotScene">
+      <div class="annot-pin">
+        <div class="frame annot-intro">
+          <p class="lede" data-reveal>Scrii <strong>„consumul”</strong> și JAC îți arată, pe aceeași fișă, actul normativ, tipul faptei, articolul care o prevede, articolul care o sancționează și plaja amenzii.</p>
+        </div>
+        <div class="annot" id="annot">
+          <div class="device annot-phone">
             <picture>
               <source srcset="assets/landing/photo_5971895843633697214_y.webp" type="image/webp">
-              <img src="assets/search-results.png" alt="Rezultatele căutării «consumul» în JAC: Legea 4/2008 cu amendă 100–1.500 lei și Legea 61/1991 cu amendă 500–1.500 lei, cu articolele care prevăd și sancționează fapta." width="587" height="1280" loading="lazy" decoding="async">
+              <img src="assets/landing/photo_5971895843633697214_y.jpg" alt="Căutarea «consumul» în JAC: 10 rezultate. Legea 4/2008, contravenție, amendă 100–1.500 lei, prevăzută și sancționată de Art. 23 lit. a); Legea 61/1991, contravenție, amendă 500–1.500 lei." width="587" height="1280" loading="lazy" decoding="async">
             </picture>
+            <span class="hl" style="--x:24;--y:238;--w:539;--h:94" data-n="1" aria-hidden="true"></span>
+            <span class="hl" style="--x:434;--y:345;--w:130;--h:36" data-n="2" aria-hidden="true"></span>
+            <span class="hl" style="--x:44;--y:418;--w:330;--h:78" data-n="3" aria-hidden="true"></span>
+            <span class="hl" style="--x:44;--y:502;--w:478;--h:66" data-n="4" aria-hidden="true"></span>
+            <span class="hl" style="--x:44;--y:574;--w:500;--h:316" data-n="5" aria-hidden="true"></span>
           </div>
-        </article>
-
-        <article class="card tilt b-warn" data-tilt="6" data-reveal style="--d:1">
-          <div class="card-body">
-            <p class="card-tag warn"><span class="ic-box"><svg class="ic" aria-hidden="true"><use href="#i-alert"/></svg></span>Atenționări speciale</p>
-            <h3>Nu greșești procedura.</h3>
-            <p>Casete vizuale direct pe fișa faptei pentru <strong>măsuri tehnico-administrative</strong>.</p>
-            <p class="example"><strong>Ex:</strong> Art. 111 OUG 195/2002 — reținerea permisului și dovada înlocuitoare de <span class="num">15</span> zile.</p>
-          </div>
-          <div class="shot crop">
-            <picture>
-              <source srcset="assets/landing/photo_5971895843633697212_y.webp" type="image/webp">
-              <img src="assets/favorite-card.png" alt="Fișa unei fapte salvate la Favorite: reținerea permisului de conducere conform Art. 111 din OUG 195/2002, cu caseta Atenționări speciale." width="587" height="1280" loading="lazy" decoding="async">
-            </picture>
-          </div>
-        </article>
-
-        <article class="card tilt b-order" data-tilt="6" data-reveal>
-          <div class="card-body">
-            <p class="card-tag"><span class="ic-box"><svg class="ic" aria-hidden="true"><use href="#i-sort"/></svg></span>Ordinea ta de lucru</p>
-            <h3>Flux personalizat.</h3>
-            <p>Reordonează în capul listei <strong>legile pe care le aplici zilnic</strong>.</p>
-            <div class="chips">
-              <span class="chip">Legea 61/1991</span>
-              <span class="chip">Legea 60/1991</span>
-              <span class="chip">Legea 4/2008</span>
-              <span class="chip">Regimul Drogurilor</span>
-            </div>
-          </div>
-          <div class="shot crop">
-            <picture>
-              <source srcset="assets/landing/photo_5971895843633697209_y.webp" type="image/webp">
-              <img src="assets/jac-reorder.png" alt="Ecranul Reordonează legile: Legea 61/1991, Legea 60/1991, Legea 4/2008 și Regimul Drogurilor în capul listei." width="587" height="1280" loading="lazy" decoding="async">
-            </picture>
-          </div>
-        </article>
-
-        <article class="card tilt b-modules" data-tilt="3" data-reveal style="--d:1">
-          <div class="card-body">
-            <p class="card-tag"><span class="ic-box"><svg class="ic" aria-hidden="true"><use href="#i-offline"/></svg></span>Module operative • 100% offline</p>
-            <h3>Zero semnal? Nicio problemă.</h3>
-            <p><strong class="num">1.691</strong> de articole împărțite operativ, <strong>stocate local în telefon</strong>:</p>
-            <ul class="mod-list">
-              <li><span class="count num">679 art.</span><span><strong>Legislație Penală</strong> — Infracțiuni, Parte Generală, Procedură</span></li>
-              <li><span class="count num">75 art.</span><span><strong>Codul Rutier</strong> — Sancțiuni, Proceduri și info punct-amendă</span></li>
-              <li><span class="count">+</span><span><strong>Legi Speciale</strong></span></li>
-            </ul>
-          </div>
-          <div class="duo">
-            <div class="shot crop">
-              <picture>
-                <source srcset="assets/landing/photo_5971895843633697211_y.webp" type="image/webp">
-                <img src="assets/cod-rutier.png" alt="Modulul Cod rutier: 2 module operative, 75 de articole — Sancțiuni rutiere, Proceduri rutiere și valoarea punctului-amendă." width="587" height="1280" loading="lazy" decoding="async">
-              </picture>
-            </div>
-            <div class="shot crop">
-              <picture>
-                <source srcset="assets/landing/photo_5971895843633697210_y.webp" type="image/webp">
-                <img src="assets/legislatie-penala.png" alt="Modulul Legislație penală: 3 module operative, 679 de articole — Codul Penal Infracțiuni, Codul Penal Partea Generală și Procedură Penală." width="587" height="1280" loading="lazy" decoding="async">
-              </picture>
-            </div>
-          </div>
-        </article>
+          <ol class="annot-notes">
+            <li class="an an-l" style="--y:285"><span class="an-line"></span><p><b>01</b><strong>Căutare globală</strong><span>Fapte, articole, instituții, proceduri — direct în baza locală.</span></p></li>
+            <li class="an an-r" style="--y:363"><span class="an-line"></span><p><b>02</b><strong>Toate potrivirile</strong><span>Rezultatele pentru termenul căutat, numărate.</span></p></li>
+            <li class="an an-l" style="--y:457"><span class="an-line"></span><p><b>03</b><strong>Actul, tipul, amenda</strong><span>Legea 4/2008 · contravenție · 100–1.500 lei.</span></p></li>
+            <li class="an an-r" style="--y:535"><span class="an-line"></span><p><b>04</b><strong>Încadrarea completă</strong><span>Prevăzut de / Sancționat de — articolul exact.</span></p></li>
+            <li class="an an-l" style="--y:732"><span class="an-line"></span><p><b>05</b><strong>Textul faptei</strong><span>Descrierea integrală, fără să părăsești rezultatul.</span></p></li>
+          </ol>
+        </div>
       </div>
     </div>
-  </section>
 
-  <!-- 3. SHIFTR -->
-  <section id="shiftr" class="section" aria-labelledby="shiftr-title">
-    <div class="wrap split">
-      <div>
-        <p class="eyebrow" data-reveal><span class="num">02</span> • Planificatorul Shiftr</p>
-        <h2 id="shiftr-title" data-reveal style="--d:1">Turele, norma legală și orele suplimentare. Calculate automat.</h2>
-        <ul class="bullets">
-          <li data-reveal style="--d:1">
-            <span class="ic-box"><svg class="ic" aria-hidden="true"><use href="#i-calendar"/></svg></span>
-            <span><strong>Calendar vizual pe schimburi</strong>Zi, Noapte, Schimbul 1/2/3, Concediu, Recuperare, Liber sau Zona Școlară.
-              <span class="shift-codes" aria-hidden="true"><span class="code z">Z</span><span class="code n">N</span><span class="code s">S1</span><span class="code s">S2</span><span class="code s">S3</span><span class="code c">C</span><span class="code r">R</span><span class="code l">L</span><span class="code zs">ZȘ</span></span>
-            </span>
-          </li>
-          <li data-reveal style="--d:2">
-            <span class="ic-box"><svg class="ic" aria-hidden="true"><use href="#i-calc"/></svg></span>
-            <span><strong>Calcul automat al normei</strong>Vezi instant orele lucrate raportate la norma legală a lunii (<span class="num">zile lucrătoare × 8h</span>).</span>
-          </li>
-          <li data-reveal style="--d:3">
-            <span class="ic-box"><svg class="ic" aria-hidden="true"><use href="#i-trend"/></svg></span>
-            <span><strong>Evidență ore suplimentare</strong>Știi mereu exact câte ore ai în plus (ex: <span class="num">+22h</span> suplimentare) și câte C/M sau libere ai în lună.</span>
-          </li>
-          <li data-reveal style="--d:4">
-            <span class="ic-box"><svg class="ic" aria-hidden="true"><use href="#i-share"/></svg></span>
-            <span><strong>Partajare rapidă</strong>Trimite programul colegilor printr-un singur tap.</span>
-          </li>
-        </ul>
-        <p class="note"><svg class="ic" aria-hidden="true"><use href="#i-alert"/></svg>Valorile din capturi sunt un exemplu de program introdus în aplicație. Calculele Shiftr au rol orientativ personal.</p>
-      </div>
-      <figure class="phones" data-reveal style="--d:1">
-        <div class="aura" aria-hidden="true"></div>
-        <div class="phone back">
+    <!-- Scena 2: favorite + atenționări (H) și ordinea ta (E) -->
+    <div class="frame spread">
+      <div class="spread-art" aria-hidden="false">
+        <div class="device spread-a" data-parallax="-6">
           <picture>
-            <source srcset="assets/landing/photo_5971895843633697205_y.webp" type="image/webp">
-            <img src="assets/landing/photo_5971895843633697205_y.jpg" alt="Calendarul Shiftr pentru octombrie 2026, cu ture de zi, noapte, schimburi și zile libere." width="587" height="1280" loading="lazy" decoding="async">
+            <source srcset="assets/landing/photo_5971895843633697212_y.webp" type="image/webp">
+            <img src="assets/landing/photo_5971895843633697212_y.jpg" alt="Favorite: o faptă salvată — procedură rutieră, măsură tehnico-administrativă, reținerea permisului conform Art. 111 din OUG 195/2002, cu caseta Atenționări speciale." width="587" height="1280" loading="lazy" decoding="async">
           </picture>
         </div>
-        <div class="phone front tilt" data-tilt="8">
+        <div class="device spread-b" data-parallax="10">
           <picture>
-            <source srcset="assets/landing/photo_5971895843633697207_y.webp" type="image/webp">
-            <img src="assets/shiftr-bento.png" alt="Sumarul Shiftr pentru octombrie 2026: 21 de ture, 198 de ore lucrate, normă legală 176 de ore și +22 de ore suplimentare." width="587" height="1280" loading="lazy" decoding="async">
+            <source srcset="assets/landing/photo_5971895843633697209_y.webp" type="image/webp">
+            <img src="assets/landing/photo_5971895843633697209_y.jpg" alt="Ecranul Reordonează legile: Legea 61/1991, Legea 60/1991, Legea 4/2008 și Regimul Drogurilor în capul listei, cu săgeți de mutare." width="587" height="1280" loading="lazy" decoding="async">
           </picture>
         </div>
-      </figure>
-    </div>
-  </section>
-
-  <!-- 4. JAC CREW -->
-  <section id="crew" class="section" aria-labelledby="crew-title">
-    <div class="wrap split flip">
-      <div>
-        <p class="eyebrow" data-reveal><span class="num">03</span> • Echipajul tău (JAC Crew)</p>
-        <h2 id="crew-title" data-reveal style="--d:1">Intră cu patrula. Deblocați <span class="num">60</span> de zile PRO gratuit.</h2>
-        <p class="lede" data-reveal style="--d:2">Creează un echipaj de <strong>5 colegi</strong> în aplicație prin <strong>codul unic de invitație</strong>. La completarea echipajului, toți membrii primesc <strong>60 de zile de acces PRO gratuit</strong> după lansare.</p>
-        <div class="squad" data-reveal style="--d:3" aria-label="Echipaj complet: 5 din 5 membri">
-          <span class="seat on" style="--i:0"><svg class="ic" aria-hidden="true"><use href="#i-user"/></svg></span>
-          <span class="seat on" style="--i:1"><svg class="ic" aria-hidden="true"><use href="#i-user"/></svg></span>
-          <span class="seat on" style="--i:2"><svg class="ic" aria-hidden="true"><use href="#i-user"/></svg></span>
-          <span class="seat on" style="--i:3"><svg class="ic" aria-hidden="true"><use href="#i-user"/></svg></span>
-          <span class="seat on" style="--i:4"><svg class="ic" aria-hidden="true"><use href="#i-user"/></svg></span>
-          <span class="squad-label"><span class="num">5/5</span> → 60 de zile PRO</span>
-        </div>
-        <ol class="crew-steps">
-          <li data-reveal style="--d:1"><span><strong>Creezi echipajul</strong> din Setări → JAC Crew.</span></li>
-          <li data-reveal style="--d:2"><span><strong>Trimiți codul de invitație</strong> colegilor de patrulă.</span></li>
-          <li data-reveal style="--d:3"><span><strong>Echipaj complet</strong> — bonusul PRO se deblochează pentru toți.</span></li>
-        </ol>
-        <p class="note"><svg class="ic" aria-hidden="true"><use href="#i-cloud"/></svg>Gestionarea echipajului JAC Crew necesită conexiune la internet, fiind separată de baza legislativă offline.</p>
       </div>
-      <figure class="phones" data-reveal style="--d:1">
-        <div class="aura" aria-hidden="true"></div>
-        <div class="phone tilt" data-tilt="8">
-          <div class="masked">
+      <div class="spread-text">
+        <article class="spread-block">
+          <p class="kicker kicker-sm" data-reveal>Favorite · Atenționări speciale</p>
+          <h3 class="display-sm" data-reveal>Nu greșești procedura.</h3>
+          <p data-reveal>Salvezi fișele pe care le folosești des. Pe fișa faptei, casetele de atenționare semnalează <strong>măsurile tehnico-administrative</strong> care contează pe teren.</p>
+          <blockquote class="pull" data-reveal>
+            <p>„În cele 15 zile conducătorul poate circula doar cu dovada înlocuitoare asupra sa.”</p>
+            <footer>Atenționare afișată în JAC · Art. 111 OUG 195/2002</footer>
+          </blockquote>
+        </article>
+        <article class="spread-block">
+          <p class="kicker kicker-sm" data-reveal>Ordinea ta de lucru</p>
+          <h3 class="display-sm" data-reveal>Legile tale, primele.</h3>
+          <p data-reveal>Reordonezi lista astfel încât actele pe care le aplici zilnic să stea în capul ei.</p>
+          <ol class="order" data-reveal>
+            <li>Legea 61/1991</li>
+            <li>Legea 60/1991</li>
+            <li>Legea 4/2008</li>
+            <li>Regimul Drogurilor</li>
+          </ol>
+        </article>
+      </div>
+    </div>
+
+    <!-- Scena 3: module (F, G) -->
+    <div class="frame modules">
+      <div class="modules-head">
+        <p class="kicker kicker-sm" data-reveal>Module operative</p>
+        <h3 class="display-md" data-reveal>Zero semnal? <em>Nicio problemă.</em></h3>
+        <p class="lede" data-reveal>Articolele sunt împărțite pe module de lucru și stocate local în telefon.</p>
+      </div>
+      <div class="index" role="table" aria-label="Module legislative">
+        <div class="index-row" role="row" data-reveal>
+          <span class="index-num" role="cell">679<small>art.</small></span>
+          <span class="index-name" role="cell">Legislație penală</span>
+          <span class="index-sub" role="cell">Codul Penal — Infracțiuni · Codul Penal — Partea Generală · Procedură Penală — Operativ</span>
+        </div>
+        <div class="index-row" role="row" data-reveal>
+          <span class="index-num" role="cell">75<small>art.</small></span>
+          <span class="index-name" role="cell">Cod rutier</span>
+          <span class="index-sub" role="cell">Sancțiuni rutiere · Proceduri rutiere · valoarea punctului-amendă</span>
+        </div>
+        <div class="index-row" role="row" data-reveal>
+          <span class="index-num" role="cell">+</span>
+          <span class="index-name" role="cell">Legi speciale și contravenții</span>
+          <span class="index-sub" role="cell">Ordine publică, silvic, arme și alte domenii</span>
+        </div>
+        <div class="index-row index-total" role="row" data-reveal>
+          <span class="index-num" role="cell">1.691</span>
+          <span class="index-name" role="cell">articole în baza locală</span>
+          <span class="index-sub" role="cell">Consultate fără conexiune la internet</span>
+        </div>
+      </div>
+      <div class="modules-art">
+        <figure class="pane pane-a" data-reveal>
           <picture>
-            <source srcset="assets/landing/jac-crew-masked.webp?v=3" type="image/webp">
-            <img src="assets/landing/jac-crew-masked.jpg?v=3" alt="Ecranul Echipajul tău JAC Crew: progres 3 din 5 membri și mesajul de bonus de 60 de zile PRO. Codul de invitație și numele membrilor sunt ascunse." width="587" height="1280" loading="lazy" decoding="async">
+            <source srcset="assets/landing/photo_5971895843633697210_y.webp" type="image/webp">
+            <img src="assets/landing/photo_5971895843633697210_y.jpg" alt="Legislație penală: 3 module operative, 679 de articole — Codul Penal Infracțiuni (477), Codul Penal Partea Generală (187), Procedură Penală Operativ (15)." width="587" height="1280" loading="lazy" decoding="async">
           </picture>
-          <span class="mask mask-code" aria-hidden="true">JAC-<span>••••••</span></span>
-          <span class="mask mask-user" aria-hidden="true"></span>
-          <span class="mask mask-row mask-r1" aria-hidden="true"></span>
-          <span class="mask mask-row mask-r2" aria-hidden="true"></span>
-          <span class="mask mask-row mask-r3" aria-hidden="true"></span>
-          <span class="mask-badge" aria-hidden="true"><svg class="ic" style="width:1em;height:1em" aria-hidden="true"><use href="#i-shield"/></svg>Date ascunse</span>
-          </div>
-        </div>
-      </figure>
-    </div>
-  </section>
-
-  <!-- 5. ABONAMENTE -->
-  <section id="abonamente" class="section bg-grid" aria-labelledby="price-title">
-    <div class="wrap">
-      <header class="section-head center">
-        <p class="eyebrow" data-reveal><span class="num">04</span> • Abonamente</p>
-        <h2 id="price-title" data-reveal style="--d:1">Siguranță în decizie, la prețul unei cafele în tură.</h2>
-        <p class="lede" data-reveal style="--d:2">Începe gratuit și alege planul potrivit pentru tine sau echipajul tău.</p>
-      </header>
-
-      <div class="plans">
-        <article class="card tilt plan" data-tilt="5" data-reveal>
-          <h3>Basic</h3>
-          <p class="plan-desc">Gratuit</p>
-          <p class="price num"><span class="amount">0 lei</span><span class="unit">/ mereu</span></p>
-          <ul>
-            <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Consultare offline de bază</li>
-            <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Calendar Shiftr (funcții standard)</li>
-            <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Acces JAC Crew (creare sau alăturare în echipaj)</li>
-          </ul>
-          <a class="btn btn-ghost btn-lg btn-block" href="https://play.google.com/store/apps/details?id=com.ticuv.jac" target="_blank" rel="noopener noreferrer">Descarcă gratuit</a>
-        </article>
-
-        <article class="card tilt plan" data-tilt="5" data-reveal style="--d:1">
-          <h3>PRO Individual</h3>
-          <p class="plan-desc">Pentru un singur utilizator</p>
-          <p class="price num"><span class="amount">10 lei</span><span class="unit">/ lună</span></p>
-          <p class="anchor"><svg class="ic" aria-hidden="true"><use href="#i-coffee"/></svg>Mai puțin decât o cafea la intrarea în schimb.</p>
-          <ul>
-            <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span>Toate cele <span class="num">1.691</span> de articole și sinteze operative</span></li>
-            <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Atenționări Speciale pe fișele faptelor</li>
-            <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Reordonarea legilor și căutare rapidă completă</li>
-            <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Shiftr complet (calcul normă legală și ore suplimentare)</li>
-            <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>100% fără reclame</li>
-          </ul>
-          <a class="btn btn-ghost btn-lg btn-block" href="https://play.google.com/store/apps/details?id=com.ticuv.jac" target="_blank" rel="noopener noreferrer">Descarcă gratuit</a>
-        </article>
-
-        <article class="card tilt plan plan-crew" data-tilt="4" data-reveal style="--d:2">
-          <p class="plan-badge">Cel mai avantajos • 5 membri</p>
-          <h3>PRO Echipaj — 5 Colegi</h3>
-          <p class="plan-desc">Un abonament pentru toată patrula</p>
-          <div class="billing" data-billing role="group" aria-label="Perioada de facturare">
-            <button type="button" data-mode="anual" aria-pressed="true">Anual<span class="save">−44%</span></button>
-            <button type="button" data-mode="lunar" aria-pressed="false">Lunar</button>
-          </div>
-          <p class="price num" data-show="anual"><span class="amount">3,33 lei</span><span class="unit">/ lună / om</span></p>
-          <p class="price num hidden" data-show="lunar"><span class="amount">6 lei</span><span class="unit">/ lună / om</span></p>
-          <p class="price-details">Prin planul anual de <strong class="num">200 lei/an</strong> pentru tot echipajul (doar <strong class="num">40 lei/an</strong> de coleg) sau <strong class="num">6 lei/lună/om</strong> la plata lunară (<span class="num">30 lei/lună</span> total).</p>
-          <p class="anchor"><svg class="ic" aria-hidden="true"><use href="#i-coffee"/></svg>Cât un pachet de țigări pe an pentru 12 luni de acces complet.</p>
-          <ul>
-            <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Acces PRO complet pentru toți cei 5 membri ai echipajului</li>
-            <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Economie masivă prin împărțirea costului în patrulă sau detașament</li>
-            <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Bonus 60 de zile PRO gratuit în aplicație la formarea echipajului</li>
-          </ul>
-          <a class="btn btn-primary btn-lg btn-block shimmer" href="https://play.google.com/store/apps/details?id=com.ticuv.jac" target="_blank" rel="noopener noreferrer">Descarcă și formează echipajul</a>
-        </article>
+          <figcaption class="cap">Legislație penală</figcaption>
+        </figure>
+        <figure class="pane pane-b" data-reveal>
+          <picture>
+            <source srcset="assets/landing/photo_5971895843633697211_y.webp" type="image/webp">
+            <img src="assets/landing/photo_5971895843633697211_y.jpg" alt="Cod rutier: 2 module operative, 75 de articole — Sancțiuni rutiere (60), Proceduri rutiere (15) și valoarea punctului-amendă, 216,25 lei, valabil de la 1 iulie 2026." width="587" height="1280" loading="lazy" decoding="async">
+          </picture>
+          <figcaption class="cap">Cod rutier</figcaption>
+        </figure>
       </div>
-      <p class="pricing-foot">Achiziția se face în aplicație, prin Google Play Billing. Prețul și condițiile sunt afișate în aplicație înainte de cumpărare.</p>
-      <!-- Re-enable after Google Play trial is confirmed: Toate abonamentele includ o perioadă de testare gratuită. -->
     </div>
-  </section>
 
-  <!-- 6. LEGISLAȚIE INTEGRALĂ & TRANSPARENȚĂ -->
-  <section id="integral" class="section" aria-labelledby="int-title">
-    <div class="wrap split">
-      <div>
-        <p class="eyebrow" data-reveal><span class="num">05</span> • Legislație integrală &amp; transparență</p>
-        <h2 id="int-title" data-reveal style="--d:1">Actele normative în format integral. Informația se verifică la sursă.</h2>
-        <p class="lede" data-reveal style="--d:2">Ai nevoie de textul complet al legii? Modulul <strong>Legislație integrală</strong> îți oferă acces local la:</p>
-        <div class="integral-list chips" data-reveal style="--d:3">
-          <span class="chip"><svg class="ic" style="width:1rem;height:1rem" aria-hidden="true"><use href="#i-book"/></svg>Codul Penal</span>
-          <span class="chip"><svg class="ic" style="width:1rem;height:1rem" aria-hidden="true"><use href="#i-book"/></svg>Codul de Procedură Penală</span>
-          <span class="chip"><svg class="ic" style="width:1rem;height:1rem" aria-hidden="true"><use href="#i-book"/></svg>Codul Silvic</span>
-          <span class="chip"><svg class="ic" style="width:1rem;height:1rem" aria-hidden="true"><use href="#i-book"/></svg>Codul Aerian</span>
-          <span class="chip"><svg class="ic" style="width:1rem;height:1rem" aria-hidden="true"><use href="#i-book"/></svg>Legea 126/1995</span>
-          <span class="chip"><svg class="ic" style="width:1rem;height:1rem" aria-hidden="true"><use href="#i-book"/></svg>Legea 143/2000</span>
-        </div>
-        <div class="card verify" data-reveal style="--d:3">
-          <p class="card-tag"><span class="ic-box"><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg></span>Transparență</p>
-          <p class="disclaimer">JAC este o aplicație independentă. Nu este o aplicație oficială a Guvernului României și nu este afiliată, aprobată sau susținută de Ministerul Afacerilor Interne, Poliția Română, Jandarmeria Română ori de alte autorități publice. Aplicația nu înlocuiește consultarea actelor normative oficiale din Monitorul Oficial, iar calculele Shiftr au rol orientativ personal.</p>
-          <a class="source-link" href="https://legislatie.just.ro/" target="_blank" rel="noopener noreferrer">Consultă Portalul Legislativ Oficial (legislatie.just.ro) <svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a>
-        </div>
-      </div>
-      <figure class="phones" data-reveal style="--d:1">
-        <div class="aura" aria-hidden="true"></div>
-        <div class="phone tilt" data-tilt="8">
+    <!-- Scena 4: legislație integrală (I) + transparență -->
+    <div class="frame integral">
+      <div class="integral-art">
+        <div class="device integral-phone" data-parallax="-5">
           <picture>
             <source srcset="assets/landing/photo_5971895843633697213_y.webp" type="image/webp">
-            <img src="assets/legislatie-integrala.png" alt="Modulul Legislație integrală: Codul Aerian, Codul Silvic, Codul Penal, Codul de Procedură Penală, Legea 126/1995 și Legea 143/2000." width="587" height="1280" loading="lazy" decoding="async">
+            <img src="assets/landing/photo_5971895843633697213_y.jpg" alt="Legislație integrală: Codul Aerian, Codul Silvic, Codul Penal, Codul de Procedură Penală, Legea 126/1995 și Legea 143/2000, cu numărul de articole și căutare în text." width="587" height="1280" loading="lazy" decoding="async">
           </picture>
         </div>
-      </figure>
+      </div>
+      <div class="integral-text">
+        <p class="kicker kicker-sm" data-reveal>Legislație integrală</p>
+        <h3 class="display-md" data-reveal>Textul complet. <em>Verificat la sursă.</em></h3>
+        <p class="lede" data-reveal>Când ai nevoie de actul normativ întreg, modulul Legislație integrală îți oferă acces local, cu căutare după denumire sau în textul articolelor.</p>
+        <ul class="acts" data-reveal>
+          <li>Codul Penal</li><li>Codul de Procedură Penală</li><li>Codul Silvic</li><li>Codul Aerian</li><li>Legea 126/1995</li><li>Legea 143/2000</li>
+        </ul>
+        <aside class="notice" data-reveal aria-label="Transparență">
+          <p class="notice-label">Notă de transparență</p>
+          <p>JAC este o aplicație independentă. Nu este o aplicație oficială a Guvernului României și nu este afiliată, aprobată sau susținută de Ministerul Afacerilor Interne, Poliția Română, Jandarmeria Română ori de alte autorități publice. Aplicația nu înlocuiește consultarea actelor normative oficiale din Monitorul Oficial, iar calculele Shiftr au rol orientativ personal.</p>
+          <a class="link-out" href="https://legislatie.just.ro/" target="_blank" rel="noopener noreferrer">Portalul Legislativ oficial — legislatie.just.ro <svg class="ic" aria-hidden="true"><use href="#i-out"/></svg></a>
+        </aside>
+      </div>
     </div>
   </section>
 
-  <!-- 7. DESCARCĂ -->
-  <section id="descarca" class="section final bg-grid" aria-labelledby="dl-title" data-cta-stop>
-    <div class="wrap">
-      <header class="section-head center">
-        <p class="eyebrow" data-reveal><span class="num">06</span> • JAC pe Android</p>
-        <h2 id="dl-title" data-reveal style="--d:1">Legea în buzunar. Tura sub control.</h2>
-        <p class="lede" data-reveal style="--d:2">Instalează JAC gratuit și ai baza legislativă și calendarul Shiftr la tine, chiar și fără semnal.</p>
-      </header>
-      <div class="cta-row" data-reveal style="--d:3">
-        <a class="btn btn-primary btn-lg shimmer" href="https://play.google.com/store/apps/details?id=com.ticuv.jac" target="_blank" rel="noopener noreferrer"><svg class="ic ic-fill" aria-hidden="true"><use href="#i-play"/></svg>Descarcă de pe Google Play</a>
+  <!-- ═══ CAPITOLUL II — SHIFTR ═══ -->
+  <section id="shiftr" class="chapter chapter-night" aria-labelledby="shiftr-title">
+    <header class="frame chapter-head">
+      <p class="kicker" data-reveal><span class="roman">II</span>Planificatorul Shiftr</p>
+      <h2 id="shiftr-title" class="display" data-reveal>Tura, norma și orele suplimentare. <em>Pe aceeași pagină.</em></h2>
+    </header>
+
+    <div class="shiftr-scene" id="shiftrScene">
+      <div class="shiftr-pin">
+        <div class="frame shiftr-grid">
+          <div class="shiftr-copy">
+            <p class="lede" data-reveal>Shiftr este fila de lângă legislație. Îți notezi turele în calendar, iar luna se adună singură: ore lucrate, norma legală și diferența.</p>
+            <dl class="ledger" id="ledger">
+              <div><dt>Ture</dt><dd data-count="21">21</dd></div>
+              <div><dt>Ore lucrate</dt><dd><span data-count="198">198</span>h</dd></div>
+              <div><dt>Normă legală</dt><dd><span data-count="176">176</span>h</dd></div>
+              <div class="over"><dt>Ore suplimentare</dt><dd>+<span data-count="22">22</span>h</dd></div>
+            </dl>
+            <p class="formula">Normă legală = 22 zile lucrătoare × 8h − 0 sărbători legale în zile lucrătoare × 8h = 176h</p>
+            <p class="fine">Exemplu din captură, octombrie 2026. Valorile depind de programul introdus; calculele Shiftr au rol orientativ personal.</p>
+          </div>
+          <div class="shiftr-art" id="shiftrArt">
+            <div class="device shiftr-cal" id="shiftrCal">
+              <picture>
+                <source srcset="assets/landing/photo_5971895843633697205_y.webp" type="image/webp">
+                <img src="assets/landing/photo_5971895843633697205_y.jpg" alt="Calendarul Shiftr, octombrie 2026: ture Z, N, S1, S2, S3, C, R, L, cu orele de început și sfârșit, ziua de 23 selectată și sumarul lunii dedesubt." width="587" height="1280" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <div class="device shiftr-sum" id="shiftrSum">
+              <picture>
+                <source srcset="assets/landing/photo_5971895843633697207_y.webp" type="image/webp">
+                <img src="assets/landing/photo_5971895843633697207_y.jpg" alt="Sumar octombrie 2026 în Shiftr: 21 de ture, 198 de ore lucrate, normă legală 176 de ore și +22 de ore suplimentare, cu legenda tipurilor de tură." width="587" height="1280" loading="lazy" decoding="async">
+              </picture>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="frame shiftr-detail">
+      <div class="codes-block">
+        <h3 class="display-sm" data-reveal>Fiecare tură, cu culoarea ei.</h3>
+        <ul class="codes" data-reveal>
+          <li style="--c:#3F74E6"><b>Z</b>Zi</li>
+          <li style="--c:#8E5CF2"><b>N</b>Noapte</li>
+          <li style="--c:#2BA597"><b>S1</b>Schimbul 1</li>
+          <li style="--c:#E46A2C"><b>S2</b>Schimbul 2</li>
+          <li style="--c:#DB3F3F"><b>S3</b>Schimbul 3</li>
+          <li style="--c:#4C7BE8"><b>C</b>Concediu</li>
+          <li style="--c:#2BA597"><b>R</b>Recuperare</li>
+          <li style="--c:#2BA597"><b>L</b>Liber</li>
+          <li style="--c:#E8892B"><b>ZȘ</b>Zona Școlară</li>
+        </ul>
+      </div>
+      <ul class="pillars">
+        <li data-reveal><strong>Normă calculată automat</strong>Orele lucrate, raportate la norma legală a lunii (zile lucrătoare × 8h).</li>
+        <li data-reveal><strong>Ore suplimentare la vedere</strong>Diferența apare în sumar, alături de concedii medicale și zilele libere din lună.</li>
+        <li data-reveal><strong>Partajare rapidă</strong>Trimiți programul colegilor direct din calendar.</li>
+        <li data-reveal><strong>Programul rămâne pe telefon</strong>Turele și statisticile Shiftr sunt stocate local, pe dispozitiv.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ═══ CAPITOLUL III — JAC CREW ═══ -->
+  <section id="crew" class="chapter" aria-labelledby="crew-title">
+    <div class="frame crew">
+      <div class="crew-art">
+        <div class="device crew-phone" data-parallax="-4">
+          <picture>
+            <source srcset="assets/landing/jac-crew-redacted.webp" type="image/webp">
+            <img src="assets/landing/jac-crew-redacted.jpg" alt="Ecranul Echipajul tău JAC Crew: progres 3 din 5 membri și mesajul de bonus. Codul de invitație, numele de utilizator și membrii echipajului sunt ascunși." width="587" height="1280" loading="lazy" decoding="async">
+          </picture>
+        </div>
+        <p class="stamp" aria-hidden="true">Date<br>redactate</p>
+      </div>
+      <div class="crew-text">
+        <p class="kicker" data-reveal><span class="roman">III</span>Echipajul tău · JAC Crew</p>
+        <h2 id="crew-title" class="display" data-reveal>Intri cu patrula. <em>Nu de unul singur.</em></h2>
+        <p class="lede" data-reveal>Creezi un echipaj din Setări și îl completezi cu colegii, printr-un <strong>cod unic de invitație</strong>. Un echipaj are până la <strong>5 membri</strong>.</p>
+        <div class="seats" data-reveal aria-label="Echipaj de până la 5 membri">
+          <span></span><span></span><span></span><span></span><span></span>
+          <em>până la 5 membri</em>
+        </div>
+        <ol class="steps">
+          <li data-reveal><span><strong>Creezi echipajul</strong> din Setări → JAC Crew.</span></li>
+          <li data-reveal><span><strong>Trimiți codul de invitație</strong> colegilor de patrulă.</span></li>
+          <li data-reveal><span><strong>Urmărești progresul</strong> și bonusurile deblocate, direct în aplicație.</span></li>
+        </ol>
+        <blockquote class="pull pull-sm" data-reveal>
+          <p>„Bonus Maxim Deblocat: toți membrii au 60 de zile PRO gratuit după lansare!”</p>
+          <footer>Mesaj afișat în aplicație, în captura de mai sus. Beneficiile acordate prin invitații urmează regulile aplicației și pot fi modificate.</footer>
+        </blockquote>
+        <p class="fine">JAC Crew necesită conexiune la internet, separat de baza legislativă offline.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CAPITOLUL IV — ABONAMENTE ═══ -->
+  <section id="abonamente" class="chapter chapter-paper" aria-labelledby="price-title">
+    <header class="frame chapter-head">
+      <p class="kicker" data-reveal><span class="roman">IV</span>Abonamente</p>
+      <h2 id="price-title" class="display" data-reveal>Siguranță în decizie, <em>la prețul unei cafele în tură.</em></h2>
+      <p class="lede" data-reveal>Începi gratuit și alegi planul potrivit pentru tine sau pentru echipaj.</p>
+    </header>
+
+    <div class="frame tariff">
+      <article class="plan" data-reveal>
+        <header>
+          <h3>Basic</h3>
+          <p class="plan-desc">Gratuit, cu reclame</p>
+        </header>
+        <p class="price"><span class="amount">0 lei</span><span class="unit">mereu</span></p>
+        <ul>
+          <li>Consultare offline de bază</li>
+          <li>Calendar Shiftr, funcții standard</li>
+          <li>Acces JAC Crew: creezi sau intri într-un echipaj</li>
+        </ul>
+        <a class="btn btn-line btn-block" href="https://play.google.com/store/apps/details?id=com.ticuv.jac" target="_blank" rel="noopener noreferrer">Descarcă gratuit</a>
+      </article>
+
+      <article class="plan" data-reveal>
+        <header>
+          <h3>PRO Individual</h3>
+          <p class="plan-desc">Pentru un singur utilizator</p>
+        </header>
+        <p class="price"><span class="amount">10 lei</span><span class="unit">pe lună</span></p>
+        <ul>
+          <li>Toate cele 1.691 de articole și sinteze operative</li>
+          <li>Atenționări speciale pe fișele faptelor</li>
+          <li>Reordonarea legilor și căutare rapidă completă</li>
+          <li>Shiftr complet: normă legală și ore suplimentare</li>
+          <li>Fără reclame</li>
+        </ul>
+        <a class="btn btn-line btn-block" href="https://play.google.com/store/apps/details?id=com.ticuv.jac" target="_blank" rel="noopener noreferrer">Descarcă gratuit</a>
+      </article>
+
+      <article class="plan plan-crew" data-reveal>
+        <header>
+          <p class="plan-flag">Pentru 5 membri</p>
+          <h3>PRO Echipaj</h3>
+          <p class="plan-desc">Un abonament pentru toată patrula</p>
+        </header>
+        <div class="billing" role="group" aria-label="Perioada de facturare">
+          <button type="button" data-mode="anual" aria-pressed="true">Anual</button>
+          <button type="button" data-mode="lunar" aria-pressed="false">Lunar</button>
+        </div>
+        <div data-show="anual">
+          <p class="price"><span class="amount">200 lei</span><span class="unit">pe an, tot echipajul</span></p>
+          <p class="per">≈ 3,33 lei / lună de membru · 40 lei / an de membru<br><span>Cu 44% mai puțin decât 12 luni × 30 lei.</span></p>
+        </div>
+        <div data-show="lunar" hidden>
+          <p class="price"><span class="amount">30 lei</span><span class="unit">pe lună, tot echipajul</span></p>
+          <p class="per">6 lei / lună de membru<br><span>Plată lunară, pentru toți cei 5 membri.</span></p>
+        </div>
+        <ul>
+          <li>Acces PRO complet pentru toți cei 5 membri</li>
+          <li>Costul se împarte în patrulă sau detașament</li>
+        </ul>
+        <a class="btn btn-solid btn-block" href="https://play.google.com/store/apps/details?id=com.ticuv.jac" target="_blank" rel="noopener noreferrer">Descarcă și formează echipajul</a>
+      </article>
+    </div>
+    <p class="frame tariff-foot">Achiziția se face în aplicație, prin Google Play Billing. Prețul și condițiile sunt afișate în aplicație înainte de cumpărare. Pe acest site nu se fac plăți.</p>
+    <!-- Re-enable after Google Play trial is confirmed: Toate abonamentele includ o perioadă de testare gratuită. -->
+  </section>
+
+  <!-- ═══ DESCARCĂ ═══ -->
+  <section id="descarca" class="finale" aria-labelledby="dl-title">
+    <div class="finale-light" aria-hidden="true"></div>
+    <div class="frame finale-grid">
+      <div class="finale-head">
+        <img class="finale-mark" src="assets/landing/jac-mark-192.webp" alt="" width="170" height="192" loading="lazy" decoding="async">
+        <p class="kicker kicker-sm" data-reveal>JAC pe Android</p>
+        <h2 id="dl-title" class="display" data-reveal>Legea în buzunar. <em>Tura sub control.</em></h2>
+        <p class="lede" data-reveal>Instalează JAC gratuit și ai baza legislativă și calendarul Shiftr la tine, chiar și fără semnal.</p>
+        <div class="cta-row" data-reveal>
+          <a class="btn btn-solid btn-lg" href="https://play.google.com/store/apps/details?id=com.ticuv.jac" target="_blank" rel="noopener noreferrer"><svg class="ic" aria-hidden="true" style="fill:currentColor;stroke:none"><use href="#i-play"/></svg>Descarcă de pe Google Play</a>
+        </div>
       </div>
     </div>
   </section>
 
 </main>
 
-<footer class="site-footer" data-cta-stop>
-  <div class="wrap">
-    <div class="foot">
+<footer class="colophon">
+  <div class="frame colophon-grid">
+    <div class="colophon-brand">
       <a class="brand" href="#aplicatia">
-        <span class="brand-logo"><picture>
-          <source srcset="assets/landing/logo-192.webp" type="image/webp">
-          <img src="assets/logo.png" alt="Logo JAC" width="1254" height="1254" loading="lazy" decoding="async">
-        </picture></span>
+        <img src="assets/landing/jac-mark-96.webp" alt="" width="85" height="96" loading="lazy" decoding="async">
         <span>JAC</span>
       </a>
-      <nav aria-label="Documente și contact">
-        <a href="legal/terms.html">Termeni și condiții</a>
-        <a href="legal/privacy.html">Politica de confidențialitate</a>
-        <a href="legal/cookies.html">Cookie-uri</a>
-        <a href="legal/asistenta.html">Asistență</a>
-        <a href="mailto:vladticu100@gmail.com">Contact</a>
-        <a href="https://legislatie.just.ro/" target="_blank" rel="noopener noreferrer">Portalul Legislativ oficial</a>
-      </nav>
+      <p>Claritate în lege. Siguranță în decizie.</p>
     </div>
-    <p class="foot-disclaimer">JAC este o aplicație independentă, destinată consultării informațiilor juridice. Nu este afiliată și nu reprezintă Guvernul României, Ministerul Afacerilor Interne, Poliția Română sau Jandarmeria Română.</p>
-    <p class="copy">© <span data-year>2026</span> JAC</p>
+    <nav class="colophon-nav" aria-label="Documente și contact">
+      <a href="legal/terms.html">Termeni și condiții</a>
+      <a href="legal/privacy.html">Politica de confidențialitate</a>
+      <a href="legal/cookies.html">Cookie-uri</a>
+      <a href="legal/asistenta.html">Asistență</a>
+      <a href="mailto:vladticu100@gmail.com">Contact</a>
+      <a href="https://legislatie.just.ro/" target="_blank" rel="noopener noreferrer">Portalul Legislativ oficial</a>
+    </nav>
+    <p class="colophon-disclaimer">JAC este o aplicație independentă, destinată consultării informațiilor juridice. Nu este afiliată și nu reprezintă Guvernul României, Ministerul Afacerilor Interne, Poliția Română sau Jandarmeria Română.</p>
+    <p class="colophon-copy">© <span data-year>2026</span> JAC</p>
   </div>
 </footer>
 
-<div id="mobileCta" class="mobile-cta">
-  <a class="btn btn-primary btn-lg shimmer" href="https://play.google.com/store/apps/details?id=com.ticuv.jac" target="_blank" rel="noopener noreferrer"><svg class="ic ic-fill" aria-hidden="true"><use href="#i-play"/></svg>Descarcă de pe Google Play</a>
+<div id="dock" class="dock" hidden>
+  <a class="btn btn-solid btn-lg btn-block" href="https://play.google.com/store/apps/details?id=com.ticuv.jac" target="_blank" rel="noopener noreferrer"><svg class="ic" aria-hidden="true" style="fill:currentColor;stroke:none"><use href="#i-play"/></svg>Descarcă de pe Google Play</a>
 </div>
-
-<script src="assets/js/site.js?v=4" defer></script>
 </body>
 </html>
