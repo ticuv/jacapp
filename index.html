@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JAC — Informații juridice și organizarea turelor</title>
-<meta name="description" content="Descoperă JAC: acces la informații juridice, căutare în conținutul disponibil și instrumente pentru organizarea turelor cu Shiftr. Testare închisă: accesul se acordă pe bază de solicitare.">
+<title>JAC — legislație pe Android și calendar Shiftr</title>
+<meta name="description" content="Aplicație Android independentă pentru consultarea legislației și a contravențiilor, cu acces offline, și pentru organizarea turelor cu Shiftr. Testare închisă.">
 <link rel="canonical" href="https://aplicatiajac.ro/">
+<!-- Pagină servită la /. index-live.html este noindex. La lansarea publică, înlocuiește acest fișier cu varianta publică, păstrează canonical https://aplicatiajac.ro/ și robots index,follow. Dacă index-live.html rămâne online, lasă-l noindex, cu canonical https://aplicatiajac.ro/ . -->
 <meta name="robots" content="index, follow">
 <meta name="author" content="JAC">
 <meta name="theme-color" content="#070b12">
@@ -13,35 +14,43 @@
 <meta property="og:site_name" content="JAC">
 <meta property="og:locale" content="ro_RO">
 <meta property="og:url" content="https://aplicatiajac.ro/">
-<meta property="og:title" content="JAC — Informații juridice și organizarea turelor">
-<meta property="og:description" content="Descoperă JAC: acces la informații juridice, căutare în conținutul disponibil și instrumente pentru organizarea turelor cu Shiftr. Testare închisă: accesul se acordă pe bază de solicitare.">
+<meta property="og:title" content="JAC — legislație pe Android și calendar Shiftr">
+<meta property="og:description" content="Aplicație Android independentă pentru consultarea legislației și a contravențiilor, cu acces offline, și pentru organizarea turelor cu Shiftr. Testare închisă.">
 <meta property="og:image" content="https://aplicatiajac.ro/assets/hero-dual.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1280">
 <meta property="og:image:height" content="720">
 <meta property="og:image:alt" content="Două telefoane care afișează interfața JAC și calendarul de ture Shiftr.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="JAC — Informații juridice și organizarea turelor">
-<meta name="twitter:description" content="Descoperă JAC: acces la informații juridice, căutare în conținutul disponibil și instrumente pentru organizarea turelor cu Shiftr. Testare închisă: accesul se acordă pe bază de solicitare.">
+<meta name="twitter:title" content="JAC — legislație pe Android și calendar Shiftr">
+<meta name="twitter:description" content="Aplicație Android independentă pentru consultarea legislației și a contravențiilor, cu acces offline, și pentru organizarea turelor cu Shiftr. Testare închisă.">
 <meta name="twitter:image" content="https://aplicatiajac.ro/assets/hero-dual.png">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "JAC",
-  "operatingSystem": "Android",
-  "applicationCategory": "ReferenceApplication",
-  "description": "Descoperă JAC: acces la informații juridice, căutare în conținutul disponibil și instrumente pentru organizarea turelor cu Shiftr. Testare închisă: accesul se acordă pe bază de solicitare.",
-  "url": "https://aplicatiajac.ro/",
-  "inLanguage": "ro-RO",
-  "offers": {"@type": "Offer", "availability": "https://schema.org/LimitedAvailability", "description": "Testare închisă. Acces pe bază de solicitare."}
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "JAC",
+      "url": "https://aplicatiajac.ro/",
+      "inLanguage": "ro-RO",
+      "description": "Aplicație Android independentă pentru consultarea legislației și a contravențiilor, cu acces offline, și pentru organizarea turelor cu Shiftr."
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "JAC",
+      "operatingSystem": "Android",
+      "applicationCategory": "ReferenceApplication",
+      "inLanguage": "ro-RO",
+      "url": "https://aplicatiajac.ro/",
+      "description": "Aplicație Android independentă pentru consultarea legislației și a contravențiilor, cu acces offline, și pentru organizarea turelor cu Shiftr. Testare închisă."
+    }
+  ]
 }
 </script>
 <link rel="icon" type="image/png" href="assets/logo.png">
 <link rel="apple-touch-icon" href="assets/logo.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/fonts/inter.css">
 <style>
 
 :root {
@@ -204,7 +213,6 @@ nav.primary a:hover { color: white; }
 .cluster .ph {
   position: absolute;
   margin: 0;
-  filter: drop-shadow(0 22px 28px rgba(0,0,0,.45));
 }
 .shot-img {
   width: 100%;
@@ -213,6 +221,7 @@ nav.primary a:hover { color: white; }
   border-radius: 1.35rem;
   border: 1px solid rgba(226, 236, 248, .2);
   background: #0c121c;
+  box-shadow: 0 22px 28px rgba(0,0,0,.45);
 }
 .caps {
   display: grid;
@@ -303,6 +312,156 @@ html.motion .reveal { animation: rise .65s ease both; }
   .cluster .ph:nth-child(odd) { justify-self: start; margin-left: 2%; }
   .hero-shot { width: 100%; }
 }
+.pricing-head { text-align: center; }
+.pricing-head .kicker { justify-content: center; }
+.pricing-head .lede { margin-inline: auto; }
+.plans {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.4rem;
+  align-items: start;
+}
+.plan {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  margin: 0;
+  padding: 1.15rem 1rem 1.2rem;
+  border: 1px solid var(--line);
+  background: var(--elev);
+}
+.plan h3 { font-size: 1.15rem; }
+.plan-price {
+  margin: .75rem 0 0;
+  color: var(--ink);
+  font-size: clamp(1.7rem, 2vw, 2.05rem);
+  font-weight: 800;
+  letter-spacing: -.03em;
+  line-height: 1.05;
+}
+.plan-bill { font-size: .95rem; font-weight: 650; color: var(--muted); }
+.plan-sub { margin: .25rem 0 0; color: var(--muted); font-size: .875rem; }
+.nowrap, .plan-amount, .plan-total, .plan-choice .plan-bill { white-space: nowrap; }
+.plan-dual {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: .75rem;
+  margin-top: .85rem;
+  min-width: 0;
+}
+.plan-choice {
+  min-width: 0;
+  margin: 0;
+  padding: 1rem .95rem 1.05rem;
+  border: 1px solid rgba(76, 154, 240, .5);
+  background: rgba(7, 11, 18, .45);
+  box-shadow: inset 0 0 0 1px rgba(76, 154, 240, .16), 0 0 22px rgba(76, 154, 240, .08);
+  cursor: default;
+}
+.plan-choice-label {
+  margin: 0;
+  color: var(--muted);
+  font-size: .8125rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.plan-choice .plan-price {
+  margin: .55rem 0 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+.plan-figure {
+  display: inline-block;
+  margin-right: .12rem;
+  color: var(--ink);
+  font-size: clamp(2.05rem, 2.8vw, 2.55rem);
+  font-weight: 800;
+  letter-spacing: -.04em;
+  line-height: .95;
+}
+.plan-figure-accent { color: var(--accent); }
+.plan-approx {
+  margin-right: .08rem;
+  color: var(--muted);
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+.plan-choice .plan-bill {
+  display: block;
+  margin-top: .4rem;
+  color: var(--muted);
+  font-size: .875rem;
+  font-weight: 650;
+  line-height: 1.35;
+}
+.plan-choice .plan-sub {
+  margin-top: .7rem;
+  color: var(--muted);
+  font-size: .875rem;
+  line-height: 1.4;
+}
+.plan-total { color: var(--ink); font-weight: 700; }
+.plan-save {
+  margin: .6rem 0 0;
+  color: var(--ink);
+  font-size: .875rem;
+  font-weight: 650;
+  line-height: 1.4;
+}
+.plan-explain {
+  margin: .35rem 0 0;
+  color: var(--muted);
+  font-size: .875rem;
+  line-height: 1.45;
+}
+.plan > p { margin: .7rem 0 0; }
+.plan ul {
+  margin: 1rem 0 0;
+  padding: .15rem 0 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+.plan li {
+  padding: .62rem 0;
+  border-bottom: 1px solid var(--line);
+  font-size: .92rem;
+}
+.plan-badge {
+  align-self: flex-start;
+  margin: 0 0 .75rem;
+  padding: .22rem .6rem;
+  border: 1px solid rgba(76, 154, 240, .5);
+  border-radius: 999px;
+  color: #d5e8ff;
+  background: rgba(76, 154, 240, .1);
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+.plan-crew {
+  border-color: rgba(76, 154, 240, .62);
+  box-shadow:
+    inset 0 0 0 1px rgba(76, 154, 240, .22),
+    0 0 32px rgba(76, 154, 240, .1);
+}
+@media (min-width: 430px) {
+  .plan-dual { grid-template-columns: 1fr 1fr; gap: .8rem; }
+}
+@media (min-width: 760px) {
+  .plans { grid-template-columns: 1fr 1fr; align-items: stretch; }
+  .plan-crew { grid-column: 1 / -1; order: -1; align-self: start; }
+  .plan-dual { gap: 1rem; }
+  .plan-choice { padding: 1.1rem 1.15rem 1.15rem; }
+}
+@media (min-width: 1040px) {
+  .plans { grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; }
+  .plan-crew { grid-column: auto; order: 0; }
+  .plan-dual { gap: .7rem; }
+  .plan-choice { padding: 1rem .85rem 1.05rem; }
+  .plan-figure { font-size: 2.15rem; }
+}
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   html.motion .reveal { animation: none; }
@@ -325,7 +484,7 @@ html.motion .reveal { animation: rise .65s ease both; }
   <div class="wrap bar">
     <a class="brand" href="#top">
       <span class="logo-frame"><picture>
-  <source srcset="assets/landing/logo.webp" type="image/webp">
+  <source srcset="assets/landing/logo-192.webp 192w, assets/landing/logo.webp 1254w" sizes="48px" type="image/webp">
   <img src="assets/logo.png" alt="Logo JAC" width="1254" height="1254" class="logo-img" decoding="async">
 </picture></span>
       <span>JAC</span>
@@ -335,6 +494,7 @@ html.motion .reveal { animation: rise .65s ease both; }
       <a href="#functionalitati">Funcționalități</a>
       <a href="#shiftr">Shiftr</a>
       <a href="#echipaj">JAC Crew</a>
+      <a href="#abonamente">Abonamente</a>
       <a href="#aplica">Acces</a>
     </nav>
     <div class="actions">
@@ -349,6 +509,7 @@ html.motion .reveal { animation: rise .65s ease both; }
       <a href="#functionalitati">Funcționalități</a>
       <a href="#shiftr">Shiftr</a>
       <a href="#echipaj">JAC Crew</a>
+      <a href="#abonamente">Abonamente</a>
       <a href="#aplica">Acces</a>
     </nav>
   </div>
@@ -369,7 +530,7 @@ html.motion .reveal { animation: rise .65s ease both; }
       </div>
       <figure class="hero-visual">
         <picture>
-  <source srcset="assets/landing/hero-dual.webp" type="image/webp">
+  <source srcset="assets/landing/hero-dual-800.webp 800w, assets/landing/hero-dual.webp 1280w" sizes="(min-width: 1040px) 720px, 100vw" type="image/webp">
   <img src="assets/hero-dual.png" alt="Două telefoane care afișează interfața JAC și calendarul de ture Shiftr." width="1280" height="720" class="hero-shot" decoding="async" fetchpriority="high">
 </picture>
         <figcaption class="mono">JAC reunește consultarea informațiilor juridice și organizarea turelor într-o singură aplicație.</figcaption>
@@ -541,10 +702,67 @@ html.motion .reveal { animation: rise .65s ease both; }
     </div>
   </section>
 
+  <section id="abonamente" class="section">
+    <div class="wrap">
+      <div class="pricing-head">
+        <div class="kicker"><span class="idx">04</span><p class="eyebrow">ABONAMENTE</p></div>
+        <h2>Abonamente</h2>
+        <p class="lede">Alege planul potrivit pentru tine sau echipajul tău.</p>
+      </div>
+      <div class="plans">
+        <article class="plan">
+          <h3>Basic</h3>
+          <p class="plan-price">0 lei <span class="plan-bill">Gratuit, mereu</span></p>
+          <p>Organizare și consultare rapidă.</p>
+          <ul>
+            <li>Căutare legislativă de bază</li>
+            <li>Calendar Shiftr (standard)</li>
+            <li>Bază de date offline</li>
+          </ul>
+        </article>
+        <article class="plan">
+          <h3>PRO Individual</h3>
+          <p class="plan-price">10 lei <span class="plan-bill">/ lună</span></p>
+          <p>Acces nelimitat pentru un singur utilizator.</p>
+          <ul>
+            <li>Acces integral 1.691 articole</li>
+            <li>Atenționări Speciale pe fișă</li>
+            <li>Shiftr nelimitat (statistici, export)</li>
+            <li>Fără reclame</li>
+          </ul>
+        </article>
+        <article class="plan plan-crew">
+          <p class="plan-badge">RECOMANDAT · 5 MEMBRI</p>
+          <h3>PRO Echipaj</h3>
+          <div class="plan-dual">
+            <div class="plan-choice">
+              <p class="plan-choice-label">Lunar</p>
+              <p class="plan-price"><span class="plan-amount"><span class="plan-figure">6</span> lei</span> <span class="plan-bill">/ lună / persoană</span></p>
+              <p class="plan-sub"><span class="plan-total">30 lei / lună</span> pentru întregul echipaj</p>
+            </div>
+            <div class="plan-choice">
+              <p class="plan-choice-label">Anual</p>
+              <p class="plan-price"><span class="plan-amount"><span class="plan-approx">≈</span> <span class="plan-figure plan-figure-accent">3,33</span> lei</span> <span class="plan-bill">/ lună / persoană</span></p>
+              <p class="plan-sub"><span class="plan-total">200 lei / an</span> pentru întregul echipaj</p>
+              <p class="plan-save">Economisești față de plata lunară.</p>
+              <p class="plan-explain">Echivalentul a aproximativ <span class="nowrap">3,33 lei</span> pe lună pentru fiecare membru.</p>
+            </div>
+          </div>
+          <p>Cel mai avantajos plan. Împarte costul cu colegii.</p>
+          <ul>
+            <li>Include toate funcțiile PRO pentru cei 5 membri ai echipajului.</li>
+            <li>Un singur abonament pentru întregul echipaj.</li>
+          </ul>
+        </article>
+      </div>
+      <!-- Re-enable after Google Play trial is confirmed: Toate abonamentele includ o perioadă de testare gratuită. -->
+    </div>
+  </section>
+
   <section id="transparenta" class="section">
     <div class="wrap layout">
       <div>
-        <div class="kicker"><span class="idx">04</span><p class="eyebrow">TRANSPARENȚĂ</p></div>
+        <div class="kicker"><span class="idx">05</span><p class="eyebrow">TRANSPARENȚĂ</p></div>
         <h2>Informația juridică trebuie verificată.</h2>
         <p class="lede">JAC facilitează consultarea conținutului disponibil în aplicație. Pentru aplicarea unei norme într-o situație concretă, verifică forma oficială și actualizată a actului normativ.</p>
         <p class="callout">JAC este o aplicație independentă și nu reprezintă o instituție publică. Disponibilitatea locală a conținutului nu garantează că acesta reflectă automat toate modificările legislative ulterioare.</p>
@@ -566,7 +784,7 @@ html.motion .reveal { animation: rise .65s ease both; }
 
   <section id="descarca" class="section">
     <div class="wrap">
-      <div class="kicker"><span class="idx">05</span><p class="eyebrow">JAC • INFORMAȚII ȘI ORGANIZARE</p></div>
+      <div class="kicker"><span class="idx">06</span><p class="eyebrow">JAC • INFORMAȚII ȘI ORGANIZARE</p></div>
       <h2>Mai multă claritate. Mai puțin timp pierdut.</h2>
       <p class="lede">Descoperă instrumentele JAC pentru consultarea informațiilor juridice și organizarea programului de lucru.</p>
       <div class="cta-row"><a class="btn btn-primary" href="#aplica">Solicită Acces în Closed Beta</a></div>
@@ -619,7 +837,7 @@ html.motion .reveal { animation: rise .65s ease both; }
   <div class="wrap">
     <div class="foot">
       <a class="brand" href="#top"><span class="logo-frame"><picture>
-  <source srcset="assets/landing/logo.webp" type="image/webp">
+  <source srcset="assets/landing/logo-192.webp 192w, assets/landing/logo.webp 1254w" sizes="48px" type="image/webp">
   <img src="assets/logo.png" alt="Logo JAC" width="1254" height="1254" class="logo-img" decoding="async">
 </picture></span><span>JAC</span></a>
       <nav aria-label="Documente și contact">
