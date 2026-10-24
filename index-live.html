@@ -112,10 +112,9 @@ h3 { margin: 0 0 .2rem; font-size: 1rem; font-weight: 700; }
 .lede { margin: .8rem 0 0; max-width: 38rem; }
 .note { margin: .7rem 0 0; max-width: 38rem; color: #93a3b6; font-size: .92rem; }
 .mono {
-  font-family: var(--mono);
-  font-size: .68rem;
-  line-height: 1.4;
-  letter-spacing: .01em;
+  font-family: var(--sans);
+  font-size: .78rem;
+  line-height: 1.45;
   color: #93a6bb;
 }
 header.site {
@@ -164,7 +163,7 @@ nav.primary a:hover { color: white; }
 .mobile a { display: block; padding: .75rem .1rem; text-decoration: none; color: var(--ink); font-weight: 600; }
 .hero {
   position: relative;
-  padding: 1.6rem 0 1.2rem;
+  padding: 1.3rem 0 1rem;
   background-image:
     linear-gradient(to right, rgba(176,198,224,.045) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(176,198,224,.045) 1px, transparent 1px);
@@ -174,11 +173,13 @@ nav.primary a:hover { color: white; }
 .cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: .65rem; margin-top: 1.15rem; }
 .store { display: inline-flex; line-height: 0; }
 .store img { height: 4.35rem; width: auto; }
-.hero-visual { min-width: 0; }
+.hero-visual { min-width: 0; margin: 0; }
 .hero-shot {
   width: 100%;
   height: auto;
   display: block;
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 90%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 90%, transparent 100%);
 }
 .hero-visual .mono { margin-top: .45rem; max-width: 36rem; }
 .section { padding: 2.3rem 0; border-top: 1px solid var(--line); }
@@ -249,7 +250,7 @@ nav.primary a:hover { color: white; }
 }
 footer.site { border-top: 1px solid var(--line); padding: 1.6rem 0 2.2rem; }
 .foot { display: flex; flex-wrap: wrap; gap: 1rem 1.5rem; justify-content: space-between; align-items: flex-start; }
-.foot nav { display: flex; flex-wrap: wrap; gap: .55rem 1rem; }
+.foot nav { display: grid; grid-template-columns: repeat(2, auto); gap: .5rem 1.75rem; justify-content: start; }
 .foot nav a { color: #d5deea; text-decoration: none; font-weight: 600; font-size: .92rem; }
 .foot nav a:hover { color: white; }
 .disclaimer { max-width: 46rem; margin: 1rem 0 0; font-size: .92rem; }
@@ -288,7 +289,7 @@ html.motion .reveal { animation: rise .65s ease both; }
 @media (min-width: 1040px) {
   .menu-btn { display: none; }
   nav.primary { display: flex; }
-  .hero { padding: 1.1rem 0 .4rem; }
+  .hero { padding: 1rem 0 .3rem; }
   .hero-grid { grid-template-columns: minmax(16rem, 22.5rem) minmax(0, 1fr); gap: 1rem 1.5rem; align-items: center; }
   .hero-shot { width: 100%; max-width: none; }
   .store img { height: 5.1rem; }
@@ -526,7 +527,6 @@ html.motion .reveal { animation: rise .65s ease both; }
           <a class="store" href="https://play.google.com/store/apps/details?id=com.ticuv.jac" target="_blank" rel="noopener noreferrer"><img src="https://play.google.com/intl/ro_ro/badges/static/images/badges/ro_badge_web_generic.png" alt="Disponibil pe Google Play" width="646" height="250"></a>
           <a class="btn btn-ghost" href="#functionalitati">Descoperă funcționalitățile</a>
         </div>
-        <p class="note">Creată pentru acces rapid la informații și organizare practică.</p>
         
       </div>
       <figure class="hero-visual">
