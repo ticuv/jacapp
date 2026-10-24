@@ -56,7 +56,7 @@
 <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/landing/photo_5971895843633697206_y.webp" as="image" type="image/webp" fetchpriority="high">
 <link rel="stylesheet" href="assets/fonts/inter.css">
-<link rel="stylesheet" href="assets/css/site.css?v=6">
+<link rel="stylesheet" href="assets/css/site.css?v=7">
 <script>
 (function () {
   var d = document.documentElement;
@@ -304,10 +304,56 @@
       <div class="integral-text">
         <p class="kicker kicker-sm" data-reveal>Legislație integrală</p>
         <h3 class="display-md" data-reveal>Textul complet. <em>Verificat la sursă.</em></h3>
-        <p class="lede" data-reveal>Când ai nevoie de actul normativ întreg, modulul Legislație integrală îți oferă acces local, cu căutare după denumire sau în textul articolelor.</p>
-        <ul class="acts" data-reveal>
-          <li>Codul Penal</li><li>Codul de Procedură Penală</li><li>Codul Silvic</li><li>Codul Aerian</li><li>Legea 126/1995</li><li>Legea 143/2000</li>
-        </ul>
+        <p class="lede" data-reveal>Când ai nevoie de actul normativ întreg, modulul Legislație integrală îți oferă <strong>27 de acte normative</strong> cu text complet, pe articole, încărcate local în aplicație. Cauți după denumire sau direct în textul articolelor.</p>
+        <div class="acts-index">
+          <section class="acts-group" data-reveal aria-labelledby="acts-coduri">
+            <h4 id="acts-coduri">Coduri <span>4</span></h4>
+            <ul>
+              <li><b>Codul penal</b><span>Cod nr. 286/2009</span></li>
+              <li><b>Codul de procedură penală</b><span>Cod nr. 135/2010</span></li>
+              <li><b>Codul Silvic</b><span>Legea nr. 331/2024</span></li>
+              <li><b>Codul Aerian</b><span>Cod nr. 21/2020</span></li>
+            </ul>
+          </section>
+          <section class="acts-group" data-reveal aria-labelledby="acts-ordine">
+            <h4 id="acts-ordine">Ordine publică și contravenții <span>7</span></h4>
+            <ul>
+              <li><b>Legea nr. 61/1991</b><span>conviețuire socială, ordine și liniște publică</span></li>
+              <li><b>Legea nr. 60/1991</b><span>organizarea și desfășurarea adunărilor publice</span></li>
+              <li><b>OG nr. 2/2001</b><span>regimul juridic al contravențiilor</span></li>
+              <li><b>Legea nr. 4/2008</b><span>competiții și jocuri sportive</span></li>
+              <li><b>Legea nr. 407/2006</b><span>vânătoare și protecția fondului cinegetic</span></li>
+              <li><b>Legea nr. 176/2024</b><span>pescuit și protecția resursei acvatice vii</span></li>
+              <li><b>Legea nr. 54/2012</b><span>activități de picnic</span></li>
+            </ul>
+          </section>
+          <section class="acts-group" data-reveal aria-labelledby="acts-operative">
+            <h4 id="acts-operative">Domenii specifice și operative <span>14</span></h4>
+            <ul>
+              <li><b>Legea nr. 143/2000</b><span>prevenirea și combaterea traficului și consumului de droguri</span></li>
+              <li><b>Legea nr. 194/2011</b><span>substanțe psihoactive</span></li>
+              <li><b>Legea nr. 126/1995</b><span>regimul materiilor explozive</span></li>
+              <li><b>Legea nr. 295/2004</b><span>regimul armelor, componentelor esențiale și al munițiilor</span></li>
+              <li><b>HG nr. 11/2018</b><span>normele metodologice ale Legii 295/2004 (arme)</span></li>
+              <li><b>Legea nr. 217/2003</b><span>prevenirea și combaterea violenței domestice</span></li>
+              <li><b>Legea nr. 333/2003</b><span>paza obiectivelor, bunurilor și valorilor</span></li>
+              <li><b>Legea nr. 349/2002</b><span>prevenirea efectelor consumului de tutun</span></li>
+              <li><b>Legea nr. 365/2002</b><span>comerț electronic</span></li>
+              <li><b>Legea nr. 145/2014</b><span>reglementarea pieței produselor agricole</span></li>
+              <li><b>OUG nr. 55/2002</b><span>câini periculoși sau agresivi</span></li>
+              <li><b>OUG nr. 97/2005</b><span>evidența, domiciliul și actele de identitate</span></li>
+              <li><b>OUG nr. 34/2008</b><span>Sistemul național unic pentru apeluri de urgență (112)</span></li>
+              <li><b>Legea nr. 171/2010</b><span>contravenții silvice</span></li>
+            </ul>
+          </section>
+          <section class="acts-group" data-reveal aria-labelledby="acts-rutier">
+            <h4 id="acts-rutier">Rutier <span>2</span></h4>
+            <ul>
+              <li><b>OUG nr. 195/2002</b><span>circulația pe drumurile publice</span></li>
+              <li><b>HG nr. 1391/2006</b><span>regulamentul de aplicare a OUG 195/2002</span></li>
+            </ul>
+          </section>
+        </div>
         <aside class="notice" data-reveal aria-label="Transparență">
           <p class="notice-label">Notă de transparență</p>
           <p>JAC este o aplicație independentă. Nu este o aplicație oficială a Guvernului României și nu este afiliată, aprobată sau susținută de Ministerul Afacerilor Interne, Poliția Română, Jandarmeria Română ori de alte autorități publice. Aplicația nu înlocuiește consultarea actelor normative oficiale din Monitorul Oficial, iar calculele Shiftr au rol orientativ personal.</p>
@@ -464,12 +510,14 @@
           <button type="button" data-mode="lunar" aria-pressed="false">Lunar</button>
         </div>
         <div data-show="anual">
-          <p class="price"><span class="amount">200 lei</span><span class="unit">pe an, tot echipajul</span></p>
-          <p class="per">≈ 3,33 lei / lună de membru · 40 lei / an de membru<br><span>Cu 44% mai puțin decât 12 luni × 30 lei.</span></p>
+          <p class="price"><span class="amount">3,33 lei</span><span class="unit">/ lună / persoană</span></p>
+          <p class="price-basis">cu plata anuală</p>
+          <p class="price-total"><strong>200 lei/an</strong> pentru întregul echipaj de 5 membri</p>
         </div>
         <div data-show="lunar" hidden>
-          <p class="price"><span class="amount">30 lei</span><span class="unit">pe lună, tot echipajul</span></p>
-          <p class="per">6 lei / lună de membru<br><span>Plată lunară, pentru toți cei 5 membri.</span></p>
+          <p class="price"><span class="amount">6 lei</span><span class="unit">/ lună / persoană</span></p>
+          <p class="price-basis">cu plata lunară</p>
+          <p class="price-total"><strong>30 lei/lună</strong> pentru întregul echipaj</p>
         </div>
         <ul>
           <li>Acces PRO complet pentru toți cei 5 membri</li>

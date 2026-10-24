@@ -410,9 +410,23 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .integral-phone { width: min(100%, 360px); margin-inline: auto; transform: rotateY(12deg) rotateZ(-1.5deg); }
 .integral-text { grid-column: 7 / -1; }
 .integral-text .lede { margin-top: 22px; }
-.acts { list-style: none; display: flex; flex-wrap: wrap; gap: 0; margin: 28px 0 0; padding: 0; }
-.acts li { font: italic 400 1.15rem/1.6 var(--serif); color: var(--paper); }
-.acts li:not(:last-child)::after { content: "·"; color: var(--amber); margin: 0 .55em; font-style: normal; }
+.acts-index { display: grid; gap: 30px; margin-top: 34px; }
+.acts-group h4 {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin: 0; padding-bottom: 10px;
+  border-bottom: 1px solid var(--rule-2); font: 600 .72rem/1.3 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: var(--paper-2);
+}
+.acts-group h4 span { font: italic 400 1.2rem/1 var(--serif); letter-spacing: 0; color: var(--amber); }
+.acts-group ul { list-style: none; margin: 0; padding: 0; }
+.acts-group li { display: grid; grid-template-columns: 11.5rem 1fr; column-gap: 18px; padding: 9px 0; border-bottom: 1px solid var(--rule); }
+.acts-group b { font: 400 1.05rem/1.35 var(--serif); color: var(--paper); }
+.acts-group li span { font-size: .87rem; line-height: 1.45; color: var(--paper-3); padding-top: 2px; }
+@media (min-width: 1024px) {
+  .integral { align-items: start; }
+  .integral-art { position: sticky; top: 110px; }
+}
+@media (max-width: 599px) {
+  .acts-group li { grid-template-columns: 1fr; row-gap: 2px; }
+}
 .notice { margin-top: 40px; padding: 26px 0 0; border-top: 1px solid var(--rule-2); }
 .notice-label { margin: 0 0 10px; font: 600 .7rem/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--amber); }
 .notice p:not(.notice-label) { margin: 0; font-size: .9rem; line-height: 1.65; color: var(--paper-3); max-width: 40rem; }
@@ -521,8 +535,11 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .price { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 12px; margin: 30px 0 0; }
 .price .amount { font: 300 clamp(3rem, 4.8vw, 4.6rem)/.9 var(--serif); letter-spacing: -.035em; font-variant-numeric: lining-nums; }
 .price .unit { font-size: .86rem; color: var(--paper-3); }
-.per { margin: 14px 0 0; font-size: .88rem; line-height: 1.55; color: var(--paper-2); }
-.per span { color: var(--paper-3); }
+/* PRO Echipaj: costul pe persoană primul, apoi modul de plată, apoi totalul facturat */
+.plan-crew .price .unit { color: var(--paper-2); font-size: .92rem; }
+.price-basis { margin: 10px 0 0; font: italic 400 1.2rem/1.3 var(--serif); color: var(--paper-2); }
+.price-total { margin: 18px 0 0; padding-top: 14px; border-top: 1px solid var(--rule); font-size: .92rem; line-height: 1.5; color: var(--paper-2); }
+.price-total strong { color: var(--paper); font-weight: 600; white-space: nowrap; }
 .plan ul { list-style: none; margin: 30px 0 34px; padding: 0; flex: 1; }
 .plan li { position: relative; padding: 9px 0 9px 22px; border-bottom: 1px solid var(--rule); font-size: .92rem; color: var(--paper-2); }
 .plan li::before { content: ""; position: absolute; left: 0; top: 1.05em; width: 10px; height: 1px; background: var(--amber); }
