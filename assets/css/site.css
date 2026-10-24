@@ -535,11 +535,15 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .price { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 12px; margin: 30px 0 0; }
 .price .amount { font: 300 clamp(3rem, 4.8vw, 4.6rem)/.9 var(--serif); letter-spacing: -.035em; font-variant-numeric: lining-nums; }
 .price .unit { font-size: .86rem; color: var(--paper-3); }
-/* PRO Echipaj: costul pe persoană primul, apoi modul de plată, apoi totalul facturat */
-.plan-crew .price .unit { color: var(--paper-2); font-size: .92rem; }
-.price-basis { margin: 10px 0 0; font: italic 400 1.2rem/1.3 var(--serif); color: var(--paper-2); }
-.price-total { margin: 18px 0 0; padding-top: 14px; border-top: 1px solid var(--rule); font-size: .92rem; line-height: 1.5; color: var(--paper-2); }
-.price-total strong { color: var(--paper); font-weight: 600; white-space: nowrap; }
+/* PRO Echipaj: 1. costul pe om  2. plata și totalul pentru echipaj  3. alternativa  4. avantaje + acțiune */
+.plan-crew .price .unit { color: var(--paper-2); font-size: .95rem; }
+.plan-crew .price .amount { font-size: clamp(3.4rem, 5.4vw, 5.2rem); }
+.price-total { margin: 12px 0 0; font-size: 1rem; line-height: 1.45; color: var(--paper); }
+.price-total strong { color: var(--amber-2); font-weight: 600; white-space: nowrap; }
+.price-alt { margin: 8px 0 0; font-size: .86rem; line-height: 1.45; color: var(--paper-3); }
+.plan-pitch { margin: 22px 0 0; padding-top: 18px; border-top: 1px solid var(--rule); font: italic 400 1.25rem/1.3 var(--serif); color: var(--paper); }
+.plan-anchor { margin: 6px 0 0; font-size: .88rem; line-height: 1.5; color: var(--paper-2); }
+.plan-crew ul { margin-top: 18px; }
 .plan ul { list-style: none; margin: 30px 0 34px; padding: 0; flex: 1; }
 .plan li { position: relative; padding: 9px 0 9px 22px; border-bottom: 1px solid var(--rule); font-size: .92rem; color: var(--paper-2); }
 .plan li::before { content: ""; position: absolute; left: 0; top: 1.05em; width: 10px; height: 1px; background: var(--amber); }
