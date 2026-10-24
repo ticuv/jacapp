@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>JAC — legislație offline și Shiftr, pe Google Play</title>
-<meta name="description" content="1.691 de articole legislative stocate local și calendarul de ture Shiftr, pentru ritmul din teren. Aplicație Android independentă, disponibilă pe Google Play.">
+<title>Aplicația JAC: legislație offline și calendar de ture Shiftr</title>
+<meta name="description" content="JAC este o aplicație Android independentă: 1.691 de articole de legislație stocate local, căutare cu încadrare și amendă și calendarul de ture Shiftr.">
 <link rel="canonical" href="https://aplicatiajac.ro/index-live.html">
 <!-- Nu este pagina de la /. Rămâne noindex cât timp index.html este varianta publicată. La lansare, mută acest conținut în index.html și setează canonical https://aplicatiajac.ro/ cu robots index,follow. -->
 <meta name="robots" content="noindex, follow">
@@ -15,16 +15,16 @@
 <meta property="og:site_name" content="JAC">
 <meta property="og:locale" content="ro_RO">
 <meta property="og:url" content="https://aplicatiajac.ro/index-live.html">
-<meta property="og:title" content="JAC — legislație offline și Shiftr, pe Google Play">
-<meta property="og:description" content="1.691 de articole legislative stocate local și calendarul de ture Shiftr, pentru ritmul din teren. Aplicație Android independentă, disponibilă pe Google Play.">
+<meta property="og:title" content="Aplicația JAC: legislație offline și calendar de ture Shiftr">
+<meta property="og:description" content="JAC este o aplicație Android independentă: 1.691 de articole de legislație stocate local, căutare cu încadrare și amendă și calendarul de ture Shiftr.">
 <meta property="og:image" content="https://aplicatiajac.ro/assets/landing/og-jac.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Aplicația JAC: ecranul principal cu baza legislativă locală și calendarul de ture Shiftr.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="JAC — legislație offline și Shiftr, pe Google Play">
-<meta name="twitter:description" content="1.691 de articole legislative stocate local și calendarul de ture Shiftr, pentru ritmul din teren. Aplicație Android independentă, disponibilă pe Google Play.">
+<meta name="twitter:title" content="Aplicația JAC: legislație offline și calendar de ture Shiftr">
+<meta name="twitter:description" content="JAC este o aplicație Android independentă: 1.691 de articole de legislație stocate local, căutare cu încadrare și amendă și calendarul de ture Shiftr.">
 <meta name="twitter:image" content="https://aplicatiajac.ro/assets/landing/og-jac.jpg">
 <script type="application/ld+json">
 {
@@ -32,20 +32,46 @@
   "@graph": [
     {
       "@type": "WebSite",
+      "@id": "https://aplicatiajac.ro/#website",
       "name": "JAC",
+      "alternateName": ["Aplicația JAC", "JAC — legislație și calendar de ture"],
       "url": "https://aplicatiajac.ro/",
-      "inLanguage": "ro-RO",
-      "description": "Aplicație Android independentă pentru consultarea legislației și a contravențiilor, cu acces offline, și pentru organizarea turelor cu Shiftr."
+      "inLanguage": "ro-RO"
     },
     {
-      "@type": "SoftwareApplication",
+      "@type": "WebPage",
+      "@id": "https://aplicatiajac.ro/#webpage",
+      "url": "https://aplicatiajac.ro/",
+      "name": "Aplicația JAC: legislație offline și calendar de ture Shiftr",
+      "isPartOf": { "@id": "https://aplicatiajac.ro/#website" },
+      "about": { "@id": "https://aplicatiajac.ro/#app" },
+      "primaryImageOfPage": "https://aplicatiajac.ro/assets/landing/og-jac.jpg",
+      "inLanguage": "ro-RO"
+    },
+    {
+      "@type": "MobileApplication",
+      "@id": "https://aplicatiajac.ro/#app",
       "name": "JAC",
+      "alternateName": "Aplicația JAC",
       "operatingSystem": "Android",
       "applicationCategory": "ReferenceApplication",
       "inLanguage": "ro-RO",
-      "url": "https://aplicatiajac.ro/index-live.html",
-      "downloadUrl": "https://play.google.com/store/apps/details?id=com.ticuv.jac",
-      "description": "Aplicație Android independentă pentru consultarea legislației și a contravențiilor, cu acces offline, și pentru organizarea turelor cu Shiftr. Disponibilă pe Google Play."
+      "url": "https://aplicatiajac.ro/",
+      "description": "Aplicație Android independentă pentru consultarea legislației și a contravențiilor, cu bază legislativă stocată local, și pentru organizarea turelor cu calendarul Shiftr. Disponibilă pe Google Play.",
+      "installUrl": "https://play.google.com/store/apps/details?id=com.ticuv.jac",
+      "featureList": [
+        "1.691 de articole legislative stocate local, consultabile fără conexiune",
+        "Căutare globală cu încadrarea faptei și plaja amenzii",
+        "Legislație integrală: 27 de acte normative cu text complet",
+        "Favorite și atenționări speciale pe fișele faptelor",
+        "Calendarul de ture Shiftr, cu norma legală și orele suplimentare",
+        "Echipaje JAC Crew de până la 5 membri"
+      ],
+      "screenshot": [
+        "https://aplicatiajac.ro/assets/screens/jac-ecran-principal-legislatie-offline.jpg",
+        "https://aplicatiajac.ro/assets/screens/jac-cautare-contraventii-amenzi.jpg",
+        "https://aplicatiajac.ro/assets/screens/shiftr-calendar-ture.jpg"
+      ]
     }
   ]
 }
@@ -54,9 +80,9 @@
 <link rel="apple-touch-icon" href="assets/landing/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/newsreader-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/landing/photo_5971895843633697206_y.webp" as="image" type="image/webp" fetchpriority="high">
+<link rel="preload" href="assets/screens/jac-ecran-principal-legislatie-offline.webp" as="image" type="image/webp" fetchpriority="high">
 <link rel="stylesheet" href="assets/fonts/inter.css">
-<link rel="stylesheet" href="assets/css/site.css?v=8">
+<link rel="stylesheet" href="assets/css/site.css?v=9">
 <script>
 (function () {
   var d = document.documentElement;
@@ -119,11 +145,12 @@
     <div class="hero-light" aria-hidden="true"></div>
     <div class="frame hero-grid">
       <p class="docket" data-hero>
-        <span>JAC · Ghid legislativ operativ pentru Android</span>
         <span class="docket-r">Bază locală · 1.691 articole · funcționează offline</span>
+        <span>Android · Google Play</span>
       </p>
 
       <h1 id="hero-title" class="hero-title">
+        <span class="hero-kicker" data-hero>JAC — aplicație de legislație și calendar de ture pentru Android</span>
         <span class="line"><span class="line-in" data-hero-line>Claritate în lege.</span></span>
         <span class="line"><span class="line-in it" data-hero-line>Siguranță în decizie.</span></span>
       </h1>
@@ -144,14 +171,14 @@
         <div class="hero-rig" id="heroRig">
           <div class="device device-back" data-depth="-1">
             <picture>
-              <source srcset="assets/landing/photo_5971895843633697205_y.webp" type="image/webp">
-              <img src="assets/landing/photo_5971895843633697205_y.jpg" alt="Calendarul Shiftr pentru octombrie 2026, cu ture de zi, noapte, schimburi, concediu și zile libere, colorate pe tipuri." width="587" height="1280" loading="eager" decoding="async">
+              <source srcset="assets/screens/shiftr-calendar-ture.webp" type="image/webp">
+              <img src="assets/screens/shiftr-calendar-ture.jpg" alt="Calendarul Shiftr pentru octombrie 2026, cu ture de zi, noapte, schimburi, concediu și zile libere, colorate pe tipuri." width="587" height="1280" loading="eager" decoding="async">
             </picture>
           </div>
           <div class="device device-front" data-depth="1">
             <picture>
-              <source srcset="assets/landing/photo_5971895843633697206_y.webp" type="image/webp">
-              <img src="assets/landing/photo_5971895843633697206_y.jpg" alt="Ecranul principal JAC: bază locală cu 1.691 de articole care funcționează offline, căutare globală, acces rapid la Cod penal, Legi speciale, Cod rutier, Salvate și Legislație integrală." width="587" height="1280" loading="eager" decoding="async" fetchpriority="high">
+              <source srcset="assets/screens/jac-ecran-principal-legislatie-offline.webp" type="image/webp">
+              <img src="assets/screens/jac-ecran-principal-legislatie-offline.jpg" alt="Ecranul principal JAC: bază locală cu 1.691 de articole care funcționează offline, căutare globală, acces rapid la Cod penal, Legi speciale, Cod rutier, Salvate și Legislație integrală." width="587" height="1280" loading="eager" decoding="async" fetchpriority="high">
             </picture>
           </div>
           <div class="hero-floor" aria-hidden="true"></div>
@@ -184,8 +211,8 @@
         <div class="annot" id="annot">
           <div class="device annot-phone">
             <picture>
-              <source srcset="assets/landing/photo_5971895843633697214_y.webp" type="image/webp">
-              <img src="assets/landing/photo_5971895843633697214_y.jpg" alt="Căutarea «consumul» în JAC: 10 rezultate. Legea 4/2008, contravenție, amendă 100–1.500 lei, prevăzută și sancționată de Art. 23 lit. a); Legea 61/1991, contravenție, amendă 500–1.500 lei." width="587" height="1280" loading="lazy" decoding="async">
+              <source srcset="assets/screens/jac-cautare-contraventii-amenzi.webp" type="image/webp">
+              <img src="assets/screens/jac-cautare-contraventii-amenzi.jpg" alt="Căutarea «consumul» în JAC: 10 rezultate. Legea 4/2008, contravenție, amendă 100–1.500 lei, prevăzută și sancționată de Art. 23 lit. a); Legea 61/1991, contravenție, amendă 500–1.500 lei." width="587" height="1280" loading="lazy" decoding="async">
             </picture>
             <span class="hl" style="--x:24;--y:238;--w:539;--h:94" data-n="1" aria-hidden="true"></span>
             <span class="hl" style="--x:434;--y:345;--w:130;--h:36" data-n="2" aria-hidden="true"></span>
@@ -209,14 +236,14 @@
       <div class="spread-art" aria-hidden="false">
         <div class="device spread-a" data-parallax="-6">
           <picture>
-            <source srcset="assets/landing/photo_5971895843633697212_y.webp" type="image/webp">
-            <img src="assets/landing/photo_5971895843633697212_y.jpg" alt="Favorite: o faptă salvată — procedură rutieră, măsură tehnico-administrativă, reținerea permisului conform Art. 111 din OUG 195/2002, cu caseta Atenționări speciale." width="587" height="1280" loading="lazy" decoding="async">
+            <source srcset="assets/screens/jac-favorite-atentionari-speciale.webp" type="image/webp">
+            <img src="assets/screens/jac-favorite-atentionari-speciale.jpg" alt="Favorite: o faptă salvată — procedură rutieră, măsură tehnico-administrativă, reținerea permisului conform Art. 111 din OUG 195/2002, cu caseta Atenționări speciale." width="587" height="1280" loading="lazy" decoding="async">
           </picture>
         </div>
         <div class="device spread-b" data-parallax="10">
           <picture>
-            <source srcset="assets/landing/photo_5971895843633697209_y.webp" type="image/webp">
-            <img src="assets/landing/photo_5971895843633697209_y.jpg" alt="Ecranul Reordonează legile: Legea 61/1991, Legea 60/1991, Legea 4/2008 și Regimul Drogurilor în capul listei, cu săgeți de mutare." width="587" height="1280" loading="lazy" decoding="async">
+            <source srcset="assets/screens/jac-reordonare-legi.webp" type="image/webp">
+            <img src="assets/screens/jac-reordonare-legi.jpg" alt="Ecranul Reordonează legile: Legea 61/1991, Legea 60/1991, Legea 4/2008 și Regimul Drogurilor în capul listei, cu săgeți de mutare." width="587" height="1280" loading="lazy" decoding="async">
           </picture>
         </div>
       </div>
@@ -250,6 +277,7 @@
         <p class="kicker kicker-sm" data-reveal>Module operative</p>
         <h3 class="display-md" data-reveal>Zero semnal? <em>Nicio problemă.</em></h3>
         <p class="lede" data-reveal>Articolele sunt împărțite pe module de lucru și stocate local în telefon.</p>
+        <a class="link-out" href="legislatie-rutiera/" data-reveal>Legislația rutieră în JAC: sancțiuni, proceduri, punct-amendă <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div>
       <div class="index" role="table" aria-label="Module legislative">
         <div class="index-row" role="row" data-reveal>
@@ -276,15 +304,15 @@
       <div class="modules-art">
         <figure class="pane pane-a" data-reveal>
           <picture>
-            <source srcset="assets/landing/photo_5971895843633697210_y.webp" type="image/webp">
-            <img src="assets/landing/photo_5971895843633697210_y.jpg" alt="Legislație penală: 3 module operative, 679 de articole — Codul Penal Infracțiuni (477), Codul Penal Partea Generală (187), Procedură Penală Operativ (15)." width="587" height="1280" loading="lazy" decoding="async">
+            <source srcset="assets/screens/jac-legislatie-penala-module.webp" type="image/webp">
+            <img src="assets/screens/jac-legislatie-penala-module.jpg" alt="Legislație penală: 3 module operative, 679 de articole — Codul Penal Infracțiuni (477), Codul Penal Partea Generală (187), Procedură Penală Operativ (15)." width="587" height="1280" loading="lazy" decoding="async">
           </picture>
           <figcaption class="cap">Legislație penală</figcaption>
         </figure>
         <figure class="pane pane-b" data-reveal>
           <picture>
-            <source srcset="assets/landing/photo_5971895843633697211_y.webp" type="image/webp">
-            <img src="assets/landing/photo_5971895843633697211_y.jpg" alt="Cod rutier: 2 module operative, 75 de articole — Sancțiuni rutiere (60), Proceduri rutiere (15) și valoarea punctului-amendă, 216,25 lei, valabil de la 1 iulie 2026." width="587" height="1280" loading="lazy" decoding="async">
+            <source srcset="assets/screens/jac-cod-rutier-sanctiuni-proceduri.webp" type="image/webp">
+            <img src="assets/screens/jac-cod-rutier-sanctiuni-proceduri.jpg" alt="Cod rutier: 2 module operative, 75 de articole — Sancțiuni rutiere (60), Proceduri rutiere (15) și valoarea punctului-amendă, 216,25 lei, valabil de la 1 iulie 2026." width="587" height="1280" loading="lazy" decoding="async">
           </picture>
           <figcaption class="cap">Cod rutier</figcaption>
         </figure>
@@ -296,8 +324,8 @@
       <div class="integral-art">
         <div class="device integral-phone" data-parallax="-5">
           <picture>
-            <source srcset="assets/landing/photo_5971895843633697213_y.webp" type="image/webp">
-            <img src="assets/landing/photo_5971895843633697213_y.jpg" alt="Legislație integrală: Codul Aerian, Codul Silvic, Codul Penal, Codul de Procedură Penală, Legea 126/1995 și Legea 143/2000, cu numărul de articole și căutare în text." width="587" height="1280" loading="lazy" decoding="async">
+            <source srcset="assets/screens/jac-legislatie-integrala.webp" type="image/webp">
+            <img src="assets/screens/jac-legislatie-integrala.jpg" alt="Legislație integrală: Codul Aerian, Codul Silvic, Codul Penal, Codul de Procedură Penală, Legea 126/1995 și Legea 143/2000, cu numărul de articole și căutare în text." width="587" height="1280" loading="lazy" decoding="async">
           </picture>
         </div>
       </div>
@@ -383,18 +411,19 @@
             </dl>
             <p class="formula">Normă legală = 22 zile lucrătoare × 8h − 0 sărbători legale în zile lucrătoare × 8h = 176h</p>
             <p class="fine">Exemplu din captură, octombrie 2026. Valorile depind de programul introdus; calculele Shiftr au rol orientativ personal.</p>
+            <a class="link-out" href="shiftr/">Cum calculează Shiftr norma și orele suplimentare <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
           </div>
           <div class="shiftr-art" id="shiftrArt">
             <div class="device shiftr-cal" id="shiftrCal">
               <picture>
-                <source srcset="assets/landing/photo_5971895843633697205_y.webp" type="image/webp">
-                <img src="assets/landing/photo_5971895843633697205_y.jpg" alt="Calendarul Shiftr, octombrie 2026: ture Z, N, S1, S2, S3, C, R, L, cu orele de început și sfârșit, ziua de 23 selectată și sumarul lunii dedesubt." width="587" height="1280" loading="lazy" decoding="async">
+                <source srcset="assets/screens/shiftr-calendar-ture.webp" type="image/webp">
+                <img src="assets/screens/shiftr-calendar-ture.jpg" alt="Calendarul Shiftr, octombrie 2026: ture Z, N, S1, S2, S3, C, R, L, cu orele de început și sfârșit, ziua de 23 selectată și sumarul lunii dedesubt." width="587" height="1280" loading="lazy" decoding="async">
               </picture>
             </div>
             <div class="device shiftr-sum" id="shiftrSum">
               <picture>
-                <source srcset="assets/landing/photo_5971895843633697207_y.webp" type="image/webp">
-                <img src="assets/landing/photo_5971895843633697207_y.jpg" alt="Sumar octombrie 2026 în Shiftr: 21 de ture, 198 de ore lucrate, normă legală 176 de ore și +22 de ore suplimentare, cu legenda tipurilor de tură." width="587" height="1280" loading="lazy" decoding="async">
+                <source srcset="assets/screens/shiftr-sumar-ore-suplimentare-norma.webp" type="image/webp">
+                <img src="assets/screens/shiftr-sumar-ore-suplimentare-norma.jpg" alt="Sumar octombrie 2026 în Shiftr: 21 de ture, 198 de ore lucrate, normă legală 176 de ore și +22 de ore suplimentare, cu legenda tipurilor de tură." width="587" height="1280" loading="lazy" decoding="async">
               </picture>
             </div>
           </div>
@@ -432,8 +461,8 @@
       <div class="crew-art">
         <div class="device crew-phone" data-parallax="-4">
           <picture>
-            <source srcset="assets/landing/jac-crew-redacted.webp" type="image/webp">
-            <img src="assets/landing/jac-crew-redacted.jpg" alt="Ecranul Echipajul tău JAC Crew: progres 3 din 5 membri și mesajul de bonus. Codul de invitație, numele de utilizator și membrii echipajului sunt ascunși." width="587" height="1280" loading="lazy" decoding="async">
+            <source srcset="assets/screens/jac-crew-echipaj-date-ascunse.webp" type="image/webp">
+            <img src="assets/screens/jac-crew-echipaj-date-ascunse.jpg" alt="Ecranul Echipajul tău JAC Crew: progres 3 din 5 membri și mesajul de bonus. Codul de invitație, numele de utilizator și membrii echipajului sunt ascunși." width="587" height="1280" loading="lazy" decoding="async">
           </picture>
         </div>
         <p class="stamp" aria-hidden="true">Date<br>redactate</p>
@@ -557,6 +586,8 @@
       <p>Claritate în lege. Siguranță în decizie.</p>
     </div>
     <nav class="colophon-nav" aria-label="Documente și contact">
+      <a href="shiftr/">Shiftr — calendar de ture</a>
+      <a href="legislatie-rutiera/">Legislație rutieră</a>
       <a href="legal/terms.html">Termeni și condiții</a>
       <a href="legal/privacy.html">Politica de confidențialitate</a>
       <a href="legal/cookies.html">Cookie-uri</a>
