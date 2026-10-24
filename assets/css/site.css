@@ -225,7 +225,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .facts li { font-size: .84rem; line-height: 1.5; color: var(--paper-3); }
 .facts b { display: block; margin-bottom: 4px; font: italic 400 1.15rem/1.2 var(--serif); color: var(--paper); }
 
-.hero-stage { grid-column: 7 / -1; grid-row: 2 / span 2; margin: 0; position: relative; z-index: 1; perspective: 1600px; align-self: start; padding-top: clamp(80px, 12.5vw, 200px); }
+.hero-stage { grid-column: 7 / -1; grid-row: 2 / span 2; margin: 0; position: relative; z-index: 1; perspective: 1600px; align-self: start; padding-top: clamp(120px, 16vw, 250px); }
 .hero-rig { position: relative; transform-style: preserve-3d; transform: rotateY(-14deg) rotateX(5deg); width: min(100%, 560px); margin-left: auto; aspect-ratio: 560 / 640; }
 .hero-rig .device { position: absolute; width: 52%; }
 .device-front { left: 8%; top: 4%; transform: translateZ(70px); z-index: 2; }
