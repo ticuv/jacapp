@@ -1,10 +1,12 @@
-/* JAC — comportament și coregrafie de mișcare.
-   Tot conținutul este vizibil fără acest fișier; animațiile rulează doar cu clasa .motion (fără prefers-reduced-motion). */
+/* JAC — „Dark Tactic": interacțiuni și coregrafie.
+   Fără GSAP: IntersectionObserver + requestAnimationFrame, doar transform/opacity (60fps).
+   Conținutul rămâne vizibil fără JS; animațiile sunt dezactivate pentru prefers-reduced-motion. */
 (function () {
   "use strict";
   var root = document.documentElement;
   var $ = function (s, c) { return (c || document).querySelector(s); };
   var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* ── anul curent ── */
   $$("[data-year]").forEach(function (el) { el.textContent = String(new Date().getFullYear()); });
@@ -17,20 +19,22 @@
 
   /* ── meniu mobil ── */
   var toggle = $("#menuToggle"), menu = $("#menu");
-  function setMenu(open) {
-    toggle.setAttribute("aria-expanded", String(open));
-    toggle.setAttribute("aria-label", open ? "Închide meniul" : "Deschide meniul");
-    menu.hidden = !open;
-    masthead.classList.toggle("is-open", open);
-    document.body.classList.toggle("menu-open", open);
-    updateDock();
+  if (toggle && menu) {
+    function setMenu(open) {
+      toggle.setAttribute("aria-expanded", String(open));
+      toggle.setAttribute("aria-label", open ? "Închide meniul" : "Deschide meniul");
+      menu.hidden = !open;
+      masthead.classList.toggle("is-open", open);
+      document.body.classList.toggle("menu-open", open);
+      updateDock();
+    }
+    toggle.addEventListener("click", function () { setMenu(toggle.getAttribute("aria-expanded") !== "true"); });
+    $$("a", menu).forEach(function (a) { a.addEventListener("click", function () { setMenu(false); }); });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") { setMenu(false); toggle.focus(); }
+    });
+    window.matchMedia("(min-width: 1024px)").addEventListener("change", function (e) { if (e.matches) setMenu(false); });
   }
-  toggle.addEventListener("click", function () { setMenu(toggle.getAttribute("aria-expanded") !== "true"); });
-  $$("a", menu).forEach(function (a) { a.addEventListener("click", function () { setMenu(false); }); });
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") { setMenu(false); toggle.focus(); }
-  });
-  window.matchMedia("(min-width: 900px)").addEventListener("change", function (e) { if (e.matches) setMenu(false); });
 
   /* ── navigație: secțiunea curentă ── */
   var navLinks = $$(".nav a");
@@ -38,13 +42,18 @@
     var current = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
         if (!en.isIntersecting) return;
-        navLinks.forEach(function (a) { a.setAttribute("aria-current", String(a.getAttribute("href") === "#" + en.target.id)); });
+        navLinks.forEach(function (a) {
+          a.setAttribute("aria-current", String(a.getAttribute("href") === "#" + en.target.id));
+        });
       });
     }, { rootMargin: "-45% 0px -50% 0px" });
-    ["legislatie", "shiftr", "crew", "abonamente", "aplica"].forEach(function (id) { var s = document.getElementById(id); if (s) current.observe(s); });
+    ["legislatie", "ghid", "shiftr", "crew", "abonamente", "aplica"].forEach(function (id) {
+      var s = document.getElementById(id);
+      if (s) current.observe(s);
+    });
   }
 
-  /* ── bară CTA mobilă: apare după CTA-ul din hero, dispare la formular și în subsol ── */
+  /* ── bară CTA mobilă ── */
   var dock = $("#dock"), heroCta = $("#heroCta");
   var heroVisible = true, endVisible = false;
   function updateDock() {
@@ -62,7 +71,7 @@
       entries.forEach(function (en) { ends.set(en.target, en.isIntersecting); });
       endVisible = Array.from(ends.values()).some(Boolean); updateDock();
     });
-    [$("#aplica") || $("#descarca"), $(".colophon")].forEach(function (el) { if (el) endObs.observe(el); });
+    [$("#aplica"), $(".colophon")].forEach(function (el) { if (el) endObs.observe(el); });
   }
 
   /* ── PRO Echipaj: anual / lunar ── */
@@ -76,6 +85,19 @@
       });
     });
   });
+
+  /* ── Ghidul Operativ: tipizat / exemplu completat ── */
+  var ghidPhone = $("#ghidPhone");
+  if (ghidPhone) {
+    var ghidBtns = $$("[data-ghid]");
+    ghidBtns.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var mode = btn.getAttribute("data-ghid");
+        ghidBtns.forEach(function (b) { b.setAttribute("aria-pressed", String(b === btn)); });
+        ghidPhone.classList.toggle("is-sablon", mode === "sablon");
+      });
+    });
+  }
 
   /* ── formular Closed Beta → e-mail (fără server) ── */
   var form = $("#applyForm");
@@ -111,135 +133,89 @@
   }
 
   /* ════════ MIȘCARE ════════ */
-  if (!root.classList.contains("motion")) return;
-
-  var started = false;
-  function tryStart() {
-    if (started) return true;
-    if (!window.gsap || !window.ScrollTrigger) return false;
-    started = true; initMotion(window.gsap, window.ScrollTrigger); return true;
-  }
-  function giveUp() { if (!tryStart()) root.classList.remove("motion"); }
-  if (!tryStart()) {
-    window.addEventListener("load", giveUp, { once: true });
-    setTimeout(giveUp, 4000);
+  if (reduced) {
+    /* fără animații: cifrele se afișează direct */
+    return;
   }
 
-  function initMotion(gsap, ScrollTrigger) {
-    gsap.registerPlugin(ScrollTrigger);
-    root.classList.add("is-ready");
-    var ease = "expo.out";
+  /* ── apariții la intrarea în ecran ── */
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+    $$("[data-reveal]").forEach(function (el) { io.observe(el); });
 
-    /* hero: intrare */
-    var rig = $("#heroRig"), stage = $("#heroStage");
-    var wide = window.innerWidth >= 1024;
-    gsap.set(rig, { rotationY: wide ? -14 : -8, rotationX: wide ? 5 : 4 });
-    gsap.set("[data-hero-line]", { y: 0, yPercent: 105 });
-    var intro = gsap.timeline({ defaults: { ease: ease } });
-    intro
-      .to("[data-hero-line]", { yPercent: 0, duration: 1.4, stagger: .12 }, .1)
-      .fromTo(stage, { opacity: 0, y: 80 }, { opacity: 1, y: 0, duration: 1.8 }, .25)
-      .from(rig, { rotationY: -38, rotationX: 14, z: -160, duration: 2.2 }, .25)
-      .to("[data-hero]", { opacity: 1, y: 0, duration: 1.1, stagger: .09 }, .55);
-
-    var mm = gsap.matchMedia();
-
-    /* hero: lumină și perspectivă care urmăresc cursorul (desktop) */
-    mm.add("(min-width: 1024px) and (pointer: fine)", function () {
-      var hero = $(".hero"), light = $(".hero-light");
-      var ry = gsap.quickTo(rig, "rotationY", { duration: 1.2, ease: "power3" });
-      var rx = gsap.quickTo(rig, "rotationX", { duration: 1.2, ease: "power3" });
-      var move = function (e) {
-        var r = hero.getBoundingClientRect();
-        var px = (e.clientX - r.left) / r.width, py = (e.clientY - r.top) / r.height;
-        ry(-14 + (px - .5) * 14); rx(5 - (py - .5) * 8);
-        light.style.setProperty("--mx", (40 + px * 50).toFixed(1) + "%");
-        light.style.setProperty("--my", (10 + py * 50).toFixed(1) + "%");
-      };
-      hero.addEventListener("pointermove", move);
-      return function () { hero.removeEventListener("pointermove", move); };
+    /* evidențierile de pe captura căutării */
+    var hlObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add("in"); hlObs.unobserve(en.target); }
+      });
+    }, { threshold: 0.4 });
+    $$("#annot .hl").forEach(function (el, i) {
+      setTimeout(function () { hlObs.observe(el); }, i * 90);
     });
+  }
 
-    /* hero: ieșire la derulare */
-    gsap.to(".hero-rig .device-front", { yPercent: -10, ease: "none", scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true } });
-    gsap.to(".hero-rig .device-back", { yPercent: 6, ease: "none", scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true } });
-
-    /* bandă de acte normative, legată de derulare */
-    var track = $("#bandTrack");
-    gsap.fromTo(track, { x: 0 }, {
-      x: function () { return -(track.scrollWidth - window.innerWidth) * .55; }, ease: "none",
-      scrollTrigger: { trigger: ".band", start: "top bottom", end: "bottom top", scrub: .6, invalidateOnRefresh: true }
+  /* ── contor pentru registrul Shiftr ── */
+  function easeOut(v) { return 1 - Math.pow(1 - v, 3); }
+  function runCounters() {
+    $$("#ledger [data-count]").forEach(function (el, idx) {
+      var end = parseInt(el.getAttribute("data-count"), 10) || 0;
+      var t0 = null, dur = 1300;
+      function step(ts) {
+        if (!t0) t0 = ts;
+        var p = Math.min((ts - t0) / dur, 1);
+        el.textContent = Math.round(easeOut(p) * end);
+        if (p < 1) requestAnimationFrame(step);
+      }
+      setTimeout(function () { requestAnimationFrame(step); }, idx * 140);
     });
+  }
+  var ledger = $("#ledger");
+  if (ledger && "IntersectionObserver" in window) {
+    new IntersectionObserver(function (en, obs) {
+      if (en[0].isIntersecting) { runCounters(); obs.disconnect(); }
+    }, { threshold: 0.4 }).observe(ledger);
+  }
 
-    /* apariții la intrarea în ecran */
-    ScrollTrigger.batch("[data-reveal]", {
-      start: "top 88%", once: true,
-      // la salturi lungi (ancore) intră multe elemente deodată: decalajul total rămâne sub 0,4 s
-      onEnter: function (els) { gsap.to(els, { opacity: 1, y: 0, duration: 1.1, ease: ease, stagger: Math.min(.08, .4 / els.length), overwrite: true }); }
-    });
-
-    /* paralaxă discretă pe capturi */
-    $$("[data-parallax]").forEach(function (el) {
-      var d = parseFloat(el.getAttribute("data-parallax")) || 0;
-      gsap.fromTo(el, { yPercent: d * -1 }, { yPercent: d, ease: "none", scrollTrigger: { trigger: el.parentNode, start: "top bottom", end: "bottom top", scrub: true } });
-    });
-
-    /* JAC Crew: locurile din echipaj */
-    gsap.from(".seats span", { scaleX: 0, duration: .9, ease: ease, stagger: .12, scrollTrigger: { trigger: ".seats", start: "top 85%", once: true } });
-
-    /* contor pentru registrul Shiftr */
-    function counters(tl, at, dur) {
-      $$("#ledger [data-count]").forEach(function (el) {
-        var o = { v: 0 }, end = +el.getAttribute("data-count");
-        tl.fromTo(o, { v: 0 }, { v: end, duration: dur, ease: "power2.out", onUpdate: function () { el.textContent = Math.round(o.v); } }, at);
+  /* ── paralaxă discretă pe capturi (rAF, doar transform) ── */
+  var parEls = $$("[data-parallax]").map(function (el) {
+    return { el: el, d: parseFloat(el.getAttribute("data-parallax")) || 0 };
+  });
+  if (parEls.length) {
+    var ticking = false;
+    function par() {
+      ticking = false;
+      var vh = window.innerHeight;
+      parEls.forEach(function (p) {
+        var r = p.el.getBoundingClientRect();
+        if (r.bottom < -240 || r.top > vh + 240) return;
+        var c = (r.top + r.height / 2 - vh / 2) / vh; /* -0.5 … 0.5 */
+        p.el.style.transform = "translateY(" + (-c * p.d * 2).toFixed(2) + "px)";
       });
     }
+    window.addEventListener("scroll", function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(par); }
+    }, { passive: true });
+    par();
+  }
 
-    /* ─ desktop: scene fixate (sticky nativ, fără deturnarea derulării) ─ */
-    mm.add("(min-width: 1024px)", function () {
-      root.classList.add("is-scene");
-
-      /* scena adnotărilor */
-      var hls = $$("#annot .hl"), notes = $$("#annot .an");
-      gsap.set(hls, { opacity: 0, scale: 1.08 });
-      gsap.set(notes.map(function (n) { return $(".an-line", n); }), { scaleX: 0, transformOrigin: function (i, t) { return t.parentNode.classList.contains("an-l") ? "100% 50%" : "0% 50%"; } });
-      gsap.set(notes.map(function (n) { return $("p", n); }), { opacity: 0, x: function (i, t) { return t.parentNode.classList.contains("an-l") ? -20 : 20; } });
-      var at = gsap.timeline({ scrollTrigger: { trigger: "#annotScene", start: "top top", end: "bottom bottom", scrub: .5 } });
-      at.fromTo(".annot-phone", { rotationX: 18, scale: .9, transformPerspective: 1400 }, { rotationX: 0, scale: 1, duration: 1, ease: "power2.out" });
-      hls.forEach(function (hl, i) {
-        var t = 1 + i * 1;
-        at.to(hl, { opacity: 1, scale: 1, duration: .5, ease: "power2.out" }, t)
-          .to($(".an-line", notes[i]), { scaleX: 1, duration: .45, ease: "power2.out" }, t + .15)
-          .to($("p", notes[i]), { opacity: 1, x: 0, duration: .5, ease: "power2.out" }, t + .3);
-      });
-      at.to({}, { duration: .8 });
-
-      /* scena Shiftr: calendarul se ridică de pe masă */
-      var st = gsap.timeline({ scrollTrigger: { trigger: "#shiftrScene", start: "top top", end: "bottom bottom", scrub: .6 } });
-      st.fromTo("#shiftrCal", { rotationX: 62, y: 120, scale: .9 }, { rotationX: 0, y: 0, scale: 1, duration: 1.2, ease: "power2.out" }, 0)
-        .fromTo("#shiftrSum", { opacity: 0, xPercent: 40, rotationY: -28, z: -120 }, { opacity: 1, xPercent: 0, rotationY: 0, z: 0, duration: 1, ease: "power2.out" }, .7)
-        .to("#shiftrCal", { filter: "brightness(.72)", duration: .6 }, 1.1)
-        .fromTo("#ledger > div", { opacity: .15 }, { opacity: 1, duration: .5, stagger: .15 }, .8)
-        .to({}, { duration: .4 });
-      counters(st, .8, 1);
-
-      return function () { root.classList.remove("is-scene"); };
+  /* ── hero: lumină + perspectivă care urmăresc cursorul (desktop) ── */
+  var rig = $("#heroRig");
+  if (rig && window.matchMedia("(min-width: 1024px) and (pointer: fine)").matches) {
+    var hero = $(".hero"), light = $(".hero-light");
+    hero.addEventListener("pointermove", function (e) {
+      var r = hero.getBoundingClientRect();
+      var px = (e.clientX - r.left) / r.width;
+      var py = (e.clientY - r.top) / r.height;
+      rig.style.transform = "rotateY(" + ((px - 0.5) * 8).toFixed(2) + "deg) rotateX(" + ((0.5 - py) * 5).toFixed(2) + "deg)";
+      light.style.setProperty("--mx", (35 + px * 55).toFixed(1) + "%");
+      light.style.setProperty("--my", (10 + py * 55).toFixed(1) + "%");
     });
-
-    /* ─ mobil/tabletă: variante ușoare ─ */
-    mm.add("(max-width: 1023px)", function () {
-      gsap.fromTo("#shiftrCal", { rotationX: 40, transformPerspective: 1200, y: 40 }, {
-        rotationX: 0, y: 0, ease: "none", scrollTrigger: { trigger: "#shiftrArt", start: "top 95%", end: "center 55%", scrub: true }
-      });
-      gsap.fromTo("#shiftrSum", { xPercent: 22, opacity: .3 }, {
-        xPercent: 0, opacity: 1, ease: "none", scrollTrigger: { trigger: "#shiftrArt", start: "top 85%", end: "center 55%", scrub: true }
-      });
-      var ct = gsap.timeline({ scrollTrigger: { trigger: "#ledger", start: "top 85%", once: true } });
-      counters(ct, 0, 1.4);
+    hero.addEventListener("pointerleave", function () {
+      rig.style.transform = "rotateY(0deg) rotateX(0deg)";
     });
-
-    /* recalculare după încărcarea fonturilor și a imaginilor */
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { ScrollTrigger.refresh(); });
-    window.addEventListener("load", function () { ScrollTrigger.refresh(); }, { once: true });
   }
 })();
