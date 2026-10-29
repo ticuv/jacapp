@@ -1,6 +1,6 @@
 /* JAC — „Dark Tactic": interacțiuni și coregrafie.
-   Fără GSAP: IntersectionObserver + requestAnimationFrame, doar transform/opacity (60fps).
-   Conținutul rămâne vizibil fără JS; animațiile sunt dezactivate pentru prefers-reduced-motion. */
+   Vanilla JS, fără dependențe. IntersectionObserver + requestAnimationFrame,
+   doar transform/opacity (60fps). Compatibil cu subpaginile existente. */
 (function () {
   "use strict";
   var root = document.documentElement;
@@ -11,34 +11,35 @@
   /* ── anul curent ── */
   $$("[data-year]").forEach(function (el) { el.textContent = String(new Date().getFullYear()); });
 
-  /* ── antet: fundal la derulare ── */
-  var masthead = $("#masthead");
-  var onScroll = function () { masthead.classList.toggle("is-scrolled", window.scrollY > 24); };
+  /* ── antet: fundal la derulare (landing + subpagini) ── */
+  var header = $("#navbar") || $("#masthead");
+  var onScroll = function () { header.classList.toggle("is-scrolled", window.scrollY > 24); };
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
-  /* ── meniu mobil ── */
-  var toggle = $("#menuToggle"), menu = $("#menu");
-  if (toggle && menu) {
+  /* ── meniu mobil (landing: #navToggle/#navPanel · subpagini: #menuToggle/#menu) ── */
+  var toggle = $("#navToggle") || $("#menuToggle");
+  var panel = $("#navPanel") || $("#menu");
+  if (toggle && panel) {
     function setMenu(open) {
       toggle.setAttribute("aria-expanded", String(open));
       toggle.setAttribute("aria-label", open ? "Închide meniul" : "Deschide meniul");
-      menu.hidden = !open;
-      masthead.classList.toggle("is-open", open);
+      panel.hidden = !open;
+      header.classList.toggle("is-open", open);
       document.body.classList.toggle("menu-open", open);
       updateDock();
     }
     toggle.addEventListener("click", function () { setMenu(toggle.getAttribute("aria-expanded") !== "true"); });
-    $$("a", menu).forEach(function (a) { a.addEventListener("click", function () { setMenu(false); }); });
+    $$("a", panel).forEach(function (a) { a.addEventListener("click", function () { setMenu(false); }); });
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") { setMenu(false); toggle.focus(); }
     });
     window.matchMedia("(min-width: 1024px)").addEventListener("change", function (e) { if (e.matches) setMenu(false); });
   }
 
-  /* ── navigație: secțiunea curentă ── */
-  var navLinks = $$(".nav a");
-  if ("IntersectionObserver" in window) {
+  /* ── navigație: secțiunea curentă (landing) ── */
+  var navLinks = $$(".navbar__links a");
+  if (navLinks.length && "IntersectionObserver" in window) {
     var current = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
         if (!en.isIntersecting) return;
@@ -47,14 +48,14 @@
         });
       });
     }, { rootMargin: "-45% 0px -50% 0px" });
-    ["legislatie", "ghid", "shiftr", "crew", "abonamente", "aplica"].forEach(function (id) {
+    ["legislatie", "ghid", "shiftr", "crew", "preturi", "acces"].forEach(function (id) {
       var s = document.getElementById(id);
       if (s) current.observe(s);
     });
   }
 
   /* ── bară CTA mobilă ── */
-  var dock = $("#dock"), heroCta = $("#heroCta");
+  var dock = $("#dock");
   var heroVisible = true, endVisible = false;
   function updateDock() {
     if (!dock) return;
@@ -63,20 +64,21 @@
     dock.setAttribute("aria-hidden", String(!on));
     $$("a", dock).forEach(function (a) { a.tabIndex = on ? 0 : -1; });
   }
-  if (dock && heroCta && "IntersectionObserver" in window) {
+  if (dock && "IntersectionObserver" in window) {
     dock.hidden = false;
-    new IntersectionObserver(function (en) { heroVisible = en[0].isIntersecting; updateDock(); }).observe(heroCta);
+    var heroEl = $(".hero");
+    new IntersectionObserver(function (en) { heroVisible = en[0].isIntersecting; updateDock(); }, { threshold: 0.15 }).observe(heroEl);
     var ends = new Map();
     var endObs = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) { ends.set(en.target, en.isIntersecting); });
       endVisible = Array.from(ends.values()).some(Boolean); updateDock();
     });
-    [$("#aplica"), $(".colophon")].forEach(function (el) { if (el) endObs.observe(el); });
+    [$("#acces"), $(".footer")].forEach(function (el) { if (el) endObs.observe(el); });
   }
 
   /* ── PRO Echipaj: anual / lunar ── */
-  $$(".billing").forEach(function (group) {
-    var plan = group.closest(".plan");
+  $$(".billing-toggle, .billing").forEach(function (group) {
+    var plan = group.closest(".plan") || group.parentNode;
     $$("button", group).forEach(function (btn) {
       btn.addEventListener("click", function () {
         var mode = btn.getAttribute("data-mode");
@@ -133,10 +135,7 @@
   }
 
   /* ════════ MIȘCARE ════════ */
-  if (reduced) {
-    /* fără animații: cifrele se afișează direct */
-    return;
-  }
+  if (reduced) return;
 
   /* ── apariții la intrarea în ecran ── */
   if ("IntersectionObserver" in window) {
@@ -147,18 +146,17 @@
     }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
     $$("[data-reveal]").forEach(function (el) { io.observe(el); });
 
-    /* evidențierile de pe captura căutării */
     var hlObs = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
         if (en.isIntersecting) { en.target.classList.add("in"); hlObs.unobserve(en.target); }
       });
     }, { threshold: 0.4 });
-    $$("#annot .hl").forEach(function (el, i) {
+    $$(".annot__hl").forEach(function (el, i) {
       setTimeout(function () { hlObs.observe(el); }, i * 90);
     });
   }
 
-  /* ── contor pentru registrul Shiftr ── */
+  /* ── contor registrul Shiftr ── */
   function easeOut(v) { return 1 - Math.pow(1 - v, 3); }
   function runCounters() {
     $$("#ledger [data-count]").forEach(function (el, idx) {
@@ -180,7 +178,7 @@
     }, { threshold: 0.4 }).observe(ledger);
   }
 
-  /* ── paralaxă discretă pe capturi (rAF, doar transform) ── */
+  /* ── paralaxă discretă (rAF, doar transform) ── */
   var parEls = $$("[data-parallax]").map(function (el) {
     return { el: el, d: parseFloat(el.getAttribute("data-parallax")) || 0 };
   });
@@ -192,7 +190,7 @@
       parEls.forEach(function (p) {
         var r = p.el.getBoundingClientRect();
         if (r.bottom < -240 || r.top > vh + 240) return;
-        var c = (r.top + r.height / 2 - vh / 2) / vh; /* -0.5 … 0.5 */
+        var c = (r.top + r.height / 2 - vh / 2) / vh;
         p.el.style.transform = "translateY(" + (-c * p.d * 2).toFixed(2) + "px)";
       });
     }
@@ -205,7 +203,7 @@
   /* ── hero: lumină + perspectivă care urmăresc cursorul (desktop) ── */
   var rig = $("#heroRig");
   if (rig && window.matchMedia("(min-width: 1024px) and (pointer: fine)").matches) {
-    var hero = $(".hero"), light = $(".hero-light");
+    var hero = $(".hero"), light = $(".hero__glow");
     hero.addEventListener("pointermove", function (e) {
       var r = hero.getBoundingClientRect();
       var px = (e.clientX - r.left) / r.width;
