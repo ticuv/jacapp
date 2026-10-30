@@ -1,259 +1,214 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ro">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Shiftr — calendar de ture cu normă și ore suplimentare | JAC</title>
-<meta name="description" content="Shiftr, din aplicația JAC: calendar de ture pentru Android, cu tipuri de tură colorate, norma legală a lunii și orele suplimentare calculate din programul tău.">
+<meta name="description" content="Shiftr, din aplicația JAC: calendar de ture pentru Android, cu șabloane de tură colorate, sărbători legale, statistici, export și copii de rezervă, norma legală a lunii și orele suplimentare calculate din programul tău.">
 <link rel="canonical" href="https://aplicatiajac.ro/shiftr/">
-<meta name="robots" content="index, follow">
-<meta name="theme-color" content="#07090D">
+<meta name="theme-color" content="#0a0f1c">
 <meta name="color-scheme" content="dark">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+<link rel="preload" href="../assets/fonts/manrope-var.woff2" as="font" type="font/woff2" crossorigin>
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="JAC">
 <meta property="og:locale" content="ro_RO">
+<meta property="og:site_name" content="JAC">
+<meta property="og:title" content="Shiftr — tura, norma și orele suplimentare | JAC">
+<meta property="og:description" content="Notezi turele, iar luna se adună singură: ore lucrate, normă legală și ore suplimentare.">
 <meta property="og:url" content="https://aplicatiajac.ro/shiftr/">
-<meta property="og:title" content="Shiftr — calendar de ture cu normă și ore suplimentare | JAC">
-<meta property="og:description" content="Shiftr, din aplicația JAC: calendar de ture pentru Android, cu tipuri de tură colorate, norma legală a lunii și orele suplimentare calculate din programul tău.">
-<meta property="og:image" content="https://aplicatiajac.ro/assets/landing/og-jac.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:image" content="https://aplicatiajac.ro/assets/img/og-jac.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebPage",
-      "@id": "https://aplicatiajac.ro/shiftr/#webpage",
-      "url": "https://aplicatiajac.ro/shiftr/",
-      "name": "Shiftr — calendar de ture cu normă și ore suplimentare | JAC",
-      "description": "Shiftr, din aplicația JAC: calendar de ture pentru Android, cu tipuri de tură colorate, norma legală a lunii și orele suplimentare calculate din programul tău.",
-      "inLanguage": "ro-RO",
-      "isPartOf": {
-        "@id": "https://aplicatiajac.ro/#website"
-      },
-      "about": {
-        "@id": "https://aplicatiajac.ro/#app"
-      },
-      "breadcrumb": {
-        "@id": "https://aplicatiajac.ro/shiftr/#breadcrumb"
-      }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://aplicatiajac.ro/shiftr/#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Acasă",
-          "item": "https://aplicatiajac.ro/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Shiftr",
-          "item": "https://aplicatiajac.ro/shiftr/"
-        }
-      ]
-    }
-  ]
-}
-</script>
-<link rel="icon" type="image/png" sizes="48x48" href="../assets/landing/favicon-48.png">
-<link rel="apple-touch-icon" href="../assets/landing/apple-touch-icon.png">
-<link rel="preload" href="../assets/fonts/newsreader-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../assets/fonts/inter.css">
-<link rel="stylesheet" href="../assets/css/site.css?v=10">
-<script>document.documentElement.classList.add("js");</script>
-<script src="../assets/js/site.js?v=6" defer></script>
+<link rel="stylesheet" href="../assets/css/main.css">
+<script>document.documentElement.classList.add('js');</script>
 </head>
-<body class="subpage">
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></symbol>
-  <symbol id="i-out" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
-</svg>
+<body>
 <a class="skip" href="#continut">Sari la conținut</a>
+<div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
 
-<header class="masthead is-scrolled" id="masthead">
-  <div class="masthead-bar">
-    <a class="brand" href="../" aria-label="JAC — pagina principală">
-      <img src="../assets/landing/jac-mark-96.webp" alt="" width="85" height="96" decoding="async">
-      <span>JAC</span>
-    </a>
-    <nav class="nav" aria-label="Pagini">
-      <a href="../#legislatie">Legislație</a>
-      <a href="../shiftr/" aria-current="page">Shiftr</a>
+<header class="top">
+  <div class="top__bar">
+    <a class="brand" href="../" aria-label="JAC, pagina principală"><img src="../assets/img/logo-64.png" width="22" height="25" alt=""><span>JAC</span></a>
+    <nav class="nav" aria-label="Navigare principală">
       <a href="../legislatie-rutiera/">Legislație rutieră</a>
-      <a href="../#abonamente">Abonamente</a>
+      <a href="../legi-speciale/">Legi speciale</a>
+      <a href="../ghid-operativ/">Ghid operativ</a>
+      <a href="../legislatie-penala/">Legislație penală</a>
+      <a href="../shiftr/" aria-current="page">Shiftr</a>
+      <a href="../#preturi">Prețuri</a>
     </nav>
-    <a class="btn btn-solid btn-sm masthead-cta" href="../#aplica">Solicită acces</a>
-    <button id="menuToggle" class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Deschide meniul">
-      <span></span><span></span>
-    </button>
-  </div>
-  <div id="menu" class="menu" hidden>
-    <nav aria-label="Meniu mobil">
-      <a href="../"><i>—</i>Pagina principală</a>
-      <a href="../#legislatie"><i>I</i>Legislație</a>
-      <a href="../shiftr/"><i>II</i>Shiftr</a>
-      <a href="../legislatie-rutiera/"><i>III</i>Legislație rutieră</a>
-      <a href="../#abonamente"><i>IV</i>Abonamente</a>
-    </nav>
-    <a class="btn btn-solid btn-lg" href="../#aplica">Solicită acces în Closed Beta <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-    <p class="menu-foot">Aplicație Android independentă · testare închisă</p>
+    <a class="pill" href="#acces">Acces beta</a>
   </div>
 </header>
 
 <main id="continut">
   <section class="page-hero" aria-labelledby="page-title">
-    <div class="frame page-hero-grid">
-      <div class="page-hero-copy">
-        <nav class="crumbs" aria-label="Fir de navigare">
-          <ol><li><a href="../">Acasă</a></li><li aria-current="page">Shiftr</li></ol>
-        </nav>
-        <p class="kicker kicker-sm">Calendar de ture pentru Android</p>
-        <h1 id="page-title" class="display">Shiftr: calendarul de ture care îți arată <em>norma și orele suplimentare.</em></h1>
-        <p class="lede">Shiftr este calendarul de ture din aplicația JAC. Îți notezi turele, iar luna se adună singură: ore lucrate, norma legală și diferența, cu programul păstrat pe telefon.</p>
-        <div class="cta-row">
-          <a class="btn btn-solid btn-lg" href="../#aplica">Solicită acces în Closed Beta <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-        </div>
-      </div>
-      <figure class="page-hero-art">
-        <div class="device page-phone">
-          <picture>
-            <source srcset="../assets/screens/shiftr-calendar-ture.webp" type="image/webp">
-            <img src="../assets/screens/shiftr-calendar-ture.jpg" alt="Calendarul Shiftr pentru octombrie 2026, cu ture de zi, noapte, schimburi, concediu și zile libere, colorate pe tipuri, și ziua de 23 selectată." width="587" height="1280" loading="eager" decoding="async" fetchpriority="high">
-          </picture>
+    <div>
+      <nav class="crumbs" aria-label="Unde ești"><a href="../">Acasă</a><span aria-hidden="true">/</span><span>Shiftr</span></nav>
+      <h1 id="page-title" class="display">Știi exact<br><span class="grad">cât ai muncit.</span></h1>
+      <p class="sub">Notezi turele. Luna se adună singură: ore lucrate, norma legală și orele suplimentare.</p>
+      <a class="btn btn--blue magnetic" href="#acces"><span>Cere acces la beta</span></a>
+    </div>
+    <div class="feature__stage" data-fx="rise-tilt">
+      <figure class="device device--solo">
+        <div class="device__screen">
+          <img src="../assets/img/screens/shiftr-calendar-800.webp" srcset="../assets/img/screens/shiftr-calendar-480.webp 480w, ../assets/img/screens/shiftr-calendar-800.webp 800w, ../assets/img/screens/shiftr-calendar-1175.webp 1175w" sizes="(min-width: 1024px) 320px, 66vw" width="1175" height="2560" alt="Calendarul Shiftr pentru octombrie 2026, cu ziua de 29 selectată: concedii, ture de zi și de noapte, schimburi 2, recuperări și zile libere, fiecare cu intervalul orar, plus sumarul lunii." fetchpriority="high">
         </div>
       </figure>
+      <span class="float float--1 float--blue" aria-hidden="true">+18h suplimentare</span>
+      <span class="float float--3" aria-hidden="true">Normă: 176h</span>
     </div>
   </section>
 
-  <section class="page-section frame" aria-labelledby="s-luna">
-    <h2 id="s-luna" class="display-sm">Luna ta, pe un singur ecran.</h2>
-    <div class="page-body">
-      <p>Fiecare zi din calendar arată codul turei și intervalul orar. Turele sunt colorate pe tipuri, astfel încât vezi dintr-o privire nopțile, schimburile și zilele libere ale lunii.</p>
-      <ul class="codes">
-        <li style="--c:#3F74E6"><b>Z</b>Zi</li>
-        <li style="--c:#8E5CF2"><b>N</b>Noapte</li>
-        <li style="--c:#2BA597"><b>S1</b>Schimbul 1</li>
-        <li style="--c:#E46A2C"><b>S2</b>Schimbul 2</li>
-        <li style="--c:#DB3F3F"><b>S3</b>Schimbul 3</li>
-        <li style="--c:#4C7BE8"><b>C</b>Concediu</li>
-        <li style="--c:#2BA597"><b>R</b>Recuperare</li>
-        <li style="--c:#2BA597"><b>L</b>Liber</li>
-        <li style="--c:#E8892B"><b>ZȘ</b>Zona Școlară</li>
-      </ul>
+  <section class="section" id="flux" aria-labelledby="bento-title">
+    <div class="section__head" data-fx="slide-left">
+      <p class="eyebrow">Tot Shiftr, dintr-o privire</p>
+      <h2 id="bento-title" class="display">Programul tău,<br><span class="grad">sub control.</span></h2>
+      <p class="sub">Ecrane reale din aplicație. Atinge oricare ca să-l vezi întreg. Valorile sunt exemple din capturi.</p>
     </div>
-  </section>
-  <section class="page-section frame has-art" aria-labelledby="s-norma">
-    <h2 id="s-norma" class="display-sm">Cum se calculează norma legală.</h2>
-    <div class="page-body">
-      <p>Shiftr pornește de la zilele lucrătoare ale lunii. Formula afișată în aplicație este:</p>
-      <p class="formula-block">Normă legală = zile lucrătoare × 8h − sărbători legale în zile lucrătoare × 8h</p>
-      <p>Orele suplimentare sunt diferența dintre orele lucrate, adunate din turele introduse, și norma legală a lunii.</p>
-      <dl class="ledger">
-        <div><dt>Ture</dt><dd>21</dd></div>
-        <div><dt>Ore lucrate</dt><dd>198h</dd></div>
-        <div><dt>Normă legală</dt><dd>176h</dd></div>
-        <div class="over"><dt>Ore suplimentare</dt><dd>+22h</dd></div>
-      </dl>
-      <p class="fine">Exemplu din aplicație, octombrie 2026: 22 de zile lucrătoare × 8h, fără sărbători legale în zile lucrătoare = 176h. Valorile depind de programul introdus. Calculele Shiftr au rol orientativ personal și nu înlocuiesc evidența oficială a timpului de muncă de la angajator.</p>
+
+    <div class="bento" data-fx="rise">
+      <article class="bs bs--span2" data-fx-child>
+        <p class="bs__k">Calendar</p>
+        <h3>Fiecare zi, cu tura și orele ei.</h3>
+        <div class="bs__win" style="--y: -15%; --ar: 358 / 280"><img src="../assets/img/screens/shiftr-calendar-800.webp" srcset="../assets/img/screens/shiftr-calendar-480.webp 480w, ../assets/img/screens/shiftr-calendar-800.webp 800w" sizes="(min-width: 1024px) 600px, 92vw" width="1175" height="2560" alt="Grila calendarului Shiftr pentru octombrie 2026, cu ture de zi, noapte, schimbul 2, recuperări, concedii și zile libere, fiecare cu intervalul orar." loading="lazy" decoding="async"></div>
+        <button type="button" class="bs__hit" data-shot="shiftr-calendar" data-cap="Calendarul Shiftr, octombrie 2026"><span class="sr-only">Mărește ecranul: Calendarul Shiftr, octombrie 2026</span><span class="bs__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></span></button>
+      </article>
+
+      <article class="bs" data-fx-child>
+        <p class="bs__k">Șabloane</p>
+        <h3>10 ture gata făcute.</h3>
+        <div class="bs__win" style="--y: -13%; --ar: 174 / 260"><img src="../assets/img/screens/shiftr-2-sabloane-800.webp" srcset="../assets/img/screens/shiftr-2-sabloane-480.webp 480w, ../assets/img/screens/shiftr-2-sabloane-800.webp 800w" sizes="(min-width: 1024px) 300px, 46vw" width="1175" height="2560" alt="Lista de șabloane: Zi 06:00–18:00, Noapte 18:00–06:00, Program 08:00–16:00, Schimbul 1, 2 și 3, Liber." loading="lazy" decoding="async"></div>
+        <button type="button" class="bs__hit" data-shot="shiftr-2-sabloane" data-cap="Gestionează Șabloane: 10 șabloane configurate"><span class="sr-only">Mărește ecranul: Gestionează Șabloane: 10 șabloane configurate</span><span class="bs__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></span></button>
+      </article>
+
+      <article class="bs" data-fx-child>
+        <p class="bs__k">Tură nouă</p>
+        <h3>Ore, culoare, notiță.</h3>
+        <div class="bs__win" style="--y: -18%; --ar: 174 / 260"><img src="../assets/img/screens/shiftr-tura-noua-800.webp" srcset="../assets/img/screens/shiftr-tura-noua-480.webp 480w, ../assets/img/screens/shiftr-tura-noua-800.webp 800w" sizes="(min-width: 1024px) 300px, 46vw" width="1175" height="2560" alt="Formularul Tură Nouă: presetări Zi și Noapte, interval 08:00–20:00 și paleta de culori pentru zi." loading="lazy" decoding="async"></div>
+        <button type="button" class="bs__hit" data-shot="shiftr-tura-noua" data-cap="Formularul Tură Nouă: preset, interval, culoare, nume și notițe"><span class="sr-only">Mărește ecranul: Formularul Tură Nouă: preset, interval, culoare, nume și notițe</span><span class="bs__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></span></button>
+      </article>
+
+      <article class="bs bs--span2" data-fx-child>
+        <p class="bs__k">Din calendar</p>
+        <h3>Adaugi, copiezi, colorezi, ștergi.</h3>
+        <div class="bs__win" style="--y: -45%; --ar: 358 / 220"><img src="../assets/img/screens/shiftr-calendar-actiuni-800.webp" srcset="../assets/img/screens/shiftr-calendar-actiuni-480.webp 480w, ../assets/img/screens/shiftr-calendar-actiuni-800.webp 800w" sizes="(min-width: 1024px) 600px, 92vw" width="1175" height="2560" alt="Meniul de acțiuni rapide din calendar: Șterge, Copiază tura, Colorează și Adaugă tură." loading="lazy" decoding="async"></div>
+        <button type="button" class="bs__hit" data-shot="shiftr-calendar-actiuni" data-cap="Acțiuni rapide în calendar"><span class="sr-only">Mărește ecranul: Acțiuni rapide în calendar</span><span class="bs__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></span></button>
+      </article>
+
+      <article class="bs" data-fx-child>
+        <p class="bs__k">Sărbători legale</p>
+        <h3>Cât scade din normă.</h3>
+        <div class="bs__win" style="--y: -14%; --ar: 174 / 260"><img src="../assets/img/screens/shiftr-3-sarbatori-800.webp" srcset="../assets/img/screens/shiftr-3-sarbatori-480.webp 480w, ../assets/img/screens/shiftr-3-sarbatori-800.webp 800w" sizes="(min-width: 1024px) 300px, 46vw" width="1175" height="2560" alt="Sărbătorile legale 2026: Anul Nou, Boboteaza, Sfântul Ioan, fiecare cu −8h din normă." loading="lazy" decoding="async"></div>
+        <button type="button" class="bs__hit" data-shot="shiftr-3-sarbatori" data-cap="Sărbătorile legale 2026 și impactul asupra normei"><span class="sr-only">Mărește ecranul: Sărbătorile legale 2026 și impactul asupra normei</span><span class="bs__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></span></button>
+      </article>
+
+      <article class="bs" data-fx-child>
+        <p class="bs__k">Istoric lunar</p>
+        <h3>Lună cu lună, cu export.</h3>
+        <div class="bs__win" style="--y: -14%; --ar: 174 / 260"><img src="../assets/img/screens/shiftr-4-istoric-800.webp" srcset="../assets/img/screens/shiftr-4-istoric-480.webp 480w, ../assets/img/screens/shiftr-4-istoric-800.webp 800w" sizes="(min-width: 1024px) 300px, 46vw" width="1175" height="2560" alt="Istoricul lunar 2026: ture, sărbători și normă pentru ianuarie, februarie, martie, cu buton de export CSV." loading="lazy" decoding="async"></div>
+        <button type="button" class="bs__hit" data-shot="shiftr-4-istoric" data-cap="Istoric lunar 2026, cu export CSV"><span class="sr-only">Mărește ecranul: Istoric lunar 2026, cu export CSV</span><span class="bs__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></span></button>
+      </article>
+
+      <article class="bs bs--span2" data-fx-child>
+        <p class="bs__k">Statistici anuale</p>
+        <h3>Tot anul, într-un panou.</h3>
+        <div class="bs__win" style="--y: -13%; --ar: 358 / 300"><img src="../assets/img/screens/shiftr-5-statistici-800.webp" srcset="../assets/img/screens/shiftr-5-statistici-480.webp 480w, ../assets/img/screens/shiftr-5-statistici-800.webp 800w" sizes="(min-width: 1024px) 600px, 92vw" width="1175" height="2560" alt="Statistici anuale 2026: 303 ore în 37 de zile lucrate, 9 concedii, 9 zile libere." loading="lazy" decoding="async"></div>
+        <button type="button" class="bs__hit" data-shot="shiftr-5-statistici" data-cap="Statistici anuale 2026"><span class="sr-only">Mărește ecranul: Statistici anuale 2026</span><span class="bs__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></span></button>
+      </article>
+
+      <article class="bs bs--span2" data-fx-child>
+        <p class="bs__k">Sumarul lunii</p>
+        <h3>Orele peste normă, la vedere.</h3>
+        <div class="bs__win" style="--y: -44%; --ar: 358 / 230"><img src="../assets/img/screens/shiftr-sumar-800.webp" srcset="../assets/img/screens/shiftr-sumar-480.webp 480w, ../assets/img/screens/shiftr-sumar-800.webp 800w" sizes="(min-width: 1024px) 600px, 92vw" width="1175" height="2560" alt="Sumarul lunii octombrie 2026: 20 de ture, 194 de ore lucrate, normă legală 176h, +18h suplimentare." loading="lazy" decoding="async"></div>
+        <button type="button" class="bs__hit" data-shot="shiftr-sumar" data-cap="Sumarul lunii: 20 de ture, 194h lucrate, normă 176h, +18h"><span class="sr-only">Mărește ecranul: Sumarul lunii: 20 de ture, 194h lucrate, normă 176h, +18h</span><span class="bs__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></span></button>
+      </article>
+
+      <article class="bs" data-fx-child>
+        <p class="bs__k">Datele tale</p>
+        <h3>Backup, CSV, PDF.</h3>
+        <div class="bs__win" style="--y: -30%; --ar: 174 / 260"><img src="../assets/img/screens/shiftr-6-backup-800.webp" srcset="../assets/img/screens/shiftr-6-backup-480.webp 480w, ../assets/img/screens/shiftr-6-backup-800.webp 800w" sizes="(min-width: 1024px) 300px, 46vw" width="1175" height="2560" alt="Opțiunile de copie de rezervă: backup complet, restaurare, export și import CSV, raport PDF lunar și anual." loading="lazy" decoding="async"></div>
+        <button type="button" class="bs__hit" data-shot="shiftr-6-backup" data-cap="Copie de rezervă, export CSV și rapoarte PDF"><span class="sr-only">Mărește ecranul: Copie de rezervă, export CSV și rapoarte PDF</span><span class="bs__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></span></button>
+      </article>
+
+      <article class="bs" data-fx-child>
+        <p class="bs__k">Setări</p>
+        <h3>Temă, statistici, alarmă.</h3>
+        <div class="bs__win" style="--y: -9%; --ar: 174 / 260"><img src="../assets/img/screens/shiftr-1-setari-800.webp" srcset="../assets/img/screens/shiftr-1-setari-480.webp 480w, ../assets/img/screens/shiftr-1-setari-800.webp 800w" sizes="(min-width: 1024px) 300px, 46vw" width="1175" height="2560" alt="Setările Shiftr: temă de accent, statistici anuale, istoric lunar, șabloane și sărbători legale." loading="lazy" decoding="async"></div>
+        <button type="button" class="bs__hit" data-shot="shiftr-1-setari" data-cap="Setările Shiftr"><span class="sr-only">Mărește ecranul: Setările Shiftr</span><span class="bs__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg></span></button>
+      </article>
+
+      <a class="bs-bar" href="../legal/privacy.html" data-fx-child>
+        <span class="bs-bar__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span>
+        <span class="bs-bar__text"><b>Programul rămâne pe telefon</b><span>Turele nu ajung pe serverele JAC · Confidențialitate</span></span>
+        <span class="bs-bar__go" aria-hidden="true">→</span>
+      </a>
     </div>
-    <figure class="page-art">
-      <div class="device ">
-          <picture>
-            <source srcset="../assets/screens/shiftr-sumar-ore-suplimentare-norma.webp" type="image/webp">
-            <img src="../assets/screens/shiftr-sumar-ore-suplimentare-norma.jpg" alt="Sumarul Shiftr pentru octombrie 2026: 21 de ture, 198 de ore lucrate, normă legală 176 de ore și +22 de ore suplimentare, cu formula normei și legenda turelor." width="587" height="1280" loading="lazy" decoding="async">
-          </picture>
-        </div>
-    </figure>
+    <p class="fine">Calculele Shiftr au rol orientativ personal. Evidența oficială a timpului de muncă rămâne cea a angajatorului.</p>
   </section>
-  <section class="page-section frame" aria-labelledby="s-sumar">
-    <h2 id="s-sumar" class="display-sm">Ce vezi în sumarul lunii.</h2>
-    <div class="page-body">
-      <ul class="plain">
-        <li><strong>Numărul de ture</strong> introduse în luna afișată.</li>
-        <li><strong>Orele lucrate</strong>, adunate din intervalele turelor.</li>
-        <li><strong>Norma legală</strong> și formula din care rezultă.</li>
-        <li><strong>Orele suplimentare</strong>, ca diferență față de normă.</li>
-        <li><strong>Concediile medicale și zilele libere</strong> din lună, numărate separat.</li>
-        <li><strong>Legenda turelor</strong> folosite în luna respectivă.</li>
-      </ul>
-    </div>
-  </section>
-  <section class="page-section frame" aria-labelledby="s-date">
-    <h2 id="s-date" class="display-sm">Programul tău rămâne pe telefon.</h2>
-    <div class="page-body">
-      <p>Turele, orele, notițele și statisticile introduse în Shiftr sunt stocate și prelucrate local, pe dispozitiv. Programul de ture nu este trimis către serverele JAC. Detaliile, inclusiv despre backup-ul automat Android, sunt în <a href="../legal/privacy.html">Politica de confidențialitate</a>.</p>
-      <p>Când vrei să-l arăți colegilor, trimiți programul direct din calendar, cu butonul de partajare.</p>
-    </div>
-  </section>
-  <section class="page-section frame" aria-labelledby="s-jac">
-    <h2 id="s-jac" class="display-sm">Shiftr face parte din JAC.</h2>
-    <div class="page-body">
-      <p>Shiftr este una dintre filele aplicației JAC, alături de Acasă, Favorite și Setări. În aceeași aplicație ai și <a href="../#legislatie">baza legislativă locală</a>, cu căutare după faptă, încadrare și amendă.</p>
-      <p>Planul Basic include Shiftr standard, iar planurile PRO includ Shiftr nelimitat. Vezi <a href="../#abonamente">abonamentele</a>.</p>
-    </div>
-  </section>
-  <section class="page-section frame" aria-labelledby="faq-title">
-    <h2 id="faq-title" class="display-sm">Întrebări frecvente</h2>
-    <div class="page-body">
-      <dl class="qa">
-          <div>
-            <dt>Shiftr funcționează fără internet?</dt>
-            <dd>Da. Programul de ture este stocat local, pe telefon, așa că îl poți consulta și completa fără conexiune.</dd>
-          </div>
-          <div>
-            <dt>Calculul orelor suplimentare este oficial?</dt>
-            <dd>Nu. Shiftr calculează orientativ, din turele pe care le introduci tu. Evidența oficială a timpului de muncă rămâne cea a angajatorului.</dd>
-          </div>
-          <div>
-            <dt>Ce tipuri de ture pot introduce?</dt>
-            <dd>Zi, Noapte, Schimbul 1, 2 și 3, Concediu, Recuperare, Liber și Zona Școlară, fiecare cu interval orar.</dd>
-          </div>
-          <div>
-            <dt>Pe ce telefoane funcționează?</dt>
-            <dd>JAC, cu Shiftr inclus, este o aplicație pentru Android. Acum este în testare închisă; accesul se solicită de pe pagina principală.</dd>
-          </div>
-      </dl>
+
+  <section class="section faq faq-wrap" aria-labelledby="faq-title">
+    <h2 id="faq-title" class="display">Întrebări.</h2>
+    <div class="faq__list">
+      <details>
+        <summary>Merge fără internet?</summary>
+        <p>Da. Programul de ture e stocat pe telefon, așa că îl consulți și îl completezi fără conexiune.</p>
+      </details>
+      <details>
+        <summary>Calculul orelor e oficial?</summary>
+        <p>Nu. Shiftr calculează orientativ, din turele pe care le introduci tu.</p>
+      </details>
+      <details>
+        <summary>E inclus gratuit?</summary>
+        <p>Basic include Shiftr standard. PRO Individual și PRO Echipaj includ Shiftr nelimitat. <a href="../#preturi">Vezi prețurile</a>.</p>
+      </details>
+      <details>
+        <summary>Cine îmi vede turele?</summary>
+        <p>Nimeni de la JAC. Dacă ai backup Android activ, datele pot ajunge în contul tău Google personal. <a href="../legal/privacy.html">Confidențialitate</a>.</p>
+      </details>
     </div>
   </section>
 
-  <section class="page-cta frame" aria-labelledby="cta-title">
-    <h2 id="cta-title" class="display-md">JAC este în testare închisă.</h2>
-    <p class="lede">Aplicația nu este încă disponibilă pentru descărcare publică. Poți solicita acces din formularul de pe pagina principală.</p>
-    <div class="cta-row">
-      <a class="btn btn-solid btn-lg" href="../#aplica">Solicită acces <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-      <a class="btn btn-line btn-lg" href="../">Înapoi la prezentarea JAC</a>
+  <section class="section" aria-labelledby="next-title">
+    <h2 id="next-title" class="eyebrow">Mai vezi și</h2>
+    <div class="next-modules">
+      <a class="module" href="../legislatie-penala/"><span class="module__text"><b>Legislație penală</b><span>Trei module: infracțiuni, partea generală și procedură.</span><i>Vezi modulul →</i></span><img class="module__shot" src="../assets/img/screens/penal-1-module-480.webp" width="1175" height="2560" alt="" loading="lazy" decoding="async"></a>
+      <a class="module" href="../legislatie-rutiera/"><span class="module__text"><b>Legislație rutieră</b><span>Sancțiuni, proceduri, punct-amendă.</span><i>Vezi modulul →</i></span><img class="module__shot" src="../assets/img/screens/cod-rutier-480.webp" width="1175" height="2560" alt="" loading="lazy" decoding="async"></a>
+      <a class="module" href="../ghid-operativ/"><span class="module__text"><b>Ghid operativ</b><span>16 capitole, spețe și tipizate.</span><i>Vezi modulul →</i></span><img class="module__shot" src="../assets/img/screens/ghid-operativ-480.webp" width="1175" height="2560" alt="" loading="lazy" decoding="async"></a>
+      <a class="module" href="../#preturi"><span class="module__text"><b>Prețuri</b><span>De la 3,33 lei / lună de persoană.</span><i>Vezi planurile →</i></span><img class="module__shot" src="../assets/img/screens/crew-redactat-480.webp" width="1175" height="2560" alt="" loading="lazy" decoding="async"></a>
     </div>
+  </section>
+
+  <section class="access" id="acces" aria-labelledby="access-title">
+    <h2 id="access-title" class="display display--xl">Intră în <span class="grad">beta.</span></h2>
+    <p>JAC e în testare închisă, doar pentru Android. Trimite un e-mail și cere acces.</p>
+    <a class="btn btn--blue btn--lg magnetic" href="mailto:vladticu100@gmail.com?subject=Acces%20beta%20JAC"><span>Cere acces la beta</span></a>
+    <p class="access__note">Se deschide un e-mail către vladticu100@gmail.com</p>
   </section>
 </main>
 
-<footer class="colophon">
-  <div class="frame colophon-grid">
-    <div class="colophon-brand">
-      <a class="brand" href="../">
-        <img src="../assets/landing/jac-mark-96.webp" alt="" width="85" height="96" loading="lazy" decoding="async">
-        <span>JAC</span>
-      </a>
-      <p>Claritate în lege. Siguranță în decizie.</p>
-    </div>
-    <nav class="colophon-nav" aria-label="Documente și contact">
-      <a href="../shiftr/">Shiftr — calendar de ture</a>
-      <a href="../legislatie-rutiera/">Legislație rutieră</a>
-      <a href="../legal/terms.html">Termeni și condiții</a>
-      <a href="../legal/privacy.html">Politica de confidențialitate</a>
-      <a href="../legal/cookies.html">Cookie-uri</a>
-      <a href="../legal/asistenta.html">Asistență</a>
-      <a href="mailto:vladticu100@gmail.com">Contact</a>
-      <a href="https://legislatie.just.ro/" target="_blank" rel="noopener noreferrer">Portalul Legislativ oficial</a>
-    </nav>
-    <p class="colophon-disclaimer">JAC este o aplicație independentă, destinată consultării informațiilor juridice. Nu este afiliată și nu reprezintă Guvernul României, Ministerul Afacerilor Interne, Poliția Română sau Jandarmeria Română.</p>
-    <p class="colophon-copy">© <span data-year>2026</span> JAC</p>
-  </div>
+<footer class="foot">
+  <a class="brand" href="../"><img src="../assets/img/logo-64.png" width="22" height="25" alt="" loading="lazy"><span>JAC</span></a>
+  <nav aria-label="Pagini și documente">
+    <a href="../legislatie-rutiera/">Legislație rutieră</a>
+    <a href="../legi-speciale/">Legi speciale</a>
+    <a href="../ghid-operativ/">Ghid operativ</a>
+    <a href="../legislatie-penala/">Legislație penală</a>
+    <a href="../shiftr/">Shiftr</a>
+    <a href="../legal/privacy.html">Confidențialitate</a>
+    <a href="../legal/terms.html">Termeni</a>
+    <a href="../legal/cookies.html">Cookie-uri</a>
+    <a href="../legal/asistenta.html">Asistență</a>
+  </nav>
+  <p>© 2026 JAC. Aplicație independentă de informare legislativă. Nu reprezintă Guvernul României, MAI, Poliția Română sau Jandarmeria Română.</p>
 </footer>
+
+<dialog class="viewer" aria-label="Ecran din aplicație">
+  <button type="button" class="viewer__close" aria-label="Închide">✕</button>
+  <figure class="device viewer__phone"><div class="device__screen"><img alt=""></div></figure>
+  <p class="viewer__cap"></p>
+</dialog>
+
+<script src="../assets/js/main.js" defer></script>
 </body>
 </html>
