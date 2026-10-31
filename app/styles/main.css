@@ -1149,3 +1149,7 @@ html:not(.js) .carousel__btn { visibility: hidden; }
 /* Rutieră demo on the home page: the fine-point chip sits where the speedometer used to be */
 .dw-chip--fine { top: auto; right: auto; left: 0; bottom: 14%; font-size: .9375rem; padding: 10px 14px; }
 @media (min-width: 1024px) { .dw-chip--fine { left: 4%; right: auto; } }
+
+/* Legislatie integrala on the home page: the "27" card sits low, so the search capture behind it stays readable */
+.acts__art .dw--27 { top: auto; bottom: 3%; }
+@media (min-width: 1024px) { .acts__art .dw--27 { bottom: 17%; } }
