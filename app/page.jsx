@@ -124,12 +124,7 @@ export default function HomePage() {
         <div className="demo__art" data-fx="rise-tilt" aria-hidden="true">
           <figure className="device device--back"><div className="device__screen"><img src="/assets/img/screens/rutier-1-sanctiuni-480.webp" srcSet="/assets/img/screens/rutier-1-sanctiuni-480.webp 480w, /assets/img/screens/rutier-1-sanctiuni-800.webp 800w" sizes="(min-width: 1024px) 180px, 50vw" width="1175" height="2560" alt="" loading="lazy" decoding="async" /></div></figure>
           <figure className="device device--front"><div className="device__screen"><img src="/assets/img/screens/cod-rutier-480.webp" srcSet="/assets/img/screens/cod-rutier-480.webp 480w, /assets/img/screens/cod-rutier-800.webp 800w" sizes="(min-width: 1024px) 215px, 50vw" width="1175" height="2560" alt="" loading="lazy" decoding="async" /></div></figure>
-          <div data-ui="" className="dw dw--gauge">
-            <svg viewBox="0 0 120 68"><path className="g__track" d="M12 60 A48 48 0 0 1 108 60" /><path className="g__z1" d="M26.06 26.06 A48 48 0 0 1 60 12" /><path className="g__z2" d="M60 12 A48 48 0 0 1 93.94 26.06" /><g className="g__needle"><path d="M58.4 60 L60 18 L61.6 60 Z" /><circle cx="60" cy="60" r="5" /></g></svg>
-            <p className="g__v">+<b data-count="25">25</b> <small>km/h peste limită</small></p>
-            <p className="g__k">Clasa a II-a, 4–5 puncte-amendă</p>
-          </div>
-          <span className="dw-chip">1 punct-amendă = <b>216,25 lei</b></span>
+          <span className="dw-chip dw-chip--fine">1 punct-amendă = <b>216,25 lei</b></span>
         </div>
       </article>
       <article className="demo">

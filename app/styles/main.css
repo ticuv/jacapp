@@ -929,19 +929,6 @@ html:not(.js) .carousel__btn { visibility: hidden; }
 .cut--blue small { color: var(--on-accent-2); }
 .cut::after { content: ""; position: absolute; left: 100%; top: 50%; width: 34px; height: 2px; background: var(--blue); transform-origin: left; }
 
-/* Rutieră: mini speedometer, the needle sweeps into the 21–30 zone */
-.dw--gauge { left: 0; bottom: 12%; width: 168px; padding: 12px 14px; border-radius: 18px; background: var(--raised); border: 1px solid var(--line-2); } /* taste-skill-ignore: chips float over the phone art */
-.dw--gauge svg { display: block; width: 100%; overflow: visible; }
-.g__track { fill: none; stroke: var(--veil-1); stroke-width: 8; stroke-linecap: round; }
-.g__z1, .g__z2 { fill: none; stroke-width: 8; }
-.g__z1 { stroke: var(--accent-line); }
-.g__z2 { stroke: var(--warn); }
-.g__needle { transform-box: view-box; transform-origin: 60px 60px; transform: rotate(22.5deg); } /* +25 on a 0–40 dial */
-.g__needle path { fill: var(--penalty); }
-.g__needle circle { fill: var(--text); }
-.g__v { margin-top: 2px; font-size: 1.5rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; }
-.g__v small { display: block; font-size: .8125rem; color: var(--muted); letter-spacing: 0; }
-.g__k { margin-top: 6px; color: var(--warn-ink); font-size: .8125rem; font-weight: 800; line-height: 1.3; }
 
 /* Legi speciale: law tags fan out of the library */
 .dw--tags { left: 0; top: 26%; display: grid; justify-items: start; gap: 9px; width: 62%; }
@@ -979,14 +966,9 @@ html:not(.js) .carousel__btn { visibility: hidden; }
   .cut { transition: transform .8s var(--settle), opacity .5s var(--out); transition-delay: calc(.35s + var(--i) * .18s); }
   .cut::after { transition: transform .5s var(--out); transition-delay: calc(.75s + var(--i) * .18s); }
 
-  .js .demo__art:not(.in) .dw--gauge, .js .demo__art:not(.in) .dw-chip { opacity: 0; transform: translateY(24px) scale(.9); }
-  .dw--gauge, .dw-chip { transition: transform .8s var(--settle), opacity .5s var(--out); transition-delay: .3s; }
-  .dw-chip { transition-delay: 1.6s; }
-  .g__needle { transition: transform 1.6s cubic-bezier(.16, 1, .3, 1) .7s; }
-  .js .demo__art:not(.in) .g__needle { transform: rotate(-90deg); }
-  .g__z2 { transition: opacity .4s 1.6s; }
-  .js .demo__art:not(.in) .g__z2 { opacity: .2; }
-
+  .js .demo__art:not(.in) .dw-chip { opacity: 0; transform: translateY(24px) scale(.9); }
+  .dw-chip { transition: transform .8s var(--settle), opacity .5s var(--out); transition-delay: .3s; }
+  .dw-chip { transition-delay: .7s; }
   .js .demo__art:not(.in) .ltag { opacity: 0; transform: translate(90px, 30px) rotate(12deg) scale(.7); }
   .ltag { transition: transform .9s var(--settle), opacity .4s var(--out); transition-delay: calc(.3s + var(--i) * .14s); }
 
@@ -1011,8 +993,7 @@ html:not(.js) .carousel__btn { visibility: hidden; }
 @media (min-width: 1024px) {
   .demo__specs b { font-size: 2rem; }
   .dw--cut { width: 250px; left: 2%; }
-  .dw--gauge { width: 200px; left: 4%; }
-  .dw--tags { left: 2%; }
+    .dw--tags { left: 2%; }
   .dw--pv { width: 180px; height: 220px; left: 6%; }
   .dw--ot { width: 270px; left: 2%; }
   .dw-chip { right: 6%; }
@@ -1164,3 +1145,7 @@ html:not(.js) .carousel__btn { visibility: hidden; }
   .board__val { justify-content: flex-start; font-size: 1.75rem; }
   .hud__phone { height: clamp(300px, calc(100svh - var(--hh) - 88px - 230px), 560px); margin-top: 0; }
 }
+
+/* Rutieră demo on the home page: the fine-point chip sits where the speedometer used to be */
+.dw-chip--fine { top: auto; right: auto; left: 0; bottom: 14%; font-size: .9375rem; padding: 10px 14px; }
+@media (min-width: 1024px) { .dw-chip--fine { left: 4%; right: auto; } }

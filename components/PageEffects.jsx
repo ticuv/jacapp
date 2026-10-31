@@ -6,7 +6,8 @@ import { initBehaviours } from "@/lib/behaviours";
 export default function PageEffects({ page }) {
   useEffect(() => {
     const cleanup = initBehaviours();
-    window.__lenis?.scrollTo(window.location.hash || 0, { immediate: true, offset: -80 });
+    // only a link with #anchor needs a jump; never reset a page the visitor has already started to scroll
+    if (window.location.hash) window.__lenis?.scrollTo(window.location.hash, { immediate: true, offset: -80 });
     return cleanup;
   }, [page]);
   return null;
