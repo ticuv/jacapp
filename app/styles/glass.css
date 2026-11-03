@@ -57,10 +57,9 @@ body::before {
 }
 
 /* the frosted surface, on every card-like element of the site */
-.top__bar, .module, .plan-card, .trust__row li, .faq details, .block, .quote, .chips li, .shiftkeys li,
-.bs, .pin__card, .hud__card, .lens__card, .deck__card, .float, .dw-chip, .cut, .ltag, .dw--ot, .dw--27,
-.carousel__btn, .btn--ghost, .pill, .proof li, .demo__specs li, .switch, .viewer__close, .layer, .formula,
-.shelf__detail, .deck__btn, .acts__tabs, .marquee__item, .compare__tag--bottom, .sheet__tag,
+.top__bar, .module, .plan-card, .trust__row li, .faq details, .block, .quote,
+.bs, .hud__card, .lens__card, .float, .dw-chip, .cut, .ltag, .dw--ot, .dw--27, .btn--ghost, .pill, .demo__specs li, .switch, .viewer__close, .layer,
+.shelf__detail, .acts__tabs, .compare__tag--bottom, .sheet__tag,
 .bs__ico, .hud__read li, .bs-bar, .foot {
   background-color: var(--glass);
   -webkit-backdrop-filter: var(--glass-blur);
@@ -68,8 +67,8 @@ body::before {
   box-shadow: inset 0 1px 0 var(--glass-edge-hi), inset 0 0 0 1px var(--glass-edge-lo), var(--glass-shadow);
 }
 /* small chips sit lower in the stack: no drop shadow, a stronger fill */
-.chips li, .shiftkeys li, .proof li, .demo__specs li, .ltag, .cut, .dw-chip, .sheet__tag, .bs__ico,
-.hud__read li, .compare__tag--bottom, .marquee__item {
+.demo__specs li, .ltag, .cut, .dw-chip, .sheet__tag, .bs__ico,
+.hud__read li, .compare__tag--bottom {
   background-color: var(--glass-2);
   box-shadow: inset 0 1px 0 var(--glass-edge-hi), inset 0 0 0 1px var(--glass-edge-lo);
 }
@@ -79,7 +78,7 @@ body::before {
   background-image: radial-gradient(120% 80% at 100% 0%, rgba(47, 107, 255, .24), transparent 60%);
   box-shadow: inset 0 1px 0 rgba(160, 190, 255, .35), inset 0 0 0 1.5px rgba(91, 140, 255, .55), 0 30px 80px -30px rgba(47, 107, 255, .5);
 }
-.faq details[open], .faq details:hover, .btn--ghost:hover, .carousel__btn:hover, .pill:hover { background-color: var(--glass-3); }
+.faq details[open], .faq details:hover, .btn--ghost:hover, .pill:hover { background-color: var(--glass-3); }
 .foot { border-radius: 28px 28px 0 0; box-shadow: inset 0 1px 0 var(--glass-edge-hi); }
 
 /* header: a floating glass pill that firms up once the page scrolls under it */
@@ -95,7 +94,7 @@ body::before {
 .btn--blue:hover { background: linear-gradient(180deg, #5687ff, var(--btn-hover)); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .3), 0 18px 40px -12px rgba(47, 107, 255, .9); }
 .btn { transition: transform .5s var(--spring), box-shadow .35s var(--out), background-color .3s; }
 .btn:active { transform: scale(.96); transition-duration: .12s; }
-.float--blue, .compare__tag--top, .pin__fact span, .switch__thumb, .compare__knob { background: linear-gradient(180deg, var(--btn-top), var(--btn-bot)); }
+.float--blue, .compare__tag--top, .switch__thumb, .compare__knob { background: linear-gradient(180deg, var(--btn-top), var(--btn-bot)); }
 
 /* cards lift on a spring, like the app's press-scale, and catch a light that follows the pointer */
 .module, .plan-card, .bs, .block, .trust__row li, .faq details, .quote {
@@ -138,10 +137,10 @@ body::before {
 /* without backdrop-filter, or when transparency is unwanted: solid, still readable surfaces */
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   .top__bar { background-color: rgba(12, 14, 19, .96); }
-  .module, .plan-card, .faq details, .block, .bs, .pin__card, .hud__card, .lens__card, .deck__card { background-color: #12151c; }
+  .module, .plan-card, .faq details, .block, .bs, .hud__card, .lens__card { background-color: #12151c; }
 }
 @media (prefers-reduced-transparency: reduce) {
-  .top__bar, .module, .plan-card, .faq details, .block, .bs, .pin__card, .hud__card, .lens__card, .deck__card {
+  .top__bar, .module, .plan-card, .faq details, .block, .bs, .hud__card, .lens__card {
     -webkit-backdrop-filter: none; backdrop-filter: none; background-color: #12151c;
   }
 }

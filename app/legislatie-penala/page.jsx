@@ -90,22 +90,22 @@ export default function PenalaPage() {
         </div></figure>
       </div>
       <ol className="lens__steps">
-        <li className="lens__step" data-img="0" data-top="35" data-bot="46" data-tag="Încadrare juridică">{" "}
+        <li className="lens__step" data-img="0" data-top="14" data-bot="23" data-tag="Încadrare juridică">{" "}
           <div className="lens__card"><h3>Încadrarea, exactă</h3><p>Art. 188 alin. (1) din Codul Penal, cu sursa oficială chiar deasupra.</p></div>{" "}
         </li>
-        <li className="lens__step" data-img="0" data-top="46" data-bot="62" data-tag="Descrierea faptei">{" "}
+        <li className="lens__step" data-img="0" data-top="23" data-bot="38" data-tag="Descrierea faptei">{" "}
           <div className="lens__card"><h3>Ce spune legea</h3><p>Textul care definește infracțiunea, citit direct pe fișă, fără să cauți în cod.</p></div>{" "}
         </li>
-        <li className="lens__step" data-img="0" data-top="63" data-bot="77" data-tag="Pedeapsa">{" "}
+        <li className="lens__step" data-img="0" data-top="39" data-bot="54" data-tag="Pedeapsa">{" "}
           <div className="lens__card"><h3>Pedeapsa, la vedere</h3><p>Închisoare de la 10 la 20 de ani și interzicerea exercitării unor drepturi.</p></div>{" "}
         </li>
-        <li className="lens__step" data-img="0" data-top="78" data-bot="99" data-tag="Competență, CPP">{" "}
+        <li className="lens__step" data-img="0" data-top="56" data-bot="71" data-tag="Competență, CPP">{" "}
           <div className="lens__card"><h3>Cine cercetează, cine judecă</h3><p>Fără plângere prealabilă. Cercetarea: procurorul. Judecata: tribunalul, cu articolele din CPP.</p></div>{" "}
         </li>
-        <li className="lens__step" data-img="1" data-top="30" data-bot="41" data-tag="Doctrină, obiectul">{" "}
+        <li className="lens__step" data-img="1" data-top="28" data-bot="42" data-tag="Doctrină, obiectul">{" "}
           <div className="lens__card"><h3>Doctrina, pe secțiuni</h3><p>Obiectul juridic și obiectul material, scrise pe înțelesul celui de pe teren.</p></div>{" "}
         </li>
-        <li className="lens__step" data-img="1" data-top="44" data-bot="66" data-tag="Doctrină, laturi">{" "}
+        <li className="lens__step" data-img="1" data-top="42" data-bot="61" data-tag="Doctrină, laturi">{" "}
           <div className="lens__card"><h3>Laturile și tentativa</h3><p>Latura obiectivă, latura subiectivă (intenție directă sau indirectă) și regimul tentativei.</p></div>{" "}
         </li>
       </ol>
