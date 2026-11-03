@@ -5,7 +5,7 @@ export const metadata = { title: "Pagina nu există | JAC", robots: { index: fal
 export default function NotFound() {
   return (
     <main className="nf">
-      <Link className="brand nf__brand" href="/" aria-label="JAC, pagina principală"><img src="/assets/img/logo-64.webp" width="22" height="25" alt="" /><span>JAC</span></Link>
+      <Link className="brand nf__brand" href="/" aria-label="JAC, pagina principală"><img src="/assets/img/logo-white-64.webp" width="20" height="27" alt="" /><span>JAC</span></Link>
       <p className="nf__code" aria-hidden="true">404</p>
       <h1 className="display">Pagina nu există.</h1>
       <p className="sub">Adresa s-a schimbat sau a fost scrisă greșit.</p>

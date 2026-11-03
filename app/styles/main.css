@@ -954,8 +954,8 @@ html:not(.js) .carousel__btn { visibility: hidden; }
 .ot__big small { font-size: .8125rem; color: var(--muted); letter-spacing: 0; }
 .ot__bar { display: flex; height: 10px; margin-top: 12px; border-radius: 6px; overflow: hidden; background: var(--veil-1); }
 .ot__bar i { display: block; height: 100%; transform-origin: left; }
-.ot__norm { width: 90.7%; background: var(--blue); } /* 176 / 194 */
-.ot__over { width: 9.3%; background: var(--penalty-fill); }
+.ot__norm { width: 81.6%; background: var(--blue); } /* 160 / 196 */
+.ot__over { width: 18.4%; background: var(--penalty-fill); }
 .ot__legend { display: flex; justify-content: space-between; align-items: baseline; margin-top: 8px; color: var(--muted); font-size: .8125rem; font-weight: 700; }
 .ot__red { display: inline-block; color: var(--penalty); font-size: 1.25rem; font-weight: 800; letter-spacing: -0.02em; }
 

@@ -1,4 +1,5 @@
 import "./styles/main.css";
+import "./styles/glass.css";
 import SmoothScroll from "@/components/SmoothScroll";
 
 export const metadata = {
@@ -10,13 +11,13 @@ export const viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
-  themeColor: "#0a0f1c",
+  themeColor: "#07080b",
   colorScheme: "dark",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="ro">
+    <html lang="ro" suppressHydrationWarning>
       <head>
         <link rel="preload" href="/assets/fonts/manrope-var.woff2" as="font" type="font/woff2" crossOrigin="" />
         {/* the page is styled for "no script" first; this class switches on the enhanced, animated version */}

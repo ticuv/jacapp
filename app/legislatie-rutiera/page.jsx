@@ -216,7 +216,7 @@ export default function RutieraPage() {
 
   <section className="access" id="acces" aria-labelledby="access-title">
     <h2 id="access-title" className="display display--xl">Intră în beta.</h2>
-    <p>JAC e în testare închisă, doar pentru Android. Trimite un e-mail și cere acces.</p>
+    <p>JAC e în testare închisă, deocamdată doar pe Android. Scrie-ne un e-mail și cere acces.</p>
     <a className="btn btn--blue btn--lg magnetic" href="mailto:vladticu100@gmail.com?subject=Acces%20beta%20JAC"><span>Cere acces la beta</span></a>
     <p className="access__note">Se deschide un e-mail către vladticu100@gmail.com</p>
   </section>

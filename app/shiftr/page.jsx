@@ -39,11 +39,11 @@ export default function ShiftrPage() {
     <div className="feature__stage" data-fx="rise-tilt">
       <figure className="device device--solo">
         <div className="device__screen">
-          <img src="/assets/img/screens/shiftr-calendar-800.webp" srcSet="/assets/img/screens/shiftr-calendar-480.webp 480w, /assets/img/screens/shiftr-calendar-800.webp 800w, /assets/img/screens/shiftr-calendar-1175.webp 1175w" sizes="(min-width: 1024px) 320px, 66vw" width="1175" height="2560" alt="Calendarul Shiftr pentru octombrie 2026, cu ziua de 29 selectată: concedii, ture de zi și de noapte, schimburi 2, recuperări și zile libere, fiecare cu intervalul orar, plus sumarul lunii." fetchPriority="high" />
+          <img src="/assets/img/screens/shiftr-calendar-800.webp" srcSet="/assets/img/screens/shiftr-calendar-480.webp 480w, /assets/img/screens/shiftr-calendar-800.webp 800w, /assets/img/screens/shiftr-calendar-1175.webp 1175w" sizes="(min-width: 1024px) 320px, 66vw" width="1175" height="2560" alt="Calendarul Shiftr pentru noiembrie 2026, cu ziua de azi selectată: ture de zi și de noapte, zile libere, recuperare și program, plus soldul orelor suplimentare." fetchPriority="high" />
         </div>
       </figure>
-      <span className="float float--1 float--blue" aria-hidden="true">+18h suplimentare</span>
-      <span className="float float--3" aria-hidden="true">Normă: 176h</span>
+      <span className="float float--1 float--blue" aria-hidden="true">+36h peste normă</span>
+      <span className="float float--3" aria-hidden="true">Normă: 160h</span>
     </div>
   </section>
 
@@ -58,22 +58,22 @@ export default function ShiftrPage() {
       <article className="bs bs--span2" data-fx-child="">
         <h3>Calendar</h3>
         <p className="bs__lead">Fiecare zi, cu tura și orele ei.</p>
-        <div className="bs__win" style={{ "--y": "-15%", "--ar": "358 / 280" }}><img src="/assets/img/screens/shiftr-calendar-800.webp" srcSet="/assets/img/screens/shiftr-calendar-480.webp 480w, /assets/img/screens/shiftr-calendar-800.webp 800w" sizes="(min-width: 1024px) 600px, 92vw" width="1175" height="2560" alt="Grila calendarului Shiftr pentru octombrie 2026, cu ture de zi, noapte, schimbul 2, recuperări, concedii și zile libere, fiecare cu intervalul orar." loading="lazy" decoding="async" /></div>
-        <button type="button" className="bs__hit" data-shot="shiftr-calendar" data-cap="Calendarul Shiftr, octombrie 2026"><span className="sr-only">Mărește ecranul: Calendarul Shiftr, octombrie 2026</span><span className="bs__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7" /></svg></span></button>
+        <div className="bs__win" style={{ "--y": "-15%", "--ar": "358 / 280" }}><img src="/assets/img/screens/shiftr-calendar-800.webp" srcSet="/assets/img/screens/shiftr-calendar-480.webp 480w, /assets/img/screens/shiftr-calendar-800.webp 800w" sizes="(min-width: 1024px) 600px, 92vw" width="1175" height="2560" alt="Grila calendarului Shiftr pentru noiembrie 2026, cu ture de zi, de noapte și zile libere, colorate ca în aplicație." loading="lazy" decoding="async" /></div>
+        <button type="button" className="bs__hit" data-shot="shiftr-calendar" data-cap="Calendarul Shiftr, noiembrie 2026"><span className="sr-only">Mărește ecranul: Calendarul Shiftr, noiembrie 2026</span><span className="bs__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7" /></svg></span></button>
       </article>
 
       <article className="bs" data-fx-child="">
         <h3>Șabloane</h3>
         <p className="bs__lead">10 ture gata făcute.</p>
         <div className="bs__win" style={{ "--y": "-13%", "--ar": "174 / 260" }}><img src="/assets/img/screens/shiftr-2-sabloane-800.webp" srcSet="/assets/img/screens/shiftr-2-sabloane-480.webp 480w, /assets/img/screens/shiftr-2-sabloane-800.webp 800w" sizes="(min-width: 1024px) 300px, 46vw" width="1175" height="2560" alt="Lista de șabloane: Zi 06:00–18:00, Noapte 18:00–06:00, Program 08:00–16:00, Schimbul 1, 2 și 3, Liber." loading="lazy" decoding="async" /></div>
-        <button type="button" className="bs__hit" data-shot="shiftr-2-sabloane" data-cap="Gestionează Șabloane: 10 șabloane configurate"><span className="sr-only">Mărește ecranul: Gestionează Șabloane: 10 șabloane configurate</span><span className="bs__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7" /></svg></span></button>
+        <button type="button" className="bs__hit" data-shot="shiftr-2-sabloane" data-cap="Șabloane de ture: 10 șabloane gata făcute"><span className="sr-only">Mărește ecranul: Șabloane de ture: 10 șabloane gata făcute</span><span className="bs__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7" /></svg></span></button>
       </article>
 
       <article className="bs" data-fx-child="">
         <h3>Tură nouă</h3>
         <p className="bs__lead">Ore, culoare, notiță.</p>
-        <div className="bs__win" style={{ "--y": "-18%", "--ar": "174 / 260" }}><img src="/assets/img/screens/shiftr-tura-noua-800.webp" srcSet="/assets/img/screens/shiftr-tura-noua-480.webp 480w, /assets/img/screens/shiftr-tura-noua-800.webp 800w" sizes="(min-width: 1024px) 300px, 46vw" width="1175" height="2560" alt="Formularul Tură Nouă: presetări Zi și Noapte, interval 08:00–20:00 și paleta de culori pentru zi." loading="lazy" decoding="async" /></div>
-        <button type="button" className="bs__hit" data-shot="shiftr-tura-noua" data-cap="Formularul Tură Nouă: preset, interval, culoare, nume și notițe"><span className="sr-only">Mărește ecranul: Formularul Tură Nouă: preset, interval, culoare, nume și notițe</span><span className="bs__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7" /></svg></span></button>
+        <div className="bs__win" style={{ "--y": "-18%", "--ar": "174 / 260" }}><img src="/assets/img/screens/shiftr-tura-noua-800.webp" srcSet="/assets/img/screens/shiftr-tura-noua-480.webp 480w, /assets/img/screens/shiftr-tura-noua-800.webp 800w" sizes="(min-width: 1024px) 300px, 46vw" width="1175" height="2560" alt="Formularul turei: șabloanele Zi și Noapte, programul 06:00–18:00 cu durata de 12h, alarma la 05:00 și paleta de culori." loading="lazy" decoding="async" /></div>
+        <button type="button" className="bs__hit" data-shot="shiftr-tura-noua" data-cap="Formularul turei: șablon, program, culoare, denumire și notițe"><span className="sr-only">Mărește ecranul: Formularul turei: șablon, program, culoare, denumire și notițe</span><span className="bs__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7" /></svg></span></button>
       </article>
 
       <article className="bs bs--span2" data-fx-child="">
@@ -107,8 +107,8 @@ export default function ShiftrPage() {
       <article className="bs bs--span2" data-fx-child="">
         <h3>Sumarul lunii</h3>
         <p className="bs__lead">Orele peste normă, la vedere.</p>
-        <div className="bs__win" style={{ "--y": "-44%", "--ar": "358 / 230" }}><img src="/assets/img/screens/shiftr-sumar-800.webp" srcSet="/assets/img/screens/shiftr-sumar-480.webp 480w, /assets/img/screens/shiftr-sumar-800.webp 800w" sizes="(min-width: 1024px) 600px, 92vw" width="1175" height="2560" alt="Sumarul lunii octombrie 2026: 20 de ture, 194 de ore lucrate, normă legală 176h, +18h suplimentare." loading="lazy" decoding="async" /></div>
-        <button type="button" className="bs__hit" data-shot="shiftr-sumar" data-cap="Sumarul lunii: 20 de ture, 194h lucrate, normă 176h, +18h"><span className="sr-only">Mărește ecranul: Sumarul lunii: 20 de ture, 194h lucrate, normă 176h, +18h</span><span className="bs__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7" /></svg></span></button>
+        <div className="bs__win" style={{ "--y": "-44%", "--ar": "358 / 230" }}><img src="/assets/img/screens/shiftr-sumar-800.webp" srcSet="/assets/img/screens/shiftr-sumar-480.webp 480w, /assets/img/screens/shiftr-sumar-800.webp 800w" sizes="(min-width: 1024px) 600px, 92vw" width="1175" height="2560" alt="Sumarul lunii noiembrie 2026: 196 de ore lucrate față de o normă de 160h, cu soldul orelor suplimentare." loading="lazy" decoding="async" /></div>
+        <button type="button" className="bs__hit" data-shot="shiftr-sumar" data-cap="Sumarul lunii: 196h lucrate, normă 160h, +36h"><span className="sr-only">Mărește ecranul: Sumarul lunii: 196h lucrate, normă 160h, +36h</span><span className="bs__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7" /></svg></span></button>
       </article>
 
       <article className="bs" data-fx-child="">
@@ -167,7 +167,7 @@ export default function ShiftrPage() {
 
   <section className="access" id="acces" aria-labelledby="access-title">
     <h2 id="access-title" className="display display--xl">Intră în beta.</h2>
-    <p>JAC e în testare închisă, doar pentru Android. Trimite un e-mail și cere acces.</p>
+    <p>JAC e în testare închisă, deocamdată doar pe Android. Scrie-ne un e-mail și cere acces.</p>
     <a className="btn btn--blue btn--lg magnetic" href="mailto:vladticu100@gmail.com?subject=Acces%20beta%20JAC"><span>Cere acces la beta</span></a>
     <p className="access__note">Se deschide un e-mail către vladticu100@gmail.com</p>
   </section>

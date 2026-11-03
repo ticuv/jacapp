@@ -40,7 +40,7 @@ export default function LegiSpecialePage() {
     <div className="feature__stage" data-fx="rise-tilt">
       <figure className="device device--solo">
         <div className="device__screen">
-          <img src="/assets/img/screens/legi-speciale-1-biblioteca-800.webp" srcSet="/assets/img/screens/legi-speciale-1-biblioteca-480.webp 480w, /assets/img/screens/legi-speciale-1-biblioteca-800.webp 800w, /assets/img/screens/legi-speciale-1-biblioteca-1175.webp 1175w" sizes="(min-width: 1024px) 320px, 66vw" width="1175" height="2560" alt="Legi speciale în JAC: 20 de pachete legislative, de la Legea 61/1991 (40 de fapte) la Domeniul Silvic (129 de fapte), cu butonul Reordonează." fetchPriority="high" />
+          <img src="/assets/img/screens/legi-speciale-1-biblioteca-800.webp" srcSet="/assets/img/screens/legi-speciale-1-biblioteca-480.webp 480w, /assets/img/screens/legi-speciale-1-biblioteca-800.webp 800w, /assets/img/screens/legi-speciale-1-biblioteca-1175.webp 1175w" sizes="(min-width: 1024px) 320px, 66vw" width="1175" height="2560" alt="Legi speciale în JAC: 20 de pachete și 947 de fapte, de la Legea 61/1991 (40 de fapte) la Domeniul Silvic (129 de fapte), cu butonul Ordine." fetchPriority="high" />
         </div>
       </figure>
       <span className="float float--1" aria-hidden="true">20 pachete</span>
@@ -170,7 +170,7 @@ export default function LegiSpecialePage() {
             <p className="stack__fig">Salvată local</p>
             <p className="stack__law">Biblioteca ta</p>
             <h3>Reordonezi legile</h3>
-            <p className="stack__txt">Deschizi „Reordonează”, muți pachetele cu săgeți sau mâner, salvezi: ordinea rămâne pe dispozitiv.</p>
+            <p className="stack__txt">Atingi „Ordine”, muți pachetele cu săgețile sau din mâner și salvezi. Ordinea rămâne pe telefon.</p>
           </div>
         </div>
         <div className="stack__scene" aria-hidden="true">
@@ -179,7 +179,7 @@ export default function LegiSpecialePage() {
           <figure className="device stack__phone" style={{ "--i": "2" }}><div className="device__screen"><img src="/assets/img/screens/legi-speciale-5-droguri-detalii-800.webp" srcSet="/assets/img/screens/legi-speciale-5-droguri-detalii-480.webp 480w, /assets/img/screens/legi-speciale-5-droguri-detalii-800.webp 800w" sizes="(min-width: 1024px) 320px, 58vw" width="1175" height="2560" alt="Continuarea fișei: doza uzuală de consum, lipsa indiciilor de vânzare, indiciile de trafic și clasificarea." loading="lazy" decoding="async" /></div></figure>
           <figure className="device stack__phone" style={{ "--i": "3" }}><div className="device__screen"><img src="/assets/img/screens/legi-speciale-6-legea61-800.webp" srcSet="/assets/img/screens/legi-speciale-6-legea61-480.webp 480w, /assets/img/screens/legi-speciale-6-legea61-800.webp 800w" sizes="(min-width: 1024px) 320px, 58vw" width="1175" height="2560" alt="Fișa contravenției din Legea 61/1991: fapte, acte sau gesturi obscene, injurii și amenințări, amendă 200–1.000 lei." loading="lazy" decoding="async" /></div></figure>
           <figure className="device stack__phone" style={{ "--i": "4" }}><div className="device__screen"><img src="/assets/img/screens/legi-speciale-7-legea61-extra-800.webp" srcSet="/assets/img/screens/legi-speciale-7-legea61-extra-480.webp 480w, /assets/img/screens/legi-speciale-7-legea61-extra-800.webp 800w" sizes="(min-width: 1024px) 320px, 58vw" width="1175" height="2560" alt="Măsuri complementare: recidiva în 72 de ore, agravanta în instituții și cine poate constata." loading="lazy" decoding="async" /></div></figure>
-          <figure className="device stack__phone" style={{ "--i": "5" }}><div className="device__screen"><img src="/assets/img/screens/legi-speciale-2-reordonare-800.webp" srcSet="/assets/img/screens/legi-speciale-2-reordonare-480.webp 480w, /assets/img/screens/legi-speciale-2-reordonare-800.webp 800w" sizes="(min-width: 1024px) 320px, 58vw" width="1175" height="2560" alt="Ecranul Reordonează legile: pachetele cu mâner de tragere și săgeți de mutare, plus Salvează." loading="lazy" decoding="async" /></div></figure>
+          <figure className="device stack__phone" style={{ "--i": "5" }}><div className="device__screen"><img src="/assets/img/screens/legi-speciale-2-reordonare-800.webp" srcSet="/assets/img/screens/legi-speciale-2-reordonare-480.webp 480w, /assets/img/screens/legi-speciale-2-reordonare-800.webp 800w" sizes="(min-width: 1024px) 320px, 58vw" width="1175" height="2560" alt="Ecranul de reordonare a legilor: pachetele cu mâner de tragere și săgeți de mutare, plus Implicit și Salvează." loading="lazy" decoding="async" /></div></figure>
         </div>
       </div>
     </div>
@@ -215,7 +215,7 @@ export default function LegiSpecialePage() {
       </details>
       <details>
         <summary>Pot schimba ordinea legilor?</summary>
-        <p>Da. Din „Reordonează" muți pachetele cu săgeți sau cu mânerul, apoi salvezi. Ordinea rămâne local.</p>
+        <p>Da. Din „Ordine” muți pachetele cu săgețile sau din mâner, apoi salvezi. Ordinea rămâne pe telefon.</p>
       </details>
     </div>
   </section>
@@ -232,7 +232,7 @@ export default function LegiSpecialePage() {
 
   <section className="access" id="acces" aria-labelledby="access-title">
     <h2 id="access-title" className="display display--xl">Intră în beta.</h2>
-    <p>JAC e în testare închisă, doar pentru Android. Trimite un e-mail și cere acces.</p>
+    <p>JAC e în testare închisă, deocamdată doar pe Android. Scrie-ne un e-mail și cere acces.</p>
     <a className="btn btn--blue btn--lg magnetic" href="mailto:vladticu100@gmail.com?subject=Acces%20beta%20JAC"><span>Cere acces la beta</span></a>
     <p className="access__note">Se deschide un e-mail către vladticu100@gmail.com</p>
   </section>

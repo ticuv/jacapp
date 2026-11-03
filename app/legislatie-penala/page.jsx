@@ -52,8 +52,8 @@ export default function PenalaPage() {
   <section className="section" aria-labelledby="mod-title">
     <div className="section__head" data-fx="slide-right">
       <h2 id="mod-title" className="display">Trei module operative</h2>
-      <p className="claim">Infracțiuni, principii, procedură. Fiecare cu rolul ei.</p>
-      <p className="sub">Legislația penală este organizată în trei module operative: infracțiunile, partea generală și procedura penală. Alege zona de lucru și continuă către articolele relevante.</p>
+      <p className="claim">Infracțiuni, principii, procedură. Fiecare cu rolul lui.</p>
+      <p className="sub">Infracțiunile, partea generală și procedura penală, fiecare în modulul ei. Intri unde ai nevoie și ajungi direct la articol.</p>
     </div>
     <div className="blocks blocks--3">
       <article className="block" data-fx="slide-left">
@@ -106,7 +106,7 @@ export default function PenalaPage() {
           <div className="lens__card"><h3>Doctrina, pe secțiuni</h3><p>Obiectul juridic și obiectul material, scrise pe înțelesul celui de pe teren.</p></div>{" "}
         </li>
         <li className="lens__step" data-img="1" data-top="44" data-bot="66" data-tag="Doctrină, laturi">{" "}
-          <div className="lens__card"><h3>Laturile și tentativa</h3><p>Latura obiectivă, latura subiectivă: intenție directă sau indirectă: și regimul tentativei.</p></div>{" "}
+          <div className="lens__card"><h3>Laturile și tentativa</h3><p>Latura obiectivă, latura subiectivă (intenție directă sau indirectă) și regimul tentativei.</p></div>{" "}
         </li>
       </ol>
     </div>
@@ -186,7 +186,7 @@ export default function PenalaPage() {
 
   <section className="access" id="acces" aria-labelledby="access-title">
     <h2 id="access-title" className="display display--xl">Intră în beta.</h2>
-    <p>JAC e în testare închisă, doar pentru Android. Trimite un e-mail și cere acces.</p>
+    <p>JAC e în testare închisă, deocamdată doar pe Android. Scrie-ne un e-mail și cere acces.</p>
     <a className="btn btn--blue btn--lg magnetic" href="mailto:vladticu100@gmail.com?subject=Acces%20beta%20JAC"><span>Cere acces la beta</span></a>
     <p className="access__note">Se deschide un e-mail către vladticu100@gmail.com</p>
   </section>

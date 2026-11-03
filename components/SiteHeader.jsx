@@ -23,7 +23,7 @@ export default function SiteHeader({ current }) {
       <header className="top">
         <div className="top__bar">
           <Link className="brand" href="/" aria-label="JAC, pagina principală">
-            <img src="/assets/img/logo-64.webp" width="22" height="25" alt="" />
+            <img src="/assets/img/logo-white-64.webp" width="20" height="27" alt="" />
             <span>JAC</span>
           </Link>
           <nav className="nav" aria-label="Navigare principală">
