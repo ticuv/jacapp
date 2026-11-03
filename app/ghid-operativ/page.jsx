@@ -1,4 +1,4 @@
-// Generated from legacy/ghid-operativ/index.html by tools/html2jsx.py, then edited by hand where noted.
+// Hand-maintained page (originally converted from the static site, which has since been retired).
 import Link from "next/link";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
