@@ -13,7 +13,7 @@ export const metadata = {
 
 const TYPES = [
   ["Z", "Zi", "#2F6BFF", "tura de zi"], ["N", "Noapte", "#F08A5D", "tura de noapte"], ["S1", "Schimbul 1", "#7FA6FF", "program în schimburi"], ["S2", "Schimbul 2", "#8B5CF6", "program în schimburi"],
-  ["S3", "Schimbul 3", "#38BDF8", "program în schimburi"], ["C", "Concediu", "#E8B54A", "C/M în weekend sau de sărbători = 0h"], ["R", "Recuperare", "#69BFAE", "scade din soldul de ore suplimentare"], ["L", "Liber", "#8B97A1", "nu adaugă ore lucrate"],
+  ["S3", "Schimbul 3", "#38BDF8", "program în schimburi"], ["C", "Concediu", "#E8B54A", "concediul și medicalul se socotesc singure"], ["R", "Recuperare", "#69BFAE", "scade din soldul de ore suplimentare"], ["L", "Liber", "#8B97A1", "nu adaugă ore lucrate"],
 ];
 
 const ROWS = [
@@ -25,9 +25,9 @@ const ROWS = [
   ["Soldul de ore suplimentare", "n", "p"],
   ["Recuperările scăzute din sold", "n", "p"],
   ["Ore adăugate manual din altă aplicație", "n", "p"],
-  ["C/M în weekend și de sărbători (0h)", "n", "p"],
+  ["Fără bătăi de cap cu calcularea concediilor sau medicalelor", "n", "p"],
 ];
-const MARK = { y: ["✓", "inclus"], p: ["PRO", "inclus în PRO"], n: ["–", "nu e inclus"] };
+const MARK = { y: ["Da", "inclus"], p: ["PRO", "inclus în PRO"], n: ["Nu", "nu e inclus"] };
 
 export default function ShiftrPage() {
   return (
@@ -44,12 +44,12 @@ export default function ShiftrPage() {
               <div className="btns" data-r=""><MainCta /><a className="btn btn--glass" href="#calcul">Cum calculează</a></div>
             </div>
             <Stage
-              front="app-shiftr-luna"
+              front="app-shiftr-a"
               back="app-shiftr-editare"
               backAlt="Foaia Modifică tura din Shiftr: șabloanele Zi (06:00–18:00) și Noapte (18:00–06:00), ora de început și de sfârșit, culoarea și denumirea turei."
               backRight
               priority
-              frontAlt="Calendarul Shiftr pentru noiembrie 2026: ture de zi (Z), de noapte (N), zile libere grupate, o recuperare de cinci zile, iar dedesubt soldul de ore suplimentare +6h și norma 160h din 160h."
+              frontAlt="Calendarul Shiftr pentru noiembrie 2026: ture de zi (Z) și de noapte (N), zile libere, două zile de program, iar dedesubt 172h lucrate din 160h și soldul de ore suplimentare +12h."
             >
               <Chip pos="tl" k="Normă legală">160h</Chip>
               <Chip pos="mr" tone="red" k="Sold">+6h</Chip>
@@ -84,37 +84,24 @@ export default function ShiftrPage() {
               <ol className="formula" style={{ marginTop: 28 }}>
                 <li className="glass" data-r=""><b>Norma lunii</b><span><code>zile lucrătoare × 8h</code> minus sărbătorile legale. În noiembrie 2026: <code>21 × 8h − 1 sărbătoare = 160h</code>.</span></li>
                 <li className="glass" data-r="" style={{ "--d": 1 }}><b>Orele suplimentare</b><span>Se calculează singure: <code>ore lucrate − normă</code>.</span></li>
-                <li className="glass" data-r="" style={{ "--d": 2 }}><b>Concediu în weekend sau de sărbători</b><span>Ziua de C/M care cade în weekend sau într-o sărbătoare legală contează <code>0h</code>.</span></li>
+                <li className="glass" data-r="" style={{ "--d": 2 }}><b>Concediile și medicalele</b><span>Fără bătăi de cap cu calcularea lor: Shiftr le socotește singur în normă, inclusiv când cad în weekend sau de sărbători.</span></li>
                 <li className="glass" data-r="" style={{ "--d": 3 }}><b>Soldul</b><span>Scade cu recuperările acordate: <code>sold = peste normă − recuperări</code>.</span></li>
                 <li className="glass" data-r="" style={{ "--d": 4 }}><b>Ore din altă aplicație</b><span>Orele aduse din altă evidență se adaugă manual, cu butonul „+” de lângă sold.</span></li>
               </ol>
             </div>
-            <div>
-              <div className="calc glass" data-shiftr="" data-norm="160" data-r="" style={{ marginTop: 0 }}>
-                <p className="calc__k">Exemplu: luna cu normă de 160h</p>
-                <div className="range">
-                  <label htmlFor="sh-l">Ore lucrate <output data-o="lucrate" htmlFor="sh-l">172h</output></label>
-                  <input id="sh-l" name="lucrate" type="range" min="120" max="220" step="1" defaultValue="172" />
-                </div>
-                <div className="range">
-                  <label htmlFor="sh-r">Recuperări acordate <output data-o="rec" htmlFor="sh-r">12h</output></label>
-                  <input id="sh-r" name="recuperari" type="range" min="0" max="12" step="1" defaultValue="12" />
-                </div>
-                <dl className="calc__out" aria-live="polite">
-                  <div><dt>Peste normă</dt><dd data-o="extra">+12h</dd></div>
-                  <div data-o="balbox" className="is-teal"><dt>Sold ore suplimentare</dt><dd data-o="bal">0h</dd></div>
-                </dl>
-                <p className="calc__note">160h normă, 172h lucrate → +12h. O recuperare de 12h → sold 0h. Calculele Shiftr sunt orientative.</p>
+            <div className="live" data-shiftr2="" data-norm="160">
+              <p className="live__num mono" aria-live="polite"><span className="sr-only">Sold ore suplimentare: </span><span data-o="bal">+12h</span></p>
+              <div className="calc2" role="group" aria-label="Exemplu de calcul Shiftr, noiembrie 2026">
+                <div className="calc2__row"><span>Normă</span><b className="mono">160h</b></div>
+                <div className="calc2__row"><span>Lucrate</span><b className="mono" data-o="lucrate">172h</b></div>
+                <label className="calc2__row calc2__check"><span>O noapte în plus, pe 23</span><span className="calc2__toggle"><input type="checkbox" data-extra="12" /><b className="mono">+12h</b></span></label>
+                <label className="calc2__row calc2__check"><span>Recuperare pe 17</span><span className="calc2__toggle"><input type="checkbox" data-rec="12" /><b className="mono">−12h</b></span></label>
               </div>
-              <div style={{ marginTop: "clamp(64px, 12vw, 120px)" }}>
-                <Stage
-                  front="app-shiftr-sumar"
-                  frontAlt="Sumarul lunii în Shiftr: 160h din 160h, sold de ore suplimentare +6h (acumulate +35h, 5 recuperări în lună −40h, +35h adăugate manual), 15 zile lucrate, 15 zile libere și norma legală: 21 de zile × 8h − 1 sărbătoare = 160h."
-                >
-                  <Chip pos="tl" k="Normă">21 × 8h − 1</Chip>
-                  <Chip pos="br" tone="red" k="Sold">+6h</Chip>
-                </Stage>
+              <div className="live__phone">
+                <span className="hero__halo stage__halo" aria-hidden="true"></span>
+                <figure className="phone shiftr-stack" data-ui=""><img className="shiftr-st is-on" data-st="a" src="/assets/img/screens/app-shiftr-a-800.webp" srcSet="/assets/img/screens/app-shiftr-a-480.webp 480w, /assets/img/screens/app-shiftr-a-800.webp 800w, /assets/img/screens/app-shiftr-a-1175.webp 1175w" sizes="(min-width: 1024px) 300px, 64vw" width="1175" height="2560" alt="Shiftr, noiembrie 2026: 172h lucrate din 160h normă, sold ore suplimentare +12h, acumulate +12h." loading="lazy" decoding="async" /><img className="shiftr-st" data-st="b" src="/assets/img/screens/app-shiftr-b-800.webp" srcSet="/assets/img/screens/app-shiftr-b-480.webp 480w, /assets/img/screens/app-shiftr-b-800.webp 800w, /assets/img/screens/app-shiftr-b-1175.webp 1175w" sizes="(min-width: 1024px) 300px, 64vw" width="1175" height="2560" alt="Shiftr, noiembrie 2026, cu tura de zi din 17 noiembrie trecută ca recuperare: 172h din 160h, sold 0h, acumulate +12h și 1 recuperare în lună −12h." loading="lazy" decoding="async" /><img className="shiftr-st" data-st="c" src="/assets/img/screens/app-shiftr-c-800.webp" srcSet="/assets/img/screens/app-shiftr-c-480.webp 480w, /assets/img/screens/app-shiftr-c-800.webp 800w, /assets/img/screens/app-shiftr-c-1175.webp 1175w" sizes="(min-width: 1024px) 300px, 64vw" width="1175" height="2560" alt="Shiftr, noiembrie 2026, cu o noapte în plus pe 23 noiembrie: 184h din 160h, sold +24h." loading="lazy" decoding="async" /><img className="shiftr-st" data-st="d" src="/assets/img/screens/app-shiftr-d-800.webp" srcSet="/assets/img/screens/app-shiftr-d-480.webp 480w, /assets/img/screens/app-shiftr-d-800.webp 800w, /assets/img/screens/app-shiftr-d-1175.webp 1175w" sizes="(min-width: 1024px) 300px, 64vw" width="1175" height="2560" alt="Shiftr, noiembrie 2026, cu o noapte în plus și o recuperare: 184h din 160h, sold +12h, acumulate +24h și 1 recuperare în lună −12h." loading="lazy" decoding="async" /></figure>
               </div>
+              <p className="fine">Patru ecrane reale din aplicație, unul pentru fiecare combinație. Calculele Shiftr sunt orientative.</p>
             </div>
           </div>
         </section>
@@ -139,7 +126,7 @@ export default function ShiftrPage() {
                     <tr key={t}>
                       <td>{t}</td>
                       <td className={a}><span aria-hidden="true">{MARK[a][0]}</span><span className="sr-only">{MARK[a][1]}</span></td>
-                      <td className={b}><span aria-hidden="true">✓</span><span className="sr-only">inclus</span></td>
+                      <td className={b}><span aria-hidden="true">{b === "p" ? "PRO" : "Da"}</span><span className="sr-only">inclus</span></td>
                     </tr>
                   ))}
                 </tbody>

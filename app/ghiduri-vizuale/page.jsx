@@ -22,7 +22,7 @@ const GUIDES = [
   },
   {
     id: "droguri", tag: "Droguri", law: "Legea 143/2000 · Legea 194/2011 · C.pr.pen.", shot: "app-ghid-droguri", back: "app-ghid-droguri-teren", backAlt: "Ghidul Droguri din JAC, tab-ul Pe teren: pașii numerotați, de la observare și înregistrare la ridicarea probelor.",
-    t: "Droguri: cum arată, cum încadrezi, ce scrii în PV.",
+    t: "Droguri, cu modelul de PV.",
     p: "10 substanțe, fiecare cu două fotografii, în forme diferite. Pentru fiecare: cum arată, dacă e drog de risc sau de mare risc, consum sau trafic, siguranța agentului și un model de descriere pentru procesul-verbal.",
     list: ["Tab-urile Teren, Tipuri, Încadrare, Siguranță, Pedepse", "Drog de risc sau de mare risc, consum sau trafic", "Model de descriere a probei „în procesul-verbal”", "Siguranța agentului la contact"],
     alt: "Ghidul Droguri din JAC, tab-ul Tipuri de droguri: fișa Cannabis cu fotografia probei, ce găsești de obicei (pungi zip-lock, râșniță, foițe) și secțiunea „În procesul-verbal”, cu modelul de descriere al probei ridicate și sigilate.",
@@ -30,7 +30,7 @@ const GUIDES = [
   },
   {
     id: "pirotehnice", tag: "Pirotehnice", law: "Legea 126/1995 · HG 1102/2014", shot: "app-ghid-pirotehnice",
-    t: "Pirotehnice: categoria e pe etichetă.",
+    t: "Pirotehnice, după etichetă.",
     p: "Categoriile F1–F4, T1–T2 și P1–P2, ce are voie publicul, orele și distanțele interzise, cine constată și plata a jumătate din amendă în 15 zile.",
     list: ["Pe teren: citești eticheta și categoria", "F1 permis publicului, de la 16 ani; restul doar pirotehnicienilor", "Unde și când e interzis", "Sancțiuni și plata în 15 zile"],
     alt: "Ghidul Pirotehnice din JAC, tab-ul Categorii: categoria F1, permisă publicului de la 16 ani, cu fotografia a patru articole numerotate (artificii de tort, steluțe, pocnitori) și regimul de vânzare din art. 37 alin. (1) din Legea 126/1995.",
@@ -46,7 +46,7 @@ const GUIDES = [
   },
   {
     id: "caini", tag: "Câini periculoși", law: "OUG 55/2002", shot: "app-ghid-caini", back: "app-ghid-caini-2", backAlt: "Catalogul vizual Câini periculoși din JAC, categoria a II-a: portretul unui Rottweiler din profil și din față, gabaritul 40–50 kg, 56–68 cm, și trăsăturile de recunoaștere.",
-    t: "Câini periculoși: rasa se vede din profil.",
+    t: "Câini periculoși, pe rase.",
     p: "Catalog vizual pe cele două categorii din OUG 55/2002: 3 rase în categoria I și 9 în categoria a II-a, fiecare cu portret uniform din profil și din față, gabaritul și trăsăturile de recunoaștere. Plus obligațiile deținătorului și sancțiunile.",
     list: ["Categoria I, regim strict: 3 rase", "Categoria a II-a: 9 rase", "Obligații: sterilizare, asigurare RC, plăcuța „Câine periculos”", "Metișii: asimilarea morfologică, pe trăsăturile dominante"],
     alt: "Catalogul vizual Câini periculoși din JAC (OUG 55/2002): portretul din profil și din față al unui Pit Bull, categoria I, cu gabaritul, trăsăturile de recunoaștere și nota despre asimilarea morfologică a metișilor.",
@@ -111,17 +111,17 @@ export default function GhiduriPage() {
           <div className="wrap">
             <div className="sec__head">
               <p className="eyebrow" data-r="">Și încă unul</p>
-              <h2 id="more-title" className="h2" data-r="">Fumat.</h2>
+              <h2 id="more-title" className="h2" data-r="">Fumat și tutun încălzit.</h2>
             </div>
-            <ul className="tiles tiles--2">
-              {TEXT_ONLY.map((g, i) => (
-                <li key={g.t} className="tile glass" data-r="" style={{ "--d": i }}>
-                  <span className="tile__k">{g.law}</span>
-                  <h3>{g.t}</h3>
-                  <p>{g.p}</p>
-                </li>
-              ))}
-            </ul>
+            <div className="split">
+              <div className="copy">
+                {TEXT_ONLY.map((g) => <p key={g.t} className="lead" style={{ marginTop: 0 }}>{g.p} <span className="soft">{g.law}.</span></p>)}
+              </div>
+              <div className="photos2">
+                <figure><img src="/assets/img/ghiduri/fumat_vape-1000.webp" srcSet="/assets/img/ghiduri/fumat_vape-600.webp 600w, /assets/img/ghiduri/fumat_vape-1000.webp 1000w" sizes="(min-width: 1024px) 40vw, 92vw" width="1000" height="622" alt="Țigări electronice de mai multe tipuri, fotografiate pe fond negru, din ghidul Fumat." loading="lazy" decoding="async" /><figcaption><span className="mono">INTERZISĂ ÎN TRANSPORTUL ÎN COMUN</span> Țigara electronică (vape)</figcaption></figure>
+                <figure><img src="/assets/img/ghiduri/fumat_tutun_incalzit-1000.webp" srcSet="/assets/img/ghiduri/fumat_tutun_incalzit-600.webp 600w, /assets/img/ghiduri/fumat_tutun_incalzit-1000.webp 1000w" sizes="(min-width: 1024px) 40vw, 92vw" width="1000" height="622" alt="Dispozitive de tutun încălzit și rezervele lor, fotografiate pe fond negru, din ghidul Fumat." loading="lazy" decoding="async" /><figcaption><span className="mono">NU E „FUMAT” ÎN SENSUL LEGII</span> Tutunul încălzit</figcaption></figure>
+              </div>
+            </div>
             <div className="disclaimer glass" style={{ marginTop: 28 }} data-r="">
               <p><strong>Ghidurile vizuale au scop exclusiv educativ și de identificare.</strong> Fotografiile sunt ilustrații. Aspectul unei substanțe sau al unui obiect e doar orientativ.</p>
               <p>JAC este o aplicație dezvoltată independent și NU reprezintă o instituție publică. Nu este afiliată, aprobată sau susținută de Guvernul României, MAI, Poliția Română, Jandarmeria Română ori alte autorități.</p>

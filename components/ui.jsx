@@ -26,7 +26,7 @@ const W = [480, 800, 1175];
 export function Phone({ name, alt = "", sizes = "(min-width: 1024px) 300px, 58vw", className = "", priority = false, ...rest }) {
   const base = `/assets/img/screens/${name}`;
   return (
-    <figure className={`phone ${className}`.trim()} {...rest}>
+    <figure className={`phone ${className}`.trim()} data-ui="" {...rest}>
       <img
         src={`${base}-800.webp`}
         srcSet={W.map((w) => `${base}-${w}.webp ${w}w`).join(", ")}
@@ -44,6 +44,7 @@ export function Phone({ name, alt = "", sizes = "(min-width: 1024px) 300px, 58vw
 export function Stage({ front, frontAlt, back, backAlt = "", backRight = false, priority = false, children, label }) {
   return (
     <div className="stage" data-r="scale" role={label ? "img" : undefined} aria-label={label}>
+      <span className="hero__halo stage__halo" aria-hidden="true"></span>
       <div className="stage__phones">
         {back ? <Phone name={back} alt={backAlt} className={`phone--back${backRight ? " is-right" : ""}`} sizes="(min-width: 1024px) 230px, 40vw" /> : null}
         <Phone name={front} alt={frontAlt} className="phone--front" priority={priority} data-par="" />
@@ -53,13 +54,9 @@ export function Stage({ front, frontAlt, back, backAlt = "", backRight = false, 
   );
 }
 
-export function Chip({ pos, tone = "", k, children }) {
-  return (
-    <span className={`chip ${pos} ${tone ? `chip--${tone}` : ""}`.trim()} aria-hidden="true">
-      {k ? <small>{k}</small> : null}
-      <b>{children}</b>
-    </span>
-  );
+/* Floating labels over the phones were retired with the v6 design; kept as a no-op so pages need no edits. */
+export function Chip() {
+  return null;
 }
 
 export function Lock() {
@@ -96,7 +93,7 @@ export function MainCta({ size = "" }) {
 /* The independence and sources notice the app requires on the site (docs/rezumat_pentru_site.md), kept word for word. */
 export function Disclaimer() {
   return (
-    <div className="disclaimer glass">
+    <div className="disclaimer">
       <p><strong>JAC este o aplicație dezvoltată independent și NU reprezintă o instituție publică.</strong> Nu este afiliată, aprobată sau susținută de Guvernul României, MAI, Poliția Română, Jandarmeria Română ori alte autorități.</p>
       <p>Textele legislative provin din actele publice de pe Portalul Legislativ (<a href="https://legislatie.just.ro" rel="noopener">https://legislatie.just.ro</a>). Aplicația are rol de orientare și nu înlocuiește forma oficială din Monitorul Oficial. Spețele și PV-urile model sunt exemple fictive. Calculele Shiftr sunt orientative.</p>
     </div>

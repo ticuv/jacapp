@@ -108,7 +108,7 @@ export default function RutierPage() {
           <div className="wrap split">
             <div className="copy">
               <p className="eyebrow" data-r="">Calculul automat</p>
-              <h2 id="calc-title" className="h2" data-r="">Punctul-amendă <span className="mono blue">216,25</span> lei.</h2>
+              <h2 id="calc-title" className="h2" data-r="">Punctul-amendă: <span className="blue">216,25 lei.</span></h2>
               <p className="lead" data-r="">Când se schimbă valoarea punctului-amendă, toate amenzile din aplicație se recalculează. Încearcă mai jos.</p>
               <div className="calc glass" data-rcalc="" data-point="216.25" data-r="" role="group" aria-labelledby="rcalc-k">
                 <p className="calc__k" id="rcalc-k">Alege clasa de sancțiune</p>
@@ -150,10 +150,10 @@ export default function RutierPage() {
               <h2 id="proc-title" className="h2" data-r="">Pașii de după amendă.</h2>
             </div>
             <ul className="tiles tiles--4">
-              <li className="tile glass" data-r=""><span className="tile__k">01</span><h3>Reținerea permisului</h3><p>Când se reține, pentru cât timp și ce se consemnează.</p></li>
-              <li className="tile glass" data-r="" style={{ "--d": 1 }}><span className="tile__k">02</span><h3>Dovada înlocuitoare</h3><p>Cu sau fără drept de circulație și termenele ei.</p></li>
-              <li className="tile glass" data-r="" style={{ "--d": 2 }}><span className="tile__k">03</span><h3>Măsuri tehnico-administrative</h3><p>Retragerea certificatului, ridicarea vehiculului și celelalte măsuri.</p></li>
-              <li className="tile glass" data-r="" style={{ "--d": 3 }}><span className="tile__k">04</span><h3>Reguli pentru minori</h3><p>Ce se aplică atunci când contravenientul nu are 18 ani.</p></li>
+              <li className="tile glass" data-r=""><h3>Reținerea permisului</h3><p>Când se reține, pentru cât timp și ce se consemnează.</p></li>
+              <li className="tile glass" data-r="" style={{ "--d": 1 }}><h3>Dovada înlocuitoare</h3><p>Cu sau fără drept de circulație și termenele ei.</p></li>
+              <li className="tile glass" data-r="" style={{ "--d": 2 }}><h3>Măsuri tehnico-administrative</h3><p>Retragerea certificatului, ridicarea vehiculului și celelalte măsuri.</p></li>
+              <li className="tile glass" data-r="" style={{ "--d": 3 }}><h3>Reguli pentru minori</h3><p>Ce se aplică atunci când contravenientul nu are 18 ani.</p></li>
             </ul>
             <div style={{ marginTop: 28 }} data-r=""><Disclaimer /></div>
           </div>

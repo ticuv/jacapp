@@ -49,7 +49,7 @@ export default function GhidOperativPage() {
               <p className="eyebrow" data-r="">Capitolele</p>
               <h2 id="cap-title" className="h2" data-r="">De la contravenție <span className="soft">la mandatul de aducere.</span></h2>
             </div>
-            <ol className="chap" data-r="">
+            <ol className="chaplist" data-r="">
               {CHAPTERS.map((c) => <li key={c}>{c}</li>)}
             </ol>
           </div>

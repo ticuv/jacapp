@@ -1,34 +1,21 @@
 import Link from "next/link";
 import { PAGES, LEGAL } from "./SiteHeader";
 
+// The close of every page: the links and the independence notice, then the name, so large the screen's edge cuts it.
 export default function SiteFooter() {
   return (
-    <footer className="ftr">
-      <div className="wrap">
-        <div className="ftr__grid">
-          <div>
-            <Link className="brand" href="/" aria-label="JAC, pagina principală">
-              <span className="brand__mark"><img src="/assets/img/logo-white-64.webp" width="20" height="27" alt="" loading="lazy" /></span>
-              <span>JAC</span>
-            </Link>
-            <p className="ftr__slogan">Unicul instrument legislativ care le are pe toate.</p>
-          </div>
-          <nav aria-labelledby="ftr-pages">
-            <h2 id="ftr-pages">Aplicația</h2>
-            <ul>
-              <li><Link href="/">Pagina principală</Link></li>
-              {PAGES.map((p) => <li key={p.key}><Link href={p.href}>{p.label}</Link></li>)}
-            </ul>
-          </nav>
-          <nav aria-labelledby="ftr-legal">
-            <h2 id="ftr-legal">Documente</h2>
-            <ul>
-              {LEGAL.map((l) => <li key={l.href}><a href={l.href}>{l.label}</a></li>)}
-            </ul>
-          </nav>
-        </div>
-        <p className="ftr__legal">© 2026 JAC. Aplicație dezvoltată independent. Nu reprezintă o instituție publică și nu este afiliată, aprobată sau susținută de Guvernul României, MAI, Poliția Română, Jandarmeria Română ori alte autorități. Textele legislative provin de pe <a href="https://legislatie.just.ro" rel="noopener">legislatie.just.ro</a>.</p>
+    <footer className="ft">
+      <div className="wrap ft__top">
+        <nav className="ft__nav" aria-label="Pagini">
+          <Link href="/">Pagina principală</Link>
+          {PAGES.map((p) => <Link key={p.key} href={p.href}>{p.label}</Link>)}
+        </nav>
+        <nav className="ft__nav" aria-label="Documente">
+          {LEGAL.map((l) => <a key={l.href} href={l.href}>{l.label}</a>)}
+        </nav>
+        <p className="ft__legal">JAC este o aplicație dezvoltată independent și nu reprezintă o instituție publică. Nu este afiliată, aprobată sau susținută de Guvernul României, MAI, Poliția Română, Jandarmeria Română ori alte autorități. Textele legislative provin din actele publice de pe <a href="https://legislatie.just.ro" rel="noopener">legislatie.just.ro</a>; aplicația are rol de orientare și nu înlocuiește forma oficială din Monitorul Oficial. Spețele și PV-urile model sunt exemple fictive. Calculele Shiftr sunt orientative. © 2026 JAC.</p>
       </div>
+      <p className="ft__mark" aria-hidden="true">JAC</p>
     </footer>
   );
 }

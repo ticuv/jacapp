@@ -44,7 +44,7 @@ export default function LegiSpecialePage() {
             <div className="copy">
               <ol className="crumbs" aria-label="Unde ești"><li><Link href="/">Acasă</Link></li><li aria-current="page">Legi speciale</li></ol>
               <p className="eyebrow" data-r="">Legi speciale · {F.speciale} pachete · {F.specialeFapte} fapte</p>
-              <h1 className="h1" data-r="">Legile speciale, <span className="soft">la o căutare distanță.</span></h1>
+              <h1 className="h1" data-r="">Legile speciale, <span className="soft">la o căutare.</span></h1>
               <p className="lead" data-r="">Pentru fiecare faptă: încadrarea exactă („Prevăzută de / Sancționată de”), amenda, plata în 15 zile și măsurile complementare. Iar unde contează, ghidul vizual se deschide direct din lege.</p>
               <div className="btns" data-r=""><MainCta /><Link className="btn btn--glass" href="/ghiduri-vizuale/">Ghidurile vizuale</Link></div>
             </div>

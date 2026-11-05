@@ -109,7 +109,7 @@ export default function PenalPage() {
             <div className="split" style={{ alignItems: "end", marginBottom: "clamp(32px, 6vw, 56px)" }}>
               <div className="sec__head" style={{ marginBottom: 0 }}>
                 <p className="eyebrow" data-r="">Legislație integrală</p>
-                <h2 id="int-title" className="h2" data-r=""><span className="mono">{total}</span> de acte, <span className="soft">în text complet.</span></h2>
+                <h2 id="int-title" className="h2" data-r="">{total} de acte, <span className="soft">în text complet.</span></h2>
                 <p className="lead" data-r="">Coduri și acte normative cu tot textul, pe articole, salvate pe telefon. Cauți după denumire sau direct în conținutul articolelor.</p>
               </div>
               <Stage

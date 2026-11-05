@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ro" suppressHydrationWarning>
       <head>
-        <link rel="preload" href="/assets/fonts/manrope-var.woff2" as="font" type="font/woff2" crossOrigin="" />
+        <link rel="preload" href="/assets/fonts/inter-tight-latin-wght-normal.woff2" as="font" type="font/woff2" crossOrigin="" />
         {/* the page is styled for "no script" first; this class switches on the enhanced, animated version */}
         <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
       </head>
