@@ -1,371 +1,395 @@
-// Hand-maintained page (originally converted from the static site, which has since been retired).
 import Link from "next/link";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageEffects from "@/components/PageEffects";
+import { FACTS as F, Stage, Chip, Phone, Lock, MainCta, Disclaimer, CtaBand } from "@/components/ui";
+
+const DESC = "JAC – Legislație și Ture: 33 de module offline, peste 3.500 de fișe, 28 de acte integrale, 6 ghiduri vizuale cu fotografii, ghidul operativ și planificatorul de ture Shiftr. Aplicație Android independentă.";
 
 export const metadata = {
-  "title": "JAC: legislație offline, ghid operativ și ture Shiftr pentru Android",
-  "description": "Aplicație Android independentă pentru personal operativ și nu numai: 1.701 articole offline, ghid operativ cu procese-verbale model și calendarul de ture Shiftr. JAC Crew: 5 membri, de la 3,33 lei/lună de persoană.",
-  "alternates": {
-    "canonical": "https://aplicatiajac.ro/"
+  title: "JAC – Legislație și Ture | Unicul instrument legislativ care le are pe toate",
+  description: DESC,
+  alternates: { canonical: "https://aplicatiajac.ro/" },
+  openGraph: {
+    title: "JAC – Legislație și Ture",
+    description: "Unicul instrument legislativ care le are pe toate. 33 de module, peste 3.500 de fișe, 100% offline.",
+    url: "https://aplicatiajac.ro/",
+    siteName: "JAC",
+    locale: "ro_RO",
+    type: "website",
+    images: [{ url: "https://aplicatiajac.ro/assets/img/og-jac.jpg", width: 1200, height: 630, alt: "JAC – Legislație și Ture: unicul instrument legislativ care le are pe toate." }],
   },
-  "openGraph": {
-    "title": "JAC: Claritate în lege. Siguranță în decizie.",
-    "description": "1.701 articole offline, procese-verbale model și turele tale. Aplicație Android independentă.",
-    "url": "https://aplicatiajac.ro/",
-    "siteName": "JAC",
-    "locale": "ro_RO",
-    "type": "website",
-    "images": [
-      {
-        "url": "https://aplicatiajac.ro/assets/img/og-jac.jpg",
-        "width": 1200,
-        "height": 630,
-        "alt": "JAC: Claritate în lege. Siguranță în decizie. Lângă text, ecranul principal și ghidul operativ."
-      }
-    ]
-  },
-  "twitter": {
-    "card": "summary_large_image"
-  }
+  twitter: { card: "summary_large_image" },
 };
+
+const LD = {
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  name: "JAC – Legislație și Ture",
+  operatingSystem: "Android",
+  applicationCategory: "ReferenceApplication",
+  description: DESC,
+  url: "https://aplicatiajac.ro/",
+  inLanguage: "ro",
+  contentRating: "PEGI 3",
+};
+
+const RUTIER = [
+  { c: "#DC2626", t: "Codul rutier", a: "OUG 195/2002 + HG 1391/2006" },
+  { c: "#F59E0B", t: "Taxi și închiriere", a: "Legea 38/2003" },
+  { c: "#22C55E", t: "Transport alternativ", a: "OUG 49/2019 (ride-sharing)" },
+  { c: "#38BDF8", t: "Rovinieta / tarife rutiere", a: "Legea 226/2023" },
+  { c: "#8B5CF6", t: "Transport rutier (norme UE)", a: "HG 1317/2023" },
+  { c: "#A3A3A3", t: "Regimul drumurilor", a: "OG 43/1997" },
+  { c: "#EF7A73", t: "Tahograf, conducere și odihnă", a: "OG 37/2007" },
+  { c: "#F08A5D", t: "Parcări gravide și copii", a: "Legea 280/2023" },
+  { c: "#69BFAE", t: "RCA", a: "Legea 132/2017" },
+  { c: "#2F6BFF", t: "Proceduri rutiere", a: "Permis reținut, dovadă înlocuitoare, minori" },
+];
+
+const GHIDURI = [
+  { n: "app-ghid-drone", tag: "Drone", t: "Drone C0 · C1 · C2 · FPV", p: "Clasa după marcaj, documentele cerute pilotului, regulile de zbor după Reg. (UE) 2019/947 și sancțiunile.", alt: "Ghidul vizual Drone din JAC: cardul Clasa C2 cu fotografia unei drone semiprofesionale de până la 4 kg și regulile: înregistrarea operatorului, certificatul A2, distanța de 30 m față de persoane." },
+  { n: "app-ghid-droguri", tag: "Droguri", t: "Droguri, cu model de PV", p: "10 substanțe, câte două fotografii, drog de risc sau de mare risc și cum descrii proba în procesul-verbal.", alt: "Ghidul vizual Droguri din JAC: fișa Cannabis cu fotografie, ce găsești de obicei și secțiunea „În procesul-verbal”, cu modelul de descriere al probei ridicate." },
+  { n: "app-ghid-pirotehnice", tag: "Pirotehnice", t: "Pirotehnice F1–F4, T, P", p: "Categoria de pe etichetă, ce are voie publicul, orele și distanțele interzise, plata a jumătate din amendă.", alt: "Ghidul vizual Pirotehnice din JAC: categoria F1, permisă publicului de la 16 ani, cu fotografia articolelor numerotate și regimul de vânzare." },
+  { n: "app-ghid-stadion", tag: "Stadion", t: "Stadion: ce nu intră", p: "Obiectele interzise la poartă, interdicțiile spectatorilor pe trepte de amendă și interdicția de acces.", alt: "Ghidul vizual Stadion din JAC: tab-ul Obiecte interzise, cu fotografia articolelor pirotehnice interzise la intrare și ce trebuie reținut." },
+];
 
 export default function HomePage() {
   return (
     <>
       <SiteHeader current="home" />
       <main id="continut">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
 
-  {/* ================= HERO ================= */}
-  <section className="hero" aria-labelledby="hero-title">
-    <div className="hero__copy">
-      <h1 id="hero-title" className="hero__title"><span className="w">Claritate</span> <span className="w">în</span> <span className="w">lege.</span><br /><span className="w">Siguranță</span> <span className="w">în</span> <span className="w">decizie.</span></h1>
-      <p className="lead hero__lead">1.701 articole care merg și fără semnal, procese-verbale model și turele tale. Într-o singură aplicație.</p>
-      <div className="hero__cta">
-        <a className="btn btn--blue magnetic" href="#acces"><span>Cere acces la beta</span></a>
-        <a className="price-chip" href="#pro-echipaj">de la <b>3,33 lei</b>/lună</a>
-      </div>
-    </div>
+        {/* ================= 1. HERO ================= */}
+        <section className="hero" aria-labelledby="hero-title">
+          <div className="wrap">
+            <div className="hero__grid">
+              <div className="copy">
+                <p className="eyebrow" data-r="">Aplicație Android · 100% offline</p>
+                <h1 id="hero-title" className="h1" data-r="" style={{ "--d": 1 }}>JAC – Legislație <span className="soft">și</span> Ture</h1>
+                <p className="hero__slogan" data-r="" style={{ "--d": 2 }}><b>Unicul instrument legislativ care le are pe toate.</b> Cod penal, legi speciale, regim rutier, text integral, ghiduri cu poze și turele tale, fără semnal.</p>
+                <div className="btns" data-r="" style={{ "--d": 3 }}>
+                  <MainCta />
+                  <a className="btn btn--glass" href="#rutier">Vezi ce conține</a>
+                </div>
+                <p className="hero__note" data-r="" style={{ "--d": 4 }}>În testare închisă pe Google Play. Acces Fondator în perioada beta.</p>
+              </div>
+              <Stage
+                front="app-acasa"
+                back="app-rutier-fisa"
+                backRight
+                priority
+                frontAlt="Ecranul Acasă din JAC: salutul „Salutare, ticuv” cu avatarul PRO încadrat de lauri aurii, cardul Programul tău („Liber azi. De Zi duminică.”, 160h din 160h), căutarea în baza locală de 3.542 de articole offline și plăcile Cod penal, Legi speciale, Regim rutier și Text integral."
+              >
+                <Chip pos="tl" tone="gold" k="Cont PRO">Lauri aurii</Chip>
+                <Chip pos="mr" k="Baza locală">3.542 fișe</Chip>
+                <Chip pos="bl" tone="teal" k="Programul tău">Liber azi</Chip>
+              </Stage>
+            </div>
 
-    <div className="carousel" data-carousel="" aria-roledescription="carusel" aria-label="Ecrane din aplicație">
-      <div className="carousel__stage">
-        <div className="carousel__phones" data-tilt="">
-          <figure className="device" data-pos="center" data-name="Acasă, toate modulele" data-link="#mod-title" aria-roledescription="ecran" aria-label="Acasă, ecranul principal">
-            <div className="device__screen">
-              <img src="/assets/img/screens/acasa-principal-800.webp" srcSet="/assets/img/screens/acasa-principal-480.webp 480w, /assets/img/screens/acasa-principal-800.webp 800w, /assets/img/screens/acasa-principal-1175.webp 1175w" sizes="(min-width: 1024px) 290px, 54vw" width="1175" height="2560" alt="Ecranul principal JAC pentru utilizatorul ticuv: programul zilei (în tură, termină la 06:00), căutarea globală, baza locală cu 1701 articole offline și accesul rapid la Cod penal, Legi speciale, Cod rutier și Text integral." fetchPriority="high" />
-            </div>
-          </figure>
-          <figure className="device" data-pos="right" data-name="Legislație penală" data-link="legislatie-penala/" aria-roledescription="ecran" aria-label="Legislație penală">
-            <div className="device__screen">
-              <img src="/assets/img/screens/penal-1-module-800.webp" srcSet="/assets/img/screens/penal-1-module-480.webp 480w, /assets/img/screens/penal-1-module-800.webp 800w" sizes="(min-width: 1024px) 250px, 54vw" width="1175" height="2560" alt="Secțiunea Legislație penală din JAC: 3 module operative și 679 de articole: Codul Penal Infracțiuni (477), Codul Penal Partea Generală (187) și Procedură Penală Operativ (15)." loading="lazy" decoding="async" />
-            </div>
-          </figure>
-          <figure className="device" data-pos="back" data-name="Legislație rutieră" data-link="legislatie-rutiera/" aria-roledescription="ecran" aria-label="Legislație rutieră">
-            <div className="device__screen">
-              <img src="/assets/img/screens/cod-rutier-800.webp" srcSet="/assets/img/screens/cod-rutier-480.webp 480w, /assets/img/screens/cod-rutier-800.webp 800w" sizes="(min-width: 1024px) 250px, 54vw" width="1175" height="2560" alt="Secțiunea Cod rutier din JAC: 2 module operative, 75 de articole. Sancțiuni rutiere, 60 de articole; Proceduri rutiere, 15 articole; valoarea punctului-amendă, 216,25 lei, valabilă de la 1 iulie 2026." loading="lazy" decoding="async" />
-            </div>
-          </figure>
-          <figure className="device" data-pos="back" data-name="Legi speciale" data-link="legi-speciale/" aria-roledescription="ecran" aria-label="Legi speciale">
-            <div className="device__screen">
-              <img src="/assets/img/screens/legi-speciale-1-biblioteca-800.webp" srcSet="/assets/img/screens/legi-speciale-1-biblioteca-480.webp 480w, /assets/img/screens/legi-speciale-1-biblioteca-800.webp 800w" sizes="(min-width: 1024px) 250px, 54vw" width="1175" height="2560" alt="Legi speciale în JAC: 20 de pachete și 947 de fapte, de la Legea 61/1991 (40 de fapte) la Domeniul Silvic (129 de fapte), cu butonul Ordine." loading="lazy" decoding="async" />
-            </div>
-          </figure>
-          <figure className="device" data-pos="back" data-name="Ghid operativ" data-link="ghid-operativ/" aria-roledescription="ecran" aria-label="Ghid operativ">
-            <div className="device__screen">
-              <img src="/assets/img/screens/ghid-operativ-800.webp" srcSet="/assets/img/screens/ghid-operativ-480.webp 480w, /assets/img/screens/ghid-operativ-800.webp 800w" sizes="(min-width: 1024px) 290px, 54vw" width="1175" height="2560" alt="Ghid operativ: 16 capitole tematice, actualizat 2026, de la regimul contravențiilor la regimul silvic." />
-            </div>
-          </figure>
-          <figure className="device" data-pos="left" data-name="Shiftr, calendarul de ture" data-link="shiftr/" aria-roledescription="ecran" aria-label="Shiftr, calendarul de ture">
-            <div className="device__screen">
-              <img src="/assets/img/screens/shiftr-calendar-800.webp" srcSet="/assets/img/screens/shiftr-calendar-480.webp 480w, /assets/img/screens/shiftr-calendar-800.webp 800w" sizes="(min-width: 1024px) 290px, 54vw" width="1175" height="2560" alt="Calendarul Shiftr pentru noiembrie 2026: ture de zi și de noapte, zile libere, o recuperare și o zi de program, plus soldul orelor suplimentare." />
-            </div>
-          </figure>
-        </div>
-        <div className="floor" aria-hidden="true"></div>
-      </div>
-    </div>
-  </section>
-
-
-  {/* ================= MODULES ================= */}
-  <section className="section" aria-labelledby="mod-title">
-    <div className="section__head" data-fx="rise">
-      <h2 id="mod-title" className="display">Tot ce-ți trebuie pe teren.</h2>
-    </div>
-
-    <div className="demos">
-      <article className="demo">
-        <div className="demo__text" data-fx="slide-right">
-          <h2 className="display">Legislație penală</h2>
-          <p className="claim">Trei module. 679 de articole.</p>
-          <p className="sub">Infracțiunile, partea generală și procedura penală. La fiecare faptă: încadrarea, descrierea și pedeapsa.</p>
-          <ul className="demo__specs" data-fx="rise"><li><b>679</b><span>articole penale</span></li><li><b>3</b><span>module</span></li><li><b>6</b><span>secțiuni pe fișă</span></li></ul>
-          <Link className="btn btn--ghost magnetic" href="/legislatie-penala/">Vezi legislația penală</Link>
-        </div>
-        <div className="demo__art" data-fx="rise-tilt" aria-hidden="true">
-          <figure className="device device--back"><div className="device__screen"><img src="/assets/img/screens/penal-2-infractiuni-480.webp" srcSet="/assets/img/screens/penal-2-infractiuni-480.webp 480w, /assets/img/screens/penal-2-infractiuni-800.webp 800w" sizes="(min-width: 1024px) 180px, 50vw" width="1175" height="2560" alt="" loading="lazy" decoding="async" /></div></figure>
-          <figure className="device device--front"><div className="device__screen"><img src="/assets/img/screens/penal-1-module-480.webp" srcSet="/assets/img/screens/penal-1-module-480.webp 480w, /assets/img/screens/penal-1-module-800.webp 800w" sizes="(min-width: 1024px) 215px, 50vw" width="1175" height="2560" alt="" loading="lazy" decoding="async" /></div></figure>
-          <div className="dw dw--cut">
-            <span className="cut" style={{ "--i": "0" }}><small>Încadrare</small>Art. 188 alin. (1)</span>
-            <span className="cut" style={{ "--i": "1" }}><small>Pedeapsa</small>10–20 ani închisoare</span>
-            <span className="cut cut--blue" style={{ "--i": "2" }}><small>Competență</small>Procuror, Tribunal</span>
+            <ul className="stats" aria-label="JAC în cifre">
+              <li className="glass" data-r="" style={{ "--d": 0 }}><b data-count={F.modules}>{F.modules}</b><span>de module legislative</span></li>
+              <li className="glass" data-r="" style={{ "--d": 1 }}><b>3.500+</b><span>de fișe cu încadrare și sancțiune</span></li>
+              <li className="glass" data-r="" style={{ "--d": 2 }}><b data-count={F.integrale}>{F.integrale}</b><span>de acte în text integral</span></li>
+              <li className="glass" data-r="" style={{ "--d": 3 }}><b data-count={F.ghiduri}>{F.ghiduri}</b><span>ghiduri vizuale cu fotografii</span></li>
+              <li className="glass" data-r="" style={{ "--d": 4 }}><b>100%</b><span>offline, fără semnal</span></li>
+            </ul>
           </div>
-        </div>
-      </article>
-      <article className="demo demo--flip">
-        <div className="demo__text" data-fx="slide-left">
-          <h2 className="display">Legislație rutieră</h2>
-          <p className="claim">Codul rutier, fără semnal.</p>
-          <p className="sub">Sancțiunile și procedurile din OUG 195/2002, punctul-amendă la zi și atenționările care contează în trafic.</p>
-          <ul className="demo__specs" data-fx="rise"><li><b>75</b><span>articole rutiere</span></li><li><b>2</b><span>module</span></li><li><b>216,25</b><span>lei / punct-amendă</span></li></ul>
-          <Link className="btn btn--ghost magnetic" href="/legislatie-rutiera/">Vezi legislația rutieră</Link>
-        </div>
-        <div className="demo__art" data-fx="rise-tilt" aria-hidden="true">
-          <figure className="device device--back"><div className="device__screen"><img src="/assets/img/screens/rutier-1-sanctiuni-480.webp" srcSet="/assets/img/screens/rutier-1-sanctiuni-480.webp 480w, /assets/img/screens/rutier-1-sanctiuni-800.webp 800w" sizes="(min-width: 1024px) 180px, 50vw" width="1175" height="2560" alt="" loading="lazy" decoding="async" /></div></figure>
-          <figure className="device device--front"><div className="device__screen"><img src="/assets/img/screens/cod-rutier-480.webp" srcSet="/assets/img/screens/cod-rutier-480.webp 480w, /assets/img/screens/cod-rutier-800.webp 800w" sizes="(min-width: 1024px) 215px, 50vw" width="1175" height="2560" alt="" loading="lazy" decoding="async" /></div></figure>
-          <span className="dw-chip dw-chip--fine">1 punct-amendă = <b>216,25 lei</b></span>
-        </div>
-      </article>
-      <article className="demo">
-        <div className="demo__text" data-fx="slide-right">
-          <h2 className="display">Legi speciale</h2>
-          <p className="claim">20 de pachete. Contravenții la vedere.</p>
-          <p className="sub">Ordine publică, adunări, droguri, silvic, arme și multe altele. Pentru fiecare faptă: încadrarea, sancțiunea și procedura.</p>
-          <ul className="demo__specs" data-fx="rise"><li><b>20</b><span>de legi speciale</span></li><li><b>9</b><span>incluse în Basic</span></li><li><b>280</b><span>de fapte în Basic</span></li></ul>
-          <Link className="btn btn--ghost magnetic" href="/legi-speciale/">Vezi legile speciale</Link>
-        </div>
-        <div className="demo__art" data-fx="rise-tilt" aria-hidden="true">
-          <figure className="device device--back"><div className="device__screen"><img src="/assets/img/screens/legi-speciale-6-legea61-480.webp" srcSet="/assets/img/screens/legi-speciale-6-legea61-480.webp 480w, /assets/img/screens/legi-speciale-6-legea61-800.webp 800w" sizes="(min-width: 1024px) 180px, 50vw" width="1175" height="2560" alt="" loading="lazy" decoding="async" /></div></figure>
-          <figure className="device device--front"><div className="device__screen"><img src="/assets/img/screens/legi-speciale-1-biblioteca-480.webp" srcSet="/assets/img/screens/legi-speciale-1-biblioteca-480.webp 480w, /assets/img/screens/legi-speciale-1-biblioteca-800.webp 800w" sizes="(min-width: 1024px) 215px, 50vw" width="1175" height="2560" alt="" loading="lazy" decoding="async" /></div></figure>
-          <div className="dw dw--tags">
-            <span className="ltag" style={{ "--i": "0", "--hue": "218" }}>Legea 61/1991 <b>40 de fapte</b></span>
-            <span className="ltag" style={{ "--i": "1", "--hue": "150" }}>Domeniul Silvic <b>129 de fapte</b></span>
-            <span className="ltag" style={{ "--i": "2", "--hue": "28" }}>Legea 4/2008 <b>40 de fapte</b></span>
-            <span className="ltag ltag--pro" style={{ "--i": "3", "--hue": "270" }}>Regimul Drogurilor <b>PRO</b></span>
+        </section>
+
+        {/* ================= 2. REGIM RUTIER ================= */}
+        <section className="sec" id="rutier" aria-labelledby="rutier-title">
+          <div className="wrap split">
+            <div className="copy">
+              <p className="eyebrow" data-r="">Regim rutier · nou</p>
+              <h2 id="rutier-title" className="h2" data-r="">10 module. <span className="soft">Amenda se calculează singură.</span></h2>
+              <p className="lead" data-r="">Clasa de sancțiune, punctele-amendă și punctele de penalizare sunt pe fiecare fișă, cu amenda în lei la punctul-amendă de <b className="mono">216,25 lei</b> (de la 01.07.2026). Plus reținerea permisului, dovada înlocuitoare și procedurile rutiere.</p>
+
+              <div className="calc glass" data-rcalc="" data-point="216.25" data-r="" role="group" aria-labelledby="rcalc-k">
+                <p className="calc__k" id="rcalc-k">Încearcă: alege clasa de sancțiune</p>
+                <fieldset className="seg">
+                  <legend className="sr-only">Clasa de sancțiune</legend>
+                  {["I", "II", "III", "IV", "V"].map((c, i) => (
+                    <span key={c} style={{ display: "contents" }}>
+                      <input type="radio" name="clasa" id={`cls-${c}`} value={c} defaultChecked={i === 2} />
+                      <label htmlFor={`cls-${c}`}>Cl. {c}</label>
+                    </span>
+                  ))}
+                </fieldset>
+                <dl className="calc__out" aria-live="polite">
+                  <div><dt>Puncte-amendă</dt><dd data-o="pts">6–8</dd></div>
+                  <div><dt>Jumătate din minim, în 15 zile</dt><dd data-o="half">648,75 lei</dd></div>
+                  <div className="wide is-red"><dt>Amenda</dt><dd data-o="fine">1.297,50 lei – 1.730,00 lei</dd></div>
+                </dl>
+                <p className="calc__note">Clasele I–V din art. 98 al OUG 195/2002. În aplicație fiecare fișă are și punctele de penalizare și măsurile complementare.</p>
+              </div>
+              <Link className="link-arrow" href="/legislatie-rutiera/">Toate cele 10 module rutiere</Link>
+            </div>
+            <div>
+              <Stage
+                front="app-rutier-fisa"
+                back="app-rutier-module"
+                frontAlt="Fișa din Codul rutier pentru folosirea telefonului mobil fără dispozitiv mâini libere: prevăzută de art. 36 alin. (3), sancționată de art. 101 alin. (2) din OUG 195/2002, clasa a III-a, 6–8 puncte-amendă, amendă 1.297,50–1.730,00 lei, 4 puncte de penalizare și jumătate din minim 648,75 lei."
+              >
+                <Chip pos="tl" k="Clasa a III-a">6–8 puncte</Chip>
+                <Chip pos="mr" tone="red" k="Penalizare">4 puncte</Chip>
+                <Chip pos="bl" tone="blue" k="1 punct-amendă">216,25 lei</Chip>
+              </Stage>
+            </div>
           </div>
-        </div>
-      </article>
-        {/* ================= LEGISLATIE ================= */}
-  <section className="feature feature-inline" id="legislatie" aria-labelledby="leg-title">
-    <div className="feature__text">
-      <h2 id="leg-title" className="display">Totul offline</h2>
-      <p className="claim">Scrii un cuvânt. Găsești încadrarea.</p>
-      <p className="sub">Vezi actul, tipul faptei, amenda și articolul exact care o prevede și o sancționează. Și în subsol, și pe câmp.</p>
-    </div>
-    <div className="feature__stage" data-reveal="3d">
-      <figure className="device device--solo">
-        <div className="device__screen">
-          <img src="/assets/img/screens/acasa-cautare-800.webp" srcSet="/assets/img/screens/acasa-cautare-480.webp 480w, /assets/img/screens/acasa-cautare-800.webp 800w, /assets/img/screens/acasa-cautare-1175.webp 1175w" sizes="(min-width: 1024px) 320px, 66vw" width="1175" height="2560" alt="Căutare după „consumul”: contravenție din Legea 61/1991, amendă 100–500 lei, prevăzută de Art. 2 pct. 23 și sancționată de Art. 3 alin. (1) lit. e)." loading="lazy" decoding="async" />
-        </div>
-      </figure>
-      <span className="float float--2 float--blue" aria-hidden="true">100–500 lei</span>
-    </div>
-    <ul className="stats" aria-label="Din aplicație">
-      <li><b data-count="1701" data-sep="1">1.701</b><span>articole offline</span></li>
-      <li><b data-count="679">679</b><span>articole penale</span></li>
-      <li><b data-count="27">27</b><span>acte integrale</span></li>
-    </ul>
-  </section>
-
-      <article className="demo demo--flip">
-        <div className="demo__text" data-fx="slide-left">
-          <h2 className="display">Ghid operativ</h2>
-          <p className="claim">16 capitole. Gata de teren.</p>
-          <p className="sub">Pe fiecare capitol: spețe, procese-verbale completate ca model și tipizatul gol, gata de printat.</p>
-          <ul className="demo__specs" data-fx="rise"><li><b>16</b><span>capitole</span></li></ul>
-          <Link className="btn btn--ghost magnetic" href="/ghid-operativ/">Vezi ghidul operativ</Link>
-        </div>
-        <div className="demo__art" data-fx="rise-tilt" aria-hidden="true">
-          <figure className="device device--back"><div className="device__screen"><img src="/assets/img/screens/ghid-1-cuprins-480.webp" srcSet="/assets/img/screens/ghid-1-cuprins-480.webp 480w, /assets/img/screens/ghid-1-cuprins-800.webp 800w" sizes="(min-width: 1024px) 180px, 50vw" width="1175" height="2560" alt="" loading="lazy" decoding="async" /></div></figure>
-          <figure className="device device--front"><div className="device__screen"><img src="/assets/img/screens/ghid-operativ-480.webp" srcSet="/assets/img/screens/ghid-operativ-480.webp 480w, /assets/img/screens/ghid-operativ-800.webp 800w" sizes="(min-width: 1024px) 215px, 50vw" width="1175" height="2560" alt="" loading="lazy" decoding="async" /></div></figure>
-          <div className="dw dw--pv">
-            <p className="pvx__h">Proces-verbal</p>
-            <i style={{ "--i": "0" }}></i><i style={{ "--i": "1" }}></i><i style={{ "--i": "2" }}></i><i style={{ "--i": "3" }}></i><i style={{ "--i": "4" }}></i>
-            <span className="pvx__stamp">Model</span>
+          <div className="wrap">
+            <ul className="mods" aria-label="Modulele rutiere">
+              {RUTIER.map((m, i) => (
+                <li key={m.t} className="glass" data-r="" style={{ "--d": i % 4, "--c": m.c }}>
+                  <span className="dot" aria-hidden="true"><i></i></span>
+                  <span><b>{m.t}</b><span>{m.a}</span></span>
+                </li>
+              ))}
+            </ul>
           </div>
-          <span className="dw-chip dw-chip--pv">+ tipizatul gol</span>
-        </div>
-      </article>
-        {/* ================= PV SLIDER ================= */}
-  <section className="pv-wrap pv-inline" id="pv" aria-labelledby="pv-title">
-    <div className="section__head" data-fx="rise">
-      <h2 id="pv-title" className="display">Procese-verbale</h2>
-      <p className="claim">Gol sau completat? Trage linia.</p>
-      <p className="sub">Sus, exemplul completat. Jos, tipizatul gol. Speța e fictivă.</p>
-      <p><Link className="arrow-link" href="/ghid-operativ/">Tot ghidul operativ</Link></p>
-    </div>
-    <div className="compare" data-compare="" style={{ "--pos": "50%" }}>
-      <div className="compare__screen">
-        <img className="compare__under" src="/assets/img/screens/pv-necompletat-800.webp" srcSet="/assets/img/screens/pv-necompletat-480.webp 480w, /assets/img/screens/pv-necompletat-800.webp 800w, /assets/img/screens/pv-necompletat-1175.webp 1175w" sizes="(min-width: 1024px) 380px, 84vw" width="1175" height="2150" alt="Tipizatul necompletat al procesului-verbal de constatare a infracțiunii flagrante, cu spații goale pentru dată, loc, agenți și constatări." loading="lazy" decoding="async" />
-        <div className="compare__over">
-          <img src="/assets/img/screens/pv-completat-800.webp" srcSet="/assets/img/screens/pv-completat-480.webp 480w, /assets/img/screens/pv-completat-800.webp 800w, /assets/img/screens/pv-completat-1175.webp 1175w" sizes="(min-width: 1024px) 380px, 84vw" width="1175" height="2150" alt="Același proces-verbal, completat pe o speță fictivă: data și ora, agenții, sesizarea prin 112 și deplasarea patrulei la un hipermarket din Iași." loading="lazy" decoding="async" />
-        </div>
-        <span className="compare__tag compare__tag--top" aria-hidden="true">Completat</span>
-        <span className="compare__tag compare__tag--bottom" aria-hidden="true">Necompletat</span>
-        <div className="compare__line" aria-hidden="true"><span className="compare__knob"><svg viewBox="0 0 24 24"><path d="M8 9l4-4 4 4M8 15l4 4 4-4" /></svg></span></div>
-      </div>
-      <label className="sr-only" htmlFor="pv-range">Poziția liniei dintre procesul-verbal completat (sus) și cel necompletat (jos)</label>
-      <input className="compare__range" id="pv-range" type="range" min="0" max="100" defaultValue="50" step="1" />
-    </div>
-  </section>
+        </section>
 
-      <article className="demo">
-        <div className="demo__text" data-fx="slide-right">
-          <h2 className="display">Shiftr</h2>
-          <p className="claim">Tura, norma și orele suplimentare.</p>
-          <p className="sub">Notezi turele, iar luna se adună singură: ore lucrate, normă legală și diferența.</p>
-          <ul className="demo__specs" data-fx="rise"><li><b>17</b><span>zile lucrate</span></li><li><b>160h</b><span>normă legală</span></li><li className="is-red"><b>+36h</b><span>peste normă</span></li></ul>
-          <Link className="btn btn--ghost magnetic" href="/shiftr/">Vezi Shiftr</Link>
-        </div>
-        <div className="demo__art" data-fx="rise-tilt" aria-hidden="true">
-          <figure className="device device--back"><div className="device__screen"><img src="/assets/img/screens/shiftr-sumar-480.webp" srcSet="/assets/img/screens/shiftr-sumar-480.webp 480w, /assets/img/screens/shiftr-sumar-800.webp 800w" sizes="(min-width: 1024px) 180px, 50vw" width="1175" height="2560" alt="" loading="lazy" decoding="async" /></div></figure>
-          <figure className="device device--front"><div className="device__screen"><img src="/assets/img/screens/shiftr-calendar-480.webp" srcSet="/assets/img/screens/shiftr-calendar-480.webp 480w, /assets/img/screens/shiftr-calendar-800.webp 800w" sizes="(min-width: 1024px) 215px, 50vw" width="1175" height="2560" alt="" loading="lazy" decoding="async" /></div></figure>
-          <div data-ui="" className="dw dw--ot">
-            <p className="ot__k">Sumar noiembrie 2026</p>
-            <p className="ot__big"><b data-count="196">196</b>h <small>lucrate</small></p>
-            <div className="ot__bar"><i className="ot__norm"></i><i className="ot__over"></i></div>
-            <p className="ot__legend"><span>Normă legală 160h</span><span className="ot__red">+<b data-count="36">36</b>h</span></p>
+        <div className="divider" aria-hidden="true"></div>
+
+        {/* ================= 3. LEGI SPECIALE + GHIDURI VIZUALE ================= */}
+        <section className="sec" id="ghiduri" aria-labelledby="ghid-title">
+          <div className="wrap">
+            <div className="split">
+              <div className="copy">
+                <p className="eyebrow" data-r="">Legi speciale · ghiduri vizuale</p>
+                <h2 id="ghid-title" className="h2" data-r="">Ce faci pas cu pas, ce verifici, cum încadrezi. <span className="blue">Cu poze.</span></h2>
+                <p className="lead" data-r="">{F.speciale} pachete de legi speciale, de la ordinea publică la drone. Iar la drone, droguri, pirotehnice, stadion, fumat și câini periculoși, ghidul vizual se deschide direct din lege, cu fotografii de identificare.</p>
+                <ul className="tags" style={{ marginTop: 24 }} aria-label="Domenii">
+                  {["Ordine publică", "Adunări publice", "Violența în sport", "Arme", "Droguri", "Pirotehnice", "Silvic", "Pescuit", "Vânătoare", "Drone", "Câini periculoși", "Tutun și fumat", "Paza obiectivelor", "Violența domestică", "112"].map((t) => <li key={t}>{t}</li>)}
+                </ul>
+                <div className="btns">
+                  <Link className="btn btn--glass" href="/ghiduri-vizuale/">Cele 6 ghiduri vizuale</Link>
+                  <Link className="link-arrow" href="/legi-speciale/" style={{ alignSelf: "center" }}>Toate legile speciale</Link>
+                </div>
+              </div>
+              <div>
+                <Stage
+                  front="app-lege-cu-ghid"
+                  back="app-legi-speciale"
+                  variant="stage--left"
+                  frontAlt="Legea 4/2008 în JAC: sus, butonul Ghid operativ „Stadion · ce nu intră în arenă”, 8 pași; dedesubt, fișele de contravenție pentru spectatori, cu încadrarea, amenda de 80–200 lei și plata în 15 zile."
+                >
+                  <Chip pos="tr" tone="blue" k="Din lege">Ghid · 8 pași</Chip>
+                  <Chip pos="bl" k="Legi speciale">{F.speciale} pachete</Chip>
+                </Stage>
+              </div>
+            </div>
+
+            <ul className="gal" style={{ marginTop: "clamp(48px, 8vw, 88px)" }} aria-label="Ghidurile vizuale">
+              {GHIDURI.map((g, i) => (
+                <li key={g.n} className="glass" data-r="" style={{ "--d": i }}>
+                  <Phone name={g.n} alt={g.alt} sizes="(min-width: 1024px) 250px, 70vw" />
+                  <span className="gal__tag">{g.tag}</span>
+                  <h3>{g.t}</h3>
+                  <p>{g.p}</p>
+                </li>
+              ))}
+            </ul>
+            <p className="gal-hint">Glisează pentru celelalte ghiduri →</p>
           </div>
-        </div>
-      </article>
-      <article className="demo demo--flip acts" id="legislatie-integrala" data-acts="">
-        <div className="demo__text" data-fx="slide-left">
-          <h2 className="display">Legislație integrală</h2>
-          <p className="claim">Textul complet. Verificat la sursă.</p>
-          <p className="sub">27 de acte normative, cu tot textul, pe articole, salvate pe telefon. Cauți după denumire sau direct în conținutul articolelor.</p>
-          <div className="acts__strip" aria-hidden="true"><i style={{ "--n": "4" }}></i><i style={{ "--n": "7" }}></i><i style={{ "--n": "14" }}></i><i style={{ "--n": "2" }}></i></div>
-          <div className="acts__tabs" role="tablist" aria-label="Categorii de acte normative"><button type="button" role="tab" id="acts-tab-coduri" aria-controls="acts-coduri" aria-selected="true" tabIndex="0"><b>4</b><span>Coduri</span></button><button type="button" role="tab" id="acts-tab-ordine" aria-controls="acts-ordine" aria-selected="false" tabIndex="-1"><b>7</b><span>Ordine publică</span></button><button type="button" role="tab" id="acts-tab-operative" aria-controls="acts-operative" aria-selected="false" tabIndex="-1"><b>14</b><span>Domenii operative</span></button><button type="button" role="tab" id="acts-tab-rutier" aria-controls="acts-rutier" aria-selected="false" tabIndex="-1"><b>2</b><span>Rutier</span></button></div>
-          <div className="acts__panels"><div className="acts__panel" role="tabpanel" id="acts-coduri" aria-labelledby="acts-tab-coduri"><p className="acts__group">Coduri</p><ul><li style={{ "--i": "0" }}><b>Codul penal</b><span>Cod nr. 286/2009</span></li><li style={{ "--i": "1" }}><b>Codul de procedură penală</b><span>Cod nr. 135/2010</span></li><li style={{ "--i": "2" }}><b>Codul Silvic</b><span>Legea nr. 331/2024</span></li><li style={{ "--i": "3" }}><b>Codul Aerian</b><span>Cod nr. 21/2020</span></li></ul></div><div className="acts__panel" role="tabpanel" id="acts-ordine" aria-labelledby="acts-tab-ordine" hidden><p className="acts__group">Ordine publică și contravenții</p><ul><li style={{ "--i": "0" }}><b>Legea nr. 61/1991</b><span>conviețuire socială, ordine și liniște publică</span></li><li style={{ "--i": "1" }}><b>Legea nr. 60/1991</b><span>organizarea și desfășurarea adunărilor publice</span></li><li style={{ "--i": "2" }}><b>OG nr. 2/2001</b><span>regimul juridic al contravențiilor</span></li><li style={{ "--i": "3" }}><b>Legea nr. 4/2008</b><span>competiții și jocuri sportive</span></li><li style={{ "--i": "4" }}><b>Legea nr. 407/2006</b><span>vânătoare și protecția fondului cinegetic</span></li><li style={{ "--i": "5" }}><b>Legea nr. 176/2024</b><span>pescuit și protecția resursei acvatice vii</span></li><li style={{ "--i": "6" }}><b>Legea nr. 54/2012</b><span>activități de picnic</span></li></ul></div><div className="acts__panel" role="tabpanel" id="acts-operative" aria-labelledby="acts-tab-operative" hidden><p className="acts__group">Domenii specifice și operative</p><ul><li style={{ "--i": "0" }}><b>Legea nr. 143/2000</b><span>prevenirea și combaterea traficului și consumului de droguri</span></li><li style={{ "--i": "1" }}><b>Legea nr. 194/2011</b><span>substanțe psihoactive</span></li><li style={{ "--i": "2" }}><b>Legea nr. 126/1995</b><span>regimul materiilor explozive</span></li><li style={{ "--i": "3" }}><b>Legea nr. 295/2004</b><span>regimul armelor, componentelor esențiale și al munițiilor</span></li><li style={{ "--i": "4" }}><b>HG nr. 11/2018</b><span>normele metodologice ale Legii 295/2004 (arme)</span></li><li style={{ "--i": "5" }}><b>Legea nr. 217/2003</b><span>prevenirea și combaterea violenței domestice</span></li><li style={{ "--i": "6" }}><b>Legea nr. 333/2003</b><span>paza obiectivelor, bunurilor și valorilor</span></li><li style={{ "--i": "7" }}><b>Legea nr. 349/2002</b><span>prevenirea efectelor consumului de tutun</span></li><li style={{ "--i": "8" }}><b>Legea nr. 365/2002</b><span>comerț electronic</span></li><li style={{ "--i": "9" }}><b>Legea nr. 145/2014</b><span>reglementarea pieței produselor agricole</span></li><li style={{ "--i": "10" }}><b>OUG nr. 55/2002</b><span>câini periculoși sau agresivi</span></li><li style={{ "--i": "11" }}><b>OUG nr. 97/2005</b><span>evidența, domiciliul și actele de identitate</span></li><li style={{ "--i": "12" }}><b>OUG nr. 34/2008</b><span>Sistemul național unic pentru apeluri de urgență (112)</span></li><li style={{ "--i": "13" }}><b>Legea nr. 171/2010</b><span>contravenții silvice</span></li></ul></div><div className="acts__panel" role="tabpanel" id="acts-rutier" aria-labelledby="acts-tab-rutier" hidden><p className="acts__group">Rutier</p><ul><li style={{ "--i": "0" }}><b>OUG nr. 195/2002</b><span>circulația pe drumurile publice</span></li><li style={{ "--i": "1" }}><b>HG nr. 1391/2006</b><span>regulamentul de aplicare a OUG 195/2002</span></li></ul></div></div>
-        </div>
-        <div className="demo__art acts__art" data-fx="rise-tilt" aria-hidden="true">
-          <figure className="device device--back"><div className="device__screen"><img src="/assets/img/screens/legislatie-integrala-cautare-480.webp" srcSet="/assets/img/screens/legislatie-integrala-cautare-480.webp 480w, /assets/img/screens/legislatie-integrala-cautare-800.webp 800w" sizes="(min-width: 1024px) 195px, 46vw" width="1175" height="2560" alt="" loading="lazy" decoding="async" /></div></figure>
-          <figure className="device device--front"><div className="device__screen"><img src="/assets/img/screens/legislatie-integrala-480.webp" srcSet="/assets/img/screens/legislatie-integrala-480.webp 480w, /assets/img/screens/legislatie-integrala-800.webp 800w" sizes="(min-width: 1024px) 230px, 54vw" width="1175" height="2560" alt="" loading="lazy" decoding="async" /></div></figure>
-          <div className="dw dw--27"><b data-count="27">27</b><span>acte normative<br />cu text complet</span></div>
-          <span className="dw-chip dw-chip--search">Cauți și în textul articolelor</span>
-        </div>
-      </article>
-    </div>
-  </section>
+        </section>
 
-  {/* ================= PRICING ================= */}
-  <section className="section" id="preturi" aria-labelledby="price-title">
-    <div className="section__head" data-fx="rise">
-      <h2 id="price-title" className="display">Prețuri</h2>
-      <p className="claim">La prețul unei cafele. Pentru tot echipajul.</p>
-    </div>
-    <div className="plans">
-      <article className="plan-card" data-reveal="up">
-        <h3>Basic</h3>
-        <p className="plan-card__price">0 lei <small>/ mereu</small></p>
-        <p className="plan-card__for">Gratuit, cu reclame</p>
-        <ul>
-          <li>Funcționare offline</li>
-          <li>Shiftr standard</li>
-          <li>Căutare de bază</li>
-        </ul>
-      </article>
-      <article className="plan-card plan-card--individual" data-billing="annual" data-msg-annual="Anual: 96 lei pe an, adică 8 lei pe lună." data-msg-monthly="Lunar: 120 lei pe an, adică 10 lei pe lună." aria-labelledby="ind-title">
-        <h3 id="ind-title">PRO Individual</h3>
-        <p className="plan-card__for">Pentru un singur utilizator</p>
-        <fieldset className="switch">
-          <legend className="sr-only">Perioada de facturare</legend>
-          <input type="radio" name="billing-individual" id="bill-ind-annual" defaultValue="annual" defaultChecked />
-          <label htmlFor="bill-ind-annual">Anual <em>cu 20% mai ieftin</em></label>
-          <input type="radio" name="billing-individual" id="bill-ind-monthly" defaultValue="monthly" />
-          <label htmlFor="bill-ind-monthly">Lunar</label>
-          <span className="switch__thumb" aria-hidden="true"></span>
-        </fieldset>
-        <div data-plan="annual">
-          <p className="plan-card__price">8 lei <small>/ lună</small></p>
-          <p className="plan-card__total">96 lei pe an, plătit o dată</p>
-        </div>
-        <div data-plan="monthly">
-          <p className="plan-card__price">10 lei <small>/ lună</small></p>
-          <p className="plan-card__total">120 lei pe an, plătit lunar</p>
-        </div>
-        <p className="sr-only" aria-live="polite" data-billing-live=""></p>
-        <ul>
-          <li>Toate cele 1.701 articole</li>
-          <li>Atenționări speciale</li>
-          <li>Shiftr nelimitat</li>
-          <li>Fără reclame</li>
-        </ul>
-      </article>
-      <article className="plan-card plan-card--crew" id="pro-echipaj" data-billing="annual" data-msg-annual="Anual: 200 lei pe an pentru toți cei 5 membri, adică 3,33 lei pe lună de persoană." data-msg-monthly="Lunar: 30 lei pe lună pentru toți cei 5 membri, adică 6 lei pe lună de persoană." aria-labelledby="crew-title">
-        <h3 id="crew-title">PRO Echipaj</h3>
-        <p className="plan-card__for">Un abonament pentru 5 membri</p>
-        <p className="badge">Cel mai avantajos</p>
-        <fieldset className="switch">
-          <legend className="sr-only">Perioada de facturare</legend>
-          <input type="radio" name="billing" id="bill-annual" defaultValue="annual" defaultChecked />
-          <label htmlFor="bill-annual">Anual <em>cu 66,67% mai ieftin</em></label>
-          <input type="radio" name="billing" id="bill-monthly" defaultValue="monthly" />
-          <label htmlFor="bill-monthly">Lunar <em>cu 40% mai ieftin</em></label>
-          <span className="switch__thumb" aria-hidden="true"></span>
-        </fieldset>
-        <div className="crew-plan" data-plan="annual">
-          <p className="crew-plan__big"><span className="crew-plan__num">3,33</span><span className="crew-plan__unit">lei / lună<br />de persoană</span></p>
-          <p className="crew-plan__line">Mai puțin decât o cafea pe lună.</p>
-          <p className="crew-plan__total">Total: <b>200 lei pe an</b>, pentru toți cei 5 membri.</p>
-        </div>
-        <div className="crew-plan" data-plan="monthly">
-          <p className="crew-plan__big"><span className="crew-plan__num">6</span><span className="crew-plan__unit">lei / lună<br />de persoană</span></p>
-          <p className="crew-plan__line">Cât o cafea în timpul serviciului.</p>
-          <p className="crew-plan__total">Total: <b>30 lei pe lună</b>, pentru toți cei 5 membri.</p>
-        </div>
-        <p className="sr-only" aria-live="polite" data-billing-live=""></p>
-        <ul>
-          <li>Acces PRO complet pentru toți cei 5 membri</li>
-          <li>Împarți costul cu colegii de echipaj</li>
-        </ul>
-        <a className="btn btn--blue btn--block magnetic" href="#acces"><span>Cere acces la beta</span></a>
-      </article>
-    </div>
-    <p className="fine">Reducerile sunt calculate față de abonamentul PRO Individual lunar (120 lei pe an). Achiziția se face în aplicație, prin Google Play Billing; prețul și condițiile apar înainte de cumpărare. Pe acest site nu se fac plăți. Conturile create în perioada de lansare au acces gratuit, conform <a href="/legal/terms.html">Termenilor</a>, secțiunile 3–4.</p>
-  </section>
+        <div className="divider" aria-hidden="true"></div>
 
-  {/* ================= TRUST ================= */}
-  <section className="section" aria-labelledby="trust-title">
-    <h2 id="trust-title" className="sr-only">Bine de știut</h2>
-    <ul className="trust__row">
-      <li><b>Independentă</b>Nu e aplicație a MAI, Poliției sau Jandarmeriei.</li>
-      <li><b>Informativă</b>Forma oficială e în Monitorul Oficial și pe <a href="https://legislatie.just.ro/" rel="noopener">legislatie.just.ro</a>.</li>
-      <li><b>Privată</b>Turele din Shiftr rămân pe telefon.</li>
-    </ul>
-  </section>
+        {/* ================= 4. SHIFTR ================= */}
+        <section className="sec" id="shiftr" aria-labelledby="shiftr-title">
+          <div className="wrap split split--flip">
+            <div className="copy">
+              <p className="eyebrow" data-r="">Shiftr · planificatorul de ture</p>
+              <h2 id="shiftr-title" className="h2" data-r="">Norma, orele suplimentare și soldul. <span className="soft">Calculate.</span></h2>
+              <p className="lead" data-r="">Notezi turele în calendar, iar luna se adună singură. Datele rămân pe telefon.</p>
 
-  {/* ================= FAQ ================= */}
-  <section className="section faq faq-wrap" id="intrebari" aria-labelledby="faq-title">
-    <h2 id="faq-title" className="display">Întrebări.</h2>
-    <div className="faq__list">
-      <details>
-        <summary>Merge fără internet?</summary>
-        <p>Da. Legislația și Shiftr sunt stocate pe telefon. Doar actualizările și JAC Crew au nevoie de conexiune.</p>
-      </details>
-      <details>
-        <summary>Cine îmi vede turele?</summary>
-        <p>Nimeni de la JAC. Datele Shiftr sunt prelucrate local. Dacă ai backup Android activ, pot ajunge în contul tău Google personal. <a href="/legal/privacy.html">Confidențialitate</a>.</p>
-      </details>
-      <details>
-        <summary>Am nevoie de cont?</summary>
-        <p>Doar pentru PRO și JAC Crew: te autentifici cu Google.</p>
-      </details>
-      <details>
-        <summary>Unde cer ajutor?</summary>
-        <p><a href="mailto:vladticu100@gmail.com">vladticu100@gmail.com</a> sau, din aplicație, Setări → „Trimite feedback”.</p>
-      </details>
-    </div>
-  </section>
+              <ol className="formula" style={{ marginTop: 28 }}>
+                <li className="glass" data-r=""><b>Norma lunii</b><span><code>zile lucrătoare × 8h</code> minus sărbătorile legale.</span></li>
+                <li className="glass" data-r="" style={{ "--d": 1 }}><b>Orele suplimentare</b><span>Se calculează singure: ore lucrate minus normă.</span></li>
+                <li className="glass" data-r="" style={{ "--d": 2 }}><b>Concediu în weekend sau sărbători</b><span>Ziua de C/M căzută în weekend sau de sărbători contează <code>0h</code>.</span></li>
+                <li className="glass" data-r="" style={{ "--d": 3 }}><b>Soldul</b><span>Scade cu recuperările acordate. Orele aduse din altă aplicație le adaugi manual.</span></li>
+              </ol>
 
-  {/* ================= ACCESS ================= */}
-  <section className="access" id="acces" aria-labelledby="access-title">
-    <h2 id="access-title" className="display display--xl">Intră în beta.</h2>
-    <p>JAC e în testare închisă, deocamdată doar pe Android. Scrie-ne un e-mail și cere acces.</p>
-    <a className="btn btn--blue btn--lg magnetic" href="mailto:vladticu100@gmail.com?subject=Acces%20beta%20JAC"><span>Cere acces la beta</span></a>
-    <p className="access__note">Se deschide un e-mail către vladticu100@gmail.com</p>
-  </section>
-</main>
+              <div className="calc glass" data-shiftr="" data-norm="160" data-r="">
+                <p className="calc__k">Exemplu: luna cu normă de 160h</p>
+                <div className="range">
+                  <label htmlFor="sh-l">Ore lucrate <output data-o="lucrate" htmlFor="sh-l">172h</output></label>
+                  <input id="sh-l" name="lucrate" type="range" min="120" max="220" step="1" defaultValue="172" />
+                </div>
+                <div className="range">
+                  <label htmlFor="sh-r">Recuperări acordate <output data-o="rec" htmlFor="sh-r">12h</output></label>
+                  <input id="sh-r" name="recuperari" type="range" min="0" max="12" step="1" defaultValue="12" />
+                </div>
+                <dl className="calc__out" aria-live="polite">
+                  <div><dt>Peste normă</dt><dd data-o="extra">+12h</dd></div>
+                  <div data-o="balbox" className="is-teal"><dt>Sold ore suplimentare</dt><dd data-o="bal">0h</dd></div>
+                </dl>
+                <p className="calc__note">160h normă, 172h lucrate → +12h. O recuperare de 12h → sold 0h. Calculele sunt orientative.</p>
+              </div>
+              <Link className="link-arrow" href="/shiftr/">Cum lucrează Shiftr</Link>
+            </div>
+            <div>
+              <Stage
+                front="app-shiftr-luna"
+                back="app-shiftr-editare"
+                frontAlt="Calendarul Shiftr pentru noiembrie 2026: ture de zi (Z) și de noapte (N), zile libere, o recuperare de cinci zile, iar dedesubt soldul de ore suplimentare +6h și norma 160h din 160h."
+              >
+                <Chip pos="tl" k="Normă legală">160h</Chip>
+                <Chip pos="mr" tone="red" k="Sold">+6h</Chip>
+                <Chip pos="bl" tone="teal" k="Datele tale">Pe telefon</Chip>
+              </Stage>
+            </div>
+          </div>
+          <div className="wrap">
+            <div className="tiles tiles--2" style={{ marginTop: "clamp(40px, 7vw, 64px)" }}>
+              <div className="tile glass" data-r="">
+                <span className="tile__k">Gratuit</span>
+                <h3>Calendarul și orele lucrate față de normă</h3>
+                <p>Toate tipurile de tură (Z, N, schimburile 1/2/3, C, R, L, misiuni), șabloanele, norma lunii cu sărbătorile legale și partajarea calendarului cu colegii.</p>
+              </div>
+              <div className="tile tile--pro glass" data-r="" style={{ "--d": 1 }}>
+                <span className="tile__k" style={{ color: "var(--gold)" }}>PRO</span>
+                <h3>Soldul de ore suplimentare</h3>
+                <p>Recuperările scăzute din sold, orele adăugate manual din altă aplicație și concediul (C/M) pus corect în weekend și de sărbători.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div className="divider" aria-hidden="true"></div>
+
+        {/* ================= 5. GHID OPERATIV ================= */}
+        <section className="sec" id="ghid-operativ" aria-labelledby="go-title">
+          <div className="wrap split">
+            <div className="copy">
+              <p className="eyebrow" data-r="">Ghidul operativ · offline</p>
+              <h2 id="go-title" className="h2" data-r="">{F.capitole} capitole. <span className="soft">Cu spețe și tipizate.</span></h2>
+              <p className="lead" data-r="">Pe fiecare capitol, spețe cu documentele care se întocmesc. Iar într-un singur catalog, procesele-verbale model completate pe spețe fictive și formularele goale.</p>
+              <ul className="checks" data-r="">
+                <li><b>Spețe pe capitole</b>, de la regimul contravenției la mandatele de aducere.</li>
+                <li><b>Catalog de tipizate</b>: PV-uri model completate și formulare necompletate.</li>
+                <li><b>Fără semnal</b>: tot ghidul e salvat pe telefon.</li>
+              </ul>
+              <Link className="link-arrow" href="/ghid-operativ/">Capitolele ghidului</Link>
+            </div>
+            <div>
+              <Stage
+                front="app-ghid-capitole"
+                back="app-penal-module"
+                backRight
+                variant="stage--left"
+                frontAlt="Ghidul operativ din JAC, actualizat 2026: catalogul de tipizate completate și necompletate, apoi capitolele Regimul contravenției (OG 2/2001), Infracțiunea, Legea 61/1991, Legea 60/1991, Legea 4/2008, Legea 54/2012, pescuit și vânătoare, regimul silvic."
+              >
+                <Chip pos="tr" k="Catalog">PV model + gol</Chip>
+                <Chip pos="bl" tone="blue" k="Ghid operativ">{F.capitole} capitole</Chip>
+              </Stage>
+            </div>
+          </div>
+        </section>
+
+        <div className="divider" aria-hidden="true"></div>
+
+        {/* ================= 6. PENAL + CPP ================= */}
+        <section className="sec" id="penal" aria-labelledby="penal-title">
+          <div className="wrap split split--flip">
+            <div className="copy">
+              <p className="eyebrow" data-r="">Codul penal și CPP</p>
+              <h2 id="penal-title" className="h2" data-r="">Infracțiunea, pedeapsa, competența. <span className="soft">Și CPP integral.</span></h2>
+              <p className="lead" data-r="">Patru module penale aduse la forma în vigoare: infracțiunile cu pedeapsa, competența și măsurile pe fiecare fișă, partea generală, procedura operativă și, nou, Codul de procedură penală pe articole.</p>
+              <ul className="tiles tiles--2" style={{ marginTop: 26 }}>
+                <li className="tile glass" data-r=""><span className="tile__n">525</span><h3>Infracțiuni</h3><p>Partea specială, cu descrierea faptei și pedeapsa.</p></li>
+                <li className="tile glass" data-r="" style={{ "--d": 1 }}><span className="tile__n">188</span><h3>Partea generală</h3><p>Instituții și reguli de bază.</p></li>
+                <li className="tile glass" data-r="" style={{ "--d": 2 }}><span className="tile__n">15</span><h3>Procedură operativă</h3><p>Măsuri procesuale, percheziții, flagrant.</p></li>
+                <li className="tile glass" data-r="" style={{ "--d": 3 }}><span className="tile__n">641</span><h3>CPP integral</h3><p>Legea 135/2010, textul pe articole.</p></li>
+              </ul>
+              <Link className="link-arrow" href="/legislatie-penala/">Penal, CPP și cele 28 de acte integrale</Link>
+            </div>
+            <div>
+              <Stage
+                front="app-penal-fisa"
+                back="app-cpp-integral"
+                frontAlt="Fișa de infracțiune din JAC pentru furt, forma de bază: încadrarea art. 228 alin. (1) Cod penal, descrierea faptei, pedeapsa de la 6 luni la 3 ani sau amendă, acțiunea din oficiu și secțiunea Competență și măsuri procedurale."
+              >
+                <Chip pos="tl" k="Încadrare">Art. 228 (1) CP</Chip>
+                <Chip pos="mr" tone="red" k="Pedeapsa">6 luni – 3 ani</Chip>
+                <Chip pos="bl" k="CPP integral">641 articole</Chip>
+              </Stage>
+            </div>
+          </div>
+        </section>
+
+        {/* ================= 7. PRO / ECHIPAJ ================= */}
+        <section className="sec" id="pro" aria-labelledby="pro-title">
+          <div className="wrap">
+            <div className="pro" data-r="scale">
+              <div className="pro__grid">
+                <div>
+                  <p className="eyebrow eyebrow--gold">JAC PRO · Echipaj</p>
+                  <h2 id="pro-title" className="h2">Laurii aurii. <span className="soft">Pentru tot echipajul.</span></h2>
+                  <p className="lead" style={{ marginTop: 18 }}>Un echipaj are până la 5 colegi, care intră cu un cod de invitație și împart beneficiile PRO.</p>
+                  <ul className="checks checks--gold">
+                    <li><b>Toate legile speciale</b>, inclusiv cele PREMIUM, peste cele 8 gratuite.</li>
+                    <li><b>Shiftr PRO</b>: soldul de ore suplimentare, recuperările și orele manuale.</li>
+                    <li><b>Echipaj de până la 5 colegi</b>, cu un singur cod de invitație.</li>
+                    <li><b>Avatarul cu lauri aurii</b> pe ecranul Acasă.</li>
+                  </ul>
+                  <div className="btns" style={{ marginTop: 30 }}>
+                    <MainCta />
+                  </div>
+                </div>
+                <div className="pro__badge">
+                  <img src="/assets/img/pro-lauri.webp" width="240" height="240" alt="Avatarul unui cont PRO în JAC, încadrat de o coroană de lauri aurii." loading="lazy" decoding="async" />
+                  <ul className="crew" aria-label="Echipaj de 5 colegi">
+                    {["#2F6BFF", "#69BFAE", "#E8B54A", "#8B5CF6", "#EF7A73"].map((c, i) => <li key={c} style={{ "--c": c }} aria-hidden="true">{i + 1}</li>)}
+                  </ul>
+                  <span className="founder"><Lock />Acces Fondator în perioada beta</span>
+                  <p className="fine" style={{ maxWidth: "28ch", margin: 0 }}>Abonamentele vin după lansarea comercială. Până atunci, PRO e deblocat prin contul Fondator.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ================= 8. ÎNCREDERE ================= */}
+        <section className="sec sec--tight" id="incredere" aria-labelledby="trust-title">
+          <div className="wrap">
+            <div className="sec__head">
+              <p className="eyebrow" data-r="">Încredere</p>
+              <h2 id="trust-title" className="h2" data-r="">Sobru. Offline. Independent.</h2>
+            </div>
+            <ul className="trust">
+              <li className="glass" data-r=""><b>100% offline</b><span>Legislația, ghidurile și turele sunt pe telefon. Internetul trebuie doar pentru actualizări și echipaj.</span></li>
+              <li className="glass" data-r="" style={{ "--d": 1 }}><b>Surse oficiale</b><span>Textele vin din actele publice de pe <a href="https://legislatie.just.ro" rel="noopener">legislatie.just.ro</a>.</span></li>
+              <li className="glass" data-r="" style={{ "--d": 2 }}><b>Datele rămân la tine</b><span>Turele din Shiftr nu pleacă de pe telefon. Contul se șterge oricând, din aplicație sau de <a href="/legal/stergere-cont.html">aici</a>.</span></li>
+            </ul>
+            <div data-r=""><Disclaimer /></div>
+
+            <h2 className="h3" style={{ margin: "clamp(48px, 8vw, 80px) 0 18px" }}>Întrebări frecvente</h2>
+            <div className="faq">
+              <details className="glass">
+                <summary>Merge fără internet?</summary>
+                <p>Da. Legislația, ghidurile vizuale, ghidul operativ și Shiftr sunt stocate pe telefon. Doar actualizările și echipajul (JAC Crew) au nevoie de conexiune.</p>
+              </details>
+              <details className="glass">
+                <summary>Am nevoie de cont?</summary>
+                <p>Doar pentru PRO și JAC Crew: te autentifici cu Google. Contul se poate șterge din Setări → „Șterge contul” sau urmând pașii de pe <a href="/legal/stergere-cont.html">pagina de ștergere a contului</a>.</p>
+              </details>
+              <details className="glass">
+                <summary>Cine îmi vede turele?</summary>
+                <p>Nimeni de la JAC. Datele Shiftr sunt prelucrate local, pe telefon. Detalii în <a href="/legal/privacy.html">Politica de confidențialitate</a>.</p>
+              </details>
+              <details className="glass">
+                <summary>Cât costă?</summary>
+                <p>În perioada beta, contul Fondator deblocează PRO. Abonamentele vor fi anunțate la lansarea comercială.</p>
+              </details>
+            </div>
+          </div>
+        </section>
+
+        <CtaBand />
+      </main>
       <SiteFooter />
       <PageEffects page="home" />
     </>

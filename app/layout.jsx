@@ -1,5 +1,4 @@
-import "./styles/main.css";
-import "./styles/glass.css";
+import "./styles/site.css";
 import SmoothScroll from "@/components/SmoothScroll";
 
 export const metadata = {
@@ -11,7 +10,7 @@ export const viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
-  themeColor: "#07080b",
+  themeColor: "#05070d",
   colorScheme: "dark",
 };
 

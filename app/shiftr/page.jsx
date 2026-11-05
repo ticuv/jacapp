@@ -1,182 +1,156 @@
-// Hand-maintained page (originally converted from the static site, which has since been retired).
 import Link from "next/link";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageEffects from "@/components/PageEffects";
+import { Stage, Chip, MainCta, CtaBand } from "@/components/ui";
 
 export const metadata = {
-  "title": "Shiftr: calendar de ture cu normă și ore suplimentare | JAC",
-  "description": "Shiftr, din aplicația JAC: calendar de ture pentru Android, cu șabloane de tură colorate, sărbători legale, statistici, export și copii de rezervă, norma legală a lunii și orele suplimentare calculate din programul tău.",
-  "alternates": {
-    "canonical": "https://aplicatiajac.ro/shiftr/"
-  },
-  "openGraph": {
-    "title": "Shiftr: tura, norma și orele suplimentare | JAC",
-    "description": "Notezi turele, iar luna se adună singură: ore lucrate, normă legală și ore suplimentare.",
-    "url": "https://aplicatiajac.ro/shiftr/",
-    "siteName": "JAC",
-    "locale": "ro_RO",
-    "type": "website",
-    "images": [{ "url": "https://aplicatiajac.ro/assets/img/og-jac.jpg", "width": 1200, "height": 630 }]
-  },
-  "twitter": {
-    "card": "summary_large_image"
-  }
+  title: "Shiftr: turele, norma și orele suplimentare, calculate | JAC",
+  description: "Planificatorul de ture Shiftr din JAC: ture de zi, noapte, schimburi, concediu, recuperare și misiuni; norma lunii (zile lucrătoare × 8h minus sărbătorile legale), orele suplimentare și soldul calculate automat. Datele rămân pe telefon.",
+  alternates: { canonical: "https://aplicatiajac.ro/shiftr/" },
+  openGraph: { title: "Shiftr în JAC: norma și orele suplimentare, calculate", url: "https://aplicatiajac.ro/shiftr/", siteName: "JAC", locale: "ro_RO", type: "website", images: [{ url: "https://aplicatiajac.ro/assets/img/og-jac.jpg", width: 1200, height: 630 }] },
 };
+
+const TYPES = [
+  ["Z", "Zi", "#2F6BFF", "tura de zi"], ["N", "Noapte", "#F08A5D", "tura de noapte"], ["S1", "Schimbul 1", "#7FA6FF", "program în schimburi"], ["S2", "Schimbul 2", "#8B5CF6", "program în schimburi"],
+  ["S3", "Schimbul 3", "#38BDF8", "program în schimburi"], ["C", "Concediu", "#E8B54A", "C/M în weekend sau de sărbători = 0h"], ["R", "Recuperare", "#69BFAE", "scade din soldul de ore suplimentare"], ["L", "Liber", "#8B97A1", "nu adaugă ore lucrate"],
+];
+
+const ROWS = [
+  ["Calendarul de ture și șabloanele", "y", "y"],
+  ["Toate tipurile de tură și misiunile speciale", "y", "y"],
+  ["Norma lunii, cu sărbătorile legale", "y", "y"],
+  ["Orele lucrate față de normă", "y", "y"],
+  ["Partajarea calendarului cu colegii", "y", "y"],
+  ["Soldul de ore suplimentare", "n", "p"],
+  ["Recuperările scăzute din sold", "n", "p"],
+  ["Ore adăugate manual din altă aplicație", "n", "p"],
+  ["C/M în weekend și de sărbători (0h)", "n", "p"],
+];
+const MARK = { y: ["✓", "inclus"], p: ["PRO", "inclus în PRO"], n: ["–", "nu e inclus"] };
 
 export default function ShiftrPage() {
   return (
     <>
       <SiteHeader current="shiftr" />
       <main id="continut">
-  <section className="page-hero" aria-labelledby="page-title">
-    <div>
-      <nav className="crumbs" aria-label="Unde ești"><Link href="/">Acasă</Link><span aria-hidden="true">/</span><span>Shiftr</span></nav>
-      <h1 id="page-title" className="display">Știi exact<br />cât ai muncit.</h1>
-      <p className="sub">Notezi turele. Luna se adună singură: ore lucrate, norma legală și orele suplimentare.</p>
-      <a className="btn btn--blue magnetic" href="#acces"><span>Cere acces la beta</span></a>
-    </div>
-    <div className="feature__stage" data-fx="rise-tilt">
-      <figure className="device device--solo">
-        <div className="device__screen">
-          <img src="/assets/img/screens/shiftr-calendar-800.webp" srcSet="/assets/img/screens/shiftr-calendar-480.webp 480w, /assets/img/screens/shiftr-calendar-800.webp 800w, /assets/img/screens/shiftr-calendar-1175.webp 1175w" sizes="(min-width: 1024px) 320px, 66vw" width="1175" height="2560" alt="Calendarul Shiftr pentru noiembrie 2026, cu ziua de azi selectată: ture de zi și de noapte, zile libere, recuperare și program, plus soldul orelor suplimentare." fetchPriority="high" />
-        </div>
-      </figure>
-      <span className="float float--1 float--blue" aria-hidden="true">+36h peste normă</span>
-      <span className="float float--3" aria-hidden="true">Normă: 160h</span>
-    </div>
-  </section>
+        <section className="phero">
+          <div className="wrap split">
+            <div className="copy">
+              <ol className="crumbs" aria-label="Unde ești"><li><Link href="/">Acasă</Link></li><li aria-current="page">Shiftr</li></ol>
+              <p className="eyebrow" data-r="">Shiftr · planificatorul de ture</p>
+              <h1 className="h1" data-r="">Luna se adună <span className="soft">singură.</span></h1>
+              <p className="lead" data-r="">Notezi turele, iar Shiftr calculează norma, orele suplimentare și soldul după recuperări. Datele rămân pe telefon.</p>
+              <div className="btns" data-r=""><MainCta /><a className="btn btn--glass" href="#calcul">Cum calculează</a></div>
+            </div>
+            <Stage
+              front="app-shiftr-luna"
+              back="app-shiftr-editare"
+              backRight
+              priority
+              frontAlt="Calendarul Shiftr pentru noiembrie 2026: ture de zi (Z), de noapte (N), zile libere grupate, o recuperare de cinci zile, iar dedesubt soldul de ore suplimentare +6h și norma 160h din 160h."
+            >
+              <Chip pos="tl" k="Normă legală">160h</Chip>
+              <Chip pos="mr" tone="red" k="Sold">+6h</Chip>
+              <Chip pos="bl" tone="teal" k="Datele tale">Pe telefon</Chip>
+            </Stage>
+          </div>
+        </section>
 
-  <section className="section" id="flux" aria-labelledby="bento-title">
-    <div className="section__head" data-fx="slide-left">
-      <h2 id="bento-title" className="display">Tot Shiftr, dintr-o privire</h2>
-      <p className="claim">Programul tău, sub control.</p>
-      <p className="sub">Ecrane reale din aplicație. Atinge oricare ca să-l vezi întreg. Valorile sunt exemple din capturi.</p>
-    </div>
+        <section className="sec sec--tight" aria-labelledby="types-title">
+          <div className="wrap">
+            <div className="sec__head">
+              <p className="eyebrow" data-r="">Turele</p>
+              <h2 id="types-title" className="h2" data-r="">Orice program, o literă.</h2>
+              <p className="lead" data-r="">Zi, noapte, cele trei schimburi, concediu, recuperare, liber și misiuni speciale. Șabloanele (ex. Zi 06:00–18:00, Noapte 18:00–06:00) se aplică dintr-o atingere.</p>
+            </div>
+            <ul className="mods" style={{ marginTop: 0 }}>
+              {TYPES.map(([k, t, c, d], i) => (
+                <li key={k} className="glass" data-r="" style={{ "--d": i % 4, "--c": c }}>
+                  <span className="dot" aria-hidden="true" style={{ fontFamily: "var(--mono)", fontWeight: 800, fontSize: 13, color: c }}>{k}</span>
+                  <span><b>{t}</b><span>{d}</span></span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
 
-    <div className="bento" data-fx="rise">
-      <article className="bs bs--span2" data-fx-child="">
-        <h3>Calendar</h3>
-        <p className="bs__lead">Fiecare zi, cu tura și orele ei.</p>
-        <div className="bs__win" style={{ "--y": "-15%", "--ar": "358 / 280" }}><img src="/assets/img/screens/shiftr-calendar-800.webp" srcSet="/assets/img/screens/shiftr-calendar-480.webp 480w, /assets/img/screens/shiftr-calendar-800.webp 800w" sizes="(min-width: 1024px) 600px, 92vw" width="1175" height="2560" alt="Grila calendarului Shiftr pentru noiembrie 2026, cu ture de zi, de noapte și zile libere, colorate ca în aplicație." loading="lazy" decoding="async" /></div>
-        <button type="button" className="bs__hit" data-shot="shiftr-calendar" data-cap="Calendarul Shiftr, noiembrie 2026"><span className="sr-only">Mărește ecranul: Calendarul Shiftr, noiembrie 2026</span><span className="bs__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7" /></svg></span></button>
-      </article>
+        <section className="sec" id="calcul" aria-labelledby="calc-title">
+          <div className="wrap split split--flip">
+            <div className="copy">
+              <p className="eyebrow" data-r="">Calculele</p>
+              <h2 id="calc-title" className="h2" data-r="">Normă, peste normă, <span className="soft">sold.</span></h2>
+              <ol className="formula" style={{ marginTop: 28 }}>
+                <li className="glass" data-r=""><b>Norma lunii</b><span><code>zile lucrătoare × 8h</code> minus sărbătorile legale. În noiembrie 2026: <code>21 × 8h − 1 sărbătoare = 160h</code>.</span></li>
+                <li className="glass" data-r="" style={{ "--d": 1 }}><b>Orele suplimentare</b><span>Se calculează singure: <code>ore lucrate − normă</code>.</span></li>
+                <li className="glass" data-r="" style={{ "--d": 2 }}><b>Concediu în weekend sau de sărbători</b><span>Ziua de C/M care cade în weekend sau într-o sărbătoare legală contează <code>0h</code>.</span></li>
+                <li className="glass" data-r="" style={{ "--d": 3 }}><b>Soldul</b><span>Scade cu recuperările acordate: <code>sold = peste normă − recuperări</code>.</span></li>
+                <li className="glass" data-r="" style={{ "--d": 4 }}><b>Ore din altă aplicație</b><span>Orele aduse din altă evidență se adaugă manual, cu butonul „+” de lângă sold.</span></li>
+              </ol>
+            </div>
+            <div>
+              <div className="calc glass" data-shiftr="" data-norm="160" data-r="" style={{ marginTop: 0 }}>
+                <p className="calc__k">Exemplu: luna cu normă de 160h</p>
+                <div className="range">
+                  <label htmlFor="sh-l">Ore lucrate <output data-o="lucrate" htmlFor="sh-l">172h</output></label>
+                  <input id="sh-l" name="lucrate" type="range" min="120" max="220" step="1" defaultValue="172" />
+                </div>
+                <div className="range">
+                  <label htmlFor="sh-r">Recuperări acordate <output data-o="rec" htmlFor="sh-r">12h</output></label>
+                  <input id="sh-r" name="recuperari" type="range" min="0" max="12" step="1" defaultValue="12" />
+                </div>
+                <dl className="calc__out" aria-live="polite">
+                  <div><dt>Peste normă</dt><dd data-o="extra">+12h</dd></div>
+                  <div data-o="balbox" className="is-teal"><dt>Sold ore suplimentare</dt><dd data-o="bal">0h</dd></div>
+                </dl>
+                <p className="calc__note">160h normă, 172h lucrate → +12h. O recuperare de 12h → sold 0h. Calculele Shiftr sunt orientative.</p>
+              </div>
+              <div style={{ marginTop: "clamp(64px, 12vw, 120px)" }}>
+                <Stage
+                  front="app-shiftr-sumar"
+                  variant="stage--left"
+                  frontAlt="Sumarul lunii în Shiftr: 160h din 160h, sold de ore suplimentare +6h (acumulate +35h, 5 recuperări în lună −40h, +35h adăugate manual), 15 zile lucrate, 15 zile libere și norma legală: 21 de zile × 8h − 1 sărbătoare = 160h."
+                >
+                  <Chip pos="tl" k="Normă">21 × 8h − 1</Chip>
+                  <Chip pos="br" tone="red" k="Sold">+6h</Chip>
+                </Stage>
+              </div>
+            </div>
+          </div>
+        </section>
 
-      <article className="bs" data-fx-child="">
-        <h3>Șabloane</h3>
-        <p className="bs__lead">10 ture gata făcute.</p>
-        <div className="bs__win" style={{ "--y": "-13%", "--ar": "174 / 260" }}><img src="/assets/img/screens/shiftr-2-sabloane-800.webp" srcSet="/assets/img/screens/shiftr-2-sabloane-480.webp 480w, /assets/img/screens/shiftr-2-sabloane-800.webp 800w" sizes="(min-width: 1024px) 300px, 46vw" width="1175" height="2560" alt="Lista de șabloane: Zi 06:00–18:00, Noapte 18:00–06:00, Program 08:00–16:00, Schimbul 1, 2 și 3, Liber." loading="lazy" decoding="async" /></div>
-        <button type="button" className="bs__hit" data-shot="shiftr-2-sabloane" data-cap="Șabloane de ture: 10 șabloane gata făcute"><span className="sr-only">Mărește ecranul: Șabloane de ture: 10 șabloane gata făcute</span><span className="bs__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7" /></svg></span></button>
-      </article>
+        <section className="sec sec--tight" aria-labelledby="plan-title">
+          <div className="wrap split">
+            <div className="copy">
+              <p className="eyebrow" data-r="">Gratuit și PRO</p>
+              <h2 id="plan-title" className="h2" data-r="">Calendarul e gratuit. <span className="soft">Soldul e PRO.</span></h2>
+              <p className="lead" data-r="">Calendarul și orele lucrate față de normă sunt gratuite pentru toată lumea. Soldul de ore suplimentare și ce îl modifică sunt în PRO, deblocat acum prin contul Fondator.</p>
+              <ul className="checks" data-r="">
+                <li><b>Datele rămân pe telefon.</b> Nimeni de la JAC nu îți vede turele.</li>
+                <li><b>Partajezi calendarul</b> cu colegii, când vrei tu.</li>
+              </ul>
+            </div>
+            <div data-r="">
+              <table className="plan glass">
+                <caption className="sr-only">Ce e gratuit și ce e PRO în Shiftr</caption>
+                <thead><tr><th scope="col">Funcție</th><th scope="col">Gratuit</th><th scope="col">PRO</th></tr></thead>
+                <tbody>
+                  {ROWS.map(([t, a, b]) => (
+                    <tr key={t}>
+                      <td>{t}</td>
+                      <td className={a}><span aria-hidden="true">{MARK[a][0]}</span><span className="sr-only">{MARK[a][1]}</span></td>
+                      <td className={b}><span aria-hidden="true">✓</span><span className="sr-only">inclus</span></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
 
-      <article className="bs" data-fx-child="">
-        <h3>Tură nouă</h3>
-        <p className="bs__lead">Ore, culoare, notiță.</p>
-        <div className="bs__win" style={{ "--y": "-18%", "--ar": "174 / 260" }}><img src="/assets/img/screens/shiftr-tura-noua-800.webp" srcSet="/assets/img/screens/shiftr-tura-noua-480.webp 480w, /assets/img/screens/shiftr-tura-noua-800.webp 800w" sizes="(min-width: 1024px) 300px, 46vw" width="1175" height="2560" alt="Formularul turei: șabloanele Zi și Noapte, programul 06:00–18:00 cu durata de 12h, alarma la 05:00 și paleta de culori." loading="lazy" decoding="async" /></div>
-        <button type="button" className="bs__hit" data-shot="shiftr-tura-noua" data-cap="Formularul turei: șablon, program, culoare, denumire și notițe"><span className="sr-only">Mărește ecranul: Formularul turei: șablon, program, culoare, denumire și notițe</span><span className="bs__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7" /></svg></span></button>
-      </article>
-
-      <article className="bs bs--span2" data-fx-child="">
-        <h3>Din calendar</h3>
-        <p className="bs__lead">Adaugi, copiezi, colorezi, ștergi.</p>
-        <div className="bs__win" style={{ "--y": "-45%", "--ar": "358 / 220" }}><img src="/assets/img/screens/shiftr-calendar-actiuni-800.webp" srcSet="/assets/img/screens/shiftr-calendar-actiuni-480.webp 480w, /assets/img/screens/shiftr-calendar-actiuni-800.webp 800w" sizes="(min-width: 1024px) 600px, 92vw" width="1175" height="2560" alt="Meniul de acțiuni rapide din calendar: Șterge, Copiază tura, Colorează și Adaugă tură." loading="lazy" decoding="async" /></div>
-        <button type="button" className="bs__hit" data-shot="shiftr-calendar-actiuni" data-cap="Acțiuni rapide în calendar"><span className="sr-only">Mărește ecranul: Acțiuni rapide în calendar</span><span className="bs__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7" /></svg></span></button>
-      </article>
-
-      <article className="bs" data-fx-child="">
-        <h3>Sărbători legale</h3>
-        <p className="bs__lead">Cât scade din normă.</p>
-        <div className="bs__win" style={{ "--y": "-14%", "--ar": "174 / 260" }}><img src="/assets/img/screens/shiftr-3-sarbatori-800.webp" srcSet="/assets/img/screens/shiftr-3-sarbatori-480.webp 480w, /assets/img/screens/shiftr-3-sarbatori-800.webp 800w" sizes="(min-width: 1024px) 300px, 46vw" width="1175" height="2560" alt="Sărbătorile legale 2026: Anul Nou, Boboteaza, Sfântul Ioan, fiecare cu −8h din normă." loading="lazy" decoding="async" /></div>
-        <button type="button" className="bs__hit" data-shot="shiftr-3-sarbatori" data-cap="Sărbătorile legale 2026 și impactul asupra normei"><span className="sr-only">Mărește ecranul: Sărbătorile legale 2026 și impactul asupra normei</span><span className="bs__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7" /></svg></span></button>
-      </article>
-
-      <article className="bs" data-fx-child="">
-        <h3>Istoric lunar</h3>
-        <p className="bs__lead">Lună cu lună, cu export.</p>
-        <div className="bs__win" style={{ "--y": "-14%", "--ar": "174 / 260" }}><img src="/assets/img/screens/shiftr-4-istoric-800.webp" srcSet="/assets/img/screens/shiftr-4-istoric-480.webp 480w, /assets/img/screens/shiftr-4-istoric-800.webp 800w" sizes="(min-width: 1024px) 300px, 46vw" width="1175" height="2560" alt="Istoricul lunar 2026: ture, sărbători și normă pentru ianuarie, februarie, martie, cu buton de export CSV." loading="lazy" decoding="async" /></div>
-        <button type="button" className="bs__hit" data-shot="shiftr-4-istoric" data-cap="Istoric lunar 2026, cu export CSV"><span className="sr-only">Mărește ecranul: Istoric lunar 2026, cu export CSV</span><span className="bs__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7" /></svg></span></button>
-      </article>
-
-      <article className="bs bs--span2" data-fx-child="">
-        <h3>Statistici anuale</h3>
-        <p className="bs__lead">Tot anul, într-un panou.</p>
-        <div className="bs__win" style={{ "--y": "-13%", "--ar": "358 / 300" }}><img src="/assets/img/screens/shiftr-5-statistici-800.webp" srcSet="/assets/img/screens/shiftr-5-statistici-480.webp 480w, /assets/img/screens/shiftr-5-statistici-800.webp 800w" sizes="(min-width: 1024px) 600px, 92vw" width="1175" height="2560" alt="Statistici anuale 2026: 303 ore în 37 de zile lucrate, 9 concedii, 9 zile libere." loading="lazy" decoding="async" /></div>
-        <button type="button" className="bs__hit" data-shot="shiftr-5-statistici" data-cap="Statistici anuale 2026"><span className="sr-only">Mărește ecranul: Statistici anuale 2026</span><span className="bs__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7" /></svg></span></button>
-      </article>
-
-      <article className="bs bs--span2" data-fx-child="">
-        <h3>Sumarul lunii</h3>
-        <p className="bs__lead">Orele peste normă, la vedere.</p>
-        <div className="bs__win" style={{ "--y": "-44%", "--ar": "358 / 230" }}><img src="/assets/img/screens/shiftr-sumar-800.webp" srcSet="/assets/img/screens/shiftr-sumar-480.webp 480w, /assets/img/screens/shiftr-sumar-800.webp 800w" sizes="(min-width: 1024px) 600px, 92vw" width="1175" height="2560" alt="Sumarul lunii noiembrie 2026: 196 de ore lucrate față de o normă de 160h, cu soldul orelor suplimentare." loading="lazy" decoding="async" /></div>
-        <button type="button" className="bs__hit" data-shot="shiftr-sumar" data-cap="Sumarul lunii: 196h lucrate, normă 160h, +36h"><span className="sr-only">Mărește ecranul: Sumarul lunii: 196h lucrate, normă 160h, +36h</span><span className="bs__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7" /></svg></span></button>
-      </article>
-
-      <article className="bs" data-fx-child="">
-        <h3>Datele tale</h3>
-        <p className="bs__lead">Backup, CSV, PDF.</p>
-        <div className="bs__win" style={{ "--y": "-30%", "--ar": "174 / 260" }}><img src="/assets/img/screens/shiftr-6-backup-800.webp" srcSet="/assets/img/screens/shiftr-6-backup-480.webp 480w, /assets/img/screens/shiftr-6-backup-800.webp 800w" sizes="(min-width: 1024px) 300px, 46vw" width="1175" height="2560" alt="Opțiunile de copie de rezervă: backup complet, restaurare, export și import CSV, raport PDF lunar și anual." loading="lazy" decoding="async" /></div>
-        <button type="button" className="bs__hit" data-shot="shiftr-6-backup" data-cap="Copie de rezervă, export CSV și rapoarte PDF"><span className="sr-only">Mărește ecranul: Copie de rezervă, export CSV și rapoarte PDF</span><span className="bs__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7" /></svg></span></button>
-      </article>
-
-      <article className="bs" data-fx-child="">
-        <h3>Setări</h3>
-        <p className="bs__lead">Temă, statistici, alarmă.</p>
-        <div className="bs__win" style={{ "--y": "-9%", "--ar": "174 / 260" }}><img src="/assets/img/screens/shiftr-1-setari-800.webp" srcSet="/assets/img/screens/shiftr-1-setari-480.webp 480w, /assets/img/screens/shiftr-1-setari-800.webp 800w" sizes="(min-width: 1024px) 300px, 46vw" width="1175" height="2560" alt="Setările Shiftr: temă de accent, statistici anuale, istoric lunar, șabloane și sărbători legale." loading="lazy" decoding="async" /></div>
-        <button type="button" className="bs__hit" data-shot="shiftr-1-setari" data-cap="Setările Shiftr"><span className="sr-only">Mărește ecranul: Setările Shiftr</span><span className="bs__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7" /></svg></span></button>
-      </article>
-
-      <a className="bs-bar" href="/legal/privacy.html" data-fx-child="">{" "}
-        <span className="bs-bar__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2" /><path d="M8 11V8a4 4 0 0 1 8 0v3" /></svg></span>{" "}
-        <span className="bs-bar__text"><b>Programul rămâne pe telefon</b><span>Turele nu ajung pe serverele JAC, Confidențialitate</span></span>{" "}
-      </a>
-    </div>
-    <p className="fine">Calculele Shiftr au rol orientativ personal. Evidența oficială a timpului de muncă rămâne cea a angajatorului.</p>
-  </section>
-
-  <section className="section faq faq-wrap" aria-labelledby="faq-title">
-    <h2 id="faq-title" className="display">Întrebări.</h2>
-    <div className="faq__list">
-      <details>
-        <summary>Merge fără internet?</summary>
-        <p>Da. Programul de ture e stocat pe telefon, așa că îl consulți și îl completezi fără conexiune.</p>
-      </details>
-      <details>
-        <summary>Calculul orelor e oficial?</summary>
-        <p>Nu. Shiftr calculează orientativ, din turele pe care le introduci tu.</p>
-      </details>
-      <details>
-        <summary>E inclus gratuit?</summary>
-        <p>Basic include Shiftr standard. PRO Individual și PRO Echipaj includ Shiftr nelimitat. <Link href="/#preturi">Vezi prețurile</Link>.</p>
-      </details>
-      <details>
-        <summary>Cine îmi vede turele?</summary>
-        <p>Nimeni de la JAC. Dacă ai backup Android activ, datele pot ajunge în contul tău Google personal. <a href="/legal/privacy.html">Confidențialitate</a>.</p>
-      </details>
-    </div>
-  </section>
-
-  <section className="section" aria-labelledby="next-title">
-    <h2 id="next-title" className="next__title">Mai vezi și</h2>
-    <div className="next-modules" data-fx="rise">
-      <Link className="module" href="/legislatie-penala/"><span className="module__text"><b>Legislație penală</b><span>Trei module: infracțiuni, partea generală și procedură.</span><i>Vezi modulul</i></span><img className="module__shot" src="/assets/img/screens/penal-1-module-480.webp" width="1175" height="2560" alt="" loading="lazy" decoding="async" /></Link>
-      <Link className="module" href="/legislatie-rutiera/"><span className="module__text"><b>Legislație rutieră</b><span>Sancțiuni, proceduri, punct-amendă.</span><i>Vezi modulul</i></span><img className="module__shot" src="/assets/img/screens/cod-rutier-480.webp" width="1175" height="2560" alt="" loading="lazy" decoding="async" /></Link>
-      <Link className="module" href="/ghid-operativ/"><span className="module__text"><b>Ghid operativ</b><span>16 capitole, spețe și tipizate.</span><i>Vezi modulul</i></span><img className="module__shot" src="/assets/img/screens/ghid-operativ-480.webp" width="1175" height="2560" alt="" loading="lazy" decoding="async" /></Link>
-      <Link className="module" href="/#preturi"><span className="module__text"><b>Prețuri</b><span>De la 3,33 lei / lună de persoană.</span><i>Vezi planurile</i></span><img className="module__shot" src="/assets/img/screens/crew-redactat-480.webp" width="1175" height="2560" alt="" loading="lazy" decoding="async" /></Link>
-    </div>
-  </section>
-
-  <section className="access" id="acces" aria-labelledby="access-title">
-    <h2 id="access-title" className="display display--xl">Intră în beta.</h2>
-    <p>JAC e în testare închisă, deocamdată doar pe Android. Scrie-ne un e-mail și cere acces.</p>
-    <a className="btn btn--blue btn--lg magnetic" href="mailto:vladticu100@gmail.com?subject=Acces%20beta%20JAC"><span>Cere acces la beta</span></a>
-    <p className="access__note">Se deschide un e-mail către vladticu100@gmail.com</p>
-  </section>
-</main>
-      <SiteFooter /><dialog className="viewer" aria-label="Ecran din aplicație">
-  <button type="button" className="viewer__close" aria-label="Închide"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round"><path d="M6 6l12 12M18 6L6 18" /></svg></button>
-  <figure className="device viewer__phone"><div className="device__screen"><img src="/assets/img/screens/shiftr-calendar-800.webp" width="1175" height="2560" alt="" /></div></figure>
-  <p className="viewer__cap"></p>
-</dialog>
+        <CtaBand title="Turele tale, socotite corect." />
+      </main>
+      <SiteFooter />
       <PageEffects page="shiftr" />
     </>
   );

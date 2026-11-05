@@ -1,242 +1,116 @@
-// Hand-maintained page (originally converted from the static site, which has since been retired).
 import Link from "next/link";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageEffects from "@/components/PageEffects";
+import { FACTS as F, Stage, Chip, MainCta, CtaBand, Disclaimer, Lock } from "@/components/ui";
 
 export const metadata = {
-  "title": "Legi speciale și contravenții: 20 de pachete offline | JAC",
-  "description": "Legi speciale și contravenții în JAC: 20 de pachete legislative, de la ordine publică și adunări publice la violență în sport, regimul drogurilor și domeniul silvic. Încadrare, sancțiune și procedură, fără semnal.",
-  "alternates": {
-    "canonical": "https://aplicatiajac.ro/legi-speciale/"
-  },
-  "openGraph": {
-    "title": "Legi speciale și contravenții | JAC",
-    "description": "20 de pachete legislative: ordine publică, adunări publice, violență în sport, droguri, silvic. Încadrare, sancțiune și procedură, în telefon.",
-    "url": "https://aplicatiajac.ro/legi-speciale/",
-    "siteName": "JAC",
-    "locale": "ro_RO",
-    "type": "website",
-    "images": [{ "url": "https://aplicatiajac.ro/assets/img/og-jac.jpg", "width": 1200, "height": 630 }]
-  },
-  "twitter": {
-    "card": "summary_large_image"
-  }
+  title: "Legi speciale: 19 pachete, 1.161 de fapte | JAC",
+  description: "Ordine publică, adunări, violența în sport, câini periculoși, fumat, violența domestică, picnic, evidența persoanelor, silvic, arme, 112, drone, pescuit, vânătoare, comerț electronic, pază, piață agricolă, droguri și pirotehnice: legi speciale offline, cu încadrarea, amenda și ghidurile vizuale.",
+  alternates: { canonical: "https://aplicatiajac.ro/legi-speciale/" },
+  openGraph: { title: "Legi speciale în JAC: 19 pachete, offline", url: "https://aplicatiajac.ro/legi-speciale/", siteName: "JAC", locale: "ro_RO", type: "website", images: [{ url: "https://aplicatiajac.ro/assets/img/og-jac.jpg", width: 1200, height: 630 }] },
 };
+
+// The first 8 are BASIC (free); the rest are PREMIUM, unlocked during the beta by the Founder account.
+const LAWS = [
+  { d: "Ordine și liniște publică", a: "Legea 61/1991", basic: true },
+  { d: "Adunări publice", a: "Legea 60/1991", basic: true },
+  { d: "Violența în sport", a: "Legea 4/2008", basic: true, g: "Stadion" },
+  { d: "Câini periculoși", a: "OUG 55/2002", basic: true, g: "Câini periculoși" },
+  { d: "Tutun și fumat", a: "Legea 349/2002", basic: true, g: "Fumat" },
+  { d: "Violența domestică", a: "Legea 217/2003", basic: true },
+  { d: "Picnic", a: "Legea 54/2012", basic: true },
+  { d: "Evidența persoanelor", a: "OUG 97/2005", basic: true },
+  { d: "Silvic", a: "Legea 171/2010 + Codul silvic, Legea 331/2024" },
+  { d: "Arme", a: "Legea 295/2004 + HG 11/2018" },
+  { d: "112", a: "OUG 34/2008" },
+  { d: "Codul aerian și drone", a: "Legea 21/2020, HG 643/2020, HG 859/2021", g: "Drone" },
+  { d: "Pescuit", a: "Legea 176/2024" },
+  { d: "Vânătoare", a: "Legea 407/2006" },
+  { d: "Comerț electronic", a: "Legea 365/2002" },
+  { d: "Paza obiectivelor", a: "Legea 333/2003 + HG 301/2012" },
+  { d: "Piață agricolă", a: "Legea 145/2014" },
+  { d: "Droguri", a: "Legea 143/2000, Legea 194/2011, Legea 339/2005", g: "Droguri" },
+  { d: "Explozive și pirotehnice", a: "Legea 126/1995, HG 1102/2014, HG 954/2001", g: "Pirotehnice" },
+];
 
 export default function LegiSpecialePage() {
   return (
     <>
       <SiteHeader current="legi-speciale" />
       <main id="continut">
-  <section className="page-hero" aria-labelledby="page-title">
-    <div>
-      <nav className="crumbs" aria-label="Unde ești"><Link href="/">Acasă</Link><span aria-hidden="true">/</span><span>Legi speciale</span></nav>
-      <h1 id="page-title" className="display">20 de pachete.</h1>
-      <p className="claim claim--hero">O singură bibliotecă.</p>
-      <p className="sub">Ordine publică, adunări publice, violență în sport, regimul drogurilor, domeniul silvic: încadrare, sancțiune și procedură, fără semnal.</p>
-      <a className="btn btn--blue magnetic" href="#acces"><span>Cere acces la beta</span></a>
-    </div>
-    <div className="feature__stage" data-fx="rise-tilt">
-      <figure className="device device--solo">
-        <div className="device__screen">
-          <img src="/assets/img/screens/legi-speciale-1-biblioteca-800.webp" srcSet="/assets/img/screens/legi-speciale-1-biblioteca-480.webp 480w, /assets/img/screens/legi-speciale-1-biblioteca-800.webp 800w, /assets/img/screens/legi-speciale-1-biblioteca-1175.webp 1175w" sizes="(min-width: 1024px) 320px, 66vw" width="1175" height="2560" alt="Legi speciale în JAC: 20 de pachete și 947 de fapte, de la Legea 61/1991 (40 de fapte) la Domeniul Silvic (129 de fapte), cu butonul Ordine." fetchPriority="high" />
-        </div>
-      </figure>
-      <span className="float float--1" aria-hidden="true">20 pachete</span>
-      <span className="float float--2 float--blue" aria-hidden="true">40 fapte, Legea 61</span>
-      <span className="float float--3" aria-hidden="true">129 fapte, Silvic</span>
-    </div>
-  </section>
-
-  <section className="section shelf" id="raft" aria-labelledby="shelf-title" data-shelf="">
-    <div className="section__head" data-fx="slide-left">
-      <h2 id="shelf-title" className="display">Biblioteca</h2>
-      <p className="claim">20 de legi. Pe un singur raft.</p>
-      <p className="sub">Glisează raftul și atinge o carte. Primele 9 sunt în Basic; cele marcate PRO fac parte din abonament.</p>
-    </div>
-    <div className="shelf__case" data-fx="rise">
-      <div className="shelf__track" role="group" aria-label="Pachetele de legi speciale">
-        <button type="button" className="book" style={{ "--hue": "218", "--h": "150px", "--tilt": "-3deg" }} data-name="Legea 61/1991" data-domain="Ordine & Liniște Publică" data-facts="40 de fapte" aria-label="Legea 61/1991: Ordine & Liniște Publică, 40 de fapte">{" "}
-          <span className="book__spine"><span className="book__title">Legea 61/1991</span></span>{" "}
-        </button>
-        <button type="button" className="book" style={{ "--hue": "262", "--h": "187px", "--tilt": "0deg" }} data-name="Legea 60/1991" data-domain="Adunări Publice & Proteste" data-facts="10 fapte" aria-label="Legea 60/1991: Adunări Publice & Proteste, 10 fapte">{" "}
-          <span className="book__spine"><span className="book__title">Legea 60/1991</span></span>{" "}
-        </button>
-        <button type="button" className="book" style={{ "--hue": "196", "--h": "178px", "--tilt": "2deg" }} data-name="Legea 4/2008" data-domain="Violență în Sport & Arene" data-facts="40 de fapte" aria-label="Legea 4/2008: Violență în Sport & Arene, 40 de fapte">{" "}
-          <span className="book__spine"><span className="book__title">Legea 4/2008</span></span>{" "}
-        </button>
-        <button type="button" className="book" style={{ "--hue": "28", "--h": "169px", "--tilt": "0deg" }} data-name="OUG 55/2002" data-domain="Câini Periculoși & Agresivi" data-facts="10 fapte" aria-label="OUG 55/2002: Câini Periculoși & Agresivi, 10 fapte">{" "}
-          <span className="book__spine"><span className="book__title">OUG 55/2002</span></span>{" "}
-        </button>
-        <button type="button" className="book" style={{ "--hue": "0", "--h": "160px", "--tilt": "-2deg" }} data-name="Legea 349/2002" data-domain="Regimul Tutunului & Fumat" data-facts="11 fapte" aria-label="Legea 349/2002: Regimul Tutunului & Fumat, 11 fapte">{" "}
-          <span className="book__spine"><span className="book__title">Legea 349/2002</span></span>{" "}
-        </button>
-        <button type="button" className="book" style={{ "--hue": "300", "--h": "151px", "--tilt": "1deg" }} data-name="Legea 217/2003" data-domain="Violență Domestică" data-facts="8 fapte" aria-label="Legea 217/2003: Violență Domestică, 8 fapte">{" "}
-          <span className="book__spine"><span className="book__title">Legea 217/2003</span></span>{" "}
-        </button>
-        <button type="button" className="book" style={{ "--hue": "140", "--h": "188px", "--tilt": "-3deg" }} data-name="Legea 54/2012" data-domain="Regimul Picnicului & Grătare" data-facts="18 fapte" aria-label="Legea 54/2012: Regimul Picnicului & Grătare, 18 fapte">{" "}
-          <span className="book__spine"><span className="book__title">Legea 54/2012</span></span>{" "}
-        </button>
-        <button type="button" className="book" style={{ "--hue": "205", "--h": "179px", "--tilt": "0deg" }} data-name="OUG 97/2005" data-domain="Evidența Persoanelor & Acte" data-facts="14 fapte" aria-label="OUG 97/2005: Evidența Persoanelor & Acte, 14 fapte">{" "}
-          <span className="book__spine"><span className="book__title">OUG 97/2005</span></span>{" "}
-        </button>
-        <button type="button" className="book" style={{ "--hue": "150", "--h": "170px", "--tilt": "2deg" }} data-name="Domeniul Silvic" data-domain="Legea 171/2010 & Codul Silvic (L331/2024)" data-facts="129 de fapte" aria-label="Domeniul Silvic: Legea 171/2010 & Codul Silvic (L331/2024), 129 de fapte">{" "}
-          <span className="book__spine"><span className="book__title">Domeniul Silvic</span></span>{" "}
-        </button>
-        <button type="button" className="book book--pro" style={{ "--hue": "10", "--h": "161px", "--tilt": "0deg" }} data-name="Regimul Armelor" data-domain="Legea 295/2004 & HG 11/2018" data-facts="PRO" aria-label="Regimul Armelor: Legea 295/2004 & HG 11/2018, PRO">{" "}
-          <span className="book__spine"><span className="book__title">Regimul Armelor</span><span className="book__pro">PRO</span></span>{" "}
-        </button>
-        <button type="button" className="book book--pro" style={{ "--hue": "355", "--h": "152px", "--tilt": "-2deg" }} data-name="OUG 34/2008" data-domain="Sistemul Național Unic 112" data-facts="PRO" aria-label="OUG 34/2008: Sistemul Național Unic 112, PRO">{" "}
-          <span className="book__spine"><span className="book__title">OUG 34/2008</span><span className="book__pro">PRO</span></span>{" "}
-        </button>
-        <button type="button" className="book book--pro" style={{ "--hue": "190", "--h": "189px", "--tilt": "1deg" }} data-name="Codul Aerian" data-domain="Aviație Civilă & Drone (UAS), L21/2020" data-facts="PRO" aria-label="Codul Aerian: Aviație Civilă & Drone (UAS), L21/2020, PRO">{" "}
-          <span className="book__spine"><span className="book__title">Codul Aerian</span><span className="book__pro">PRO</span></span>{" "}
-        </button>
-        <button type="button" className="book book--pro" style={{ "--hue": "185", "--h": "180px", "--tilt": "-3deg" }} data-name="Legea 176/2024" data-domain="Pescuit & Resurse Acvatice Vii" data-facts="PRO" aria-label="Legea 176/2024: Pescuit & Resurse Acvatice Vii, PRO">{" "}
-          <span className="book__spine"><span className="book__title">Legea 176/2024</span><span className="book__pro">PRO</span></span>{" "}
-        </button>
-        <button type="button" className="book book--pro" style={{ "--hue": "95", "--h": "171px", "--tilt": "0deg" }} data-name="Legea 407/2006" data-domain="Vânătoare & Fond Cinegetic" data-facts="PRO" aria-label="Legea 407/2006: Vânătoare & Fond Cinegetic, PRO">{" "}
-          <span className="book__spine"><span className="book__title">Legea 407/2006</span><span className="book__pro">PRO</span></span>{" "}
-        </button>
-        <button type="button" className="book book--pro" style={{ "--hue": "250", "--h": "162px", "--tilt": "2deg" }} data-name="Legea 365/2002" data-domain="Comerț Electronic & Plăți Digitale" data-facts="PRO" aria-label="Legea 365/2002: Comerț Electronic & Plăți Digitale, PRO">{" "}
-          <span className="book__spine"><span className="book__title">Legea 365/2002</span><span className="book__pro">PRO</span></span>{" "}
-        </button>
-        <button type="button" className="book book--pro" style={{ "--hue": "225", "--h": "153px", "--tilt": "0deg" }} data-name="Legea 333/2003" data-domain="Paza Obiectivelor & Sisteme de Alarmă" data-facts="PRO" aria-label="Legea 333/2003: Paza Obiectivelor & Sisteme de Alarmă, PRO">{" "}
-          <span className="book__spine"><span className="book__title">Legea 333/2003</span><span className="book__pro">PRO</span></span>{" "}
-        </button>
-        <button type="button" className="book book--pro" style={{ "--hue": "75", "--h": "190px", "--tilt": "-2deg" }} data-name="Legea 145/2014" data-domain="Piață Agricolă & Atestate Producător" data-facts="PRO" aria-label="Legea 145/2014: Piață Agricolă & Atestate Producător, PRO">{" "}
-          <span className="book__spine"><span className="book__title">Legea 145/2014</span><span className="book__pro">PRO</span></span>{" "}
-        </button>
-        <button type="button" className="book book--pro" style={{ "--hue": "330", "--h": "181px", "--tilt": "1deg" }} data-name="Regimul Drogurilor" data-domain="Legea 143/2000, Infracțiuni" data-facts="PRO" aria-label="Regimul Drogurilor: Legea 143/2000, Infracțiuni, PRO">{" "}
-          <span className="book__spine"><span className="book__title">Regimul Drogurilor</span><span className="book__pro">PRO</span></span>{" "}
-        </button>
-        <button type="button" className="book book--pro" style={{ "--hue": "280", "--h": "172px", "--tilt": "-3deg" }} data-name="Nomenclator" data-domain="Anexa Legii 143/2000, Tabelele I–III" data-facts="PRO" aria-label="Nomenclator: Anexa Legii 143/2000, Tabelele I–III, PRO">{" "}
-          <span className="book__spine"><span className="book__title">Nomenclator</span><span className="book__pro">PRO</span></span>{" "}
-        </button>
-        <button type="button" className="book book--pro" style={{ "--hue": "15", "--h": "163px", "--tilt": "0deg" }} data-name="Legea 126/1995" data-domain="Materii explozive" data-facts="PRO" aria-label="Legea 126/1995: Materii explozive, PRO">{" "}
-          <span className="book__spine"><span className="book__title">Legea 126/1995</span><span className="book__pro">PRO</span></span>{" "}
-        </button>
-      </div>
-      <div className="shelf__plank" aria-hidden="true"></div>
-    </div>
-    <div className="shelf__detail" aria-live="polite">
-      <p className="shelf__name" data-shelf-name="">Legea 61/1991</p>
-      <p className="shelf__domain" data-shelf-domain="">Ordine &amp; Liniște Publică</p>
-      <p className="shelf__count" data-shelf-count="">40 de fapte</p>
-    </div>
-  </section>
-
-  <section className="section stack" id="dosar" aria-labelledby="stack-title" data-stack="">
-    <div className="section__head" data-fx="slide-left">
-      <h2 id="stack-title" className="display">Dosare</h2>
-      <p className="claim">Fapta, pașii și consecințele, ecran cu ecran.</p>
-      <p className="sub">Ecrane reale din aplicație: Regimul drogurilor, Legea 61/1991 și biblioteca ta.</p>
-    </div>
-    <div className="stack__track">
-      <div className="stack__stage">
-        <div className="stack__texts">
-          <div className="stack__text is-on" style={{ "--i": "0" }}>
-            <p className="stack__fig">3 luni – 2 ani</p>
-            <p className="stack__law">Regimul drogurilor</p>
-            <h3>Cauți fapta</h3>
-            <p className="stack__txt">Deținerea de droguri de risc pentru consum propriu, din Legea 143/2000: încadrarea, descrierea și sancțiunea: închisoare de la 3 luni la 2 ani sau amendă.</p>
+        <section className="phero">
+          <div className="wrap split">
+            <div className="copy">
+              <ol className="crumbs" aria-label="Unde ești"><li><Link href="/">Acasă</Link></li><li aria-current="page">Legi speciale</li></ol>
+              <p className="eyebrow" data-r="">Legi speciale · {F.speciale} pachete · {F.specialeFapte} fapte</p>
+              <h1 className="h1" data-r="">Legile speciale, <span className="soft">la o căutare distanță.</span></h1>
+              <p className="lead" data-r="">Pentru fiecare faptă: încadrarea exactă („Prevăzută de / Sancționată de”), amenda, plata în 15 zile și măsurile complementare. Iar unde contează, ghidul vizual se deschide direct din lege.</p>
+              <div className="btns" data-r=""><MainCta /><Link className="btn btn--glass" href="/ghiduri-vizuale/">Ghidurile vizuale</Link></div>
+            </div>
+            <Stage
+              front="app-legi-speciale"
+              back="app-lege-cu-ghid"
+              backRight
+              priority
+              frontAlt="Lista Legi speciale din JAC: 19 pachete legislative și 1.161 de fapte, de la Legea 61/1991 (ordine și liniște publică, 44 de fapte), Legea 60/1991, Legea 4/2008, OUG 55/2002, Legea 349/2002, Legea 217/2003, Legea 54/2012 și OUG 97/2005 la Domeniul silvic (170 de fapte)."
+            >
+              <Chip pos="tl" k="Legi speciale">{F.speciale} pachete</Chip>
+              <Chip pos="br" tone="blue" k="Fapte">{F.specialeFapte}</Chip>
+            </Stage>
           </div>
-          <div className="stack__text" style={{ "--i": "1" }}>
-            <p className="stack__fig">Pas cu pas</p>
-            <p className="stack__law">Regimul drogurilor</p>
-            <h3>Urmezi pașii</h3>
-            <p className="stack__txt">Legitimarea persoanei, predarea de bunăvoie, percheziția în flagrant, fotografierea și sigilarea substanței, apoi procesul-verbal și predarea către B.C.C.O.</p>
-          </div>
-          <div className="stack__text" style={{ "--i": "2" }}>
-            <p className="stack__fig">1–3 g</p>
-            <p className="stack__law">Regimul drogurilor</p>
-            <h3>Vezi detalii</h3>
-            <p className="stack__txt">Doza uzuală (1–3 g) și lipsa indiciilor de vânzare orientează pe art. 4; plicurile, cântarul și banii mărunți indică trafic (art. 2).</p>
-          </div>
-          <div className="stack__text" style={{ "--i": "3" }}>
-            <p className="stack__fig">200–1.000 lei</p>
-            <p className="stack__law">Legea 61/1991</p>
-            <h3>Vezi contravenția</h3>
-            <p className="stack__txt">Fapte, acte sau gesturi obscene, injurii și amenințări: prevăzut de Art. 2 pct. 1, sancționat de Art. 3 alin. (1) lit. b).</p>
-          </div>
-          <div className="stack__text" style={{ "--i": "4" }}>
-            <p className="stack__fig">72 de ore</p>
-            <p className="stack__law">Legea 61/1991</p>
-            <h3>Citește mai mult</h3>
-            <p className="stack__txt">La repetare în 72 de ore: 1.000–3.000 lei sau 50–100 ore de muncă. Constată primarul, poliția, jandarmii și poliția de frontieră.</p>
-          </div>
-          <div className="stack__text" style={{ "--i": "5" }}>
-            <p className="stack__fig">Salvată local</p>
-            <p className="stack__law">Biblioteca ta</p>
-            <h3>Reordonezi legile</h3>
-            <p className="stack__txt">Atingi „Ordine”, muți pachetele cu săgețile sau din mâner și salvezi. Ordinea rămâne pe telefon.</p>
-          </div>
-        </div>
-        <div className="stack__scene" aria-hidden="true">
-          <figure className="device stack__phone" style={{ "--i": "0" }}><div className="device__screen"><img src="/assets/img/screens/legi-speciale-3-droguri-800.webp" srcSet="/assets/img/screens/legi-speciale-3-droguri-480.webp 480w, /assets/img/screens/legi-speciale-3-droguri-800.webp 800w" sizes="(min-width: 1024px) 320px, 58vw" width="1175" height="2560" alt="Regimul Drogurilor: deținerea de droguri de risc pentru consum propriu, Art. 4 alin. (1) din Legea 143/2000, închisoare de la 3 luni la 2 ani sau amendă." decoding="async" /></div></figure>
-          <figure className="device stack__phone" style={{ "--i": "1" }}><div className="device__screen"><img src="/assets/img/screens/legi-speciale-4-droguri-procedura-800.webp" srcSet="/assets/img/screens/legi-speciale-4-droguri-procedura-480.webp 480w, /assets/img/screens/legi-speciale-4-droguri-procedura-800.webp 800w" sizes="(min-width: 1024px) 320px, 58vw" width="1175" height="2560" alt="Pașii procedurii la deținerea de droguri: legitimare, predare de bunăvoie, percheziție, fotografiere și sigilare, proces-verbal." loading="lazy" decoding="async" /></div></figure>
-          <figure className="device stack__phone" style={{ "--i": "2" }}><div className="device__screen"><img src="/assets/img/screens/legi-speciale-5-droguri-detalii-800.webp" srcSet="/assets/img/screens/legi-speciale-5-droguri-detalii-480.webp 480w, /assets/img/screens/legi-speciale-5-droguri-detalii-800.webp 800w" sizes="(min-width: 1024px) 320px, 58vw" width="1175" height="2560" alt="Continuarea fișei: doza uzuală de consum, lipsa indiciilor de vânzare, indiciile de trafic și clasificarea." loading="lazy" decoding="async" /></div></figure>
-          <figure className="device stack__phone" style={{ "--i": "3" }}><div className="device__screen"><img src="/assets/img/screens/legi-speciale-6-legea61-800.webp" srcSet="/assets/img/screens/legi-speciale-6-legea61-480.webp 480w, /assets/img/screens/legi-speciale-6-legea61-800.webp 800w" sizes="(min-width: 1024px) 320px, 58vw" width="1175" height="2560" alt="Fișa contravenției din Legea 61/1991: fapte, acte sau gesturi obscene, injurii și amenințări, amendă 200–1.000 lei." loading="lazy" decoding="async" /></div></figure>
-          <figure className="device stack__phone" style={{ "--i": "4" }}><div className="device__screen"><img src="/assets/img/screens/legi-speciale-7-legea61-extra-800.webp" srcSet="/assets/img/screens/legi-speciale-7-legea61-extra-480.webp 480w, /assets/img/screens/legi-speciale-7-legea61-extra-800.webp 800w" sizes="(min-width: 1024px) 320px, 58vw" width="1175" height="2560" alt="Măsuri complementare: recidiva în 72 de ore, agravanta în instituții și cine poate constata." loading="lazy" decoding="async" /></div></figure>
-          <figure className="device stack__phone" style={{ "--i": "5" }}><div className="device__screen"><img src="/assets/img/screens/legi-speciale-2-reordonare-800.webp" srcSet="/assets/img/screens/legi-speciale-2-reordonare-480.webp 480w, /assets/img/screens/legi-speciale-2-reordonare-800.webp 800w" sizes="(min-width: 1024px) 320px, 58vw" width="1175" height="2560" alt="Ecranul de reordonare a legilor: pachetele cu mâner de tragere și săgeți de mutare, plus Implicit și Salvează." loading="lazy" decoding="async" /></div></figure>
-        </div>
-      </div>
-    </div>
-    <p className="fine">Ecrane reale din aplicație. Forma oficială și actualizată a actelor se verifică pe <a href="https://legislatie.just.ro/" rel="noopener">legislatie.just.ro</a>.</p>
-  </section>
+        </section>
 
-  <section className="section split" aria-labelledby="quote-title">
-    <div className="section__head" data-fx="blur">
-      <h2 id="quote-title" className="display">Pe teren</h2>
-      <p className="claim">Fapta, sancțiunea, pașii.</p>
-      <p className="sub">Fiecare fișă leagă încadrarea de sancțiune și de pașii procedurii, ca să nu sari între ecrane.</p>
-    </div>
-    <blockquote className="quote" data-fx="wipe">{" "}
-      <p>„Doza uzuală de consum și lipsa indiciilor de vânzare orientează încadrarea pe art. 4; porționarea în plicuri, cântarul și banii mărunți indică trafic.”</p>{" "}
-      <footer>Notă afișată în JAC, Legea 143/2000, regimul drogurilor</footer>{" "}
-    </blockquote>
-  </section>
+        <section className="sec sec--tight" aria-labelledby="list-title">
+          <div className="wrap">
+            <div className="sec__head">
+              <p className="eyebrow" data-r="">Ce conține</p>
+              <h2 id="list-title" className="h2" data-r="">19 domenii. <span className="soft">8 gratuite.</span></h2>
+              <p className="lead" data-r="">Primele 8 legi speciale sunt în Basic, gratuit. Restul sunt PREMIUM, deblocate acum, în beta, prin contul Fondator.</p>
+            </div>
+            <ul className="mods" style={{ marginTop: 0 }}>
+              {LAWS.map((l, i) => (
+                <li key={l.d} className={`glass${l.basic ? "" : " tile--pro"}`} data-r="" style={{ "--d": i % 4, "--c": l.basic ? "#69BFAE" : "#E8B54A" }}>
+                  {l.basic ? <span className="dot" aria-hidden="true"><i></i></span> : <Lock />}
+                  <span>
+                    <b>{l.d}{l.g ? <span className="sr-only"> (are ghid vizual)</span> : null}</b>
+                    <span>{l.a}{l.g ? ` · ghid vizual: ${l.g}` : ""}{l.basic ? " · Basic" : " · PREMIUM"}</span>
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
 
-  <section className="section faq faq-wrap" aria-labelledby="faq-title">
-    <h2 id="faq-title" className="display">Întrebări.</h2>
-    <div className="faq__list">
-      <details>
-        <summary>Câte pachete are modulul?</summary>
-        <p>20 de pachete legislative, de la Legea 61/1991 la domeniul silvic, fiecare cu domeniul și numărul de fapte.</p>
-      </details>
-      <details>
-        <summary>Merge fără internet?</summary>
-        <p>Da. Articolele și fișele sunt stocate în telefon. Actualizările vin prin sincronizare, când ai conexiune.</p>
-      </details>
-      <details>
-        <summary>Informațiile sunt oficiale?</summary>
-        <p>Nu. JAC are caracter orientativ. Forma oficială se verifică pe <a href="https://legislatie.just.ro/" rel="noopener">legislatie.just.ro</a> și în Monitorul Oficial.</p>
-      </details>
-      <details>
-        <summary>Pot schimba ordinea legilor?</summary>
-        <p>Da. Din „Ordine” muți pachetele cu săgețile sau din mâner, apoi salvezi. Ordinea rămâne pe telefon.</p>
-      </details>
-    </div>
-  </section>
+        <section className="sec" aria-labelledby="fisa-title">
+          <div className="wrap split split--flip">
+            <div className="copy">
+              <p className="eyebrow" data-r="">O lege, deschisă</p>
+              <h2 id="fisa-title" className="h2" data-r="">Ghidul, <span className="soft">deasupra faptelor.</span></h2>
+              <p className="lead" data-r="">În Legea 4/2008, de exemplu, primul lucru e ghidul „Stadion · ce nu intră în arenă”, în 8 pași. Dedesubt, fișele: încadrarea, amenda și plata în 15 zile.</p>
+              <ul className="checks" data-r="">
+                <li><b>Filtre</b> pe act, contravenții, proceduri și infracțiuni.</li>
+                <li><b>Favorite și ordine proprie</b>: legile pe care le aplici des, primele.</li>
+                <li><b>Căutare în toate fișele</b>, după faptă, articol sau cuvânt-cheie.</li>
+              </ul>
+              <Link className="link-arrow" href="/ghiduri-vizuale/">Cele 6 ghiduri vizuale</Link>
+            </div>
+            <div>
+              <Stage
+                front="app-lege-cu-ghid"
+                variant="stage--left"
+                frontAlt="Legea 4/2008 deschisă în JAC: butonul Ghid operativ „Stadion · ce nu intră în arenă” cu 8 pași, filtrele Toate, Contravenții, Proceduri, Infracțiuni, 73 de articole și prima fișă: spectatorilor le este interzis să pătrundă sau să încerce să pătrundă, amendă 80–200 lei."
+              >
+                <Chip pos="tr" tone="blue" k="Ghid">8 pași</Chip>
+                <Chip pos="bl" k="Amenda">80–200 lei</Chip>
+              </Stage>
+            </div>
+          </div>
+          <div className="wrap" style={{ marginTop: 32 }} data-r=""><Disclaimer /></div>
+        </section>
 
-  <section className="section" aria-labelledby="next-title">
-    <h2 id="next-title" className="next__title">Mai vezi și</h2>
-    <div className="next-modules" data-fx="rise">
-      <Link className="module" href="/legislatie-penala/"><span className="module__text"><b>Legislație penală</b><span>Trei module: infracțiuni, partea generală și procedură.</span><i>Vezi modulul</i></span><img className="module__shot" src="/assets/img/screens/penal-1-module-480.webp" width="1175" height="2560" alt="" loading="lazy" decoding="async" /></Link>
-      <Link className="module" href="/legislatie-rutiera/"><span className="module__text"><b>Legislație rutieră</b><span>Sancțiuni, proceduri, punct-amendă.</span><i>Vezi modulul</i></span><img className="module__shot" src="/assets/img/screens/cod-rutier-480.webp" width="1175" height="2560" alt="" loading="lazy" decoding="async" /></Link>
-      <Link className="module" href="/ghid-operativ/"><span className="module__text"><b>Ghid operativ</b><span>16 capitole, spețe și tipizate.</span><i>Vezi modulul</i></span><img className="module__shot" src="/assets/img/screens/ghid-operativ-480.webp" width="1175" height="2560" alt="" loading="lazy" decoding="async" /></Link>
-      <Link className="module" href="/shiftr/"><span className="module__text"><b>Shiftr</b><span>Ture, normă și ore suplimentare.</span><i>Vezi modulul</i></span><img className="module__shot" src="/assets/img/screens/shiftr-calendar-480.webp" width="1175" height="2560" alt="" loading="lazy" decoding="async" /></Link>
-    </div>
-  </section>
-
-  <section className="access" id="acces" aria-labelledby="access-title">
-    <h2 id="access-title" className="display display--xl">Intră în beta.</h2>
-    <p>JAC e în testare închisă, deocamdată doar pe Android. Scrie-ne un e-mail și cere acces.</p>
-    <a className="btn btn--blue btn--lg magnetic" href="mailto:vladticu100@gmail.com?subject=Acces%20beta%20JAC"><span>Cere acces la beta</span></a>
-    <p className="access__note">Se deschide un e-mail către vladticu100@gmail.com</p>
-  </section>
-</main>
+        <CtaBand title="Legea specială, în buzunar." />
+      </main>
       <SiteFooter />
       <PageEffects page="legi-speciale" />
     </>
