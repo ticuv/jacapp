@@ -49,6 +49,7 @@ export default function RutierPage() {
             <Stage
               front="app-rutier-module"
               back="app-rutier-cautare"
+              backAlt="Căutarea „telefon” în Codul rutier din JAC: 3 articole găsite din 541, cu fișa pentru folosirea telefonului fără mâini libere, clasa a III-a, 6–8 puncte-amendă."
               backRight
               priority
               frontAlt="Lista Regim rutier din JAC: 10 module și 1.011 fapte și proceduri. Sus, valoarea punctului-amendă de 216,25 lei, valabilă de la 1 iulie 2026; apoi Codul rutier (541 de fapte), Proceduri rutiere (31), Legea 38/2003 (71), OUG 49/2019 (20), Legea 226/2023 (17), HG 1317/2023 (173), OG 43/1997 (63) și OG 37/2007 (91)."
@@ -94,7 +95,6 @@ export default function RutierPage() {
               <Stage
                 front="app-rutier-fisa"
                 frontAlt="Fișa din Codul rutier pentru folosirea telefonului mobil fără dispozitiv mâini libere: descrierea faptei, prevăzută de art. 36 alin. (3) și sancționată de art. 101 alin. (2) din OUG 195/2002, constatată de polițistul rutier; clasa a III-a, 6–8 puncte-amendă, amendă 1.297,50–1.730,00 lei, 4 puncte de penalizare, jumătate din minim 648,75 lei."
-                variant="stage--left"
               >
                 <Chip pos="tl" k="Clasa a III-a">6–8 puncte-amendă</Chip>
                 <Chip pos="mr" tone="red" k="Amenda">1.297,50 – 1.730 lei</Chip>

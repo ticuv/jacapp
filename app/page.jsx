@@ -51,6 +51,7 @@ const GHIDURI = [
   { n: "app-ghid-drone", tag: "Drone", t: "Drone C0 · C1 · C2 · FPV", p: "Clasa după marcaj, documentele cerute pilotului, regulile de zbor după Reg. (UE) 2019/947 și sancțiunile.", alt: "Ghidul vizual Drone din JAC: cardul Clasa C2 cu fotografia unei drone semiprofesionale de până la 4 kg și regulile: înregistrarea operatorului, certificatul A2, distanța de 30 m față de persoane." },
   { n: "app-ghid-droguri", tag: "Droguri", t: "Droguri, cu model de PV", p: "10 substanțe, câte două fotografii, drog de risc sau de mare risc și cum descrii proba în procesul-verbal.", alt: "Ghidul vizual Droguri din JAC: fișa Cannabis cu fotografie, ce găsești de obicei și secțiunea „În procesul-verbal”, cu modelul de descriere al probei ridicate." },
   { n: "app-ghid-pirotehnice", tag: "Pirotehnice", t: "Pirotehnice F1–F4, T, P", p: "Categoria de pe etichetă, ce are voie publicul, orele și distanțele interzise, plata a jumătate din amendă.", alt: "Ghidul vizual Pirotehnice din JAC: categoria F1, permisă publicului de la 16 ani, cu fotografia articolelor numerotate și regimul de vânzare." },
+  { n: "app-ghid-caini", tag: "Câini periculoși", t: "Câini periculoși, pe rase", p: "Catalog vizual pe categoriile I și a II-a din OUG 55/2002: portret din profil și din față, gabaritul și trăsăturile după care recunoști rasa.", alt: "Catalogul vizual Câini periculoși din JAC (OUG 55/2002): portretul din profil și din față al unui Pit Bull, categoria I, cu gabaritul, trăsăturile de recunoaștere și nota despre asimilarea morfologică a metișilor." },
   { n: "app-ghid-stadion", tag: "Stadion", t: "Stadion: ce nu intră", p: "Obiectele interzise la poartă, interdicțiile spectatorilor pe trepte de amendă și interdicția de acces.", alt: "Ghidul vizual Stadion din JAC: tab-ul Obiecte interzise, cu fotografia articolelor pirotehnice interzise la intrare și ce trebuie reținut." },
 ];
 
@@ -77,13 +78,14 @@ export default function HomePage() {
               </div>
               <Stage
                 front="app-acasa"
-                back="app-rutier-fisa"
+                back="app-ghid-caini"
+                backAlt="Catalogul vizual Câini periculoși din JAC (OUG 55/2002): portretul din profil și din față al unui Pit Bull, categoria I, cu gabaritul, trăsăturile de recunoaștere și nota despre asimilarea morfologică a metișilor."
                 backRight
                 priority
                 frontAlt="Ecranul Acasă din JAC: salutul „Salutare, ticuv” cu avatarul PRO încadrat de lauri aurii, cardul Programul tău („Liber azi. De Zi duminică.”, 160h din 160h), căutarea în baza locală de 3.542 de articole offline și plăcile Cod penal, Legi speciale, Regim rutier și Text integral."
               >
                 <Chip pos="tl" tone="gold" k="Cont PRO">Lauri aurii</Chip>
-                <Chip pos="mr" k="Baza locală">3.542 fișe</Chip>
+                <Chip pos="mr" tone="red" k="Ghid vizual">Câini periculoși</Chip>
                 <Chip pos="bl" tone="teal" k="Programul tău">Liber azi</Chip>
               </Stage>
             </div>
@@ -130,6 +132,7 @@ export default function HomePage() {
               <Stage
                 front="app-rutier-fisa"
                 back="app-rutier-module"
+                backAlt="Lista Regim rutier din JAC: 10 module și 1.011 fapte și proceduri, cu punctul-amendă de 216,25 lei."
                 frontAlt="Fișa din Codul rutier pentru folosirea telefonului mobil fără dispozitiv mâini libere: prevăzută de art. 36 alin. (3), sancționată de art. 101 alin. (2) din OUG 195/2002, clasa a III-a, 6–8 puncte-amendă, amendă 1.297,50–1.730,00 lei, 4 puncte de penalizare și jumătate din minim 648,75 lei."
               >
                 <Chip pos="tl" k="Clasa a III-a">6–8 puncte</Chip>
@@ -171,8 +174,9 @@ export default function HomePage() {
               <div>
                 <Stage
                   front="app-lege-cu-ghid"
-                  back="app-legi-speciale"
-                  variant="stage--left"
+                  back="app-ghid-stadion"
+                  backAlt="Ghidul Stadion din JAC: obiectele interzise la intrare, cu fotografia unor facle, petarde și artificii numerotate."
+                  backRight
                   frontAlt="Legea 4/2008 în JAC: sus, butonul Ghid operativ „Stadion · ce nu intră în arenă”, 8 pași; dedesubt, fișele de contravenție pentru spectatori, cu încadrarea, amenda de 80–200 lei și plata în 15 zile."
                 >
                   <Chip pos="tr" tone="blue" k="Din lege">Ghid · 8 pași</Chip>
@@ -234,6 +238,7 @@ export default function HomePage() {
               <Stage
                 front="app-shiftr-luna"
                 back="app-shiftr-editare"
+                backAlt="Foaia Modifică tura din Shiftr: șabloanele Zi (06:00–18:00) și Noapte (18:00–06:00), ora de început și de sfârșit, culoarea și denumirea turei."
                 frontAlt="Calendarul Shiftr pentru noiembrie 2026: ture de zi (Z) și de noapte (N), zile libere, o recuperare de cinci zile, iar dedesubt soldul de ore suplimentare +6h și norma 160h din 160h."
               >
                 <Chip pos="tl" k="Normă legală">160h</Chip>
@@ -277,9 +282,6 @@ export default function HomePage() {
             <div>
               <Stage
                 front="app-ghid-capitole"
-                back="app-penal-module"
-                backRight
-                variant="stage--left"
                 frontAlt="Ghidul operativ din JAC, actualizat 2026: catalogul de tipizate completate și necompletate, apoi capitolele Regimul contravenției (OG 2/2001), Infracțiunea, Legea 61/1991, Legea 60/1991, Legea 4/2008, Legea 54/2012, pescuit și vânătoare, regimul silvic."
               >
                 <Chip pos="tr" k="Catalog">PV model + gol</Chip>
@@ -310,6 +312,7 @@ export default function HomePage() {
               <Stage
                 front="app-penal-fisa"
                 back="app-cpp-integral"
+                backAlt="Codul de procedură penală integral în JAC: 641 de articole, începând cu art. 1, normele de procedură penală și scopul acestora."
                 frontAlt="Fișa de infracțiune din JAC pentru furt, forma de bază: încadrarea art. 228 alin. (1) Cod penal, descrierea faptei, pedeapsa de la 6 luni la 3 ani sau amendă, acțiunea din oficiu și secțiunea Competență și măsuri procedurale."
               >
                 <Chip pos="tl" k="Încadrare">Art. 228 (1) CP</Chip>

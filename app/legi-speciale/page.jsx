@@ -50,7 +50,8 @@ export default function LegiSpecialePage() {
             </div>
             <Stage
               front="app-legi-speciale"
-              back="app-lege-cu-ghid"
+              back="app-ghid-caini"
+              backAlt="Catalogul vizual Câini periculoși din JAC (OUG 55/2002): portretul din profil și din față al unui Pit Bull, categoria I, cu gabaritul, trăsăturile de recunoaștere și nota despre asimilarea morfologică a metișilor."
               backRight
               priority
               frontAlt="Lista Legi speciale din JAC: 19 pachete legislative și 1.161 de fapte, de la Legea 61/1991 (ordine și liniște publică, 44 de fapte), Legea 60/1991, Legea 4/2008, OUG 55/2002, Legea 349/2002, Legea 217/2003, Legea 54/2012 și OUG 97/2005 la Domeniul silvic (170 de fapte)."
@@ -98,7 +99,9 @@ export default function LegiSpecialePage() {
             <div>
               <Stage
                 front="app-lege-cu-ghid"
-                variant="stage--left"
+                back="app-ghid-stadion-pasi"
+                backAlt="Ghidul Stadion din JAC, tab-ul La poartă: pașii numerotați, de la controlul la intrare făcut de stewarzi la legitimare și verificarea interdicției de acces, fiecare cu articolul din Legea 4/2008."
+                backRight
                 frontAlt="Legea 4/2008 deschisă în JAC: butonul Ghid operativ „Stadion · ce nu intră în arenă” cu 8 pași, filtrele Toate, Contravenții, Proceduri, Infracțiuni, 73 de articole și prima fișă: spectatorilor le este interzis să pătrundă sau să încerce să pătrundă, amendă 80–200 lei."
               >
                 <Chip pos="tr" tone="blue" k="Ghid">8 pași</Chip>

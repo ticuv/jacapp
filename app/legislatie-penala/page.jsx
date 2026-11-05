@@ -50,6 +50,7 @@ export default function PenalPage() {
             <Stage
               front="app-penal-module"
               back="app-penal-fisa"
+              backAlt="Fișa de infracțiune pentru furt, art. 228 alin. (1) Cod penal, cu pedeapsa de la 6 luni la 3 ani sau amendă."
               backRight
               priority
               frontAlt="Secțiunea Legislație penală din JAC: 4 module și 1.369 de articole: Codul penal – Infracțiuni (525), Codul penal – Partea generală (188), Procedură penală – Operativ (15) și Codul de procedură penală, Legea 135/2010, textul integral pe articole (641)."
@@ -92,7 +93,7 @@ export default function PenalPage() {
               <Stage
                 front="app-penal-fisa"
                 back="app-cpp-integral"
-                variant="stage--left"
+                backAlt="Codul de procedură penală integral în JAC: 641 de articole, începând cu art. 1, normele de procedură penală și scopul acestora."
                 frontAlt="Fișa de infracțiune din JAC pentru furt, forma de bază: încadrarea juridică art. 228 alin. (1) Cod penal, descrierea faptei, pedeapsa de la 6 luni la 3 ani sau amendă, acțiunea din oficiu, amenda alternativă și secțiunea Competență și măsuri procedurale (CPP)."
               >
                 <Chip pos="tl" k="Încadrare">Art. 228 (1) CP</Chip>

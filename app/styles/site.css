@@ -201,52 +201,18 @@ main { display: block; }
 .copy > .btns, .copy > .link-arrow { margin-top: 28px; }
 .divider { height: 1px; max-width: var(--max); margin: 0 auto; background: linear-gradient(90deg, transparent, var(--edge-hi), transparent); }
 
-/* ---------- mesh stage: the big gradient card a phone stands on ---------- */
+/* ---------- stage: two real phones side by side, the second one showing a standout feature ---------- */
 .stage {
-  --ph: min(50vw, 260px);
-  position: relative; isolation: isolate; border-radius: var(--r-xl);
-  height: calc(var(--ph) * 1.5); margin-top: calc(var(--ph) * .34);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .14), inset 0 0 0 1px rgba(255, 255, 255, .06), 0 40px 90px -40px rgba(47, 107, 255, .5);
+  --ph: min(46vw, 250px);
+  position: relative; display: flex; justify-content: center; padding: 12px 0 24px;
 }
-.stage__bg { position: absolute; inset: 0; z-index: -1; border-radius: inherit; overflow: hidden; }
-.stage__bg::before {
-  /* black at the top, intense law-blue through the middle, a near-white light in one bottom corner */
-  content: ""; position: absolute; inset: -8%;
-  background:
-    radial-gradient(58% 40% at 98% 100%, #ffffff 0%, var(--ice) 9%, var(--blue-l) 28%, rgba(127, 166, 255, 0) 64%),
-    radial-gradient(130% 62% at 50% 80%, var(--blue) 0%, rgba(47, 107, 255, .72) 30%, rgba(47, 107, 255, 0) 72%),
-    radial-gradient(90% 50% at 15% 45%, rgba(47, 107, 255, .28) 0%, rgba(47, 107, 255, 0) 70%),
-    linear-gradient(180deg, var(--black) 0%, var(--navy-1) 26%, var(--navy-2) 55%, var(--navy-3) 100%);
-  transform: translate3d(var(--bx, 0), var(--by, 0), 0) scale(var(--bs, 1));
-  will-change: transform;
-}
-/* the light goes to the free side of the card, away from the phone behind */
-.stage--left .stage__bg::before { transform: scaleX(-1) translate3d(var(--bx, 0), var(--by, 0), 0) scale(var(--bs, 1)); }
-.stage__bg::after {
-  /* fine grain keeps the gradient from banding on cheap screens */
-  content: ""; position: absolute; inset: 0; opacity: .07; mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
-}
-/* the phones rise out of the card: free above it, cut cleanly at its bottom edge */
-.stage__phones {
-  position: absolute; left: 0; right: 0; bottom: 0; top: calc(var(--ph) * -.34);
-  display: flex; justify-content: center; align-items: flex-start;
-  clip-path: inset(-40% -40% 0 -40% round 0 0 var(--r-xl) var(--r-xl));
-}
+.stage__phones { display: flex; justify-content: center; align-items: flex-start; gap: clamp(12px, 3vw, 28px); }
 .stage__phones > .phone { width: var(--ph); }
-.stage__phones > .phone--back {
-  position: absolute; top: calc(var(--ph) * .22); width: calc(var(--ph) * .8); z-index: -1;
-  left: calc(50% - var(--ph) * 1.02); transform: rotate(-7deg); filter: brightness(.82);
-}
-.stage__phones > .phone--back.is-right { left: auto; right: calc(50% - var(--ph) * 1.02); transform: rotate(7deg); }
-@media (max-width: 639px) {
-  /* on a phone the back phone peeks in from the edge, it never pushes the page wider */
-  .stage__phones > .phone--back { left: calc(50% - var(--ph) * .9); }
-  .stage__phones > .phone--back.is-right { right: calc(50% - var(--ph) * .9); }
-}
-@media (min-width: 640px) { .stage { --ph: 270px; } }
-@media (min-width: 1024px) { .stage { --ph: 270px; } }
-@media (min-width: 1280px) { .stage { --ph: 290px; } }
+.stage__phones > .phone--back { width: calc(var(--ph) * .86); margin-top: calc(var(--ph) * .34); order: -1; }
+.stage__phones > .phone--back.is-right { order: 1; }
+@media (min-width: 640px) { .stage { --ph: 250px; } }
+@media (min-width: 1024px) { .stage { --ph: 230px; } }
+@media (min-width: 1280px) { .stage { --ph: 260px; } }
 
 /* floating glass labels on a stage */
 .chip {
@@ -269,8 +235,8 @@ main { display: block; }
 .chip.mr { top: 50%; right: 10px; }
 .chip.bl { bottom: 14%; left: 10px; }
 .chip.br { bottom: 10%; right: 10px; }
-@media (max-width: 420px) { .chip { font-size: 12px; padding: 8px 11px; max-width: 46%; } .chip b { font-size: 13.5px; } }
-@media (min-width: 768px) { .chip.tl, .chip.ml, .chip.bl { left: -14px; } .chip.tr, .chip.mr, .chip.br { right: -14px; } }
+@media (max-width: 639px) { .chip { display: none; } }
+@media (min-width: 768px) { .chip.tl, .chip.ml, .chip.bl { left: 0; } .chip.tr, .chip.mr, .chip.br { right: 0; } }
 
 /* ---------- phone frame ---------- */
 .phone {
@@ -299,11 +265,11 @@ main { display: block; }
 .hero__slogan b { color: var(--ice); font-weight: 700; }
 .hero .btns { margin-top: 30px; }
 .hero__note { margin-top: 14px; font-size: 13px; color: var(--mute); }
-.hero .stage { --ph: min(52vw, 270px); }
+.hero .stage { --ph: min(46vw, 250px); }
 @media (min-width: 1024px) {
   .hero { padding-top: 140px; }
   .hero__grid { grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: 56px; }
-  .hero .stage { --ph: 290px; }
+  .hero .stage { --ph: 250px; }
 }
 .stats { list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: clamp(48px, 8vw, 80px); }
 .stats li { padding: 18px 18px 16px; border-radius: var(--r-md); }
@@ -399,7 +365,7 @@ main { display: block; }
 .gal p { margin: 6px 0 0; font-size: 14px; color: var(--mute-2); line-height: 1.5; }
 .gal__tag { align-self: flex-start; margin-bottom: 12px; padding: 5px 10px; border-radius: 999px; font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; background: rgba(47, 107, 255, .2); color: var(--blue-l); }
 @media (min-width: 1024px) {
-  .gal { grid-auto-flow: row; grid-template-columns: repeat(4, minmax(0, 1fr)); overflow: visible; margin-inline: 0; padding: 0; }
+  .gal { grid-auto-flow: row; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; overflow: visible; margin-inline: 0; padding: 0; }
 }
 .gal-hint { margin: 4px 0 0; font-size: 12.5px; color: var(--mute); }
 @media (min-width: 1024px) { .gal-hint { display: none; } }
@@ -462,7 +428,7 @@ main { display: block; }
 
 /* ---------- CTA band ---------- */
 .cta { position: relative; isolation: isolate; text-align: center; padding: clamp(48px, 9vw, 96px) 20px; border-radius: var(--r-xl); overflow: hidden; }
-.cta .stage__bg { z-index: -1; }
+.cta { background: radial-gradient(70% 90% at 50% 0%, rgba(47, 107, 255, .22), transparent 70%), var(--glass); box-shadow: inset 0 1px 0 var(--edge-hi), inset 0 0 0 1px var(--edge); }
 .cta .h2 { max-width: 14ch; margin-inline: auto; }
 .cta p { margin: 18px auto 0; max-width: 34em; color: var(--mute-2); }
 .cta .btns { justify-content: center; margin-top: 28px; }
@@ -522,7 +488,6 @@ main { display: block; }
   .js [data-r="left"] { transform: translate3d(-28px, 0, 0); }
   .js [data-r="scale"] { transform: scale(.94) translate3d(0, 20px, 0); }
   .js [data-r].is-in { opacity: 1; transform: none; }
-  .stage { transition: transform .6s var(--out); transform: perspective(1400px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }

@@ -46,6 +46,7 @@ export default function ShiftrPage() {
             <Stage
               front="app-shiftr-luna"
               back="app-shiftr-editare"
+              backAlt="Foaia Modifică tura din Shiftr: șabloanele Zi (06:00–18:00) și Noapte (18:00–06:00), ora de început și de sfârșit, culoarea și denumirea turei."
               backRight
               priority
               frontAlt="Calendarul Shiftr pentru noiembrie 2026: ture de zi (Z), de noapte (N), zile libere grupate, o recuperare de cinci zile, iar dedesubt soldul de ore suplimentare +6h și norma 160h din 160h."
@@ -108,7 +109,6 @@ export default function ShiftrPage() {
               <div style={{ marginTop: "clamp(64px, 12vw, 120px)" }}>
                 <Stage
                   front="app-shiftr-sumar"
-                  variant="stage--left"
                   frontAlt="Sumarul lunii în Shiftr: 160h din 160h, sold de ore suplimentare +6h (acumulate +35h, 5 recuperări în lună −40h, +35h adăugate manual), 15 zile lucrate, 15 zile libere și norma legală: 21 de zile × 8h − 1 sărbătoare = 160h."
                 >
                   <Chip pos="tl" k="Normă">21 × 8h − 1</Chip>

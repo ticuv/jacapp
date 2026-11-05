@@ -40,15 +40,12 @@ export function Phone({ name, alt = "", sizes = "(min-width: 1024px) 300px, 58vw
   );
 }
 
-/* The big navy mesh card with one phone in front and, optionally, one behind it. */
-export function Stage({ front, frontAlt, back, backRight = false, variant = "", priority = false, children, label }) {
-  // with a phone behind, the corner light always sits on the other, visible side of the card
-  const side = back ? (backRight ? "stage--left" : "") : variant;
+/* One phone, or two side by side: `front` is the main screen, `back` a second, standout feature beside it. */
+export function Stage({ front, frontAlt, back, backAlt = "", backRight = false, priority = false, children, label }) {
   return (
-    <div className={`stage ${side}`.trim()} data-stage="" data-r="scale" role={label ? "img" : undefined} aria-label={label}>
-      <div className="stage__bg" aria-hidden="true"></div>
+    <div className="stage" data-r="scale" role={label ? "img" : undefined} aria-label={label}>
       <div className="stage__phones">
-        {back ? <Phone name={back} className={`phone--back${backRight ? " is-right" : ""}`} sizes="(min-width: 1024px) 240px, 46vw" aria-hidden="true" /> : null}
+        {back ? <Phone name={back} alt={backAlt} className={`phone--back${backRight ? " is-right" : ""}`} sizes="(min-width: 1024px) 230px, 40vw" /> : null}
         <Phone name={front} alt={frontAlt} className="phone--front" priority={priority} data-par="" />
       </div>
       {children}
@@ -112,7 +109,6 @@ export function CtaBand({ title = "Toată legea, în buzunar.", text }) {
     <section className="sec sec--tight" aria-labelledby="cta-title">
       <div className="wrap">
         <div className="cta" data-r="scale">
-          <div className="stage__bg" aria-hidden="true"></div>
           <h2 id="cta-title" className="h2">{title}</h2>
           <p>{text || "JAC e în testare închisă pe Android. Scrie-ne și primești acces Fondator în perioada beta."}</p>
           <div className="btns"><MainCta /></div>

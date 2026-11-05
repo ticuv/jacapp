@@ -21,7 +21,7 @@ const GUIDES = [
     chips: [["tl", "blue", "Clasa", "C2 · până la 4 kg"], ["br", "", "Reg. (UE)", "2019/947"]],
   },
   {
-    id: "droguri", tag: "Droguri", law: "Legea 143/2000 · Legea 194/2011 · C.pr.pen.", shot: "app-ghid-droguri", back: "app-ghid-droguri-teren",
+    id: "droguri", tag: "Droguri", law: "Legea 143/2000 · Legea 194/2011 · C.pr.pen.", shot: "app-ghid-droguri", back: "app-ghid-droguri-teren", backAlt: "Ghidul Droguri din JAC, tab-ul Pe teren: pașii numerotați, de la observare și înregistrare la ridicarea probelor.",
     t: "Droguri: cum arată, cum încadrezi, ce scrii în PV.",
     p: "10 substanțe, fiecare cu două fotografii, în forme diferite. Pentru fiecare: cum arată, dacă e drog de risc sau de mare risc, consum sau trafic, siguranța agentului și un model de descriere pentru procesul-verbal.",
     list: ["Tab-urile Teren, Tipuri, Încadrare, Siguranță, Pedepse", "Drog de risc sau de mare risc, consum sau trafic", "Model de descriere a probei „în procesul-verbal”", "Siguranța agentului la contact"],
@@ -37,18 +37,25 @@ const GUIDES = [
     chips: [["tl", "blue", "Categoria", "F1 · de la 16 ani"], ["br", "", "Categorii", "F1–F4 · T · P"]],
   },
   {
-    id: "stadion", tag: "Stadion", law: "Legea 4/2008 · Legea 61/1991", shot: "app-ghid-stadion", back: "app-ghid-stadion-pasi",
+    id: "stadion", tag: "Stadion", law: "Legea 4/2008 · Legea 61/1991", shot: "app-ghid-stadion", back: "app-ghid-stadion-pasi", backAlt: "Ghidul Stadion din JAC, tab-ul La poartă: pașii numerotați, de la controlul la intrare făcut de stewarzi la legitimare și verificarea interdicției de acces, fiecare cu articolul din Legea 4/2008.",
     t: "Stadion: ce nu intră în arenă.",
     p: "Obiectele interzise la intrare, cu fotografii, interdicțiile spectatorilor pe trepte de amendă și interdicția de acces. Plus pașii de la poartă: controlul stewarzilor, cine nu intră, legitimarea.",
     list: ["La poartă: controlul la intrare, în 8 pași", "Obiecte interzise, cu fotografii", "Interdicțiile spectatorilor, pe trepte de amendă", "Interdicția de acces"],
     alt: "Ghidul Stadion din JAC, tab-ul Obiecte interzise: cardul „Interzis la intrare” cu fotografia unor facle, petarde și artificii numerotate și ce trebuie reținut despre ascunderea lor și spectacolul pirotehnic al organizatorului.",
     chips: [["tl", "red", "Interzis la intrare", "Pirotehnice"], ["br", "", "La poartă", "8 pași"]],
   },
+  {
+    id: "caini", tag: "Câini periculoși", law: "OUG 55/2002", shot: "app-ghid-caini", back: "app-ghid-caini-2", backAlt: "Catalogul vizual Câini periculoși din JAC, categoria a II-a: portretul unui Rottweiler din profil și din față, gabaritul 40–50 kg, 56–68 cm, și trăsăturile de recunoaștere.",
+    t: "Câini periculoși: rasa se vede din profil.",
+    p: "Catalog vizual pe cele două categorii din OUG 55/2002: 3 rase în categoria I și 9 în categoria a II-a, fiecare cu portret uniform din profil și din față, gabaritul și trăsăturile de recunoaștere. Plus obligațiile deținătorului și sancțiunile.",
+    list: ["Categoria I, regim strict: 3 rase", "Categoria a II-a: 9 rase", "Obligații: sterilizare, asigurare RC, plăcuța „Câine periculos”", "Metișii: asimilarea morfologică, pe trăsăturile dominante"],
+    alt: "Catalogul vizual Câini periculoși din JAC (OUG 55/2002): portretul din profil și din față al unui Pit Bull, categoria I, cu gabaritul, trăsăturile de recunoaștere și nota despre asimilarea morfologică a metișilor.",
+    chips: [["tl", "red", "Categoria I", "Pit Bull"], ["br", "", "Rase", "3 + 9"]],
+  },
 ];
 
 const TEXT_ONLY = [
   { t: "Fumat", law: "Legea 349/2002", p: "Ce înseamnă „fumat” în sensul legii, tutunul încălzit, țigara electronică, narghileaua, unde e interzis și vânzarea către minori." },
-  { t: "Câini periculoși", law: "OUG 55/2002", p: "Rasele vizate, cu fotografii uniforme din profil, și obligațiile deținătorului." },
 ];
 
 export default function GhiduriPage() {
@@ -70,7 +77,8 @@ export default function GhiduriPage() {
             </div>
             <Stage
               front="app-ghid-droguri"
-              back="app-ghid-drone"
+              back="app-ghid-caini"
+              backAlt="Catalogul vizual Câini periculoși din JAC (OUG 55/2002): portretul din profil și din față al unui Pit Bull, categoria I, cu gabaritul, trăsăturile de recunoaștere și nota despre asimilarea morfologică a metișilor."
               backRight
               priority
               frontAlt="Ghidul Droguri din JAC: fișa Cannabis cu fotografia probei și modelul de descriere „În procesul-verbal”."
@@ -91,7 +99,7 @@ export default function GhiduriPage() {
                 <ul className="checks" data-r="">{g.list.map((x) => <li key={x}>{x}</li>)}</ul>
               </div>
               <div>
-                <Stage front={g.shot} back={g.back} backRight={i % 2 === 1} variant={i % 2 ? "" : "stage--left"} frontAlt={g.alt}>
+                <Stage front={g.shot} back={g.back} backAlt={g.backAlt} backRight={i % 2 === 1} frontAlt={g.alt}>
                   {g.chips.map(([pos, tone, k, v]) => <Chip key={k} pos={pos} tone={tone} k={k}>{v}</Chip>)}
                 </Stage>
               </div>
@@ -102,8 +110,8 @@ export default function GhiduriPage() {
         <section className="sec sec--tight" aria-labelledby="more-title">
           <div className="wrap">
             <div className="sec__head">
-              <p className="eyebrow" data-r="">Și încă două</p>
-              <h2 id="more-title" className="h2" data-r="">Fumat și câini periculoși.</h2>
+              <p className="eyebrow" data-r="">Și încă unul</p>
+              <h2 id="more-title" className="h2" data-r="">Fumat.</h2>
             </div>
             <ul className="tiles tiles--2">
               {TEXT_ONLY.map((g, i) => (
