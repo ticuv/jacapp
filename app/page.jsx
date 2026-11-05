@@ -42,14 +42,16 @@ export default function HomePage() {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
 
         <section className="hero" aria-labelledby="hero-title" data-hero="">
-          <h1 id="hero-title" className="hero__title">
-            <span className="ln dim">Legea, toată.</span>
-            <span className="ln dim">În buzunarul tău.</span>
-            <span className="hero__lit" aria-hidden="true">
-              <span className="ln"><span><span>Legea, toată.</span></span></span>
-              <span className="ln"><span><span>În buzunarul tău.</span></span></span>
-            </span>
-          </h1>
+          <div className="hero__head">
+            <h1 id="hero-title" className="hero__title">
+              <span className="ln dim">Legea, toată.</span>{" "}
+              <span className="ln dim">În buzunarul tău.</span>
+            </h1>
+            <div className="hero__lit" aria-hidden="true">
+              <span className="ln"><span><span data-t="Legea, toată."></span></span></span>
+              <span className="ln"><span><span data-t="În buzunarul tău."></span></span></span>
+            </div>
+          </div>
           <div className="hero__stage">
             <div className="hero__phone">
               <span className="hero__halo-wrap" aria-hidden="true"><span className="hero__halo"></span></span>

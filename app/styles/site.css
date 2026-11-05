@@ -95,11 +95,11 @@ button { font: inherit; color: inherit; }
 
 /* ---------- hero: the title is the hero; the phone stands over it and lights it ---------- */
 .hero { position: relative; isolation: isolate; overflow: clip; background: var(--black); padding: 104px 0 56px; }
-.hero__title {
-  position: relative; z-index: 1;
-  padding-inline: var(--gut); font-size: var(--step-giant); font-weight: 600; letter-spacing: -0.04em; line-height: .98;
-}
-.hero__title .ln { display: block; }
+.hero__head { position: relative; z-index: 1; }
+.hero__title { position: relative; z-index: 1; }
+/* the title and its lit copy are set identically, so the copy lies exactly on the letters */
+.hero__title, .hero__lit { margin: 0; padding-inline: var(--gut); font-size: var(--step-giant); font-weight: 600; letter-spacing: -0.04em; line-height: .98; }
+.hero__title .ln, .hero__lit .ln { display: block; }
 /* the lit copy of the title: the phone's light, rising from below onto the letters */
 .hero__lit { position: absolute; inset: 0; z-index: 2; padding-inline: var(--gut); pointer-events: none; color: var(--white); }
 .hero__title .dim { color: rgba(255, 255, 255, .2); }
@@ -120,9 +120,10 @@ button { font: inherit; color: inherit; }
 
 @media (min-width: 1024px) {
   .hero { min-height: 100svh; padding: 0; display: grid; grid-template-rows: 1fr auto; }
+  .hero__head { position: absolute; inset: 0; z-index: 1; }
   .hero__title { position: absolute; inset: 0; z-index: 1; display: flex; flex-direction: column; justify-content: center; padding: 6vh var(--gut) 0; }
-  .hero__title .ln { white-space: nowrap; line-height: 1.1; }
-  .hero__title .ln + .ln { text-align: right; }
+  .hero__title .ln, .hero__lit .ln { white-space: nowrap; line-height: 1.1; }
+  .hero__title .ln + .ln, .hero__lit .ln + .ln { text-align: right; }
   .hero__lit { padding: 6vh var(--gut) 0; display: flex; flex-direction: column; justify-content: center; }
   .hero__stage { position: absolute; inset: 0; z-index: 3; margin: 0; align-items: flex-end; }
   .hero__phone { width: auto; height: 80svh; aspect-ratio: 1175 / 2560; margin-bottom: 4svh; transform: translateY(6svh); }
@@ -526,3 +527,6 @@ button { font: inherit; color: inherit; }
 .photos2 figcaption { display: grid; gap: 4px; padding-top: 12px; font-size: 1rem; font-weight: 600; }
 .photos2 figcaption .mono { font-size: 13px; font-weight: 500; color: var(--blue-l); }
 @media (min-width: 640px) { .photos2 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* the lit copy is drawn from an attribute, so the sentence exists once in the page text */
+.hero__lit [data-t]::before { content: attr(data-t); }
