@@ -530,3 +530,19 @@ button { font: inherit; color: inherit; }
 
 /* the lit copy is drawn from an attribute, so the sentence exists once in the page text */
 .hero__lit [data-t]::before { content: attr(data-t); }
+
+/* no blue box on tap (Android's default highlight, and no text selection on controls); keyboard focus keeps its outline */
+a, button, summary, label { -webkit-tap-highlight-color: transparent; }
+button { -webkit-user-select: none; user-select: none; }
+.mnav__btn:focus:not(:focus-visible) { outline: none; }
+
+/* phones: first only the title, in the dark; then, as if the page scrolled itself, the phone rises from below
+   and its screen turns on on the way up */
+@media (max-width: 1023px) and (prefers-reduced-motion: no-preference) {
+  .hero__stage { transition: transform 1.6s cubic-bezier(.22, 1, .36, 1); }
+  .js .hero:not(.is-risen) .hero__stage { transform: translate3d(0, 100svh, 0); }
+  .js .hero:not(.is-risen) .hero__screen-off { opacity: 1; }
+  .js .hero:not(.is-risen) .hero__halo { opacity: 0; transform: translate(-50%, -50%) scale(.55); }
+  .js .hero.is-risen .hero__screen-off { transition-delay: .7s; }
+  .js .hero.is-risen .hero__halo { transition-delay: .6s; }
+}
