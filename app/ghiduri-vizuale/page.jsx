@@ -6,7 +6,7 @@ import { Stage, Chip, Phone, MainCta, CtaBand } from "@/components/ui";
 
 export const metadata = {
   title: "Ghiduri vizuale pentru teren: drone, droguri, pirotehnice, stadion | JAC",
-  description: "6 ghiduri vizuale în JAC, cu fotografii de identificare: drone C0/C1/C2/FPV, droguri (10 substanțe și modelul de descriere în PV), pirotehnice F1–F4, T, P, stadion, fumat și câini periculoși. Ce faci pas cu pas, ce verifici, cum încadrezi.",
+  description: "6 ghiduri vizuale în JAC, cu fotografii de identificare: drone C0/C1/C2/FPV, droguri (10 substanțe și modelul de descriere în PV), pirotehnice F1–F4, T, P, competiții sportive, fumat și câini periculoși. Ce faci pas cu pas, ce verifici, cum încadrezi.",
   alternates: { canonical: "https://aplicatiajac.ro/ghiduri-vizuale/" },
   openGraph: { title: "Ghiduri vizuale în JAC: pas cu pas, cu poze", url: "https://aplicatiajac.ro/ghiduri-vizuale/", siteName: "JAC", locale: "ro_RO", type: "website", images: [{ url: "https://aplicatiajac.ro/assets/img/og-jac.jpg", width: 1200, height: 630 }] },
 };
