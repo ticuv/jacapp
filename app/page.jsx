@@ -34,7 +34,8 @@ const LD = {
   contentRating: "PEGI 3",
 };
 
-/* Six real screens on a slowly turning ring behind the hero phone: one revolution, then another, never a jump. */
+/* Six real screens on a ring behind the hero phone. It turns one screen at a time; each one, as it reaches the
+   front, becomes the phone's own screen for a moment, then the ring moves on. */
 const RING = ["app-acasa", "app-rutier-module", "app-shiftr-a", "app-ghid-capitole", "app-ghid-drone", "app-text-integral"];
 function Ring({ sizes }) {
   return (
@@ -71,7 +72,22 @@ export default function HomePage() {
           <div className="hero__stage">
             <div className="hero__phone">
               <span className="hero__halo-wrap" aria-hidden="true"><span className="hero__halo"></span></span>
-              <Phone name="app-acasa" priority sizes="(min-width: 1024px) 37svh, 70vw" alt="Ecranul Acasă din JAC: salutul „Salutare, ticuv” cu avatarul PRO încadrat de lauri aurii, cardul Programul tău („Liber azi. De Zi duminică.”, 160h din 160h), căutarea în baza locală de 3.542 de articole offline și plăcile Cod penal, Legi speciale, Regim rutier și Text integral." />
+              {/* the front phone takes on each screen of the ring as it arrives; the first is Acasă */}
+              <figure className="phone hero__screens" data-ui="">
+                {RING.map((name, i) => (
+                  <img
+                    key={name}
+                    className={i === 0 ? "is-on" : undefined}
+                    src={`/assets/img/screens/${name}-800.webp`}
+                    srcSet={`/assets/img/screens/${name}-480.webp 480w, /assets/img/screens/${name}-800.webp 800w, /assets/img/screens/${name}-1175.webp 1175w`}
+                    sizes="(min-width: 1024px) 37svh, 62vw"
+                    width="1175"
+                    height="2560"
+                    alt={i === 0 ? "Ecranul Acasă din JAC: salutul „Salutare, ticuv” cu avatarul PRO încadrat de lauri aurii, cardul Programul tău („Liber azi. De Zi duminică.”, 160h din 160h), căutarea în baza locală de 3.542 de articole offline și plăcile Cod penal, Legi speciale, Regim rutier și Text integral." : ""}
+                    {...(i === 0 ? { fetchPriority: "high" } : { loading: "lazy", decoding: "async" })}
+                  />
+                ))}
+              </figure>
               <span className="hero__screen-off" aria-hidden="true"></span>
               <span className="hero__blackout" aria-hidden="true"></span>
               {/* phone widths: the same ring turns behind the phone */}
