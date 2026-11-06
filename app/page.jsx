@@ -241,6 +241,41 @@ export default function HomePage() {
               </div>
             </div>
             <p className="plans2__fine">Toate reducerile sunt calculate în funcție de prețul standard de 120 de lei pe an. Plata se face în aplicație, prin Google Play, după lansarea comercială. Pe acest site nu se fac plăți.</p>
+            <a className="plans2__compare" href="#compara" data-open-compare="">Compară planurile</a>
+            <dialog className="cmp" id="compara" aria-labelledby="cmp-title">
+              <div className="cmp__head">
+                <h3 id="cmp-title" className="cmp__title" tabIndex="-1" autoFocus>Basic sau PRO</h3>
+                <a className="cmp__close" href="#pro-title" data-close-compare="" aria-label="Închide comparația">Închide</a>
+              </div>
+              <p className="cmp__lead">PRO e același pentru PRO, Fondator și Echipaj; diferă doar prețul.</p>
+              <div className="cmp__scroll">
+                <table className="cmp__table">
+                  <caption className="sr-only">Ce include Basic și ce include PRO</caption>
+                  <thead><tr><th scope="col">Funcție</th><th scope="col">Basic</th><th scope="col">PRO</th></tr></thead>
+                  <tbody>
+                    <tr className="cmp__group"><th scope="rowgroup" colSpan="3">Legislație</th></tr>
+                    <tr><th scope="row">8 legi speciale de bază<small>Legea 61/1991, 60/1991, 4/2008, 349/2002, 217/2003, 54/2012, OUG 55/2002 și OUG 97/2005</small></th><td>Da</td><td className="cmp__pro">Da</td></tr>
+                    <tr><th scope="row">Celelalte 11 legi speciale<small>arme, droguri, pirotehnice, silvic, drone, pescuit, vânătoare, pază, 112 și altele</small></th><td className="cmp__no">—</td><td className="cmp__pro">Da</td></tr>
+                    <tr><th scope="row">Codul penal, CPP și procedura operativă<small>4 module, 1.369 de articole</small></th><td className="cmp__no">—</td><td className="cmp__pro">Da</td></tr>
+                    <tr><th scope="row">Regim rutier, cu amenda calculată<small>10 module, 1.011 fapte și proceduri</small></th><td className="cmp__no">—</td><td className="cmp__pro">Da</td></tr>
+                    <tr><th scope="row">Legislație integrală<small>28 de acte, în text complet</small></th><td>Da</td><td className="cmp__pro">Da</td></tr>
+                    <tr><th scope="row">Căutare în toate fișele<small>din ecranul Acasă</small></th><td className="cmp__no">—</td><td className="cmp__pro">Da</td></tr>
+                    <tr><th scope="row">Favorite</th><td>până la 5</td><td className="cmp__pro">nelimitat</td></tr>
+                    <tr className="cmp__group"><th scope="rowgroup" colSpan="3">Pe teren</th></tr>
+                    <tr><th scope="row">Ghiduri vizuale<small>Basic: Stadion, Fumat, Câini periculoși · PRO: plus Drone, Droguri, Pirotehnice</small></th><td>3</td><td className="cmp__pro">toate 6</td></tr>
+                    <tr><th scope="row">Ghidul operativ<small>15 capitole, spețe și tipizate</small></th><td className="cmp__no">—</td><td className="cmp__pro">Da</td></tr>
+                    <tr className="cmp__group"><th scope="rowgroup" colSpan="3">Shiftr</th></tr>
+                    <tr><th scope="row">Calendarul, norma și orele lucrate</th><td>Da</td><td className="cmp__pro">Da</td></tr>
+                    <tr><th scope="row">Soldul de ore suplimentare</th><td className="cmp__no">—</td><td className="cmp__pro">Da</td></tr>
+                    <tr><th scope="row">Recuperări și ore aduse din altă aplicație</th><td className="cmp__no">—</td><td className="cmp__pro">Da</td></tr>
+                    <tr><th scope="row">Concedii și medicale calculate automat</th><td className="cmp__no">—</td><td className="cmp__pro">Da</td></tr>
+                    <tr className="cmp__group"><th scope="rowgroup" colSpan="3">Contul</th></tr>
+                    <tr><th scope="row">Reclame</th><td>Da</td><td className="cmp__pro">Fără reclame</td></tr>
+                    <tr><th scope="row">Avatarul cu lauri aurii</th><td className="cmp__no">—</td><td className="cmp__pro">Da</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </dialog>
             <a className="pro2__link" href={PLAY_URL || BETA_MAIL}>{PLAY_URL ? "Descarcă din Google Play" : "Cere acces la beta"}</a>
           </div>
         </section>
