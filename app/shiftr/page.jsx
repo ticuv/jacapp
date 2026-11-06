@@ -95,7 +95,7 @@ export default function ShiftrPage() {
                 <div className="calc2__row"><span>Normă</span><b className="mono">160h</b></div>
                 <div className="calc2__row"><span>Lucrate</span><b className="mono" data-o="lucrate">172h</b></div>
                 <label className="calc2__row calc2__check"><span>O noapte în plus, pe 23</span><span className="calc2__toggle"><input type="checkbox" data-extra="12" /><b className="mono">+12h</b></span></label>
-                <label className="calc2__row calc2__check"><span>Recuperare de 8h pe 17</span><span className="calc2__toggle"><input type="checkbox" data-rec="8" /><b className="mono">−8h</b></span></label>
+                <label className="calc2__row calc2__check"><span>Tura din 17 devine recuperare de 8h</span><span className="calc2__toggle"><input type="checkbox" data-rec="8" /><b className="mono">−8h</b></span></label>
               </div>
               <div className="live__phone">
                 <span className="hero__halo stage__halo" aria-hidden="true"></span>
