@@ -42,6 +42,11 @@ export default function HomePage() {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
 
         <section className="hero" aria-labelledby="hero-title" data-hero="">
+          {/* desktop only: the two side screens stand behind the title, so the letters stay whole */}
+          <div className="hero__fan" aria-hidden="true">
+            <div className="hero__side hero__side--l" style={{ "--d": -14 }}><span><Phone name="app-rutier-fisa" sizes="28svh" /></span></div>
+            <div className="hero__side hero__side--r" style={{ "--d": -14 }}><span><Phone name="app-shiftr-a" sizes="28svh" /></span></div>
+          </div>
           <div className="hero__head">
             <h1 id="hero-title" className="hero__title">
               <span className="ln dim">Legea, toată.</span>{" "}
@@ -58,6 +63,14 @@ export default function HomePage() {
               <Phone name="app-acasa" priority sizes="(min-width: 1024px) 37svh, 70vw" alt="Ecranul Acasă din JAC: salutul „Salutare, ticuv” cu avatarul PRO încadrat de lauri aurii, cardul Programul tău („Liber azi. De Zi duminică.”, 160h din 160h), căutarea în baza locală de 3.542 de articole offline și plăcile Cod penal, Legi speciale, Regim rutier și Text integral." />
               <span className="hero__screen-off" aria-hidden="true"></span>
               <span className="hero__blackout" aria-hidden="true"></span>
+              {/* two more real screens fan out behind the phone, and three of the app's own numbers float beside it */}
+              <div className="hero__extras" aria-hidden="true">
+                <div className="hero__side hero__side--l" style={{ "--d": -14 }}><span><Phone name="app-rutier-fisa" sizes="(min-width: 1024px) 28svh, 52vw" /></span></div>
+                <div className="hero__side hero__side--r" style={{ "--d": -14 }}><span><Phone name="app-shiftr-a" sizes="(min-width: 1024px) 28svh, 52vw" /></span></div>
+                <div className="hero__tag hero__tag--a" style={{ "--d": 26 }}><span><b className="mono">216,25 lei</b><small>punctul-amendă, calculat pe fiecare fișă</small></span></div>
+                <div className="hero__tag hero__tag--b" style={{ "--d": 34 }}><span><b className="mono hero__tag-up">+12h</b><small>soldul de ore din Shiftr</small></span></div>
+                <div className="hero__tag hero__tag--c" style={{ "--d": 20 }}><span><b className="mono">3.542 fișe</b><small>offline, fără semnal</small></span></div>
+              </div>
             </div>
           </div>
           <div className="hero__foot wrap">
