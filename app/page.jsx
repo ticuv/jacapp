@@ -213,7 +213,7 @@ export default function HomePage() {
               <div className="plans2__stage" aria-live="polite">
                 <section className="plans2__plan" data-for-plan="basic" aria-label="Basic">
                   <p className="plans2__price"><b className="mono">0 lei</b><span>gratuit, cu reclame</span></p>
-                  <p className="plans2__text">Legislația de bază, căutarea și calendarul Shiftr, cu reclame. Fără ghidurile vizuale, fără calculele avansate din Shiftr, fără ghidul operativ și fără modulele PRO.</p>
+                  <p className="plans2__text">Cele 8 legi speciale de bază, legislația integrală, ghidul vizual Fumat și calendarul Shiftr, cu reclame. Fără celelalte ghiduri vizuale, fără calculele avansate din Shiftr, fără ghidul operativ și fără modulele PRO.</p>
                 </section>
                 <section className="plans2__plan" data-for-plan="pro" aria-label="PRO">
                   <p className="plans2__price"><b className="mono">10 lei</b><span>pe lună</span></p>
@@ -262,7 +262,7 @@ export default function HomePage() {
                     <tr><th scope="row">Căutare în toate fișele<small>din ecranul Acasă</small></th><td className="cmp__no">—</td><td className="cmp__pro">Da</td></tr>
                     <tr><th scope="row">Favorite</th><td>până la 5</td><td className="cmp__pro">nelimitat</td></tr>
                     <tr className="cmp__group"><th scope="rowgroup" colSpan="3">Pe teren</th></tr>
-                    <tr><th scope="row">Ghiduri vizuale<small>Basic: Stadion, Fumat, Câini periculoși · PRO: plus Drone, Droguri, Pirotehnice</small></th><td>3</td><td className="cmp__pro">toate 6</td></tr>
+                    <tr><th scope="row">Ghiduri vizuale<small>Basic: doar Fumat · PRO: Drone, Droguri, Pirotehnice, Stadion, Fumat și Câini periculoși</small></th><td>1</td><td className="cmp__pro">toate 6</td></tr>
                     <tr><th scope="row">Ghidul operativ<small>15 capitole, spețe și tipizate</small></th><td className="cmp__no">—</td><td className="cmp__pro">Da</td></tr>
                     <tr className="cmp__group"><th scope="rowgroup" colSpan="3">Shiftr</th></tr>
                     <tr><th scope="row">Calendarul, norma și orele lucrate</th><td>Da</td><td className="cmp__pro">Da</td></tr>
