@@ -217,12 +217,10 @@ export default function HomePage() {
                 </section>
                 <section className="plans2__plan" data-for-plan="pro" aria-label="PRO">
                   <p className="plans2__price"><b className="mono">10 lei</b><span>pe lună</span></p>
-                  <p className="plans2__save">Preț standard: 120 lei pe an</p>
                   <p className="plans2__text">Toate modulele PRO, ghidurile vizuale, ghidul operativ și calculele avansate din Shiftr: soldul, recuperările, orele manuale, concediile și medicalele. Fără reclame.</p>
                 </section>
                 <section className="plans2__plan" data-for-plan="fondator" aria-label="Fondator">
-                  <p className="plans2__price"><b className="mono">5 lei</b><span>pe lună</span></p>
-                  <p className="plans2__save"><b>−50%</b> față de abonamentul standard: 60 lei pe an în loc de 120</p>
+                  <p className="plans2__price"><span className="plans2__fig"><b className="mono">5 lei</b><sup className="plans2__off mono">−50%</sup></span><span>pe lună</span></p>
                   <p className="plans2__text">Tot ce are PRO, la jumătate de preț, fără să ai nevoie de echipaj. Prețul de fondator rămâne cât timp abonamentul e activ. Dacă îl oprești, revii la 10 lei pe lună.</p>
                 </section>
                 <section className="plans2__plan" data-for-plan="echipaj" aria-label="Echipaj">
@@ -232,19 +230,17 @@ export default function HomePage() {
                     <label><input type="radio" name="bill" value="luna" /> Lunar</label>
                   </fieldset>
                   <div data-bill="an">
-                    <p className="plans2__price"><b className="mono">3,33 lei</b><span>pe lună, de persoană</span></p>
-                    <p className="plans2__save"><b>−66,67%</b> față de abonamentul standard: 40 lei de om pe an în loc de 120</p>
+                    <p className="plans2__price"><span className="plans2__fig"><b className="mono">3,33 lei</b><sup className="plans2__off mono">−66,67%</sup></span><span>pe lună, de persoană</span></p>
                     <p className="plans2__text">Abonament anual pentru tot echipajul de 5 colegi: 200 lei pe an, adică 40 lei de om. PRO complet pentru fiecare.</p>
                   </div>
                   <div data-bill="luna">
-                    <p className="plans2__price"><b className="mono">6 lei</b><span>pe lună, de persoană</span></p>
-                    <p className="plans2__save"><b>−40%</b> față de abonamentul standard: 72 lei de om pe an în loc de 120</p>
+                    <p className="plans2__price"><span className="plans2__fig"><b className="mono">6 lei</b><sup className="plans2__off mono">−40%</sup></span><span>pe lună, de persoană</span></p>
                     <p className="plans2__text">Abonament lunar pentru tot echipajul de 5 colegi: 30 lei pe lună pentru toți. PRO complet pentru fiecare.</p>
                   </div>
                 </section>
               </div>
             </div>
-            <p className="plans2__fine">Reducerile sunt calculate față de abonamentul standard PRO, de 10 lei pe lună (120 lei pe an de persoană). Plata se face în aplicație, prin Google Play, după lansarea comercială. Pe acest site nu se fac plăți.</p>
+            <p className="plans2__fine">Toate reducerile sunt calculate în funcție de prețul standard de 120 de lei pe an. Plata se face în aplicație, prin Google Play, după lansarea comercială. Pe acest site nu se fac plăți.</p>
             <a className="pro2__link" href={PLAY_URL || BETA_MAIL}>{PLAY_URL ? "Descarcă din Google Play" : "Cere acces la beta"}</a>
           </div>
         </section>
