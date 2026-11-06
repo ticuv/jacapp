@@ -621,3 +621,5 @@ button { -webkit-user-select: none; user-select: none; }
 .plans2__save b { margin-right: .35em; font-family: var(--mono); font-weight: 600; letter-spacing: -0.02em; }
 [data-for-plan="fondator"] .plans2__save b { color: var(--gold); }
 [data-for-plan="echipaj"] .plans2__save b { color: #69bfae; }
+/* the phone-width copy of a chapter screen never shows on a desktop, whatever layout its own stack uses */
+@media (min-width: 1024px) { .chap .phone.chap__phone-m { display: none; } }
