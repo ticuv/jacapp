@@ -34,6 +34,20 @@ const LD = {
   contentRating: "PEGI 3",
 };
 
+/* Six real screens on a slowly turning ring behind the hero phone: one revolution, then another, never a jump. */
+const RING = ["app-acasa", "app-rutier-module", "app-shiftr-a", "app-ghid-capitole", "app-ghid-drone", "app-text-integral"];
+function Ring({ sizes }) {
+  return (
+    <div className="ring" style={{ "--d": -14 }}>
+      <div className="ring__spin">
+        {RING.map((name, i) => (
+          <div key={name} className="ring__item" style={{ "--i": i }}><Phone name={name} sizes={sizes} /></div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function HomePage() {
   return (
     <>
@@ -42,11 +56,8 @@ export default function HomePage() {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
 
         <section className="hero" aria-labelledby="hero-title" data-hero="">
-          {/* desktop only: the two side screens stand behind the title, so the letters stay whole */}
-          <div className="hero__fan" aria-hidden="true">
-            <div className="hero__side hero__side--l" style={{ "--d": -14 }}><span><Phone name="app-rutier-fisa" sizes="28svh" /></span></div>
-            <div className="hero__side hero__side--r" style={{ "--d": -14 }}><span><Phone name="app-shiftr-a" sizes="28svh" /></span></div>
-          </div>
+          {/* desktop: the ring of screens turns behind the title, so the letters stay whole */}
+          <div className="hero__fan" aria-hidden="true"><Ring sizes="28svh" /></div>
           <div className="hero__head">
             <h1 id="hero-title" className="hero__title">
               <span className="ln dim">Legea, toată.</span>{" "}
@@ -63,14 +74,8 @@ export default function HomePage() {
               <Phone name="app-acasa" priority sizes="(min-width: 1024px) 37svh, 70vw" alt="Ecranul Acasă din JAC: salutul „Salutare, ticuv” cu avatarul PRO încadrat de lauri aurii, cardul Programul tău („Liber azi. De Zi duminică.”, 160h din 160h), căutarea în baza locală de 3.542 de articole offline și plăcile Cod penal, Legi speciale, Regim rutier și Text integral." />
               <span className="hero__screen-off" aria-hidden="true"></span>
               <span className="hero__blackout" aria-hidden="true"></span>
-              {/* two more real screens fan out behind the phone, and three of the app's own numbers float beside it */}
-              <div className="hero__extras" aria-hidden="true">
-                <div className="hero__side hero__side--l" style={{ "--d": -14 }}><span><Phone name="app-rutier-fisa" sizes="(min-width: 1024px) 28svh, 52vw" /></span></div>
-                <div className="hero__side hero__side--r" style={{ "--d": -14 }}><span><Phone name="app-shiftr-a" sizes="(min-width: 1024px) 28svh, 52vw" /></span></div>
-                <div className="hero__tag hero__tag--a" style={{ "--d": 26 }}><span><b className="mono">216,25 lei</b><small>punctul-amendă, calculat pe fiecare fișă</small></span></div>
-                <div className="hero__tag hero__tag--b" style={{ "--d": 34 }}><span><b className="mono hero__tag-up">+12h</b><small>soldul de ore din Shiftr</small></span></div>
-                <div className="hero__tag hero__tag--c" style={{ "--d": 20 }}><span><b className="mono">3.542 fișe</b><small>offline, fără semnal</small></span></div>
-              </div>
+              {/* phone widths: the same ring turns behind the phone */}
+              <div className="hero__extras" aria-hidden="true"><Ring sizes="40vw" /></div>
             </div>
           </div>
           <div className="hero__foot wrap">
@@ -127,8 +132,8 @@ export default function HomePage() {
             </div>
             <div className="chap__stage" aria-hidden="true">
               <figure className="phone chap__back is-on" data-ui="" data-for="0"><img src="/assets/img/screens/app-rutier-fisa-800.webp" srcSet="/assets/img/screens/app-rutier-fisa-800.webp 800w, /assets/img/screens/app-rutier-fisa-1175.webp 1175w" sizes="30svh" width="1175" height="2560" alt="" loading="lazy" decoding="async" /></figure>
-              <figure className="phone chap__back" data-ui="" data-for="1"><img src="/assets/img/screens/app-rutier-module-800.webp" srcSet="/assets/img/screens/app-rutier-module-800.webp 800w, /assets/img/screens/app-rutier-module-1175.webp 1175w" sizes="30svh" width="1175" height="2560" alt="" loading="lazy" decoding="async" /></figure>
-              <figure className="phone chap__back chap__back--far" data-ui="" data-for="1"><img src="/assets/img/screens/app-penal-module-800.webp" srcSet="/assets/img/screens/app-penal-module-800.webp 800w, /assets/img/screens/app-penal-module-1175.webp 1175w" sizes="30svh" width="1175" height="2560" alt="" loading="lazy" decoding="async" /></figure>
+              <figure className="phone chap__back" data-ui="" data-for="1"><img src="/assets/img/screens/app-penal-module-800.webp" srcSet="/assets/img/screens/app-penal-module-800.webp 800w, /assets/img/screens/app-penal-module-1175.webp 1175w" sizes="30svh" width="1175" height="2560" alt="" loading="lazy" decoding="async" /></figure>
+              <figure className="phone chap__back chap__back--far" data-ui="" data-for="1"><img src="/assets/img/screens/app-rutier-module-800.webp" srcSet="/assets/img/screens/app-rutier-module-800.webp 800w, /assets/img/screens/app-rutier-module-1175.webp 1175w" sizes="30svh" width="1175" height="2560" alt="" loading="lazy" decoding="async" /></figure>
               <div className="chap__device">
                 <span className="hero__halo chap__halo"></span>
                 <figure className="phone" data-ui="">
