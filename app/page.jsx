@@ -34,20 +34,11 @@ const LD = {
   contentRating: "PEGI 3",
 };
 
-/* Six real screens on a ring behind the hero phone. It turns one screen at a time; each one, as it reaches the
-   front, becomes the phone's own screen for a moment, then the ring moves on. */
-const RING = ["app-acasa", "app-rutier-module", "app-shiftr-a", "app-ghid-capitole", "app-ghid-drone", "app-text-integral"];
-function Ring({ sizes }) {
-  return (
-    <div className="ring" style={{ "--d": -14 }}>
-      <div className="ring__spin">
-        {RING.map((name, i) => (
-          <div key={name} className="ring__item" style={{ "--i": i }}><Phone name={name} sizes={sizes} /></div>
-        ))}
-      </div>
-    </div>
-  );
-}
+/* The hero deck: six real screens. One stands at the centre for a second, then they all slide one place right to
+   left (the one on the right comes to the centre, the centre one goes left), the way the old home page did it. */
+const DECK = ["app-acasa", "app-rutier-module", "app-shiftr-a", "app-ghid-capitole", "app-ghid-drone", "app-text-integral"];
+const DECK_ALT = "Ecranul Acasă din JAC: salutul „Salutare, ticuv” cu avatarul PRO încadrat de lauri aurii, cardul Programul tău („Liber azi. De Zi duminică.”, 160h din 160h), căutarea în baza locală de 3.542 de articole offline și plăcile Cod penal, Legi speciale, Regim rutier și Text integral.";
+const deckPos = (i, n) => (i === 0 ? "center" : i === 1 ? "right" : i === n - 1 ? "left" : "back");
 
 export default function HomePage() {
   return (
@@ -57,8 +48,6 @@ export default function HomePage() {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
 
         <section className="hero" aria-labelledby="hero-title" data-hero="">
-          {/* desktop: the ring of screens turns behind the title, so the letters stay whole */}
-          <div className="hero__fan" aria-hidden="true"><Ring sizes="28svh" /></div>
           <div className="hero__head">
             <h1 id="hero-title" className="hero__title">
               <span className="ln dim">Legea, toată.</span>{" "}
@@ -72,26 +61,23 @@ export default function HomePage() {
           <div className="hero__stage">
             <div className="hero__phone">
               <span className="hero__halo-wrap" aria-hidden="true"><span className="hero__halo"></span></span>
-              {/* the front phone takes on each screen of the ring as it arrives; the first is Acasă */}
-              <figure className="phone hero__screens" data-ui="">
-                {RING.map((name, i) => (
-                  <img
-                    key={name}
-                    className={i === 0 ? "is-on" : undefined}
-                    src={`/assets/img/screens/${name}-800.webp`}
-                    srcSet={`/assets/img/screens/${name}-480.webp 480w, /assets/img/screens/${name}-800.webp 800w, /assets/img/screens/${name}-1175.webp 1175w`}
-                    sizes="(min-width: 1024px) 37svh, 62vw"
-                    width="1175"
-                    height="2560"
-                    alt={i === 0 ? "Ecranul Acasă din JAC: salutul „Salutare, ticuv” cu avatarul PRO încadrat de lauri aurii, cardul Programul tău („Liber azi. De Zi duminică.”, 160h din 160h), căutarea în baza locală de 3.542 de articole offline și plăcile Cod penal, Legi speciale, Regim rutier și Text integral." : ""}
-                    {...(i === 0 ? { fetchPriority: "high" } : { loading: "lazy", decoding: "async" })}
-                  />
+              <div className="hero__deck" data-deck="">
+                {DECK.map((name, i) => (
+                  <figure key={name} className="phone" data-ui="" data-pos={deckPos(i, DECK.length)} aria-hidden={i === 0 ? undefined : "true"}>
+                    <img
+                      src={`/assets/img/screens/${name}-800.webp`}
+                      srcSet={`/assets/img/screens/${name}-480.webp 480w, /assets/img/screens/${name}-800.webp 800w, /assets/img/screens/${name}-1175.webp 1175w`}
+                      sizes="(min-width: 1024px) 37svh, 62vw"
+                      width="1175"
+                      height="2560"
+                      alt={i === 0 ? DECK_ALT : ""}
+                      {...(i === 0 ? { fetchPriority: "high" } : { loading: i < 2 || i === DECK.length - 1 ? "eager" : "lazy", decoding: "async" })}
+                    />
+                  </figure>
                 ))}
-              </figure>
+              </div>
               <span className="hero__screen-off" aria-hidden="true"></span>
               <span className="hero__blackout" aria-hidden="true"></span>
-              {/* phone widths: the same ring turns behind the phone */}
-              <div className="hero__extras" aria-hidden="true"><Ring sizes="40vw" /></div>
             </div>
           </div>
           <div className="hero__foot wrap">

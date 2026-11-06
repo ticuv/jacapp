@@ -162,47 +162,29 @@ button { font: inherit; color: inherit; }
   .hero__line { max-width: 26ch; }
 }
 
-/* ---------- hero ring: six real screens turning slowly behind the phone (transform only, paused off screen) ---------- */
-.hero__extras { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
-.hero__fan { display: none; }
-.ring {
-
-  position: absolute; inset: 0; perspective: 900px; perspective-origin: 50% 40%;
-  translate: calc(var(--px, 0) * var(--d, 0) * 1px) calc(var(--py, 0) * var(--d, 0) * 1px);
-  transition: translate 1s var(--out), opacity .9s var(--out) .9s;
+/* ---------- hero deck: six real screens; one at the centre, one each side, the rest waiting behind ---------- */
+.hero__deck { position: relative; display: grid; perspective: 1400px; }
+.hero__deck > .phone { grid-area: 1 / 1; will-change: transform; transition: transform 1s cubic-bezier(.65, 0, .25, 1), opacity .8s var(--out), filter .8s var(--out); }
+.hero__deck > .phone[data-pos="center"] { transform: none; z-index: 4; }
+.hero__deck > .phone[data-pos="left"] { transform: translateX(-80%) scale(.76) rotateY(28deg); filter: brightness(.5); z-index: 3; }
+.hero__deck > .phone[data-pos="right"] { transform: translateX(80%) scale(.76) rotateY(-28deg); filter: brightness(.5); z-index: 3; }
+.hero__deck > .phone[data-pos="back"] { transform: scale(.55); opacity: 0; z-index: 1; }
+@media (min-width: 1024px) {
+  .hero__deck { height: 100%; grid-template: 100% / 100%; }
+  .hero__deck > .phone[data-pos="left"] { transform: translateX(-92%) scale(.78) rotateY(28deg); }
+  .hero__deck > .phone[data-pos="right"] { transform: translateX(92%) scale(.78) rotateY(-28deg); }
 }
-.ring__spin {
-  position: absolute; inset: 0; transform-style: preserve-3d;
-  transform: translateZ(calc(var(--rw) * -1)) rotateY(var(--a, 0deg));
-  transition: transform 1.1s cubic-bezier(.65, 0, .25, 1);
+/* the side phones slide out from behind the centre one once its screen is on */
+@media (prefers-reduced-motion: no-preference) {
+  .js .hero:not(.is-lit) .hero__deck > .phone:not([data-pos="center"]),
+  .js .hero:not(.is-risen) .hero__deck > .phone:not([data-pos="center"]) { transform: scale(.85); opacity: 0; }
 }
-.ring__item {
-  position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden;
-  transform: rotateY(calc(var(--i) * 60deg)) translateZ(var(--rw));
-}
-/* the front phone's six screens share one cell; the one the ring has brought round shows */
-.hero__screens { display: grid; }
-.hero__screens img { grid-area: 1 / 1; transition: opacity .45s var(--out); }
-.hero__screens img:not(.is-on) { opacity: 0; }
-.ring__item .phone { height: 100%; box-shadow: 0 30px 60px -20px rgba(0, 0, 0, .9); }
-.ring__item .phone img { filter: brightness(.6) saturate(.9); }
+/* desktop: once the visitor scrolls, only the centre phone goes on into the page */
+.hero.is-parked .hero__deck > .phone:not([data-pos="center"]) { opacity: 0; }
 @media (max-width: 1023px) {
   .hero__stage { margin-top: 28px; }
   .hero__phone { width: min(62vw, 280px); }
 }
-/* the radius in pixels: the ring box is as wide as the phone */
-.hero__extras .ring { --rw: calc(min(62vw, 280px) * .92); }
-@media (prefers-reduced-motion: no-preference) {
-  .js .hero:not(.is-lit) .ring, .js .hero:not(.is-risen) .ring { opacity: 0; }
-}
-@media (min-width: 1024px) {
-  .hero__extras { display: none; }
-  /* the fan sits where the phone stands (80svh tall, its foot 4svh above the fold, nudged 6svh down), under the title */
-  .hero__fan { display: block; position: absolute; z-index: 0; left: 50%; top: 22svh; height: 80svh; aspect-ratio: 1175 / 2560; transform: translateX(-50%); pointer-events: none; }
-  .hero__fan .ring { --rw: calc(80svh * 1175 / 2560 * 1.12); perspective: 1700px; }
-  .hero__fan .ring__item .phone img { filter: brightness(.48) saturate(.85); }
-}
-
 
 /* ---------- the phone: the app's own black frame ---------- */
 .phone { position: relative; margin: 0; padding: 2.6%; border-radius: 13% / 6%; background: #000; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .08); }
@@ -854,4 +836,17 @@ button { -webkit-user-select: none; user-select: none; }
   .chap__tabs:has(button:nth-child(4)[aria-pressed="true"]) { --ti: 3; }
   .js .chap.is-carousel .chap__tabs button { position: relative; z-index: 1; min-height: 40px; padding: 0; border-radius: 999px; font-size: 14px; font-weight: 600; transition: color .35s var(--out); }
   .js .chap.is-carousel .chap__tabs button[aria-pressed="true"] { color: var(--black); }
+}
+
+/* desktop hero, split: the title and the action hold the left half, the phone and its ring of screens the right,
+   so nothing ever stands on the letters */
+@media (min-width: 1024px) {
+  .hero { --pr: 12vw; }
+  .hero__title, .hero__lit { padding: 0 var(--gut); justify-content: center; font-size: clamp(3.5rem, 6.8vw, 9rem); }
+  .hero__title .ln, .hero__lit .ln { white-space: normal; width: 48vw; line-height: 1.02; }
+  .hero__title .ln + .ln, .hero__lit .ln + .ln { text-align: left; }
+  .hero__stage { justify-content: flex-end; padding-right: var(--pr); }
+  .hero__phone { height: 76svh; }
+  .hero__foot { justify-content: flex-start; gap: 40px; align-items: center; }
+  .hero__line { max-width: 30ch; }
 }
