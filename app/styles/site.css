@@ -321,6 +321,31 @@ button { font: inherit; color: inherit; }
 /* the side phones may hang past the screen edge, never widen the page */
 @media (max-width: 1023px) { .chap { overflow-x: clip; } }
 @media (max-width: 1023px) and (prefers-reduced-motion: no-preference) { .js .chap.is-carousel .chap__list { align-items: end; } }
+/* phone-width carousel: the figure, the copy, the phone and the tabs fit in one screen, so the swipe is visible */
+@media (max-width: 1023px) and (prefers-reduced-motion: no-preference) {
+  .js .chap.is-carousel { padding: 40px 0 24px; }
+  .js .chap.is-carousel .chap__num { font-size: clamp(2.5rem, 11vw, 4.5rem); }
+  .js .chap.is-carousel .chap__text { margin-top: 12px; font-size: 16px; line-height: 1.4; }
+  .js .chap.is-carousel .chap__meta { margin-top: 8px; font-size: 12px; }
+  .js .chap.is-carousel .calc2 { margin-top: 14px; grid-template-columns: 1fr 1fr; }
+  .js .chap.is-carousel .calc2__row { min-height: 40px; padding: 0 12px; font-size: 14px; }
+  .js .chap.is-carousel .calc2__row b { font-size: 16px; }
+  .js .chap.is-carousel .calc2__check { grid-column: 1 / -1; }
+  .js .chap.is-carousel .calc2__toggle input { width: 38px; height: 22px; }
+  .js .chap.is-carousel .calc2__toggle input::after { width: 16px; height: 16px; }
+  .js .chap.is-carousel .calc2__toggle input:checked::after { transform: translateX(16px); }
+  .js .chap.is-carousel .chap__car { --w: min(60vw, 280px, 19svh); margin-top: 20px; }
+  .js .chap.is-carousel .chap__tabs { margin-top: 8px; }
+}
+
+/* desktop: a dark, blurred pool behind the copy so the fanned-out phones never fight the text */
+@media (min-width: 1024px) {
+  .chap__list::before {
+    content: ""; position: absolute; inset: -12% -14% -12% -10%; z-index: -1; pointer-events: none;
+    background: rgba(5, 7, 13, .72); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);
+    -webkit-mask-image: radial-gradient(closest-side, #000 62%, transparent); mask-image: radial-gradient(closest-side, #000 62%, transparent);
+  }
+}
 
 /* ---------- PRO: short and calm; the only gold on the page ---------- */
 .pro2 { position: relative; z-index: 6; background: var(--black); padding: 120px 0 96px; text-align: center; }
