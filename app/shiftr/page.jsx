@@ -135,7 +135,7 @@ export default function ShiftrPage() {
           </div>
         </section>
 
-        <CtaBand title="Turele tale, socotite corect." text="Fără bătăi de cap la calculatul orelor lucrate." />
+        <CtaBand title="Fără bătăi de cap la calculatul orelor lucrate." />
       </main>
       <SiteFooter />
       <PageEffects page="shiftr" />
