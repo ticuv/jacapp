@@ -615,3 +615,9 @@ button { -webkit-user-select: none; user-select: none; }
 .plans2__names [data-plan="echipaj"]::before { background: #69bfae; }
 [data-for-plan="echipaj"] .plans2__bill label:has(input:checked) { background: #69bfae; color: var(--black); }
 .plans2__price b { white-space: nowrap; font-size: clamp(3.25rem, 1.2rem + 5.6vw, 6.5rem); }
+
+/* the saving against the standard plan, in the plan's own colour */
+.plans2__save { font-size: var(--step-body); color: var(--muted); }
+.plans2__save b { margin-right: .35em; font-family: var(--mono); font-weight: 600; letter-spacing: -0.02em; }
+[data-for-plan="fondator"] .plans2__save b { color: var(--gold); }
+[data-for-plan="echipaj"] .plans2__save b { color: #69bfae; }
