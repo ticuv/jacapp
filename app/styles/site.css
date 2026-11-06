@@ -604,3 +604,14 @@ button { -webkit-user-select: none; user-select: none; }
   .js .plans2.is-live .plans2__plan.is-on { animation: plan-in .35s var(--out); }
   @keyframes plan-in { from { opacity: 0; transform: translateY(8px); } }
 }
+
+/* each plan its own colour: Basic grey, PRO law-blue, Fondator gold, Echipaj the app's teal */
+[data-for-plan="basic"] .plans2__price b { color: #9aa3ae; }
+[data-for-plan="pro"] .plans2__price b { color: var(--blue-l); }
+[data-for-plan="fondator"] .plans2__price b { color: var(--gold); }
+[data-for-plan="echipaj"] .plans2__price b { color: #69bfae; }
+.plans2__names [data-plan="basic"]::before { background: #9aa3ae; }
+.plans2__names [data-plan="pro"]::before { background: var(--blue-l); }
+.plans2__names [data-plan="echipaj"]::before { background: #69bfae; }
+[data-for-plan="echipaj"] .plans2__bill label:has(input:checked) { background: #69bfae; color: var(--black); }
+.plans2__price b { white-space: nowrap; font-size: clamp(3.25rem, 1.2rem + 5.6vw, 6.5rem); }
