@@ -25,7 +25,7 @@ const ROWS = [
   ["Soldul de ore suplimentare", "n", "p"],
   ["Recuperările scăzute din sold", "n", "p"],
   ["Ore adăugate manual din altă aplicație", "n", "p"],
-  ["Fără bătăi de cap cu calcularea concediilor sau medicalelor", "n", "p"],
+  ["Concedii și medicale calculate automat", "n", "p"],
 ];
 const MARK = { y: ["Da", "inclus"], p: ["PRO", "inclus în PRO"], n: ["Nu", "nu e inclus"] };
 
