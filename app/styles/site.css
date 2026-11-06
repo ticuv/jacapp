@@ -555,3 +555,21 @@ button { -webkit-user-select: none; user-select: none; }
 
 /* a closing line may be a full sentence: give it the measure for two lines */
 .cta .h2 { max-width: 24ch; }
+
+/* chapter 1 on the desktop: the road list in front, its fine sheet standing behind on the left */
+.chap__back { display: none; }
+@media (min-width: 1024px) {
+  .chap__stage { position: relative; }
+  .chap__back { display: block; position: absolute; z-index: 0; top: 9svh; right: calc(100% - 8%); height: 68svh; aspect-ratio: 1175 / 2560; margin: 0;
+    filter: brightness(.7); transition: opacity .6s var(--out), transform .8s var(--out); }
+  .chap__back img { height: 100%; width: auto; }
+  .chap__device { z-index: 1; }
+}
+@media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
+  .js .chap.is-pinned .chap__back:not(.is-on) { opacity: 0; transform: translateX(40px); }
+}
+
+/* chapter 2: every section behind the special laws — the road list close, the penal modules further back */
+@media (min-width: 1024px) {
+  .chap__back--far { z-index: -1; top: 15svh; height: 58svh; right: calc(100% + 48%); filter: brightness(.55); }
+}
