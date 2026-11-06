@@ -8,7 +8,7 @@ export const metadata = {
   title: "Codul penal, CPP integral și 28 de acte în text complet | JAC",
   description: "Legislația penală din JAC, offline: 4 module și 1.369 de articole. Infracțiunile cu pedeapsa, competența și măsurile, partea generală, procedura operativă și Codul de procedură penală integral. Plus 28 de coduri și acte normative în text complet.",
   alternates: { canonical: "https://aplicatiajac.ro/legislatie-penala/" },
-  openGraph: { title: "Codul penal și CPP integral în JAC", url: "https://aplicatiajac.ro/legislatie-penala/", siteName: "JAC", locale: "ro_RO", type: "website", images: [{ url: "https://aplicatiajac.ro/assets/img/og-jac.jpg", width: 1200, height: 630 }] },
+  openGraph: { title: "Codul penal și CPP integral în JAC", url: "https://aplicatiajac.ro/legislatie-penala/", siteName: "JAC", locale: "ro_RO", type: "website", images: [{ url: "https://aplicatiajac.ro/assets/img/og-jac-2026-11.jpg", width: 1200, height: 630 }] },
 };
 
 const ACTS = [

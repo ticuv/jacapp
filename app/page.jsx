@@ -17,7 +17,7 @@ export const metadata = {
     siteName: "JAC",
     locale: "ro_RO",
     type: "website",
-    images: [{ url: "https://aplicatiajac.ro/assets/img/og-jac.jpg", width: 1200, height: 630, alt: "JAC – Legislație și Ture: unicul instrument legislativ care le are pe toate." }],
+    images: [{ url: "https://aplicatiajac.ro/assets/img/og-jac-2026-11.jpg", width: 1200, height: 630, alt: "JAC, singurul instrument legislativ care le are pe toate: ecranele Acasă, Shiftr și ghidul vizual Drone." }],
   },
   twitter: { card: "summary_large_image" },
 };

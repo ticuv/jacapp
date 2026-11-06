@@ -8,7 +8,7 @@ export const metadata = {
   title: "Ghid operativ: 15 capitole, spețe și tipizate | JAC",
   description: "Ghidul operativ din JAC, offline: 15 capitole de la regimul contravenției la mandatele de aducere, spețe cu documentele care se întocmesc și catalogul de tipizate, cu procese-verbale model completate pe spețe fictive și formularele goale.",
   alternates: { canonical: "https://aplicatiajac.ro/ghid-operativ/" },
-  openGraph: { title: "Ghid operativ în JAC: 15 capitole, spețe și tipizate", url: "https://aplicatiajac.ro/ghid-operativ/", siteName: "JAC", locale: "ro_RO", type: "website", images: [{ url: "https://aplicatiajac.ro/assets/img/og-jac.jpg", width: 1200, height: 630 }] },
+  openGraph: { title: "Ghid operativ în JAC: 15 capitole, spețe și tipizate", url: "https://aplicatiajac.ro/ghid-operativ/", siteName: "JAC", locale: "ro_RO", type: "website", images: [{ url: "https://aplicatiajac.ro/assets/img/og-jac-2026-11.jpg", width: 1200, height: 630 }] },
 };
 
 const CHAPTERS = [

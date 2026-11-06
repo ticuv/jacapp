@@ -8,7 +8,7 @@ export const metadata = {
   title: "Regim rutier: 10 module, amenda calculată | JAC",
   description: "Codul rutier, taxi, ride-sharing, rovinieta, transport rutier, regimul drumurilor, tahograf, parcări, RCA și procedurile rutiere: 10 module offline, cu clasa de sancțiune, punctele-amendă (216,25 lei) și punctele de penalizare calculate pe fiecare fișă.",
   alternates: { canonical: "https://aplicatiajac.ro/legislatie-rutiera/" },
-  openGraph: { title: "Regim rutier în JAC: 10 module, amenda calculată", url: "https://aplicatiajac.ro/legislatie-rutiera/", siteName: "JAC", locale: "ro_RO", type: "website", images: [{ url: "https://aplicatiajac.ro/assets/img/og-jac.jpg", width: 1200, height: 630 }] },
+  openGraph: { title: "Regim rutier în JAC: 10 module, amenda calculată", url: "https://aplicatiajac.ro/legislatie-rutiera/", siteName: "JAC", locale: "ro_RO", type: "website", images: [{ url: "https://aplicatiajac.ro/assets/img/og-jac-2026-11.jpg", width: 1200, height: 630 }] },
 };
 
 const MODULES = [

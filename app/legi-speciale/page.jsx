@@ -8,7 +8,7 @@ export const metadata = {
   title: "Legi speciale: 19 pachete, 1.161 de fapte | JAC",
   description: "Ordine publică, adunări, violența în sport, câini periculoși, fumat, violența domestică, picnic, evidența persoanelor, silvic, arme, 112, drone, pescuit, vânătoare, comerț electronic, pază, piață agricolă, droguri și pirotehnice: legi speciale offline, cu încadrarea, amenda și ghidurile vizuale.",
   alternates: { canonical: "https://aplicatiajac.ro/legi-speciale/" },
-  openGraph: { title: "Legi speciale în JAC: 19 pachete, offline", url: "https://aplicatiajac.ro/legi-speciale/", siteName: "JAC", locale: "ro_RO", type: "website", images: [{ url: "https://aplicatiajac.ro/assets/img/og-jac.jpg", width: 1200, height: 630 }] },
+  openGraph: { title: "Legi speciale în JAC: 19 pachete, offline", url: "https://aplicatiajac.ro/legi-speciale/", siteName: "JAC", locale: "ro_RO", type: "website", images: [{ url: "https://aplicatiajac.ro/assets/img/og-jac-2026-11.jpg", width: 1200, height: 630 }] },
 };
 
 // The first 8 are BASIC (free); the rest are PREMIUM, unlocked during the beta by the Founder account.

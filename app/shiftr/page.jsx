@@ -8,7 +8,7 @@ export const metadata = {
   title: "Shiftr: turele, norma și orele suplimentare, calculate | JAC",
   description: "Planificatorul de ture Shiftr din JAC: ture de zi, noapte, schimburi, concediu, recuperare și misiuni; norma lunii (zile lucrătoare × 8h minus sărbătorile legale), orele suplimentare și soldul calculate automat. Datele rămân pe telefon.",
   alternates: { canonical: "https://aplicatiajac.ro/shiftr/" },
-  openGraph: { title: "Shiftr în JAC: norma și orele suplimentare, calculate", url: "https://aplicatiajac.ro/shiftr/", siteName: "JAC", locale: "ro_RO", type: "website", images: [{ url: "https://aplicatiajac.ro/assets/img/og-jac.jpg", width: 1200, height: 630 }] },
+  openGraph: { title: "Shiftr în JAC: norma și orele suplimentare, calculate", url: "https://aplicatiajac.ro/shiftr/", siteName: "JAC", locale: "ro_RO", type: "website", images: [{ url: "https://aplicatiajac.ro/assets/img/og-jac-2026-11.jpg", width: 1200, height: 630 }] },
 };
 
 const TYPES = [
