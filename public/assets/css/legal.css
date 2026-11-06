@@ -1,0 +1,70 @@
+/* JAC — legal pages. Presentation only: the markup and text are kept exactly as supplied.
+   Same identity as the rest of the site: navy, the app's blue, Manrope, comfortable reading measure. */
+
+@font-face { font-family: "Manrope"; src: url("../fonts/manrope-var.woff2") format("woff2"); font-weight: 200 800; font-display: swap; }
+
+:root {
+  --bg: #07080b;
+  --s1: rgba(215, 239, 255, .055);
+  --line: rgba(215, 239, 255, .09);
+  --text: #eef2fa;
+  --body: #cdd5e4;
+  --muted: #9aa6bd;
+  --blue: #5b8cff;
+  --blue-soft: #8fb0ff;
+  --font: "Manrope", "Segoe UI Variable Text", "Segoe UI", Roboto, system-ui, -apple-system, Arial, sans-serif;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: radial-gradient(70vmax 55vmax at 100% -10%, rgba(47, 107, 255, .24), transparent 65%), radial-gradient(60vmax 50vmax at 0% 110%, rgba(170, 210, 255, .08), transparent 65%), var(--bg); background-attachment: fixed; color: var(--body); font: 500 1.0625rem/1.7 var(--font); overflow-x: clip; }
+:focus-visible { outline: 3px solid var(--blue-soft); outline-offset: 3px; border-radius: 6px; }
+a { color: var(--blue-soft); text-underline-offset: 3px; }
+
+.legal-shell { width: min(760px, 100% - 40px); margin: 0 auto; padding-bottom: 48px; }
+
+/* ----- top bar (the supplied <header><nav>) ----- */
+.legal-shell > header {
+  position: sticky; top: 0; z-index: 10; margin: 0 -20px; padding: 0 20px;
+  background: rgba(10, 11, 15, .7); -webkit-backdrop-filter: blur(22px) saturate(150%); backdrop-filter: blur(22px) saturate(150%); border-bottom: 1px solid var(--line);
+}
+.legal-shell > header nav {
+  display: flex; align-items: center; gap: 4px; overflow-x: auto; scrollbar-width: none; white-space: nowrap;
+  -webkit-mask-image: linear-gradient(90deg, #000 86%, transparent); mask-image: linear-gradient(90deg, #000 86%, transparent); padding-right: 40px;
+}
+.legal-shell > header nav::-webkit-scrollbar { display: none; }
+.legal-shell > header nav strong { display: inline-flex; align-items: center; gap: 8px; margin-right: 8px; color: var(--text); font-size: 1.25rem; font-weight: 800; letter-spacing: -0.02em; }
+.legal-shell > header nav strong::before { content: ""; width: 20px; height: 27px; background: url("../img/logo-white-64.png") center / contain no-repeat; }
+.legal-shell > header nav a { display: inline-flex; align-items: center; min-height: 56px; padding: 0 10px; color: var(--muted); text-decoration: none; font-size: .9375rem; font-weight: 600; }
+.legal-shell > header nav a:hover { color: var(--text); }
+.legal-shell > header nav a:first-of-type { color: var(--blue-soft); }
+
+/* ----- document ----- */
+.legal-shell h1 { margin: 48px 0 12px; color: var(--text); text-wrap: balance; font-size: clamp(2.2rem, 8vw, 3.5rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1.05; }
+.legal-shell h2 { margin: 44px 0 12px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--text); font-size: 1.5rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1.2; }
+.legal-shell h3 { margin: 26px 0 6px; color: var(--text); font-size: 1.125rem; font-weight: 700; letter-spacing: -0.02em; }
+.legal-shell p { margin: 0 0 14px; }
+.legal-shell strong { color: var(--text); font-weight: 700; }
+.legal-shell ul { margin: 0 0 18px; padding-left: 22px; }
+.legal-shell li { margin-bottom: 10px; }
+.legal-shell li::marker { color: var(--blue); }
+.legal-shell .last-updated, .legal-shell .last-updated strong { color: var(--muted); font-size: .9375rem; }
+.legal-shell .hero { padding-bottom: 8px; }
+.legal-shell .hero .tagline { margin: 4px 0 18px; color: var(--blue-soft); font-size: 1.25rem; font-weight: 700; letter-spacing: -0.02em; }
+.legal-shell .hero p:not(.tagline) { font-size: 1.125rem; }
+.legal-shell ul.features { list-style: none; padding: 0; display: grid; gap: 10px; }
+.legal-shell ul.features li { margin: 0; padding: 16px 18px; border-radius: 18px; background: var(--s1); border: 0; box-shadow: inset 0 1px 0 rgba(255, 255, 255, .14), inset 0 0 0 1px rgba(255, 255, 255, .04); -webkit-backdrop-filter: blur(22px) saturate(150%); backdrop-filter: blur(22px) saturate(150%); }
+
+/* ----- footer ----- */
+.legal-shell > footer { margin-top: 56px; color: var(--muted); font-size: .875rem; }
+.legal-shell > footer hr { height: 1px; margin: 0 0 18px; border: 0; background: var(--line); }
+.legal-shell > footer nav { display: flex; flex-wrap: wrap; margin-left: -10px; }
+.legal-shell > footer nav a { display: inline-block; padding: 10px; color: var(--text); text-decoration: none; font-size: .9375rem; font-weight: 600; }
+.legal-shell > footer nav a:hover { color: var(--blue-soft); }
+
+@media print {
+  body { background: #fff; color: #000; }
+  .legal-shell > header { position: static; background: none; }
+  .legal-shell h1, .legal-shell h2, .legal-shell h3, .legal-shell strong { color: #000; }
+}

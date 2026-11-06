@@ -1,0 +1,146 @@
+# JAC design model (Hue). Single source of truth for the site's colour, type and surface tokens.
+# Branch `new`. Derived from the real app captures in assets/img/screens/* (pixel-sampled 2026-10-30)
+# and applied to assets/css/main.css (:root block, every colour on the page goes through it).
+name: "JAC"
+philosophy: "An instrument for people who work under pressure, not a brochure. Deep cool navy like the app at night, one blue that means act or linked, and colour only where the law or the shift calendar gives it meaning. Everything else is ink and paper."
+primary_mode: "dark"
+brand_domain: "offline legal reference and shift calendar for Romanian operative personnel"
+brand_type: "ui-rich"
+mono_for_code: false
+mono_for_metrics: false   # figures stay in Manrope with tabular numerals, as in the app
+
+observed:                   # sampled from the captures (most common pixels)
+  app_ground: "#111823"     # screen background in every module
+  app_card: "#192533"       # cards and list rows
+  app_line: "#2a3a49"       # card outlines
+  app_link: "#4890f0"       # links, active tab, selected chip (site keeps #4c8dff, delta under 2 percent)
+  app_infraction: "#f0786c" # INFRACȚIUNE badge, PEDEAPSĂ block (site: #f2777a)
+  logo: "white shield on navy"
+
+primitives:
+  colors:
+    neutral:                # cool navy ramp; 900 is the site ground, 800 the app ground
+      950: "#060a14"
+      925: "#0a0f1c"
+      900: "#0e1526"
+      850: "#0f1830"
+      800: "#111823"
+      750: "#142038"
+      700: "#192533"
+      600: "#2a3a5c"
+      400: "#9aa6bd"
+      300: "#b9c4d8"
+      100: "#eef2fa"
+      50: "#f7f9ff"
+    brand:                  # the app blue
+      200: "#9cc2ff"
+      500: "#4c8dff"
+      600: "#2259e0"
+      700: "#1b4ec9"
+    red: { 400: "#f2777a", 500: "#e5484d", 700: "#c42b20" }
+    amber: { 300: "#ffd27a", 900: "#3a2600" }
+    orange: { 400: "#ff8a4c", 200: "#ffb48a" }
+    green: { 200: "#9fe3c2" }
+    paper: { 50: "#f6f8fc", 100: "#eef1f8", 300: "#d5dceb", 500: "#9fb0cc", 700: "#3b4a66", 900: "#13203a", link: "#2f5fd0" }
+    shift:                  # Shiftr's ten shift types, as the app colours them; data only
+      z: "#8fb3ff"
+      p: "#7fd1a8"
+      n: "#b9a2ff"
+      s1: "#f6c177"
+      s2: "#f2a37c"
+      s3: "#e9867a"
+      c: "#a9b8d9"
+      r: "#7fc4ff"
+      l: "#8ed6c0"
+      zs: "#d7b4f3"
+  radii: [10, 14, 20, 24]
+  control_heights: [44, 52]
+
+tokens:
+  colors:
+    dark:
+      background: "{neutral.925}"
+      surface1: "{neutral.850}"
+      surface2: "{neutral.750}"
+      surface3: "{neutral.700}"
+      border: "rgba(160, 185, 235, .12)"
+      border_visible: "rgba(160, 185, 235, .24)"
+      text1: "{neutral.100}"
+      text2: "{neutral.300}"
+      text3: "{neutral.400}"
+      accent: "{brand.500}"
+      accent_soft: "{brand.200}"
+      accent_strong: "{brand.600}"
+      accent_strong_hover: "{brand.700}"
+      on_accent: "{neutral.50}"
+      accent_subtle: "rgba(76, 141, 255, .1)"
+      error: "{red.400}"
+    penalty: "{red.400}"         # infraction, penalty, overtime; never decoration
+    penalty_fill: "{red.500}"    # bars only, never under text
+    warning: "{orange.400}"      # the overspeed class above +20 km/h
+    pro: "{amber.300}"           # PRO tag, on {amber.900} ink
+    success: "{green.200}"       # privacy note only
+    paper: "{paper.50}"          # documents (PV, case files) sit on paper
+    paper_ink: "{paper.900}"
+    stamp: "{red.700}"
+  css_names:                     # how the roles are spelled in main.css
+    background: "--bg"
+    surface1: "--raised"
+    surface2: "--raised-2"
+    surface3: "--screen-2"
+    border: "--line"
+    border_visible: "--line-2"
+    text1: "--text"
+    text2: "--text-2"
+    text3: "--muted"
+    accent: "--blue"
+    accent_soft: "--blue-soft"
+    accent_strong: "--btn-bot"
+    accent_strong_hover: "--btn-hover"
+    on_accent: "--on-accent"
+  contrast_checked:              # WCAG 2.x ratios, computed
+    text1_on_bg: 17.05
+    text2_on_bg: 10.88
+    text3_on_bg: 7.8
+    text3_on_surface2: 6.62
+    accent_on_bg: 5.98
+    accent_soft_on_bg: 10.54
+    on_accent_on_accent_strong: 5.58
+    on_accent_on_hover: 6.69
+    penalty_on_bg: 7.01
+    warning_ink_on_surface1: 10.18
+    on_pro_on_pro: 10.12
+    paper_ink_on_paper: 15.25
+    paper_link_on_paper: 5.38
+    stamp_on_paper: 5.0
+  typography:
+    display: { family: "Manrope", size: "clamp(40px, 10.5vw, 80px)", weight: 800, tracking: "-0.04em", line_height: 1.02 }
+    heading: { family: "Manrope", size: "clamp(22px, 5vw, 34px)", weight: 700, tracking: "-0.03em", line_height: 1.15 }
+    body: { family: "Manrope", size: "17px", weight: 500, line_height: 1.55 }
+    mono: { family: "none", size: "0", weight: 0 }
+    weights: "500 running text, 700 labels and claims, 800 heads and figures"
+    numerals: "tabular for article counts, prices and hours"
+  elevation: { strategy: "flat", note: "surfaces step by tone and a 1px line; only phones, floating chips over art and the open viewer cast a shadow, and it is black, never blue" }
+  motion: { personality: "smooth", easing: "cubic-bezier(.16, 1, .3, 1)", fast: "200ms", normal: "400ms", rule: "transform and opacity only" }
+
+  hero_stage:
+    preset: "device-on-mesh"
+    observed_style:
+      description: "Three real app captures in 3D phone frames on a flat navy ground; the centre phone faces the reader, the side phones turn away and dim. No mesh, no glow behind them."
+      where_used: ["home hero", "module page heroes"]
+    background: { medium: "absent", color_mode: "monochrome", saturation: "flat", light_source: "none", falloff: "soft", vignette: "off", texture: "grain", motion: "static", intensity: "subtle", safe_zone: "full-bleed" }
+    hero: { subject: "device", placement: "right", scale: "large", tint: "none" }
+    relation: { type: "shadow-only", bleed: 0 }
+
+  iconography:
+    observed_style: { description: "Material-style outline glyphs inside the app; the site uses almost none.", stroke_weight: "regular", corner_treatment: "soft", fill_style: "outline", form_language: "geometric", visual_density: "minimal" }
+    fallback_kit: { name: "inline SVG, 2px stroke, round caps", match_score: "medium", match_reasoning: "The site needs four glyphs (arrows, expand, close); inline 2px round-cap strokes match the app's outline set without loading a kit." }
+
+anti_patterns:
+  - "No gradient on text, buttons, chips or panels; the only gradients left are the spine shading of the law books and the screen glare on the phone glass, both physical."
+  - "No coloured glow; shadows are black and sit only under phones and floating chips."
+  - "No second accent hue on interface surfaces; the law-book spines and law tags carry one hue per act, as objects, never as UI."
+  - "No red outside a penalty, an infraction or overtime."
+  - "No amber outside PRO."
+  - "No Shiftr shift colour outside the Shiftr legend."
+  - "No colour literal outside :root; a new colour is a new role first."

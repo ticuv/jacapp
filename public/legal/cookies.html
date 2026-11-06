@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JAC — Politica de cookie-uri</title>
+<meta name="description" content="Politica de cookie-uri JAC. Site-ul static nu setează cookie-uri. Aplicația poate folosi identificatori Google pentru reclame și consimțământ.">
+<link rel="canonical" href="https://aplicatiajac.ro/legal/cookies.html">
+<meta name="theme-color" content="#0a0f1c">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32.png">
+<link rel="stylesheet" href="../assets/css/legal.css?v=2">
+</head>
+<body>
+<div class="legal-shell">
+
+<header><nav><strong>JAC</strong> &nbsp; <a href="../">Pagina principală</a> <a href="index.html">Despre JAC</a> <a href="privacy.html">Confidențialitate</a> <a href="terms.html">Termeni de utilizare</a> <a href="cookies.html">Cookie-uri</a> <a href="asistenta.html">Asistență</a></nav></header>
+
+<h1>Politica de cookie-uri</h1>
+
+<h2>Situația actuală a site-ului</h2>
+<p>Acest site (paginile de documente JAC) este <strong>static</strong>: nu utilizează cookie-uri, nu setează cookie-uri de publicitate sau de urmărire între site-uri și nu folosește tehnologii de urmărire. Nu există conturi, formulare de login sau conținut încorporat care să stocheze informații în browserul dumneavoastră.</p>
+
+<h2>Aplicația Android JAC</h2>
+<p>Aplicația JAC nu utilizează cookie-uri în sensul clasic al site-urilor web. În versiunea <strong>Basic</strong>, publicitatea este gestionată prin <strong>Google Mobile Ads</strong>, iar consimțământul pentru utilizatorii din SEE/Regatul Unit prin <strong>Google User Messaging Platform (UMP)</strong>. Aceste servicii pot folosi identificatori de dispozitiv (de exemplu identificatorul de publicitate) și pot stoca local starea consimțământului. Datele de cont și prelucrarea locală Shiftr sunt descrise în <a href="privacy.html">Politica de confidențialitate</a>. SDK-urile Google pot utiliza identificatori de dispozitiv și stocări locale necesare furnizării reclamelor și gestionării consimțământului; acestea nu sunt cookie-uri web clasice.</p>
+
+<h2>Gestionarea consimțământului</h2>
+<p>În aplicație, opțiunile de consimțământ sunt accesibile din <strong>Setări → „Opțiuni de confidențialitate”</strong>, atunci când Google UMP pune această opțiune la dispoziție.</p>
+
+<h2>Dacă adăugăm analiză sau conținut încorporat în viitor</h2>
+<p>Dacă se modifică tehnologiile utilizate de site sau de aplicație, această politică va fi actualizată pentru a descrie schimbările relevante și opțiunile utilizatorilor.</p>
+
+<footer>
+  <hr>
+  <p>© 2026 JAC. Informații privind cookie-urile și tehnologiile similare pentru site și aplicația Android.</p>
+  <nav><a href="index.html">Despre JAC</a> <a href="privacy.html">Confidențialitate</a> <a href="terms.html">Termeni de utilizare</a> <a href="cookies.html">Cookie-uri</a> <a href="asistenta.html">Asistență</a></nav>
+</footer>
+
+</div>
+
+<script>
+  (function () {
+    if (window.parent === window) return;
+    document.addEventListener('click', function (e) {
+      var a = e.target && e.target.closest ? e.target.closest('a') : null;
+      if (!a) return;
+      var href = (a.getAttribute('href') || '').trim();
+      if (href === '../' || href === '/' || href === './') {
+        e.preventDefault();
+        window.parent.postMessage('jac:close-legal', '*');
+      }
+    }, true);
+  })();
+</script>
+</body>
+</html>
