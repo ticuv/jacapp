@@ -164,15 +164,25 @@ button { font: inherit; color: inherit; }
 
 /* ---------- hero deck: six real screens; one at the centre, one each side, the rest waiting behind ---------- */
 .hero__deck { position: relative; display: grid; perspective: 1400px; }
-.hero__deck > .phone { grid-area: 1 / 1; will-change: transform; transition: transform 1s cubic-bezier(.65, 0, .25, 1), opacity .8s var(--out), filter .8s var(--out); }
+/* one long, soft ease for every property, so position, light and fade move as one gesture */
+.hero__deck > .phone {
+  --ease: cubic-bezier(.45, .05, .2, 1);
+  grid-area: 1 / 1; will-change: transform, opacity;
+  transition: transform 1.4s var(--ease), opacity 1.4s var(--ease), filter 1.4s var(--ease);
+}
 .hero__deck > .phone[data-pos="center"] { transform: none; z-index: 4; }
 .hero__deck > .phone[data-pos="left"] { transform: translateX(-80%) scale(.76) rotateY(28deg); filter: brightness(.5); z-index: 3; }
 .hero__deck > .phone[data-pos="right"] { transform: translateX(80%) scale(.76) rotateY(-28deg); filter: brightness(.5); z-index: 3; }
-.hero__deck > .phone[data-pos="back"] { transform: scale(.55); opacity: 0; z-index: 1; }
+/* the next one waits further right, already turned, and fades in on its way; the one leaving fades out further left,
+   so no phone ever crosses behind the centre one */
+.hero__deck > .phone[data-pos="back"] { transform: translateX(150%) scale(.56) rotateY(-40deg); filter: brightness(.3); opacity: 0; z-index: 1; }
+.hero__deck > .phone[data-pos="out"] { transform: translateX(-150%) scale(.56) rotateY(40deg); filter: brightness(.3); opacity: 0; z-index: 1; }
 @media (min-width: 1024px) {
   .hero__deck { height: 100%; grid-template: 100% / 100%; }
   .hero__deck > .phone[data-pos="left"] { transform: translateX(-92%) scale(.78) rotateY(28deg); }
   .hero__deck > .phone[data-pos="right"] { transform: translateX(92%) scale(.78) rotateY(-28deg); }
+  .hero__deck > .phone[data-pos="back"] { transform: translateX(170%) scale(.58) rotateY(-40deg); }
+  .hero__deck > .phone[data-pos="out"] { transform: translateX(-170%) scale(.58) rotateY(40deg); }
 }
 /* the side phones slide out from behind the centre one once its screen is on */
 @media (prefers-reduced-motion: no-preference) {
@@ -610,7 +620,8 @@ button { font: inherit; color: inherit; }
 .hero__lit [data-t]::before { content: attr(data-t); }
 
 /* no blue box on tap (Android's default highlight, and no text selection on controls); keyboard focus keeps its outline */
-a, button, summary, label { -webkit-tap-highlight-color: transparent; }
+/* no blue box on tap anywhere (the phones in the carousels are tappable too); keyboard focus keeps its own outline */
+html, a, button, summary, label, [role="button"], .phone { -webkit-tap-highlight-color: transparent; }
 button { -webkit-user-select: none; user-select: none; }
 .mnav__btn:focus:not(:focus-visible) { outline: none; }
 

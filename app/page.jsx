@@ -36,9 +36,9 @@ const LD = {
 
 /* The hero deck: six real screens. One stands at the centre for a second, then they all slide one place right to
    left (the one on the right comes to the centre, the centre one goes left), the way the old home page did it. */
-const DECK = ["app-acasa", "app-rutier-module", "app-shiftr-a", "app-ghid-capitole", "app-ghid-drone", "app-text-integral"];
+const DECK = ["app-acasa", "app-rutier-module", "app-penal-module", "app-shiftr-a", "app-ghid-capitole", "app-ghid-drone", "app-text-integral"];
 const DECK_ALT = "Ecranul Acasă din JAC: salutul „Salutare, ticuv” cu avatarul PRO încadrat de lauri aurii, cardul Programul tău („Liber azi. De Zi duminică.”, 160h din 160h), căutarea în baza locală de 3.542 de articole offline și plăcile Cod penal, Legi speciale, Regim rutier și Text integral.";
-const deckPos = (i, n) => (i === 0 ? "center" : i === 1 ? "right" : i === n - 1 ? "left" : "back");
+const deckPos = (i, n) => (i === 0 ? "center" : i === 1 ? "right" : i === n - 1 ? "left" : i === n - 2 ? "out" : "back");
 
 export default function HomePage() {
   return (
