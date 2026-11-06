@@ -13,7 +13,7 @@ export const metadata = {
 
 const TYPES = [
   ["Z", "Zi", "#2F6BFF", "tura de zi"], ["N", "Noapte", "#F08A5D", "tura de noapte"], ["S1", "Schimbul 1", "#7FA6FF", "program în schimburi"], ["S2", "Schimbul 2", "#8B5CF6", "program în schimburi"],
-  ["S3", "Schimbul 3", "#38BDF8", "program în schimburi"], ["C", "Concediu", "#E8B54A", "concediul și medicalul se socotesc singure"], ["R", "Recuperare", "#69BFAE", "scade din soldul de ore suplimentare"], ["L", "Liber", "#8B97A1", "nu adaugă ore lucrate"],
+  ["S3", "Schimbul 3", "#38BDF8", "program în schimburi"], ["C", "Concediu", "#E8B54A", "concediul și medicalul se calculează singure"], ["R", "Recuperare", "#69BFAE", "scade din soldul de ore suplimentare"], ["L", "Liber", "#8B97A1", "nu adaugă ore lucrate"],
 ];
 
 const ROWS = [
@@ -84,7 +84,7 @@ export default function ShiftrPage() {
               <ol className="formula" style={{ marginTop: 28 }}>
                 <li className="glass" data-r=""><b>Norma lunii</b><span><code>zile lucrătoare × 8h</code> minus sărbătorile legale. În noiembrie 2026: <code>21 × 8h − 1 sărbătoare = 160h</code>.</span></li>
                 <li className="glass" data-r="" style={{ "--d": 1 }}><b>Orele suplimentare</b><span>Se calculează singure: <code>ore lucrate − normă</code>.</span></li>
-                <li className="glass" data-r="" style={{ "--d": 2 }}><b>Concediile și medicalele</b><span>Fără bătăi de cap cu calcularea lor: Shiftr le socotește singur în normă, inclusiv când cad în weekend sau de sărbători.</span></li>
+                <li className="glass" data-r="" style={{ "--d": 2 }}><b>Concediile și medicalele</b><span>Fără bătăi de cap cu calcularea lor: Shiftr le calculează singur în normă, inclusiv când cad în weekend sau de sărbători.</span></li>
                 <li className="glass" data-r="" style={{ "--d": 3 }}><b>Soldul</b><span>Scade cu recuperările acordate: <code>sold = peste normă − recuperări</code>.</span></li>
                 <li className="glass" data-r="" style={{ "--d": 4 }}><b>Ore din altă aplicație</b><span>Orele aduse din altă evidență se adaugă manual, cu butonul „+” de lângă sold.</span></li>
               </ol>

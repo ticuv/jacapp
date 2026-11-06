@@ -83,7 +83,7 @@ export default function HomePage() {
               </article>
               <article className="chap__item" aria-labelledby="ch-shiftr" data-shiftr2="" data-norm="160">
                 <h2 id="ch-shiftr" className="chap__num"><span className="sr-only">Shiftr, soldul de ore suplimentare: </span><span className="chap__mask"><span className="mono" data-o="bal" aria-live="polite">+12h</span></span></h2>
-                <p className="chap__text">Notezi turele, Shiftr socotește norma, orele peste normă și soldul după recuperări. Datele rămân pe telefon.</p>
+                <p className="chap__text">Notezi turele, Shiftr calculează norma, orele peste normă și soldul după recuperări. Datele rămân pe telefon.</p>
                 <div className="calc2" role="group" aria-label="Exemplu de calcul Shiftr, noiembrie 2026">
                   <div className="calc2__row"><span>Normă</span><b className="mono">160h</b></div>
                   <div className="calc2__row"><span>Lucrate</span><b className="mono" data-o="lucrate">172h</b></div>
