@@ -201,7 +201,46 @@ export default function HomePage() {
           <div className="wrap pro2__inner">
             <Laurels />
             <h2 id="pro-title" className="pro2__title">Fondator în perioada beta.</h2>
-            <p className="pro2__text">JAC PRO deschide toate legile speciale și soldul din Shiftr, pentru tine și un echipaj de până la 5 colegi. În beta, contul Fondator le are pe toate. Abonamentele vin după lansarea comercială.</p>
+            <p className="pro2__text">În beta, contul Fondator are PRO complet. La lansare, fondatorii păstrează prețul de 5 lei pe lună, cât timp abonamentul rămâne activ.</p>
+            <div className="plans2" data-plans="">
+              <h3 className="sr-only">Prețuri</h3>
+              <div className="plans2__names" role="group" aria-label="Alege planul">
+                <button type="button" data-plan="basic" aria-pressed="false">Basic</button>
+                <button type="button" data-plan="pro" aria-pressed="false">PRO</button>
+                <button type="button" data-plan="fondator" aria-pressed="true">Fondator</button>
+                <button type="button" data-plan="echipaj" aria-pressed="false">Echipaj</button>
+              </div>
+              <div className="plans2__stage" aria-live="polite">
+                <section className="plans2__plan" data-for-plan="basic" aria-label="Basic">
+                  <p className="plans2__price"><b className="mono">0 lei</b><span>gratuit, cu reclame</span></p>
+                  <p className="plans2__text">Legislația de bază, căutarea și calendarul Shiftr, cu reclame. Fără ghidurile vizuale, fără calculele avansate din Shiftr, fără ghidul operativ și fără modulele PRO.</p>
+                </section>
+                <section className="plans2__plan" data-for-plan="pro" aria-label="PRO">
+                  <p className="plans2__price"><b className="mono">10 lei</b><span>pe lună</span></p>
+                  <p className="plans2__text">Toate modulele PRO, ghidurile vizuale, ghidul operativ și calculele avansate din Shiftr: soldul, recuperările, orele manuale, concediile și medicalele. Fără reclame.</p>
+                </section>
+                <section className="plans2__plan" data-for-plan="fondator" aria-label="Fondator">
+                  <p className="plans2__price"><b className="mono">5 lei</b><span>pe lună</span></p>
+                  <p className="plans2__text">Tot ce are PRO, la jumătate de preț, fără să ai nevoie de echipaj. Prețul de fondator rămâne cât timp abonamentul e activ. Dacă îl oprești, revii la 10 lei pe lună.</p>
+                </section>
+                <section className="plans2__plan" data-for-plan="echipaj" aria-label="Echipaj">
+                  <fieldset className="plans2__bill">
+                    <legend className="sr-only">Plata echipajului</legend>
+                    <label><input type="radio" name="bill" value="an" defaultChecked /> Anual</label>
+                    <label><input type="radio" name="bill" value="luna" /> Lunar</label>
+                  </fieldset>
+                  <div data-bill="an">
+                    <p className="plans2__price"><b className="mono">3,33 lei</b><span>pe lună, de persoană</span></p>
+                    <p className="plans2__text">Abonament anual pentru tot echipajul de 5 colegi: 200 lei pe an, adică 40 lei de om. PRO complet pentru fiecare.</p>
+                  </div>
+                  <div data-bill="luna">
+                    <p className="plans2__price"><b className="mono">6 lei</b><span>pe lună, de persoană</span></p>
+                    <p className="plans2__text">Abonament lunar pentru tot echipajul de 5 colegi: 30 lei pe lună pentru toți. PRO complet pentru fiecare.</p>
+                  </div>
+                </section>
+              </div>
+            </div>
+            <p className="plans2__fine">Plata se face în aplicație, prin Google Play, după lansarea comercială. Pe acest site nu se fac plăți.</p>
             <a className="pro2__link" href={PLAY_URL || BETA_MAIL}>{PLAY_URL ? "Descarcă din Google Play" : "Cere acces la beta"}</a>
           </div>
         </section>
