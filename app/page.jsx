@@ -4,7 +4,7 @@ import Laurels from "@/components/Laurels";
 import PageEffects from "@/components/PageEffects";
 import { Phone, MainCta, PlayBanner } from "@/components/ui";
 
-const DESC = "JAC – Legislație și Ture: 33 de module offline, peste 3.500 de fișe, 28 de acte integrale, 6 ghiduri vizuale cu fotografii, ghidul operativ și planificatorul de ture Shiftr. Aplicație Android independentă.";
+const DESC = "JAC – Legislație și Ture: 33 de module offline, peste 3.500 de fișe, 33 de acte integrale, 6 ghiduri vizuale cu fotografii, ghidul operativ și planificatorul de ture Shiftr. Aplicație Android independentă.";
 
 export const metadata = {
   title: "JAC – Legislație și Ture | Unicul instrument legislativ care le are pe toate",
@@ -37,7 +37,7 @@ const LD = {
 /* The hero deck: six real screens. One stands at the centre for a second, then they all slide one place right to
    left (the one on the right comes to the centre, the centre one goes left), the way the old home page did it. */
 const DECK = ["app-acasa", "app-rutier-module", "app-penal-module", "app-shiftr-a", "app-ghid-capitole", "app-ghid-drone", "app-text-integral"];
-const DECK_ALT = "Ecranul Acasă din JAC: salutul „Salutare, ticuv” cu avatarul PRO încadrat de lauri aurii, cardul Programul tău („Liber azi. De Zi duminică.”, 160h din 160h), căutarea în baza locală de 3.542 de articole offline și plăcile Cod penal, Legi speciale, Regim rutier și Text integral.";
+const DECK_ALT = "Ecranul Acasă din JAC: salutul „Bună seara, ticuv” cu avatarul încadrat de lauri aurii, cardul Programul tău („Liber azi. De Zi mâine.”, tura de joi 06:00–18:00 și 164h lucrate), căutarea în baza locală de 3.542 de articole offline și plăcile Cod penal, Legi speciale, Regim rutier și Text integral";
 const deckPos = (i, n) => (i === 0 ? "center" : i === 1 ? "right" : i === n - 1 ? "left" : i === n - 2 ? "out" : "back");
 
 export default function HomePage() {
@@ -99,7 +99,7 @@ export default function HomePage() {
               <article className="chap__item" aria-labelledby="ch-fise">
                 <h2 id="ch-fise" className="chap__num"><span className="sr-only">Fișe offline: </span><span className="chap__mask"><span className="mono">3.542</span></span></h2>
                 <p className="chap__text">De fișe în telefon, fără semnal: Codul penal, CPP, rutierul și 19 legi speciale. Scrii fapta și primești încadrarea exactă.</p>
-                <p className="chap__meta mono">33 de module · 28 de acte integrale</p>
+                <p className="chap__meta mono">33 de module · 33 de acte integrale</p>
                 <Phone name="app-legi-speciale" className="chap__phone-m" sizes="70vw" alt="Lista Legi speciale din JAC: 19 pachete legislative și 1.161 de fapte, de la Legea 61/1991 (ordine și liniște publică) la Domeniul silvic (170 de fapte)." />
               </article>
               <article className="chap__item" aria-labelledby="ch-shiftr" data-shiftr2="" data-norm="160">
@@ -279,7 +279,7 @@ export default function HomePage() {
                     <tr><th scope="row">Celelalte 11 legi speciale<small>arme, droguri, pirotehnice, silvic, drone, pescuit, vânătoare, pază, 112 și altele</small></th><td className="cmp__no">—</td><td className="cmp__pro">Da</td></tr>
                     <tr><th scope="row">Codul penal, CPP și procedura operativă<small>4 module, 1.369 de articole</small></th><td className="cmp__no">—</td><td className="cmp__pro">Da</td></tr>
                     <tr><th scope="row">Regim rutier, cu amenda calculată<small>10 module, 1.011 fapte și proceduri</small></th><td className="cmp__no">—</td><td className="cmp__pro">Da</td></tr>
-                    <tr><th scope="row">Legislație integrală<small>28 de acte, în text complet</small></th><td>Da</td><td className="cmp__pro">Da</td></tr>
+                    <tr><th scope="row">Legislație integrală<small>33 de acte, în text complet</small></th><td>Da</td><td className="cmp__pro">Da</td></tr>
                     <tr><th scope="row">Căutare în toate fișele<small>din ecranul Acasă</small></th><td className="cmp__no">—</td><td className="cmp__pro">Da</td></tr>
                     <tr><th scope="row">Favorite</th><td>până la 5</td><td className="cmp__pro">nelimitat</td></tr>
                     <tr className="cmp__group"><th scope="rowgroup" colSpan="3">Pe teren</th></tr>

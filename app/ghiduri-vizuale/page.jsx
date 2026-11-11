@@ -45,11 +45,11 @@ const GUIDES = [
     chips: [["tl", "red", "Interzis la intrare", "Pirotehnice"], ["br", "", "La poartă", "8 pași"]],
   },
   {
-    id: "caini", tag: "Câini periculoși", law: "OUG 55/2002", shot: "app-ghid-caini", back: "app-ghid-caini-2", backAlt: "Catalogul vizual Câini periculoși din JAC, categoria a II-a: portretul unui Rottweiler din profil și din față, gabaritul 40–50 kg, 56–68 cm, și trăsăturile de recunoaștere.",
-    t: "Câini periculoși, pe rase.",
-    p: "Catalog vizual pe cele două categorii din OUG 55/2002: 3 rase în categoria I și 9 în categoria a II-a, fiecare cu portret uniform din profil și din față, gabaritul și trăsăturile de recunoaștere. Plus obligațiile deținătorului și sancțiunile.",
-    list: ["Categoria I, regim strict: 3 rase", "Categoria a II-a: 9 rase", "Obligații: sterilizare, asigurare RC, plăcuța „Câine periculos”", "Metișii: asimilarea morfologică, pe trăsăturile dominante"],
-    alt: "Catalogul vizual Câini periculoși din JAC (OUG 55/2002): portretul din profil și din față al unui Pit Bull, categoria I, cu gabaritul, trăsăturile de recunoaștere și nota despre asimilarea morfologică a metișilor.",
+    id: "caini", tag: "Câini periculoși", law: "OUG 55/2002", shot: "app-ghid-caini", back: "app-ghid-caini-2", backAlt: "Ghidul Câini periculoși din JAC, tab-ul Control pe teren: situația „Câine din listă, la plimbare” în cinci pași, fiecare cu articolul din OUG 55/2002, și concluzia — fără botniță sau lesă, 1.500–3.000 lei.",
+    t: "Câini periculoși: rase, acte, agresivi.",
+    p: "Catalog vizual pe cele două categorii din OUG 55/2002 — 3 rase în categoria I și 9 în categoria a II-a, cu portret, gabarit și trăsături — plus ce faci pe teren: situații reale pas cu pas, ce dovedește fiecare act arătat de proprietar, cum judeci un metis și regimul câinelui agresiv, de orice rasă.",
+    list: ["Control pe teren: câine din listă, „e metis”, a mușcat, lăsat liber, lupte", "Acte: pedigree FCI și adeverința AChR dovedesc rasa; carnetul nu", "Câini agresivi (art. 2): orice rasă, cu botniță, lesă și plăcuță", "Fișa completă a sancțiunilor, art. 18–19 și infracțiunile art. 12–14"],
+    alt: "Catalogul vizual Câini periculoși din JAC (OUG 55/2002): portretul din profil și din față al unui Pit Bull, categoria I, cu gabaritul și trăsăturile de recunoaștere; deasupra, sancțiunile categoriei și butonul spre controlul pe teren.",
     chips: [["tl", "red", "Categoria I", "Pit Bull"], ["br", "", "Rase", "3 + 9"]],
   },
 ];
@@ -78,7 +78,7 @@ export default function GhiduriPage() {
             <Stage
               front="app-ghid-droguri"
               back="app-ghid-caini"
-              backAlt="Catalogul vizual Câini periculoși din JAC (OUG 55/2002): portretul din profil și din față al unui Pit Bull, categoria I, cu gabaritul, trăsăturile de recunoaștere și nota despre asimilarea morfologică a metișilor."
+              backAlt="Catalogul vizual Câini periculoși din JAC (OUG 55/2002): portretul din profil și din față al unui Pit Bull, categoria I, cu gabaritul și trăsăturile de recunoaștere; deasupra, sancțiunile categoriei și butonul spre controlul pe teren."
               backRight
               priority
               frontAlt="Ghidul Droguri din JAC: fișa Cannabis cu fotografia probei și modelul de descriere „În procesul-verbal”."

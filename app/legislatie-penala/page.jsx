@@ -5,7 +5,7 @@ import PageEffects from "@/components/PageEffects";
 import { FACTS as F, Stage, Chip, MainCta, CtaBand, Disclaimer } from "@/components/ui";
 
 export const metadata = {
-  title: "Codul penal, CPP integral și 28 de acte în text complet | JAC",
+  title: "Codul penal, CPP integral și 33 de acte în text complet | JAC",
   description: "Legislația penală din JAC, offline: 4 module și 1.369 de articole. Infracțiunile cu pedeapsa, competența și măsurile, partea generală, procedura operativă și Codul de procedură penală integral. Plus 28 de coduri și acte normative în text complet.",
   alternates: { canonical: "https://aplicatiajac.ro/legislatie-penala/" },
   openGraph: { title: "Codul penal și CPP integral în JAC", url: "https://aplicatiajac.ro/legislatie-penala/", siteName: "JAC", locale: "ro_RO", type: "website", images: [{ url: "https://aplicatiajac.ro/assets/img/og-jac-2026-11.jpg", width: 1200, height: 630 }] },
@@ -18,7 +18,7 @@ const ACTS = [
       ["Legea nr. 4/2008", "competiții și jocuri sportive"], ["Legea nr. 54/2012", "activitățile de picnic"], ["Legea nr. 60/1991", "adunările publice"],
       ["Legea nr. 61/1991", "ordinea și liniștea publică"], ["Legea nr. 126/1995", "regimul materiilor explozive"], ["Legea nr. 143/2000", "traficul și consumul de droguri"],
       ["Legea nr. 145/2014", "piața produselor agricole"], ["Legea nr. 171/2010", "contravențiile silvice"], ["Legea nr. 176/2024", "pescuitul și resursa acvatică vie"],
-      ["Legea nr. 194/2011", "produse cu efecte psihoactive"], ["Legea nr. 217/2003", "violența domestică"], ["Legea nr. 295/2004", "regimul armelor și munițiilor"],
+      ["Legea nr. 194/2011", "produse cu efecte psihoactive"], ["Legea nr. 203/2018", "plata amenzilor contravenționale"], ["Legea nr. 217/2003", "violența domestică"], ["Legea nr. 295/2004", "regimul armelor și munițiilor"],
       ["Legea nr. 333/2003", "paza obiectivelor, bunurilor și valorilor"], ["Legea nr. 349/2002", "consumul produselor din tutun"], ["Legea nr. 365/2002", "comerțul electronic"],
       ["Legea nr. 407/2006", "vânătoarea și fondul cinegetic"],
     ],
@@ -27,7 +27,7 @@ const ACTS = [
     g: "Ordonanțe și hotărâri", items: [
       ["OUG nr. 195/2002", "circulația pe drumurile publice"], ["HG nr. 1391/2006", "regulamentul OUG 195/2002"], ["OG nr. 2/2001", "regimul juridic al contravențiilor"],
       ["OUG nr. 34/2008", "sistemul 112"], ["OUG nr. 55/2002", "câinii periculoși sau agresivi"], ["OUG nr. 97/2005", "evidența și actele de identitate"],
-      ["HG nr. 11/2018", "hotărârea de aprobare a normelor Legii 295/2004"], ["Normele metodologice", "de aplicare a Legii 295/2004 (HG 11/2018)"],
+      ["HG nr. 11/2018", "hotărârea de aprobare a normelor Legii 295/2004"], ["HG nr. 643/2020", "dronele (regulamentele UE 2019/945 și 2019/947)"], ["HG nr. 859/2021", "autorizarea zborurilor în spațiul aerian"], ["HG nr. 1102/2014", "articolele pirotehnice"], ["HG nr. 146/2026", "salariul minim (punctul-amendă)"], ["Normele metodologice", "de aplicare a Legii 295/2004 (HG 11/2018)"],
     ],
   },
 ];
@@ -114,7 +114,7 @@ export default function PenalPage() {
               </div>
               <Stage
                 front="app-text-integral"
-                frontAlt="Legislația integrală din JAC: grupa Coduri, cu Codul aerian (Legea 21/2020, 136 de articole), Codul silvic (Legea 331/2024, 163 de articole), Codul penal (Legea 286/2009, 459 de articole) și Codul de procedură penală (Legea 135/2010)."
+                frontAlt="Legislația integrală din JAC: grupa Coduri, cu Codul aerian (Legea 21/2020, 136 de articole), Codul silvic (Legea 331/2024, 163 de articole), Codul penal (Legea 286/2009, 459 de articole), Codul de procedură penală (Legea 135/2010, 641 de articole), apoi legile, de la Legea 126/1995 și Codul de procedură penală (Legea 135/2010)."
               >
                 <Chip pos="tl" tone="blue" k="Text integral">{total} de acte</Chip>
                 <Chip pos="br" k="Căutare">în articole</Chip>

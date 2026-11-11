@@ -51,7 +51,7 @@ export default function LegiSpecialePage() {
             <Stage
               front="app-legi-speciale"
               back="app-ghid-caini"
-              backAlt="Catalogul vizual Câini periculoși din JAC (OUG 55/2002): portretul din profil și din față al unui Pit Bull, categoria I, cu gabaritul, trăsăturile de recunoaștere și nota despre asimilarea morfologică a metișilor."
+              backAlt="Catalogul vizual Câini periculoși din JAC (OUG 55/2002): portretul din profil și din față al unui Pit Bull, categoria I, cu gabaritul și trăsăturile de recunoaștere; deasupra, sancțiunile categoriei și butonul spre controlul pe teren."
               backRight
               priority
               frontAlt="Lista Legi speciale din JAC: 19 pachete legislative și 1.161 de fapte, de la Legea 61/1991 (ordine și liniște publică, 44 de fapte), Legea 60/1991, Legea 4/2008, OUG 55/2002, Legea 349/2002, Legea 217/2003, Legea 54/2012 și OUG 97/2005 la Domeniul silvic (170 de fapte)."
