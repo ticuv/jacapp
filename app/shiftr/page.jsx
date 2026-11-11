@@ -111,7 +111,7 @@ export default function ShiftrPage() {
             <div className="copy">
               <p className="eyebrow" data-r="">Gratuit și PRO</p>
               <h2 id="plan-title" className="h2" data-r="">Calendarul e gratuit. <span className="soft">Soldul e PRO.</span></h2>
-              <p className="lead" data-r="">Calendarul și orele lucrate față de normă sunt gratuite pentru toată lumea. Soldul de ore suplimentare și ce îl modifică sunt în PRO, deblocat acum prin contul Fondator.</p>
+              <p className="lead" data-r="">Calendarul și orele lucrate față de normă sunt gratuite pentru toată lumea. Soldul de ore suplimentare și ce îl modifică sunt în PRO, gratuit pentru toți până pe 15 ianuarie 2027.</p>
               <ul className="checks" data-r="">
                 <li><b>Datele rămân pe telefon.</b> Nimeni de la JAC nu îți vede turele.</li>
                 <li><b>Partajezi calendarul</b> cu colegii, când vrei tu.</li>

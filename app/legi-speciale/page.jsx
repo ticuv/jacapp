@@ -11,7 +11,7 @@ export const metadata = {
   openGraph: { title: "Legi speciale în JAC: 19 pachete, offline", url: "https://aplicatiajac.ro/legi-speciale/", siteName: "JAC", locale: "ro_RO", type: "website", images: [{ url: "https://aplicatiajac.ro/assets/img/og-jac-2026-11.jpg", width: 1200, height: 630 }] },
 };
 
-// The first 8 are BASIC (free); the rest are PREMIUM, unlocked during the beta by the Founder account.
+// The first 8 are BASIC (free); the rest are PREMIUM, free for everyone until 15 January 2027 (the founders' period).
 const LAWS = [
   { d: "Ordine și liniște publică", a: "Legea 61/1991", basic: true },
   { d: "Adunări publice", a: "Legea 60/1991", basic: true },
@@ -67,7 +67,7 @@ export default function LegiSpecialePage() {
             <div className="sec__head">
               <p className="eyebrow" data-r="">Ce conține</p>
               <h2 id="list-title" className="h2" data-r="">19 domenii. <span className="soft">8 gratuite.</span></h2>
-              <p className="lead" data-r="">Primele 8 legi speciale sunt în Basic, gratuit. Restul sunt PREMIUM, deblocate acum, în beta, prin contul Fondator.</p>
+              <p className="lead" data-r="">Primele 8 legi speciale sunt în Basic, gratuit. Restul sunt PREMIUM, gratuite pentru toți până pe 15 ianuarie 2027, în perioada fondatorilor.</p>
             </div>
             <ul className="mods" style={{ marginTop: 0 }}>
               {LAWS.map((l, i) => (

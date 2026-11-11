@@ -51,11 +51,11 @@ export default function HomePage() {
           <PlayBanner className="gp-pill--hero" />
           <div className="hero__head">
             <h1 id="hero-title" className="hero__title">
-              <span className="ln dim">Legea, toată.</span>{" "}
+              <span className="ln dim">Toată legea.</span>{" "}
               <span className="ln dim">În buzunarul tău.</span>
             </h1>
             <div className="hero__lit" aria-hidden="true">
-              <span className="ln"><span><span data-t="Legea, toată."></span></span></span>
+              <span className="ln"><span><span data-t="Toată legea."></span></span></span>
               <span className="ln"><span><span data-t="În buzunarul tău."></span></span></span>
             </div>
           </div>
@@ -221,8 +221,8 @@ export default function HomePage() {
         <section className="pro2" aria-labelledby="pro-title" data-in="">
           <div className="wrap pro2__inner">
             <Laurels />
-            <h2 id="pro-title" className="pro2__title">Fondator în perioada beta.</h2>
-            <p className="pro2__text">În beta, contul Fondator are PRO complet. La lansare, fondatorii păstrează prețul de 5 lei pe lună, cât timp abonamentul rămâne activ.</p>
+            <h2 id="pro-title" className="pro2__title">Perioada fondatorilor.</h2>
+            <p className="pro2__text">Până pe 15 ianuarie 2027, toate funcțiile PRO sunt gratuite. Cine își face cont acum devine Fondator și păstrează apoi prețul de 5 lei pe lună, cât timp abonamentul rămâne activ.</p>
             <div className="plans2" data-plans="">
               <h3 className="sr-only">Prețuri</h3>
               <div className="plans2__names" role="group" aria-label="Alege planul">
@@ -261,7 +261,7 @@ export default function HomePage() {
                 </section>
               </div>
             </div>
-            <p className="plans2__fine">Toate reducerile sunt calculate în funcție de prețul standard de 120 de lei pe an. Plata se face în aplicație, prin Google Play, după lansarea comercială. Pe acest site nu se fac plăți.</p>
+            <p className="plans2__fine">Toate reducerile sunt calculate în funcție de prețul standard de 120 de lei pe an. Plata se face în aplicație, prin Google Play, după perioada gratuită, care se încheie pe 15 ianuarie 2027. Pe acest site nu se fac plăți.</p>
             <a className="plans2__compare" href="#compara" data-open-compare="">Compară planurile</a>
             <dialog className="cmp" id="compara" aria-labelledby="cmp-title">
               <div className="cmp__head">
