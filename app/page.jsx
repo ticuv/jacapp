@@ -2,7 +2,7 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import Laurels from "@/components/Laurels";
 import PageEffects from "@/components/PageEffects";
-import { Phone, BETA_MAIL, PLAY_URL } from "@/components/ui";
+import { Phone, MainCta, PlayBanner } from "@/components/ui";
 
 const DESC = "JAC – Legislație și Ture: 33 de module offline, peste 3.500 de fișe, 28 de acte integrale, 6 ghiduri vizuale cu fotografii, ghidul operativ și planificatorul de ture Shiftr. Aplicație Android independentă.";
 
@@ -48,6 +48,7 @@ export default function HomePage() {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
 
         <section className="hero" aria-labelledby="hero-title" data-hero="">
+          <PlayBanner className="gp-pill--hero" />
           <div className="hero__head">
             <h1 id="hero-title" className="hero__title">
               <span className="ln dim">Legea, toată.</span>{" "}
@@ -82,7 +83,7 @@ export default function HomePage() {
           </div>
           <div className="hero__foot wrap">
             <p className="hero__line">Cod penal, rutier, legi speciale, ghiduri vizuale și turele tale. Offline.</p>
-            <a className="btn" href={PLAY_URL || BETA_MAIL}>{PLAY_URL ? "Descarcă din Google Play" : "Cere acces la beta"}</a>
+            <MainCta className="btn" />
           </div>
         </section>
 
@@ -296,7 +297,7 @@ export default function HomePage() {
                 </table>
               </div>
             </dialog>
-            <a className="pro2__link" href={PLAY_URL || BETA_MAIL}>{PLAY_URL ? "Descarcă din Google Play" : "Cere acces la beta"}</a>
+            <MainCta className="pro2__link" />
           </div>
         </section>
       </main>

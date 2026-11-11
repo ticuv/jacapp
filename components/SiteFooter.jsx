@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { PAGES, LEGAL } from "./SiteHeader";
+import { StoreDialog } from "./ui";
 
 // The close of every page: the links and the independence notice, then the name, so large the screen's edge cuts it.
 export default function SiteFooter() {
@@ -16,6 +17,7 @@ export default function SiteFooter() {
         <p className="ft__legal">JAC este o aplicație dezvoltată independent și nu reprezintă o instituție publică. Nu este afiliată, aprobată sau susținută de Guvernul României, MAI, Poliția Română, Jandarmeria Română ori alte autorități. Textele legislative provin din actele publice de pe <a href="https://legislatie.just.ro" rel="noopener">legislatie.just.ro</a>; aplicația are rol de orientare și nu înlocuiește forma oficială din Monitorul Oficial. Spețele și PV-urile model sunt exemple fictive. Calculele Shiftr sunt orientative. © 2026 JAC.</p>
       </div>
       <p className="ft__mark" aria-hidden="true">JAC</p>
+      <StoreDialog />
     </footer>
   );
 }

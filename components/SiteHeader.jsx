@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { PLAY_URL, BETA_MAIL } from "@/components/ui";
+import { PLAY_URL } from "@/components/ui";
 
 // One list drives the desktop links, the phone menu and the footer, so all three share the same order.
 const PAGES = [
@@ -34,10 +34,8 @@ export default function SiteHeader({ current }) {
           <nav className="nav" aria-label="Navigare principală">
             {PAGES.filter((p) => NAV.includes(p.key)).map((p) => <Link key={p.key} href={p.href} {...here(p.key)}>{p.label}</Link>)}
           </nav>
-          <a className="hdr__cta" href={PLAY_URL || BETA_MAIL} aria-label={PLAY_URL ? "Descarcă JAC din Google Play" : "Cere acces la beta JAC"} {...(PLAY_URL ? { rel: "noopener" } : {})}>
-            {PLAY_URL
-              ? <><span className="hdr__cta-l">Descarcă din Google Play</span><span className="hdr__cta-s" aria-hidden="true">Descarcă</span></>
-              : <><span className="hdr__cta-l">Cere acces la beta</span><span className="hdr__cta-s" aria-hidden="true">Acces beta</span></>}
+          <a className="hdr__cta" href={PLAY_URL} rel="noopener" data-open-store="" aria-haspopup="dialog" aria-label="Descarcă JAC acum">
+            <span className="hdr__cta-l">Descarcă acum</span><span className="hdr__cta-s" aria-hidden="true">Descarcă</span>
           </a>
           <div className="mnav" data-mnav="">
             <button type="button" className="mnav__btn" aria-expanded="false" aria-controls="mnav-panel">Meniu</button>

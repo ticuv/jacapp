@@ -16,8 +16,8 @@ export const FACTS = {
   punctAmenda: "216,25",
 };
 
-/* When the app is public on Google Play, set this to its store URL: every page then shows the Play button. */
-export const PLAY_URL = null;
+/* The app on Google Play. Every "Descarcă acum" button opens the store picker (Android now, iOS soon). */
+export const PLAY_URL = "https://play.google.com/store/apps/details?id=com.ticuv.jac";
 export const BETA_MAIL = "mailto:vladticu100@gmail.com?subject=Acces%20beta%20JAC";
 
 const W = [480, 800, 1175];
@@ -73,19 +73,73 @@ export function PlayIcon() {
   );
 }
 
-/* The primary action: Google Play once public, the closed beta until then. */
-export function MainCta({ size = "" }) {
-  if (PLAY_URL) {
-    return (
-      <a className={`btn btn--primary ${size}`.trim()} href={PLAY_URL} rel="noopener">
-        <PlayIcon />
-        <span>Descarcă din Google Play</span>
-      </a>
-    );
-  }
+/* The primary action. Without script it is a plain link to Google Play; with script it opens the store picker. */
+export function MainCta({ size = "", className = "btn btn--primary", label = "Descarcă acum", children }) {
   return (
-    <a className={`btn btn--primary ${size}`.trim()} href={BETA_MAIL}>
-      <span>Cere acces la beta</span>
+    <a className={`${className} ${size}`.trim()} href={PLAY_URL} rel="noopener" data-open-store="" aria-haspopup="dialog">
+      {children || <span>{label}</span>}
+    </a>
+  );
+}
+
+/* Google Play's four-colour mark, drawn inline. */
+export function GooglePlayMark() {
+  return (
+    <svg className="gp-mark" viewBox="0 0 24 26" aria-hidden="true">
+      <path fill="#00D7FE" d="M1.1.6C.8.9.6 1.4.6 2v22c0 .6.2 1.1.5 1.4l.1.1L13.6 13v-.3L1.2.5z" />
+      <path fill="#FFCE00" d="M17.7 17.2 13.6 13v-.3l4.1-4.2.1.1 4.9 2.8c1.4.8 1.4 2.1 0 2.9l-4.9 2.8z" />
+      <path fill="#FF3A44" d="M17.8 17.1 13.6 12.9 1.1 25.4c.5.5 1.2.5 2.1.1l14.6-8.4" />
+      <path fill="#00F076" d="M17.8 8.7 3.2.4C2.3-.1 1.6 0 1.1.5l12.5 12.4z" />
+    </svg>
+  );
+}
+
+function AppleMark() {
+  return (
+    <svg className="ap-mark" viewBox="0 0 20 24" aria-hidden="true">
+      <path fill="currentColor" d="M16.5 12.7c0-2.9 2.4-4.3 2.5-4.4-1.4-2-3.5-2.3-4.3-2.3-1.8-.2-3.5 1.1-4.4 1.1-.9 0-2.3-1-3.8-1-2 0-3.8 1.1-4.8 2.9-2 3.5-.5 8.8 1.5 11.6 1 1.4 2.1 3 3.6 2.9 1.4-.1 2-.9 3.8-.9s2.2.9 3.8.9c1.6 0 2.5-1.4 3.5-2.8 1.1-1.6 1.5-3.2 1.6-3.3-.1 0-3-1.2-3-4.7ZM13.6 4.1c.8-1 1.3-2.3 1.2-3.6-1.1 0-2.5.8-3.3 1.7-.7.8-1.4 2.2-1.2 3.5 1.3.1 2.5-.6 3.3-1.6Z" />
+    </svg>
+  );
+}
+
+/* The small store picker every "Descarcă acum" opens: Android goes to Google Play, iOS is coming soon.
+   One per page (it lives in the footer); script opens it as a modal, Esc or a click outside closes it. */
+export function StoreDialog() {
+  return (
+    <dialog className="store" id="descarca" aria-labelledby="store-title">
+      <div className="store__head">
+        <h2 id="store-title" className="store__title" tabIndex="-1">Descarcă JAC</h2>
+        <a className="store__close" href="#" data-close-store="" aria-label="Închide">×</a>
+      </div>
+      <p className="store__lead">Alege telefonul tău.</p>
+      <div className="store__opts">
+        <section className="store__opt store__opt--android" aria-label="Android">
+          <p className="store__os">Android</p>
+          <a className="gp-badge" href={PLAY_URL} rel="noopener">
+            <GooglePlayMark />
+            <span><small>Descarcă acum de pe</small><b>Google Play</b></span>
+          </a>
+        </section>
+        <section className="store__opt store__opt--ios" aria-label="iOS">
+          <p className="store__os">iOS</p>
+          <span className="ap-badge" aria-disabled="true">
+            <AppleMark />
+            <span><small>În curând pe</small><b>App Store</b></span>
+          </span>
+          <p className="store__soon">Disponibilă în curând</p>
+        </section>
+      </div>
+    </dialog>
+  );
+}
+
+/* A small pill that goes straight to the app on Google Play. */
+export function PlayBanner({ className = "" }) {
+  return (
+    <a className={`gp-pill ${className}`.trim()} href={PLAY_URL} rel="noopener">
+      <GooglePlayMark />
+      <span>Acum pe Google Play</span>
+      <span className="gp-pill__arrow" aria-hidden="true">→</span>
     </a>
   );
 }
@@ -107,9 +161,8 @@ export function CtaBand({ title = "Toată legea, în buzunar.", text }) {
       <div className="wrap">
         <div className="cta" data-r="scale">
           <h2 id="cta-title" className="h2">{title}</h2>
-          <p>{text || "JAC e în testare închisă pe Android. Scrie-ne și primești acces Fondator în perioada beta."}</p>
+          <p>{text || "JAC e disponibilă pe Android, în Google Play. Pe iOS vine în curând."}</p>
           <div className="btns"><MainCta /></div>
-          {PLAY_URL ? null : <p className="fine">Se deschide un e-mail către vladticu100@gmail.com</p>}
         </div>
       </div>
     </section>
