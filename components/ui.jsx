@@ -16,10 +16,10 @@ export const FACTS = {
   punctAmenda: "216,25",
 };
 
-/* The app on Google Play. Every "Descarcă acum" button opens the store picker (Android: Google Play, iOS: TestFlight beta). */
+/* The app on Google Play and the App Store. Every "Descarcă acum" button opens the store picker. */
 export const PLAY_URL = "https://play.google.com/store/apps/details?id=com.ticuv.jac";
-/* The iPhone beta: public TestFlight invitation (until the App Store release). */
-export const TESTFLIGHT_URL = "https://testflight.apple.com/join/tFV9dBVx";
+/* The app on the App Store (iPhone). */
+export const APPSTORE_URL = "https://apps.apple.com/ro/app/jac/id6834487466";
 export const BETA_MAIL = "mailto:vladticu100@gmail.com?subject=Acces%20beta%20JAC";
 
 const W = [480, 800, 1175];
@@ -96,7 +96,7 @@ export function GooglePlayMark() {
   );
 }
 
-function AppleMark() {
+export function AppleMark() {
   return (
     <svg className="ap-mark" viewBox="0 0 20 24" aria-hidden="true">
       <path fill="currentColor" d="M16.5 12.7c0-2.9 2.4-4.3 2.5-4.4-1.4-2-3.5-2.3-4.3-2.3-1.8-.2-3.5 1.1-4.4 1.1-.9 0-2.3-1-3.8-1-2 0-3.8 1.1-4.8 2.9-2 3.5-.5 8.8 1.5 11.6 1 1.4 2.1 3 3.6 2.9 1.4-.1 2-.9 3.8-.9s2.2.9 3.8.9c1.6 0 2.5-1.4 3.5-2.8 1.1-1.6 1.5-3.2 1.6-3.3-.1 0-3-1.2-3-4.7ZM13.6 4.1c.8-1 1.3-2.3 1.2-3.6-1.1 0-2.5.8-3.3 1.7-.7.8-1.4 2.2-1.2 3.5 1.3.1 2.5-.6 3.3-1.6Z" />
@@ -104,7 +104,7 @@ function AppleMark() {
   );
 }
 
-/* The small store picker every "Descarcă acum" opens: Android goes to Google Play, iOS to the TestFlight beta.
+/* The small store picker every "Descarcă acum" opens: Android goes to Google Play, iPhone to the App Store.
    One per page (it lives in the footer); script opens it as a modal, Esc or a click outside closes it. */
 export function StoreDialog() {
   return (
@@ -123,24 +123,24 @@ export function StoreDialog() {
           </a>
         </section>
         <section className="store__opt store__opt--ios" aria-label="iOS">
-          <p className="store__os">iOS <span className="store__beta">Beta</span></p>
-          <a className="ap-badge" href={TESTFLIGHT_URL} rel="noopener">
+          <p className="store__os">iOS</p>
+          <a className="ap-badge" href={APPSTORE_URL} rel="noopener">
             <AppleMark />
-            <span><small>Beta gratuită prin</small><b>TestFlight</b></span>
+            <span><small>Descarcă acum din</small><b>App Store</b></span>
           </a>
-          <p className="store__note">Instalează întâi <b>TestFlight</b> din App Store, apoi deschide linkul de pe iPhone și apasă „Accept” → „Install”.</p>
         </section>
       </div>
     </dialog>
   );
 }
 
-/* A small pill that goes straight to the app on Google Play. */
+/* A small pill: "now on Google Play and the App Store". Without script it goes to Google Play; with script it opens the store picker. */
 export function PlayBanner({ className = "" }) {
   return (
-    <a className={`gp-pill ${className}`.trim()} href={PLAY_URL} rel="noopener">
+    <a className={`gp-pill ${className}`.trim()} href={PLAY_URL} rel="noopener" data-open-store="" aria-haspopup="dialog">
       <GooglePlayMark />
-      <span>Acum pe Google Play</span>
+      <AppleMark />
+      <span>Acum pe Google Play și App Store</span>
       <span className="gp-pill__arrow" aria-hidden="true">→</span>
     </a>
   );
@@ -163,7 +163,7 @@ export function CtaBand({ title = "Toată legea, în buzunar.", text }) {
       <div className="wrap">
         <div className="cta" data-r="scale">
           <h2 id="cta-title" className="h2">{title}</h2>
-          <p>{text || "JAC e disponibilă pe Android, în Google Play, iar pe iPhone în beta gratuită, prin TestFlight."}</p>
+          <p>{text || "JAC e disponibilă pe Android, în Google Play, și pe iPhone, în App Store."}</p>
           <div className="btns"><MainCta /></div>
         </div>
       </div>

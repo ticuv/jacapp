@@ -4,7 +4,7 @@ import Laurels from "@/components/Laurels";
 import PageEffects from "@/components/PageEffects";
 import { Phone, MainCta, PlayBanner } from "@/components/ui";
 
-const DESC = "JAC – Legislație și Ture: 33 de module offline, peste 3.500 de fișe, 33 de acte integrale, 6 ghiduri vizuale cu fotografii, ghidul operativ și planificatorul de ture Shiftr. Aplicație Android independentă.";
+const DESC = "JAC – Legislație și Ture: 33 de module offline, peste 3.500 de fișe, 33 de acte integrale, 6 ghiduri vizuale cu fotografii, ghidul operativ și planificatorul de ture Shiftr. Aplicație independentă pentru Android și iPhone.";
 
 export const metadata = {
   title: "JAC – Legislație și Ture | Unicul instrument legislativ care le are pe toate",
@@ -26,7 +26,7 @@ const LD = {
   "@context": "https://schema.org",
   "@type": "MobileApplication",
   name: "JAC – Legislație și Ture",
-  operatingSystem: "Android",
+  operatingSystem: "Android, iOS",
   applicationCategory: "ReferenceApplication",
   description: DESC,
   url: "https://aplicatiajac.ro/",
@@ -261,7 +261,7 @@ export default function HomePage() {
                 </section>
               </div>
             </div>
-            <p className="plans2__fine">Toate reducerile sunt calculate în funcție de prețul standard de 120 de lei pe an. Plata se face în aplicație, prin Google Play, după lansarea comercială. Pe acest site nu se fac plăți.</p>
+            <p className="plans2__fine">Toate reducerile sunt calculate în funcție de prețul standard de 120 de lei pe an. Plata se face în aplicație, prin Google Play sau App Store, după lansarea comercială. Pe acest site nu se fac plăți.</p>
             <a className="plans2__compare" href="#compara" data-open-compare="">Compară planurile</a>
             <dialog className="cmp" id="compara" aria-labelledby="cmp-title">
               <div className="cmp__head">
