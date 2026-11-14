@@ -16,8 +16,10 @@ export const FACTS = {
   punctAmenda: "216,25",
 };
 
-/* The app on Google Play. Every "Descarcă acum" button opens the store picker (Android now, iOS soon). */
+/* The app on Google Play. Every "Descarcă acum" button opens the store picker (Android: Google Play, iOS: TestFlight beta). */
 export const PLAY_URL = "https://play.google.com/store/apps/details?id=com.ticuv.jac";
+/* The iPhone beta: public TestFlight invitation (until the App Store release). */
+export const TESTFLIGHT_URL = "https://testflight.apple.com/join/tFV9dBVx";
 export const BETA_MAIL = "mailto:vladticu100@gmail.com?subject=Acces%20beta%20JAC";
 
 const W = [480, 800, 1175];
@@ -102,7 +104,7 @@ function AppleMark() {
   );
 }
 
-/* The small store picker every "Descarcă acum" opens: Android goes to Google Play, iOS is coming soon.
+/* The small store picker every "Descarcă acum" opens: Android goes to Google Play, iOS to the TestFlight beta.
    One per page (it lives in the footer); script opens it as a modal, Esc or a click outside closes it. */
 export function StoreDialog() {
   return (
@@ -121,12 +123,12 @@ export function StoreDialog() {
           </a>
         </section>
         <section className="store__opt store__opt--ios" aria-label="iOS">
-          <p className="store__os">iOS</p>
-          <span className="ap-badge" aria-disabled="true">
+          <p className="store__os">iOS <span className="store__beta">Beta</span></p>
+          <a className="ap-badge" href={TESTFLIGHT_URL} rel="noopener">
             <AppleMark />
-            <span><small>În curând pe</small><b>App Store</b></span>
-          </span>
-          <p className="store__soon">Disponibilă în curând</p>
+            <span><small>Beta gratuită prin</small><b>TestFlight</b></span>
+          </a>
+          <p className="store__note">Instalează întâi <b>TestFlight</b> din App Store, apoi deschide linkul de pe iPhone și apasă „Accept” → „Install”.</p>
         </section>
       </div>
     </dialog>
@@ -161,7 +163,7 @@ export function CtaBand({ title = "Toată legea, în buzunar.", text }) {
       <div className="wrap">
         <div className="cta" data-r="scale">
           <h2 id="cta-title" className="h2">{title}</h2>
-          <p>{text || "JAC e disponibilă pe Android, în Google Play. Pe iOS vine în curând."}</p>
+          <p>{text || "JAC e disponibilă pe Android, în Google Play, iar pe iPhone în beta gratuită, prin TestFlight."}</p>
           <div className="btns"><MainCta /></div>
         </div>
       </div>

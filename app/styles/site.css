@@ -901,6 +901,9 @@ button { -webkit-user-select: none; user-select: none; }
 .store__opt { display: grid; gap: 10px; padding: 14px; border-radius: 16px; background: #0f1729; box-shadow: inset 0 0 0 1px rgba(127, 166, 255, .1); }
 .store__os { font-size: 13px; font-weight: 600; letter-spacing: .02em; color: var(--muted); }
 .store__soon { font-size: 13px; color: var(--gold); }
+.store__beta { display: inline-block; margin-left: 6px; padding: 1px 8px; border-radius: 999px; background: rgba(47, 107, 255, .18); color: var(--blue-l); font-size: 11px; letter-spacing: .04em; text-transform: uppercase; vertical-align: 1px; }
+.store__note { font-size: 13px; line-height: 1.45; color: var(--muted); }
+.store__note b { color: var(--ink); font-weight: 600; }
 /* the two badges share one shape: black, rounded, the store's mark, two lines of text */
 .gp-badge, .ap-badge {
   display: flex; align-items: center; gap: 12px; min-height: 56px; padding: 0 18px;
@@ -912,11 +915,10 @@ button { -webkit-user-select: none; user-select: none; }
 .gp-badge b, .ap-badge b { font-size: 20px; font-weight: 600; letter-spacing: -0.02em; }
 .gp-badge .gp-mark { width: 26px; }
 .ap-badge .ap-mark { width: 24px; }
-.gp-badge { transition: transform .4s cubic-bezier(.2, .9, .3, 1.3), box-shadow .3s var(--out); }
-.gp-badge:hover { transform: translateY(-2px); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .5), 0 14px 30px -12px rgba(47, 107, 255, .7); }
-.gp-badge:active { transform: scale(.98); }
-.gp-badge:focus-visible { outline: 2px solid var(--blue-l); outline-offset: 3px; }
-.ap-badge { opacity: .45; cursor: not-allowed; }
+.gp-badge, .ap-badge { transition: transform .4s cubic-bezier(.2, .9, .3, 1.3), box-shadow .3s var(--out); }
+.gp-badge:hover, .ap-badge:hover { transform: translateY(-2px); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .5), 0 14px 30px -12px rgba(47, 107, 255, .7); }
+.gp-badge:active, .ap-badge:active { transform: scale(.98); }
+.gp-badge:focus-visible, .ap-badge:focus-visible { outline: 2px solid var(--blue-l); outline-offset: 3px; }
 @media (prefers-reduced-motion: no-preference) {
   .store[open] { animation: store-in .45s cubic-bezier(.2, .9, .3, 1.2); }
   .store[open]::backdrop { animation: store-fade .3s ease; }
