@@ -48,7 +48,7 @@ export default function HomePage() {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(LD) }} />
 
         <section className="hero" aria-labelledby="hero-title" data-hero="">
-          <PlayBanner className="gp-pill--hero" />
+          <PlayBanner className="os-marks--hero" />
           <div className="hero__head">
             <h1 id="hero-title" className="hero__title">
               <span className="ln dim">Toată legea.</span>{" "}

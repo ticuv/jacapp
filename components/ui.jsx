@@ -134,15 +134,31 @@ export function StoreDialog() {
   );
 }
 
-/* A small pill: "now on Google Play and the App Store". Without script it goes to Google Play; with script it opens the store picker. */
+/* Two quiet silver marks under the bar: Android (Google Play) and Apple (App Store), each straight to its store. */
+const SILVER = (
+  <linearGradient id="silver-g" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stopColor="#f3f5f8" />
+    <stop offset=".55" stopColor="#b9c0ca" />
+    <stop offset="1" stopColor="#8a929e" />
+  </linearGradient>
+);
+
 export function PlayBanner({ className = "" }) {
   return (
-    <a className={`gp-pill ${className}`.trim()} href={PLAY_URL} rel="noopener" data-open-store="" aria-haspopup="dialog">
-      <GooglePlayMark />
-      <AppleMark />
-      <span>Acum pe Google Play și App Store</span>
-      <span className="gp-pill__arrow" aria-hidden="true">→</span>
-    </a>
+    <div className={`os-marks ${className}`.trim()}>
+      <a className="os-mark" href={PLAY_URL} rel="noopener" aria-label="JAC pe Google Play (Android)">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <defs>{SILVER}</defs>
+          <path fill="url(#silver-g)" d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85a.64.64 0 0 0-.83.22l-1.88 3.24a11.46 11.46 0 0 0-8.94 0L5.65 5.67a.64.64 0 0 0-.87-.2c-.28.18-.37.54-.22.83L6.4 9.48A10.78 10.78 0 0 0 1 18h22a10.78 10.78 0 0 0-5.4-8.52M7 15.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5m10 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5" />
+        </svg>
+      </a>
+      <span className="os-marks__sep" aria-hidden="true" />
+      <a className="os-mark" href={APPSTORE_URL} rel="noopener" aria-label="JAC pe App Store (iPhone)">
+        <svg viewBox="0 0 20 24" aria-hidden="true">
+          <path fill="url(#silver-g)" d="M16.5 12.7c0-2.9 2.4-4.3 2.5-4.4-1.4-2-3.5-2.3-4.3-2.3-1.8-.2-3.5 1.1-4.4 1.1-.9 0-2.3-1-3.8-1-2 0-3.8 1.1-4.8 2.9-2 3.5-.5 8.8 1.5 11.6 1 1.4 2.1 3 3.6 2.9 1.4-.1 2-.9 3.8-.9s2.2.9 3.8.9c1.6 0 2.5-1.4 3.5-2.8 1.1-1.6 1.5-3.2 1.6-3.3-.1 0-3-1.2-3-4.7ZM13.6 4.1c.8-1 1.3-2.3 1.2-3.6-1.1 0-2.5.8-3.3 1.7-.7.8-1.4 2.2-1.2 3.5 1.3.1 2.5-.6 3.3-1.6Z" />
+        </svg>
+      </a>
+    </div>
   );
 }
 
