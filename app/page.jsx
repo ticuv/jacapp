@@ -233,12 +233,12 @@ export default function HomePage() {
               </div>
               <div className="plans2__stage" aria-live="polite">
                 <section className="plans2__plan" data-for-plan="basic" aria-label="Basic">
-                  <p className="plans2__price"><b className="mono">0 lei</b><span>gratuit, cu reclame</span></p>
-                  <p className="plans2__text">Cele 8 legi speciale de bază, legislația integrală, ghidul vizual Fumat și calendarul Shiftr, cu reclame. Fără celelalte ghiduri vizuale, fără calculele avansate din Shiftr, fără ghidul operativ și fără modulele PRO.</p>
+                  <p className="plans2__price"><b className="mono">0 lei</b><span>gratuit, fără reclame</span></p>
+                  <p className="plans2__text">Cele 8 legi speciale de bază, legislația integrală, ghidul vizual Fumat și calendarul Shiftr, fără reclame. Fără celelalte ghiduri vizuale, fără calculele avansate din Shiftr, fără ghidul operativ și fără modulele PRO.</p>
                 </section>
                 <section className="plans2__plan" data-for-plan="pro" aria-label="PRO">
                   <p className="plans2__price"><b className="mono">10 lei</b><span>pe lună</span></p>
-                  <p className="plans2__text">Toate modulele PRO, ghidurile vizuale, ghidul operativ și calculele avansate din Shiftr: soldul, recuperările, orele manuale, concediile și medicalele. Fără reclame.</p>
+                  <p className="plans2__text">Toate modulele PRO, ghidurile vizuale, ghidul operativ și calculele avansate din Shiftr: soldul, recuperările, orele manuale, concediile și medicalele.</p>
                 </section>
                 <section className="plans2__plan" data-for-plan="fondator" aria-label="Fondator">
                   <p className="plans2__price"><span className="plans2__fig"><b className="mono">5 lei</b><sup className="plans2__off mono">−50%</sup></span><span>pe lună</span></p>
@@ -291,7 +291,7 @@ export default function HomePage() {
                     <tr><th scope="row">Recuperări și ore aduse din altă aplicație</th><td className="cmp__no">—</td><td className="cmp__pro">Da</td></tr>
                     <tr><th scope="row">Concedii și medicale calculate automat</th><td className="cmp__no">—</td><td className="cmp__pro">Da</td></tr>
                     <tr className="cmp__group"><th scope="rowgroup" colSpan="3">Contul</th></tr>
-                    <tr><th scope="row">Reclame</th><td>Da</td><td className="cmp__pro">Fără reclame</td></tr>
+                    <tr><th scope="row">Reclame</th><td>Nu</td><td className="cmp__pro">Nu</td></tr>
                     <tr><th scope="row">Avatarul cu lauri aurii</th><td className="cmp__no">—</td><td className="cmp__pro">Da</td></tr>
                   </tbody>
                 </table>
