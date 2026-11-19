@@ -713,7 +713,11 @@ button { -webkit-user-select: none; user-select: none; }
 .plans2__names [data-plan="basic"]::before { background: #9aa3ae; }
 .plans2__names [data-plan="pro"]::before { background: var(--blue-l); }
 .plans2__names [data-plan="echipaj"]::before { background: #69bfae; }
-[data-for-plan="echipaj"] .plans2__bill label:has(input:checked) { background: #69bfae; color: var(--black); }
+.plans2__stage { display: grid; gap: 22px; align-content: start; }
+.plans2[data-on="echipaj"] .plans2__bill label:has(input:checked) { background: #69bfae; color: var(--black); }
+.plans2[data-on="pro"] .plans2__bill label:has(input:checked) { background: var(--blue-l); color: var(--black); }
+.plans2[data-on="basic"] .plans2__bill { visibility: hidden; }
+[data-for-plan="pro"] .plans2__off, [data-for-plan="pro"] .plans2__save b { color: var(--blue-l); }
 .plans2__price b { white-space: nowrap; font-size: clamp(3.25rem, 1.2rem + 5.6vw, 6.5rem); }
 
 /* the saving against the standard plan, in the plan's own colour */

@@ -240,7 +240,7 @@ export default function HomePage() {
           <div className="wrap pro2__inner">
             <Laurels />
             <h2 id="pro-title" className="pro2__title">Perioada fondatorilor.</h2>
-            <p className="pro2__text">Intră cu Google în aplicație până pe 15 ianuarie 2027 și devii Fondator: ai toate funcțiile PRO gratuit până la lansarea comercială, apoi încă 30 de zile (sau 60, într-un echipaj). După aceea păstrezi prețul de 5 lei pe lună, cât timp abonamentul rămâne activ.</p>
+            <p className="pro2__text">Intră cu Google în aplicație până pe 15 ianuarie 2027 și devii Fondator: ai toate funcțiile PRO gratuit până la lansarea comercială, apoi încă 30 de zile (sau 60, într-un echipaj). După aceea păstrezi prețul de fondator, 5 lei pe lună sau 50 lei pe an, cât timp abonamentul rămâne activ.</p>
             <div className="plans2" data-plans="">
               <h3 className="sr-only">Prețuri</h3>
               <div className="plans2__names" role="group" aria-label="Alege planul">
@@ -250,36 +250,54 @@ export default function HomePage() {
                 <button type="button" data-plan="basic" aria-pressed="false">Basic</button>
               </div>
               <div className="plans2__stage" aria-live="polite">
-                <section className="plans2__plan" data-for-plan="basic" aria-label="Basic">
-                  <p className="plans2__price"><b className="mono">0 lei</b><span>gratuit, fără reclame</span></p>
-                  <p className="plans2__text">Cele 8 legi speciale de bază, legislația integrală, ghidul vizual Fumat și calendarul Shiftr, fără reclame. Fără celelalte ghiduri vizuale, fără calculele avansate din Shiftr, fără ghidul operativ și fără modulele PRO.</p>
-                </section>
-                <section className="plans2__plan" data-for-plan="pro" aria-label="PRO">
-                  <p className="plans2__price"><b className="mono">10 lei</b><span>pe lună</span></p>
-                  <p className="plans2__text">Toate modulele PRO, ghidurile vizuale, ghidul operativ și calculele avansate din Shiftr: soldul, recuperările, orele manuale, concediile și medicalele.</p>
-                </section>
-                <section className="plans2__plan" data-for-plan="fondator" aria-label="Fondator">
-                  <p className="plans2__price"><span className="plans2__fig"><b className="mono">5 lei</b><sup className="plans2__off mono">−50%</sup></span><span>pe lună</span></p>
-                  <p className="plans2__text">Tot ce are PRO, la jumătate de preț, fără să ai nevoie de echipaj. Prețul de fondator rămâne cât timp abonamentul e activ. Dacă îl oprești, revii la 10 lei pe lună.</p>
-                </section>
+                <fieldset className="plans2__bill">
+                  <legend className="sr-only">Cum plătești</legend>
+                  <label><input type="radio" name="bill" value="an" defaultChecked /> Anual</label>
+                  <label><input type="radio" name="bill" value="luna" /> Lunar</label>
+                </fieldset>
                 <section className="plans2__plan" data-for-plan="echipaj" aria-label="Echipaj">
-                  <fieldset className="plans2__bill">
-                    <legend className="sr-only">Plata echipajului</legend>
-                    <label><input type="radio" name="bill" value="an" defaultChecked /> Anual</label>
-                    <label><input type="radio" name="bill" value="luna" /> Lunar</label>
-                  </fieldset>
                   <div data-bill="an">
-                    <p className="plans2__price"><span className="plans2__fig"><b className="mono">3,33 lei</b><sup className="plans2__off mono">−66,67%</sup></span><span>pe lună, de persoană</span></p>
-                    <p className="plans2__text">Abonament anual pentru tot echipajul, de 2–4 colegi: 40 lei pe an de om, adică 160 lei pe an pentru un echipaj complet, de 4. PRO complet pentru fiecare.</p>
+                    <p className="plans2__price"><span className="plans2__fig"><b className="mono">3,33 lei</b><sup className="plans2__off mono">−66,67%</sup></span><span>pe lună, de persoană, plătit anual</span></p>
+                    <p className="plans2__save"><b>40 lei pe an</b>de om · 11 bani pe zi</p>
+                    <p className="plans2__text">Cel mai mic preț din JAC. Tu și colegii de tură, 2–4 oameni, plătiți o dată pe an: 160 lei pentru un echipaj complet, de 4. PRO complet pentru fiecare.</p>
                   </div>
                   <div data-bill="luna">
                     <p className="plans2__price"><span className="plans2__fig"><b className="mono">7 lei</b><sup className="plans2__off mono">−30%</sup></span><span>pe lună, de persoană</span></p>
-                    <p className="plans2__text">Abonament lunar pentru tot echipajul, de 2–4 colegi: 7 lei pe lună de om, adică 28 lei pe lună pentru un echipaj complet, de 4. PRO complet pentru fiecare.</p>
+                    <p className="plans2__save"><b>28 lei pe lună</b>pentru un echipaj de 4</p>
+                    <p className="plans2__text">Plătiți lună de lună, fără angajament. Trecut pe anual, fiecare economisește 44 de lei pe an.</p>
                   </div>
+                </section>
+                <section className="plans2__plan" data-for-plan="fondator" aria-label="Fondator">
+                  <div data-bill="an">
+                    <p className="plans2__price"><span className="plans2__fig"><b className="mono">4,17 lei</b><sup className="plans2__off mono">−58,33%</sup></span><span>pe lună, plătit anual</span></p>
+                    <p className="plans2__save"><b>50 lei pe an</b>· 14 bani pe zi</p>
+                    <p className="plans2__text">Prețul de fondator, fără să ai nevoie de echipaj: jumătate din PRO și încă 10 lei economisiți plătind anual. Rămâne al tău cât timp abonamentul e activ.</p>
+                  </div>
+                  <div data-bill="luna">
+                    <p className="plans2__price"><span className="plans2__fig"><b className="mono">5 lei</b><sup className="plans2__off mono">−50%</sup></span><span>pe lună</span></p>
+                    <p className="plans2__save"><b>60 lei pe an</b>plătiți lună de lună</p>
+                    <p className="plans2__text">Tot ce are PRO, la jumătate de preț, lună de lună. Prețul de fondator rămâne cât timp abonamentul e activ; dacă îl oprești, revii la prețul PRO.</p>
+                  </div>
+                </section>
+                <section className="plans2__plan" data-for-plan="pro" aria-label="PRO">
+                  <div data-bill="an">
+                    <p className="plans2__price"><span className="plans2__fig"><b className="mono">8,33 lei</b><sup className="plans2__off mono">−16,67%</sup></span><span>pe lună, plătit anual</span></p>
+                    <p className="plans2__save"><b>100 lei pe an</b>· 27 de bani pe zi</p>
+                    <p className="plans2__text">Toate modulele PRO, ghidurile vizuale, ghidul operativ și calculele avansate din Shiftr. Plătit anual, economisești 20 de lei.</p>
+                  </div>
+                  <div data-bill="luna">
+                    <p className="plans2__price"><span className="plans2__fig"><b className="mono">10 lei</b></span><span>pe lună</span></p>
+                    <p className="plans2__save"><b>120 lei pe an</b>plătiți lună de lună</p>
+                    <p className="plans2__text">Toate modulele PRO, ghidurile vizuale, ghidul operativ și calculele avansate din Shiftr: soldul, recuperările, orele manuale, concediile și medicalele. Fără angajament.</p>
+                  </div>
+                </section>
+                <section className="plans2__plan" data-for-plan="basic" aria-label="Basic">
+                  <p className="plans2__price"><b className="mono">0 lei</b><span>gratuit, fără reclame</span></p>
+                  <p className="plans2__text">Cele 8 legi speciale de bază, legislația integrală, ghidul vizual Fumat și calendarul Shiftr, fără reclame. Fără celelalte ghiduri vizuale, fără calculele avansate din Shiftr, fără ghidul operativ și fără modulele PRO. Când vrei mai mult, PRO pornește de la 3,33 lei pe lună.</p>
                 </section>
               </div>
             </div>
-            <p className="plans2__fine">Toate reducerile sunt calculate în funcție de prețul standard de 120 de lei pe an. Plata se face în aplicație, prin Google Play sau App Store, după lansarea comercială. Pe acest site nu se fac plăți.</p>
+            <p className="plans2__fine">Anual plătești o dată și iese mai ieftin; lunar plătești lună de lună și te oprești oricând. Reducerile sunt calculate față de prețul standard, 10 lei pe lună (120 de lei pe an). Plata se face în aplicație, prin Google Play sau App Store, după lansarea comercială. Pe acest site nu se fac plăți.</p>
             <a className="plans2__compare" href="#compara" data-open-compare="">Compară planurile</a>
             <dialog className="cmp" id="compara" aria-labelledby="cmp-title">
               <div className="cmp__head">
