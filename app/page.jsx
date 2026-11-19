@@ -273,8 +273,8 @@ export default function HomePage() {
                     <p className="plans2__text">Abonament anual pentru tot echipajul, de 2–4 colegi: 40 lei pe an de om, adică 160 lei pe an pentru un echipaj complet, de 4. PRO complet pentru fiecare.</p>
                   </div>
                   <div data-bill="luna">
-                    <p className="plans2__price"><span className="plans2__fig"><b className="mono">7,50 lei</b><sup className="plans2__off mono">−25%</sup></span><span>pe lună, de persoană</span></p>
-                    <p className="plans2__text">Abonament lunar pentru tot echipajul, de 2–4 colegi: 30 lei pe lună pentru toți, adică 7,50 lei de om într-un echipaj complet, de 4. PRO complet pentru fiecare.</p>
+                    <p className="plans2__price"><span className="plans2__fig"><b className="mono">7 lei</b><sup className="plans2__off mono">−30%</sup></span><span>pe lună, de persoană</span></p>
+                    <p className="plans2__text">Abonament lunar pentru tot echipajul, de 2–4 colegi: 7 lei pe lună de om, adică 28 lei pe lună pentru un echipaj complet, de 4. PRO complet pentru fiecare.</p>
                   </div>
                 </section>
               </div>
