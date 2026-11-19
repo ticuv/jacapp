@@ -244,10 +244,10 @@ export default function HomePage() {
             <div className="plans2" data-plans="">
               <h3 className="sr-only">Prețuri</h3>
               <div className="plans2__names" role="group" aria-label="Alege planul">
-                <button type="button" data-plan="basic" aria-pressed="false">Basic</button>
+                <button type="button" data-plan="echipaj" aria-pressed="true">Echipaj</button>
+                <button type="button" data-plan="fondator" aria-pressed="false">Fondator</button>
                 <button type="button" data-plan="pro" aria-pressed="false">PRO</button>
-                <button type="button" data-plan="fondator" aria-pressed="true">Fondator</button>
-                <button type="button" data-plan="echipaj" aria-pressed="false">Echipaj</button>
+                <button type="button" data-plan="basic" aria-pressed="false">Basic</button>
               </div>
               <div className="plans2__stage" aria-live="polite">
                 <section className="plans2__plan" data-for-plan="basic" aria-label="Basic">
@@ -269,12 +269,12 @@ export default function HomePage() {
                     <label><input type="radio" name="bill" value="luna" /> Lunar</label>
                   </fieldset>
                   <div data-bill="an">
-                    <p className="plans2__price"><span className="plans2__fig"><b className="mono">3,33 lei</b><sup className="plans2__off mono">−66,67%</sup></span><span>pe lună, de persoană</span></p>
-                    <p className="plans2__text">Abonament anual pentru tot echipajul de 5 colegi: 200 lei pe an, adică 40 lei de om. PRO complet pentru fiecare.</p>
+                    <p className="plans2__price"><span className="plans2__fig"><b className="mono">4,17 lei</b><sup className="plans2__off mono">−58,33%</sup></span><span>pe lună, de persoană</span></p>
+                    <p className="plans2__text">Abonament anual pentru tot echipajul, de 2–4 colegi: 200 lei pe an, adică 50 lei de om într-un echipaj complet, de 4. PRO complet pentru fiecare.</p>
                   </div>
                   <div data-bill="luna">
-                    <p className="plans2__price"><span className="plans2__fig"><b className="mono">6 lei</b><sup className="plans2__off mono">−40%</sup></span><span>pe lună, de persoană</span></p>
-                    <p className="plans2__text">Abonament lunar pentru tot echipajul de 5 colegi: 30 lei pe lună pentru toți. PRO complet pentru fiecare.</p>
+                    <p className="plans2__price"><span className="plans2__fig"><b className="mono">7,50 lei</b><sup className="plans2__off mono">−25%</sup></span><span>pe lună, de persoană</span></p>
+                    <p className="plans2__text">Abonament lunar pentru tot echipajul, de 2–4 colegi: 30 lei pe lună pentru toți, adică 7,50 lei de om într-un echipaj complet, de 4. PRO complet pentru fiecare.</p>
                   </div>
                 </section>
               </div>
