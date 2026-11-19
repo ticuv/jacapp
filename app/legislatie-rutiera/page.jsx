@@ -88,7 +88,8 @@ export default function RutierPage() {
                 <li className="glass" data-r="" style={{ "--d": 1 }}><b>Referințele legale</b>: prevăzută de, sancționată de și cine o constată.</li>
                 <li className="glass" data-r="" style={{ "--d": 2 }}><b>Clasa de sancțiune și punctele-amendă</b>, cu amenda în lei calculată.</li>
                 <li className="glass" data-r="" style={{ "--d": 3 }}><b>Punctele de penalizare</b> și jumătatea din minimul amenzii, plătibilă în 15 zile.</li>
-                <li className="glass" data-r="" style={{ "--d": 4 }}><b>Măsurile complementare</b>: suspendarea dreptului de a conduce, reținerea permisului, cumulul de puncte.</li>
+                <li className="glass" data-r="" style={{ "--d": 4 }}><b>Măsurile complementare</b>: suspendarea dreptului de a conduce, reținerea permisului, punctele de penalizare ca sancțiune complementară și cumulul de 15 puncte, cu înștiințarea scrisă.</li>
+                <li className="glass" data-r="" style={{ "--d": 5 }}><b>„Citește art. … integral”</b> deschide articolul în Legislație integrală, iar fișa se trimite colegilor ca imagine sau ca text.</li>
               </ol>
             </div>
             <div>
@@ -155,6 +156,7 @@ export default function RutierPage() {
               <li className="tile glass" data-r="" style={{ "--d": 2 }}><h3>Măsuri tehnico-administrative</h3><p>Retragerea certificatului, ridicarea vehiculului și celelalte măsuri.</p></li>
               <li className="tile glass" data-r="" style={{ "--d": 3 }}><h3>Reguli pentru minori</h3><p>Ce se aplică atunci când contravenientul nu are 18 ani.</p></li>
             </ul>
+            <p className="lead" data-r="" style={{ marginTop: 28 }}>În Codul rutier ai și ghidul vizual <Link href="/ghiduri-vizuale/#trotinete">Trotinete și biciclete</Link>: ce vehicul e, vârsta minimă, pe unde circulă, pasagerul și dotările, apoi sancțiunile.</p>
             <div style={{ marginTop: 28 }} data-r=""><Disclaimer /></div>
           </div>
         </section>

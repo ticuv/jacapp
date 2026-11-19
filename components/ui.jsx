@@ -2,14 +2,14 @@
 
 /* One place for the numbers the whole site quotes, so the home page and the detail pages never disagree. */
 export const FACTS = {
-  modules: 33,
-  fise: "3.500",
-  integrale: 28,
-  ghiduri: 6,
+  modules: 36,
+  fise: "4.600",
+  integrale: 65,
+  ghiduri: 12,
   rutierModules: 10,
-  rutierFapte: "1.011",
-  speciale: 19,
-  specialeFapte: "1.161",
+  rutierFapte: "1.015",
+  speciale: 22,
+  specialeFapte: "2.267",
   penalModules: 4,
   penalArticole: "1.369",
   capitole: 15,

@@ -5,8 +5,8 @@ import PageEffects from "@/components/PageEffects";
 import { Stage, Chip, Phone, MainCta, CtaBand } from "@/components/ui";
 
 export const metadata = {
-  title: "Ghiduri vizuale pentru teren: drone, droguri, pirotehnice, stadion | JAC",
-  description: "6 ghiduri vizuale în JAC, cu fotografii de identificare: drone C0/C1/C2/FPV, droguri (10 substanțe și modelul de descriere în PV), pirotehnice F1–F4, T, P, competiții sportive, fumat și câini periculoși. Ce faci pas cu pas, ce verifici, cum încadrezi.",
+  title: "12 ghiduri vizuale pentru teren: drone, droguri, arme, adunări | JAC",
+  description: "12 ghiduri vizuale în JAC, cu fotografii de identificare: drone, droguri, pirotehnice, stadion, fumat, câini periculoși, adunări publice, arme, pescuit, vânătoare, material lemnos și trotinete. Ce faci pas cu pas, ce verifici, ce soliciți și cum încadrezi, cu articolul exact.",
   alternates: { canonical: "https://aplicatiajac.ro/ghiduri-vizuale/" },
   openGraph: { title: "Ghiduri vizuale în JAC: pas cu pas, cu poze", url: "https://aplicatiajac.ro/ghiduri-vizuale/", siteName: "JAC", locale: "ro_RO", type: "website", images: [{ url: "https://aplicatiajac.ro/assets/img/og-jac-2026-11.jpg", width: 1200, height: 630 }] },
 };
@@ -54,6 +54,21 @@ const GUIDES = [
   },
 ];
 
+const MORE = [
+  { id: "adunari", t: "Adunări publice", law: "Legea 60/1991", img: "stadion_arme_albe", alt: "Arme albe și obiecte de lovire numerotate, fotografiate pe fond negru: obiecte interzise la o adunare publică.",
+    list: ["Pe teren: trebuia declarată? ceri dovada, identifici organizatorii", "Ora, traseul și perimetrul; alcoolul și obiectele periculoase", "Contramanifestația, avertizarea și somațiile", "Declararea și sancțiunile, cu articolul exact"] },
+  { id: "arme", t: "Arme", law: "Legea 295/2004 · HG 11/2018", img: "arma_cat_b_scurta", alt: "Un pistol și un revolver cu tocurile lor și o cutie de cartușe, numerotate, pe fond negru: arme din categoria B.",
+    list: ["Pe teren: asiguri arma, stabilești categoria A–E", "Ce soliciți: permisul sau autorizația potrivită și valabilitatea", "Portul și transportul, s-a tras cu arma?", "Încadrarea: contravenție sau art. 342 Cod penal"] },
+  { id: "pescuit", t: "Pescuit", law: "Legea 176/2024", img: "pescuit_setca", alt: "O setcă întinsă pe fond negru, cu plute și plumbi numerotați: unealtă de braconaj piscicol.",
+    list: ["Permisul de pescuit recreativ și numărul de unelte", "Captura reținută și locul de pescuit", "Unelte permise și unelte de braconaj, cu fotografii", "Sancțiuni: contravenție sau infracțiune"] },
+  { id: "vanatoare", t: "Vânătoare", law: "Legea 407/2006 · Legea 295/2004", img: "vanatoare_termoviziune", alt: "Armă de vânătoare cu lunetă cu termoviziune și imaginea termică a unui mistreț: metodă interzisă la vânătoare.",
+    list: ["Identifici vânătorii și armele, ceri cele 4 documente", "Compari autorizația cu vânatul recoltat", "Metodele interzise: termoviziune, faruri, lațuri, ogari", "Reții permisul de vânătoare; la braconaj ridici bunurile"] },
+  { id: "lemn", t: "Material lemnos", law: "Legea 171/2010 · Codul silvic", img: "lemn_fara_aviz", alt: "O căruță și un tractor cu remorcă încărcate cu lemne de foc, pe un drum de sat: transport de material lemnos care se verifică.",
+    list: ["Oprești vehiculul și soliciți avizul de însoțire", "Verifici avizul în SUMAL 2.0 și compari încărcătura", "Volumul fără proveniență și cui se aplică amenda", "Reții lemnul și îl dai în custodie"] },
+  { id: "trotinete", t: "Trotinete și biciclete", law: "OUG 195/2002 · HG 1391/2006", img: "trot_electrica", alt: "O trotinetă electrică pe fond negru, cu farul și stopul aprinse.",
+    list: ["Ce vehicul e: trotinetă electrică, bicicletă, modificată", "Vârsta minimă, actul de identitate, pe unde circulă", "Pasagerul și dotările obligatorii", "Sancțiunile și cine le constată"] },
+];
+
 const TEXT_ONLY = [
   { t: "Fumat", law: "Legea 349/2002", p: "Ce înseamnă „fumat” în sensul legii, tutunul încălzit, țigara electronică, narghileaua, unde e interzis și vânzarea către minori." },
 ];
@@ -67,12 +82,12 @@ export default function GhiduriPage() {
           <div className="wrap split">
             <div className="copy">
               <ol className="crumbs" aria-label="Unde ești"><li><Link href="/">Acasă</Link></li><li aria-current="page">Ghiduri vizuale</li></ol>
-              <p className="eyebrow" data-r="">Nou · 6 ghiduri vizuale</p>
+              <p className="eyebrow" data-r="">Nou · 12 ghiduri vizuale</p>
               <h1 className="h1" data-r="">Pas cu pas. <span className="blue">Cu poze.</span></h1>
               <p className="lead" data-r="">Ce faci pas cu pas, ce verifici, ce ceri și cum încadrezi, cu fotografii de identificare. Ghidurile apar ca buton în legea respectivă și merg fără semnal.</p>
               <div className="btns" data-r=""><MainCta /><a className="btn btn--glass" href="#drone">Vezi ghidurile</a></div>
               <ul className="tags" style={{ marginTop: 28 }} aria-label="Ghidurile">
-                {["Drone", "Droguri", "Pirotehnice", "Stadion", "Fumat", "Câini periculoși"].map((t) => <li key={t}>{t}</li>)}
+                {["Drone", "Droguri", "Pirotehnice", "Stadion", "Fumat", "Câini periculoși", "Adunări publice", "Arme", "Pescuit", "Vânătoare", "Material lemnos", "Trotinete"].map((t) => <li key={t}>{t}</li>)}
               </ul>
             </div>
             <Stage
@@ -83,7 +98,7 @@ export default function GhiduriPage() {
               priority
               frontAlt="Ghidul Droguri din JAC: fișa Cannabis cu fotografia probei și modelul de descriere „În procesul-verbal”."
             >
-              <Chip pos="tl" tone="blue" k="Ghiduri vizuale">6</Chip>
+              <Chip pos="tl" tone="blue" k="Ghiduri vizuale">12</Chip>
               <Chip pos="br" k="Offline">Cu fotografii</Chip>
             </Stage>
           </div>
@@ -106,6 +121,28 @@ export default function GhiduriPage() {
             </div>
           </section>
         ))}
+
+        <section className="sec sec--tight" id="noi" aria-labelledby="new-title">
+          <div className="wrap">
+            <div className="sec__head">
+              <p className="eyebrow" data-r="">Nou · încă 6 ghiduri</p>
+              <h2 id="new-title" className="h2" data-r="">Adunări, arme, pescuit, <span className="soft">vânătoare, lemn, trotinete.</span></h2>
+              <p className="lead" data-r="">Același format: pe teren pas cu pas, cu articolul exact la fiecare pas, ce soliciți, fotografii de identificare și sancțiunile. În toate cele 12, atingi un articol citat și se deschide textul lui integral; Back te întoarce în ghid.</p>
+            </div>
+            <ul className="gcards">
+              {MORE.map((g, i) => (
+                <li key={g.id} id={g.id} className="gcard glass" data-r="" style={{ "--d": i % 3 }}>
+                  <img src={`/assets/img/ghiduri/${g.img}-600.webp`} srcSet={`/assets/img/ghiduri/${g.img}-600.webp 600w, /assets/img/ghiduri/${g.img}-1000.webp 1000w`} sizes="(min-width: 1024px) 30vw, (min-width: 640px) 46vw, 92vw" width="1000" height="622" alt={g.alt} loading="lazy" decoding="async" />
+                  <div className="gcard__body">
+                    <p className="mono gcard__law">{g.law}</p>
+                    <h3>{g.t}</h3>
+                    <ul className="checks">{g.list.map((x) => <li key={x}>{x}</li>)}</ul>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
 
         <section className="sec sec--tight" aria-labelledby="more-title">
           <div className="wrap">

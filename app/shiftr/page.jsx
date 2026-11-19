@@ -6,7 +6,7 @@ import { Stage, Chip, MainCta, CtaBand } from "@/components/ui";
 
 export const metadata = {
   title: "Shiftr: turele, norma și orele suplimentare, calculate | JAC",
-  description: "Planificatorul de ture Shiftr din JAC: ture de zi, noapte, schimburi, concediu, recuperare și misiuni; norma lunii (zile lucrătoare × 8h minus sărbătorile legale), orele suplimentare și soldul calculate automat. Datele rămân pe telefon.",
+  description: "Planificatorul de ture Shiftr din JAC: programul generat (12/24, 12/48, 24/72), widgeturi, alarme de tură, norma lunii cu sărbătorile legale, orele suplimentare și soldul calculate automat, raportul PDF lunar. Datele rămân pe telefon.",
   alternates: { canonical: "https://aplicatiajac.ro/shiftr/" },
   openGraph: { title: "Shiftr în JAC: norma și orele suplimentare, calculate", url: "https://aplicatiajac.ro/shiftr/", siteName: "JAC", locale: "ro_RO", type: "website", images: [{ url: "https://aplicatiajac.ro/assets/img/og-jac-2026-11.jpg", width: 1200, height: 630 }] },
 };
@@ -23,6 +23,9 @@ const ROWS = [
   ["Norma lunii, cu sărbătorile legale", "y", "y"],
   ["Orele lucrate față de normă", "y", "y"],
   ["Partajarea calendarului cu colegii", "y", "y"],
+  ["Programul generat și ștergerea pe perioadă", "y", "y"],
+  ["Widgeturile și alarmele de tură", "y", "y"],
+  ["Două ture într-o zi și calendare suplimentare", "y", "y"],
   ["Soldul de ore suplimentare", "n", "p"],
   ["Recuperările scăzute din sold", "n", "p"],
   ["Ore adăugate manual din altă aplicație", "n", "p"],
@@ -30,6 +33,17 @@ const ROWS = [
   ["Soldul și recuperările în raportul PDF", "n", "p"],
   ["Concedii și medicale calculate automat", "n", "p"],
 ];
+const NEW = [
+  ["Generează programul", "12/24 – 12/48, 12/24, 12/48, 24/72 sau o secvență a ta, pus până la sfârșitul anului. Zilele deja completate rămân, iar „Anulează” îl scoate."],
+  ["Widgeturi pe ecran", "„Programul tău” cu azi, mâine și săptămâna; „Luna” cu tura din fiecare zi și orele față de normă; „Luna” mică și „Azi” pe un rând, pentru ecranele pline."],
+  ["Alarme de tură", "O notificare înainte de fiecare tură, la ora aleasă de tine, după cât timp îți trebuie să te pregătești."],
+  ["Două ture într-o zi", "A doua tură se alege din șabloane, orele se adună, iar calendarul și widgeturile arată ziua în două culori."],
+  ["Calendare suplimentare", "Creșă, sală sau orice altceva, fiecare cu numele și culoarea lui, alături de ture. Fără să atingă norma sau soldul."],
+  ["Ștergere pe perioadă", "Zi cu zi, toată luna, ultimul program generat sau un interval ales, cu numărul de ture confirmat și „Anulează”."],
+  ["Șabloanele, în ordinea ta", "Le muți prin tragere sau din meniu; tura nouă apare prima."],
+  ["Luna ca imagine", "Pe lângă PDF-ul lunar, luna se trimite ca imagine, iar raportul anual are același stil."],
+];
+
 const MARK = { y: ["Da", "inclus"], p: ["PRO", "inclus în PRO"], n: ["Nu", "nu e inclus"] };
 
 export default function ShiftrPage() {
@@ -79,6 +93,19 @@ export default function ShiftrPage() {
           </div>
         </section>
 
+        <section className="sec sec--tight" id="nou" aria-labelledby="new-title">
+          <div className="wrap">
+            <div className="sec__head">
+              <p className="eyebrow" data-r="">Nou în Shiftr</p>
+              <h2 id="new-title" className="h2" data-r="">Programul se scrie singur. <span className="soft">Și se vede de pe ecran.</span></h2>
+              <p className="lead" data-r="">Alegi tiparul, iar Shiftr pune turele până la sfârșitul anului. Turele de azi și de mâine apar pe ecranul telefonului, iar înainte de fiecare tură primești o notificare.</p>
+            </div>
+            <ul className="tiles tiles--4">
+              {NEW.map(([t, d], i) => <li key={t} className="tile glass" data-r="" style={{ "--d": i % 4 }}><h3>{t}</h3><p>{d}</p></li>)}
+            </ul>
+          </div>
+        </section>
+
         <section className="sec" id="calcul" aria-labelledby="calc-title">
           <div className="wrap split split--flip">
             <div className="copy">
@@ -88,7 +115,7 @@ export default function ShiftrPage() {
                 <li className="glass" data-r=""><b>Norma lunii</b><span><code>zile lucrătoare × 8h</code> minus sărbătorile legale. În noiembrie 2026: <code>21 × 8h − 1 sărbătoare = 160h</code>.</span></li>
                 <li className="glass" data-r="" style={{ "--d": 1 }}><b>Orele suplimentare</b><span>Se calculează singure: <code>ore lucrate − normă</code>.</span></li>
                 <li className="glass" data-r="" style={{ "--d": 2 }}><b>Concediile și medicalele</b><span>Fără bătăi de cap cu calcularea lor: Shiftr le calculează singur în normă, inclusiv când cad în weekend sau de sărbători.</span></li>
-                <li className="glass" data-r="" style={{ "--d": 3 }}><b>Soldul</b><span>Scade cu recuperările acordate: <code>sold = peste normă − recuperări</code>.</span></li>
+                <li className="glass" data-r="" style={{ "--d": 3 }}><b>Soldul</b><span>Scade cu recuperările acordate: <code>sold = peste normă − recuperări</code>. Recuperarea se socotește și când cade sâmbătă, duminică sau de sărbători.</span></li>
                 <li className="glass" data-r="" style={{ "--d": 4 }}><b>Ore din altă aplicație</b><span>Orele aduse din altă evidență se adaugă manual, cu butonul „+” de lângă sold.</span></li>
               </ol>
             </div>
@@ -114,7 +141,7 @@ export default function ShiftrPage() {
             <div className="sec__head">
               <p className="eyebrow" data-r="">Nou · raportul lunar</p>
               <h2 id="pdf-title" className="h2" data-r="">Luna întreagă, <span className="soft">într-un PDF.</span></h2>
-              <p className="lead" data-r="">Un buton deasupra calendarului: Shiftr scoate evidența lunii, gata de printat sau de trimis. Ziua, tura, intervalele lucrate și orele, cu turele de noapte împărțite corect pe cele două zile, weekendurile și sărbătorile marcate, legenda și observațiile.</p>
+              <p className="lead" data-r="">Un buton deasupra calendarului: Shiftr scoate evidența lunii, gata de printat sau de trimis. Ziua, tura, intervalele lucrate și orele, cu turele de noapte împărțite corect pe cele două zile, weekendurile și sărbătorile marcate, legenda și observațiile. Luna se poate trimite și ca imagine.</p>
             </div>
             <figure className="glass" data-r="scale" style={{ margin: "36px auto 0", maxWidth: 1100, padding: 10, borderRadius: 28 }}>
               <img src="/assets/img/screens/app-shiftr-pdf-1400.webp" srcSet="/assets/img/screens/app-shiftr-pdf-800.webp 800w, /assets/img/screens/app-shiftr-pdf-1400.webp 1400w, /assets/img/screens/app-shiftr-pdf-2000.webp 2000w" sizes="(min-width: 1180px) 1080px, 94vw" width="2000" height="1413" alt="Raportul PDF Evidența turelor pentru noiembrie 2026, generat de Shiftr: norma lunii 160h, ore lucrate 164h, ore suplimentare 4h, soldul la zi 16h, ore de noapte 56h, weekend și sărbători 60h, recuperări 8h; tabelul pe zile cu tura (Z, N, L, R, P), intervalele lucrate și orele, legenda turelor și observațiile (20.11 program fracționat, 30.11 Sfântul Andrei)." loading="lazy" decoding="async" style={{ display: "block", width: "100%", height: "auto", borderRadius: 20 }} />
@@ -132,7 +159,7 @@ export default function ShiftrPage() {
             <div className="copy">
               <p className="eyebrow" data-r="">Soldul, explicat</p>
               <h2 id="sold-title" className="h2" data-r="">Știi de unde vine <span className="soft">fiecare oră.</span></h2>
-              <p className="lead" data-r="">„Cum se calculează soldul” arată pe pași regula din Codul muncii: ce lucrezi peste normă intră în sold, se recuperează în 90 de zile cu timp liber plătit, iar ce nu recuperezi se plătește cu spor. Plus soldul tău, lună cu lună, și următorul termen de recuperare.</p>
+              <p className="lead" data-r="">„Cum se calculează soldul” arată pe pași regula din Codul muncii: ce lucrezi peste normă intră în sold, se recuperează în 90 de zile cu timp liber plătit, iar ce nu recuperezi se plătește cu spor. Plus soldul tău, lună cu lună, și următorul termen de recuperare. La „Ore de recuperat” intră doar orele din ultimele 90 de zile; cele mai vechi apar separat, cu roșu, de solicitat în scris.</p>
               <ul className="checks" data-r="">
                 <li><b>Art. 120–123 Codul muncii,</b> aplicate pe turele tale.</li>
                 <li><b>Termenul de 90 de zile</b> pentru fiecare oră, nu pentru toată luna.</li>

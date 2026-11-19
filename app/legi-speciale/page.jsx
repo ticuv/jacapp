@@ -5,33 +5,36 @@ import PageEffects from "@/components/PageEffects";
 import { FACTS as F, Stage, Chip, MainCta, CtaBand, Disclaimer, Lock } from "@/components/ui";
 
 export const metadata = {
-  title: "Legi speciale: 19 pachete, 1.161 de fapte | JAC",
-  description: "Ordine publică, adunări, violența în sport, câini periculoși, fumat, violența domestică, picnic, evidența persoanelor, silvic, arme, 112, drone, pescuit, vânătoare, comerț electronic, pază, piață agricolă, droguri și pirotehnice: legi speciale offline, cu încadrarea, amenda și ghidurile vizuale.",
+  title: "Legi speciale: 22 de pachete, 2.267 de fapte | JAC",
+  description: "Ordine publică, adunări, violența în sport, câini periculoși, fumat, violența domestică, picnic, evidența persoanelor, silvic, arme, 112, drone, pescuit, vânătoare, comerț electronic, pază, piață agricolă, droguri, pirotehnice, mediu și deșeuri, protecția animalelor și alegeri: legi speciale offline, cu încadrarea, amenda și ghidurile vizuale.",
   alternates: { canonical: "https://aplicatiajac.ro/legi-speciale/" },
-  openGraph: { title: "Legi speciale în JAC: 19 pachete, offline", url: "https://aplicatiajac.ro/legi-speciale/", siteName: "JAC", locale: "ro_RO", type: "website", images: [{ url: "https://aplicatiajac.ro/assets/img/og-jac-2026-11.jpg", width: 1200, height: 630 }] },
+  openGraph: { title: "Legi speciale în JAC: 22 de pachete, offline", url: "https://aplicatiajac.ro/legi-speciale/", siteName: "JAC", locale: "ro_RO", type: "website", images: [{ url: "https://aplicatiajac.ro/assets/img/og-jac-2026-11.jpg", width: 1200, height: 630 }] },
 };
 
 // The first 8 are BASIC (free); the rest are PREMIUM, free for Founders (signed in with Google by 15 January 2027) until the commercial launch.
 const LAWS = [
   { d: "Ordine și liniște publică", a: "Legea 61/1991", basic: true },
-  { d: "Adunări publice", a: "Legea 60/1991", basic: true },
+  { d: "Adunări publice", a: "Legea 60/1991", basic: true, g: "Adunări publice" },
   { d: "Violența în sport", a: "Legea 4/2008", basic: true, g: "Stadion" },
   { d: "Câini periculoși", a: "OUG 55/2002", basic: true, g: "Câini periculoși" },
   { d: "Tutun și fumat", a: "Legea 349/2002", basic: true, g: "Fumat" },
   { d: "Violența domestică", a: "Legea 217/2003", basic: true },
   { d: "Picnic", a: "Legea 54/2012", basic: true },
   { d: "Evidența persoanelor", a: "OUG 97/2005", basic: true },
-  { d: "Silvic", a: "Legea 171/2010 + Codul silvic, Legea 331/2024" },
-  { d: "Arme", a: "Legea 295/2004 + HG 11/2018" },
+  { d: "Silvic", a: "Legea 171/2010 + Codul silvic, Legea 331/2024", g: "Material lemnos" },
+  { d: "Arme", a: "Legea 295/2004 + HG 11/2018", g: "Arme" },
   { d: "112", a: "OUG 34/2008" },
   { d: "Codul aerian și drone", a: "Legea 21/2020, HG 643/2020, HG 859/2021", g: "Drone" },
-  { d: "Pescuit", a: "Legea 176/2024" },
-  { d: "Vânătoare", a: "Legea 407/2006" },
+  { d: "Pescuit", a: "Legea 176/2024", g: "Pescuit" },
+  { d: "Vânătoare", a: "Legea 407/2006", g: "Vânătoare" },
   { d: "Comerț electronic", a: "Legea 365/2002" },
   { d: "Paza obiectivelor", a: "Legea 333/2003 + HG 301/2012" },
   { d: "Piață agricolă", a: "Legea 145/2014" },
   { d: "Droguri", a: "Legea 143/2000, Legea 194/2011, Legea 339/2005", g: "Droguri" },
   { d: "Explozive și pirotehnice", a: "Legea 126/1995, HG 1102/2014, HG 954/2001", g: "Pirotehnice" },
+  { d: "Mediu și deșeuri", a: "OUG 195/2005, OUG 92/2021, OG 2/2021, HG 1061/2008" },
+  { d: "Protecția animalelor", a: "Legea 205/2004, OUG 155/2001, HG 1059/2013, HG 984/2005" },
+  { d: "Alegeri și referendum", a: "Legile 208/2015, 370/2004, 115/2015, 33/2007 și 3/2000" },
 ];
 
 export default function LegiSpecialePage() {
@@ -66,7 +69,7 @@ export default function LegiSpecialePage() {
           <div className="wrap">
             <div className="sec__head">
               <p className="eyebrow" data-r="">Ce conține</p>
-              <h2 id="list-title" className="h2" data-r="">19 domenii. <span className="soft">8 gratuite.</span></h2>
+              <h2 id="list-title" className="h2" data-r="">{F.speciale} de domenii. <span className="soft">8 gratuite.</span></h2>
               <p className="lead" data-r="">Primele 8 legi speciale sunt în Basic, gratuit. Restul sunt PREMIUM, gratuite pentru Fondatori: intră cu Google până pe 15 ianuarie 2027 și le ai gratuit până la lansarea comercială.</p>
             </div>
             <ul className="mods" style={{ marginTop: 0 }}>
@@ -94,7 +97,7 @@ export default function LegiSpecialePage() {
                 <li><b>Favorite și ordine proprie</b>: legile pe care le aplici des, primele.</li>
                 <li><b>Căutare în toate fișele</b>, după faptă, articol sau cuvânt-cheie.</li>
               </ul>
-              <Link className="link-arrow" href="/ghiduri-vizuale/">Cele 6 ghiduri vizuale</Link>
+              <Link className="link-arrow" href="/ghiduri-vizuale/">Cele 12 ghiduri vizuale</Link>
             </div>
             <div>
               <Stage

@@ -5,8 +5,8 @@ import PageEffects from "@/components/PageEffects";
 import { FACTS as F, Stage, Chip, MainCta, CtaBand, Disclaimer } from "@/components/ui";
 
 export const metadata = {
-  title: "Codul penal, CPP integral și 33 de acte în text complet | JAC",
-  description: "Legislația penală din JAC, offline: 4 module și 1.369 de articole. Infracțiunile cu pedeapsa, competența și măsurile, partea generală, procedura operativă și Codul de procedură penală integral. Plus 28 de coduri și acte normative în text complet.",
+  title: "Codul penal, CPP integral și 65 de acte în text complet | JAC",
+  description: "Legislația penală din JAC, offline: 4 module și 1.369 de articole. Infracțiunile cu pedeapsa, competența și măsurile, partea generală, procedura operativă și Codul de procedură penală integral. Plus 65 de coduri și acte normative în text complet, peste 4.900 de articole.",
   alternates: { canonical: "https://aplicatiajac.ro/legislatie-penala/" },
   openGraph: { title: "Codul penal și CPP integral în JAC", url: "https://aplicatiajac.ro/legislatie-penala/", siteName: "JAC", locale: "ro_RO", type: "website", images: [{ url: "https://aplicatiajac.ro/assets/img/og-jac-2026-11.jpg", width: 1200, height: 630 }] },
 };
@@ -15,19 +15,31 @@ const ACTS = [
   { g: "Coduri", items: [["Codul penal", "Legea nr. 286/2009"], ["Codul de procedură penală", "Legea nr. 135/2010"], ["Codul silvic", "Legea nr. 331/2024"], ["Codul aerian", "Legea nr. 21/2020"]] },
   {
     g: "Legi", items: [
-      ["Legea nr. 4/2008", "competiții și jocuri sportive"], ["Legea nr. 54/2012", "activitățile de picnic"], ["Legea nr. 60/1991", "adunările publice"],
-      ["Legea nr. 61/1991", "ordinea și liniștea publică"], ["Legea nr. 126/1995", "regimul materiilor explozive"], ["Legea nr. 143/2000", "traficul și consumul de droguri"],
-      ["Legea nr. 145/2014", "piața produselor agricole"], ["Legea nr. 171/2010", "contravențiile silvice"], ["Legea nr. 176/2024", "pescuitul și resursa acvatică vie"],
-      ["Legea nr. 194/2011", "produse cu efecte psihoactive"], ["Legea nr. 203/2018", "plata amenzilor contravenționale"], ["Legea nr. 217/2003", "violența domestică"], ["Legea nr. 295/2004", "regimul armelor și munițiilor"],
-      ["Legea nr. 333/2003", "paza obiectivelor, bunurilor și valorilor"], ["Legea nr. 349/2002", "consumul produselor din tutun"], ["Legea nr. 365/2002", "comerțul electronic"],
-      ["Legea nr. 407/2006", "vânătoarea și fondul cinegetic"],
+      ["Legea nr. 3/2000", "referendumul"], ["Legea nr. 4/2008", "competiții și jocuri sportive"], ["Legea nr. 33/2007", "alegerile pentru Parlamentul European"],
+      ["Legea nr. 38/2003", "transportul în regim de taxi"], ["Legea nr. 54/2012", "activitățile de picnic"], ["Legea nr. 60/1991", "adunările publice"],
+      ["Legea nr. 61/1991", "ordinea și liniștea publică"], ["Legea nr. 115/2015", "alegerile locale"], ["Legea nr. 126/1995", "regimul materiilor explozive"],
+      ["Legea nr. 132/2017", "asigurarea RCA"], ["Legea nr. 143/2000", "traficul și consumul de droguri"], ["Legea nr. 145/2014", "piața produselor agricole"],
+      ["Legea nr. 171/2010", "contravențiile silvice"], ["Legea nr. 176/2024", "pescuitul și resursa acvatică vie"], ["Legea nr. 194/2011", "produse cu efecte psihoactive"],
+      ["Legea nr. 203/2018", "plata amenzilor contravenționale"], ["Legea nr. 205/2004", "protecția animalelor"], ["Legea nr. 208/2015", "alegerea Senatului și a Camerei Deputaților"],
+      ["Legea nr. 217/2003", "violența domestică"], ["Legea nr. 226/2023", "tarifele rutiere (rovinieta)"], ["Legea nr. 280/2023", "parcarea pentru gravide și părinți cu copii mici"],
+      ["Legea nr. 295/2004", "regimul armelor și munițiilor"], ["Legea nr. 333/2003", "paza obiectivelor, bunurilor și valorilor"], ["Legea nr. 339/2005", "plantele și substanțele stupefiante și psihotrope"],
+      ["Legea nr. 349/2002", "consumul produselor din tutun"], ["Legea nr. 365/2002", "comerțul electronic"], ["Legea nr. 370/2004", "alegerea Președintelui României"],
+      ["Legea nr. 407/2006", "vânătoarea și fondul cinegetic"], ["Legea nr. 448/2006", "drepturile persoanelor cu handicap"], ["Legea nr. 550/2004", "Jandarmeria Română"],
     ],
   },
   {
     g: "Ordonanțe și hotărâri", items: [
       ["OUG nr. 195/2002", "circulația pe drumurile publice"], ["HG nr. 1391/2006", "regulamentul OUG 195/2002"], ["OG nr. 2/2001", "regimul juridic al contravențiilor"],
-      ["OUG nr. 34/2008", "sistemul 112"], ["OUG nr. 55/2002", "câinii periculoși sau agresivi"], ["OUG nr. 97/2005", "evidența și actele de identitate"],
-      ["HG nr. 11/2018", "hotărârea de aprobare a normelor Legii 295/2004"], ["HG nr. 643/2020", "dronele (regulamentele UE 2019/945 și 2019/947)"], ["HG nr. 859/2021", "autorizarea zborurilor în spațiul aerian"], ["HG nr. 1102/2014", "articolele pirotehnice"], ["HG nr. 146/2026", "salariul minim (punctul-amendă)"], ["Normele metodologice", "de aplicare a Legii 295/2004 (HG 11/2018)"],
+      ["OG nr. 55/2002", "munca în folosul comunității"], ["OUG nr. 34/2008", "sistemul 112"], ["OUG nr. 55/2002", "câinii periculoși sau agresivi"],
+      ["OUG nr. 97/2005", "evidența și actele de identitate"], ["OUG nr. 49/2019", "transportul alternativ (ride-sharing)"], ["OG nr. 27/2011", "transporturile rutiere"],
+      ["OG nr. 43/1997", "regimul drumurilor"], ["OG nr. 37/2007", "timpii de conducere și tahograful"], ["HG nr. 1317/2023", "contravențiile la normele UE din transportul rutier"],
+      ["HG nr. 530/2026", "suspendarea permisului pentru amenzi neplătite"], ["Normele HG nr. 530/2026", "procedura de suspendare, la organul fiscal local"],
+      ["OUG nr. 195/2005", "protecția mediului"], ["OUG nr. 92/2021", "regimul deșeurilor"], ["OG nr. 2/2021", "depozitarea deșeurilor"], ["HG nr. 1061/2008", "transportul deșeurilor"],
+      ["OUG nr. 155/2001", "câinii fără stăpân"], ["HG nr. 1059/2013", "hotărârea de aprobare a normelor OUG 155/2001"], ["Normele HG nr. 1059/2013", "de aplicare a OUG 155/2001"],
+      ["HG nr. 984/2005", "contravențiile sanitar-veterinare"], ["HG nr. 11/2018", "hotărârea de aprobare a normelor Legii 295/2004"], ["Normele HG nr. 11/2018", "de aplicare a Legii 295/2004"],
+      ["HG nr. 301/2012", "hotărârea de aprobare a normelor Legii 333/2003"], ["Normele HG nr. 301/2012", "de aplicare a Legii 333/2003"],
+      ["HG nr. 643/2020", "dronele (regulamentele UE 2019/945 și 2019/947)"], ["HG nr. 859/2021", "autorizarea zborurilor în spațiul aerian"], ["HG nr. 1102/2014", "articolele pirotehnice"],
+      ["HG nr. 954/2001", "avizarea jocurilor de artificii"], ["HG nr. 146/2026", "salariul minim (punctul-amendă)"],
     ],
   },
 ];
@@ -110,7 +122,7 @@ export default function PenalPage() {
               <div className="sec__head" style={{ marginBottom: 0 }}>
                 <p className="eyebrow" data-r="">Legislație integrală</p>
                 <h2 id="int-title" className="h2" data-r="">{total} de acte, <span className="soft">în text complet.</span></h2>
-                <p className="lead" data-r="">Coduri și acte normative cu tot textul, pe articole, salvate pe telefon. Cauți după denumire sau direct în conținutul articolelor.</p>
+                <p className="lead" data-r="">Coduri și acte normative cu tot textul, peste 4.900 de articole, salvate pe telefon și aduse la zi de pe Portalul legislativ. Cauți după denumire sau direct în conținutul articolelor, iar trimiterile din fișe și din ghiduri deschid articolul exact.</p>
               </div>
               <Stage
                 front="app-text-integral"

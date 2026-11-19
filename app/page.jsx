@@ -4,7 +4,7 @@ import Laurels from "@/components/Laurels";
 import PageEffects from "@/components/PageEffects";
 import { Phone, MainCta, PlayBanner } from "@/components/ui";
 
-const DESC = "JAC – Legislație și Ture: 33 de module offline, peste 3.500 de fișe, 33 de acte integrale, 6 ghiduri vizuale cu fotografii, ghidul operativ și planificatorul de ture Shiftr. Aplicație independentă pentru Android și iPhone.";
+const DESC = "JAC – Legislație și Ture: 36 de module offline, peste 4.600 de fișe, 65 de acte integrale, 12 ghiduri vizuale cu fotografii, ghidul operativ și planificatorul de ture Shiftr. Aplicație independentă pentru Android și iPhone.";
 
 export const metadata = {
   title: "JAC – Legislație și Ture | Unicul instrument legislativ care le are pe toate",
@@ -12,7 +12,7 @@ export const metadata = {
   alternates: { canonical: "https://aplicatiajac.ro/" },
   openGraph: {
     title: "JAC – Legislație și Ture",
-    description: "Unicul instrument legislativ care le are pe toate. 33 de module, peste 3.500 de fișe, 100% offline.",
+    description: "Unicul instrument legislativ care le are pe toate. 36 de module, peste 4.600 de fișe, 100% offline.",
     url: "https://aplicatiajac.ro/",
     siteName: "JAC",
     locale: "ro_RO",
@@ -97,9 +97,9 @@ export default function HomePage() {
                 <Phone name="app-rutier-module" className="chap__phone-m" sizes="70vw" alt="Lista Regim rutier din JAC: sus, valoarea punctului-amendă de 216,25 lei, valabilă de la 1 iulie 2026; dedesubt 10 module și 1.011 fapte și proceduri, de la Codul rutier (541 de fapte) și Proceduri rutiere la Legea 38/2003, OUG 49/2019, Legea 226/2023, HG 1317/2023, OG 43/1997 și OG 37/2007." />
               </article>
               <article className="chap__item" aria-labelledby="ch-fise">
-                <h2 id="ch-fise" className="chap__num"><span className="sr-only">Fișe offline: </span><span className="chap__mask"><span className="mono">3.542</span></span></h2>
+                <h2 id="ch-fise" className="chap__num"><span className="sr-only">Fișe offline: </span><span className="chap__mask"><span className="mono">4.651</span></span></h2>
                 <p className="chap__text">De fișe în telefon, fără semnal: Codul penal, CPP, rutierul și 19 legi speciale. Scrii fapta și primești încadrarea exactă.</p>
-                <p className="chap__meta mono">33 de module · 33 de acte integrale</p>
+                <p className="chap__meta mono">36 de module · 65 de acte integrale</p>
                 <Phone name="app-legi-speciale" className="chap__phone-m" sizes="70vw" alt="Lista Legi speciale din JAC: 19 pachete legislative și 1.161 de fapte, de la Legea 61/1991 (ordine și liniște publică) la Domeniul silvic (170 de fapte)." />
               </article>
               <article className="chap__item" aria-labelledby="ch-shiftr" data-shiftr2="" data-norm="160">
@@ -213,6 +213,24 @@ export default function HomePage() {
                   <figcaption><span className="mono">CATEGORIA I · OUG 55/2002</span><b>Pit Bull (American Pit Bull Terrier)</b><small>Ghidul Câini periculoși</small></figcaption>
                 </figure>
               </li>
+              <li className="gal2__item">
+                <figure>
+                  <img src="/assets/img/ghiduri/arma_cat_b_scurta-1000.webp" srcSet="/assets/img/ghiduri/arma_cat_b_scurta-600.webp 600w, /assets/img/ghiduri/arma_cat_b_scurta-1000.webp 1000w" sizes="(min-width: 1024px) 90svh, 86vw" width="1000" height="622" alt="Un pistol și un revolver cu tocurile lor și o cutie de cartușe, numerotate, pe fond negru." loading="lazy" decoding="async" />
+                  <figcaption><span className="mono">CATEGORIA B · LEGEA 295/2004</span><b>Pistol și revolver</b><small>Ghidul Arme</small></figcaption>
+                </figure>
+              </li>
+              <li className="gal2__item">
+                <figure>
+                  <img src="/assets/img/ghiduri/vanatoare_termoviziune-1000.webp" srcSet="/assets/img/ghiduri/vanatoare_termoviziune-600.webp 600w, /assets/img/ghiduri/vanatoare_termoviziune-1000.webp 1000w" sizes="(min-width: 1024px) 90svh, 86vw" width="1000" height="622" alt="Armă de vânătoare cu lunetă cu termoviziune, lângă imaginea termică a unui mistreț." loading="lazy" decoding="async" />
+                  <figcaption><span className="mono">METODĂ INTERZISĂ · LEGEA 407/2006</span><b>Luneta cu termoviziune</b><small>Ghidul Vânătoare</small></figcaption>
+                </figure>
+              </li>
+              <li className="gal2__item">
+                <figure>
+                  <img src="/assets/img/ghiduri/pescuit_setca-1000.webp" srcSet="/assets/img/ghiduri/pescuit_setca-600.webp 600w, /assets/img/ghiduri/pescuit_setca-1000.webp 1000w" sizes="(min-width: 1024px) 90svh, 86vw" width="1000" height="622" alt="O setcă întinsă pe fond negru, cu plute și plumbi numerotați." loading="lazy" decoding="async" />
+                  <figcaption><span className="mono">UNEALTĂ DE BRACONAJ · LEGEA 176/2024</span><b>Setca</b><small>Ghidul Pescuit</small></figcaption>
+                </figure>
+              </li>
             </ul>
             <p className="gal2__note wrap">Ghidurile au scop exclusiv educativ și de identificare. Fotografiile sunt ilustrații.</p>
           </div>
@@ -276,17 +294,18 @@ export default function HomePage() {
                   <tbody>
                     <tr className="cmp__group"><th scope="rowgroup" colSpan="3">Legislație</th></tr>
                     <tr><th scope="row">8 legi speciale de bază<small>Legea 61/1991, 60/1991, 4/2008, 349/2002, 217/2003, 54/2012, OUG 55/2002 și OUG 97/2005</small></th><td>Da</td><td className="cmp__pro">Da</td></tr>
-                    <tr><th scope="row">Celelalte 11 legi speciale<small>arme, droguri, pirotehnice, silvic, drone, pescuit, vânătoare, pază, 112 și altele</small></th><td className="cmp__no">—</td><td className="cmp__pro">Da</td></tr>
+                    <tr><th scope="row">Celelalte 14 legi speciale<small>arme, droguri, pirotehnice, silvic, drone, pescuit, vânătoare, pază, mediu, animale, alegeri și altele</small></th><td className="cmp__no">—</td><td className="cmp__pro">Da</td></tr>
                     <tr><th scope="row">Codul penal, CPP și procedura operativă<small>4 module, 1.369 de articole</small></th><td className="cmp__no">—</td><td className="cmp__pro">Da</td></tr>
-                    <tr><th scope="row">Regim rutier, cu amenda calculată<small>10 module, 1.011 fapte și proceduri</small></th><td className="cmp__no">—</td><td className="cmp__pro">Da</td></tr>
-                    <tr><th scope="row">Legislație integrală<small>33 de acte, în text complet</small></th><td>Da</td><td className="cmp__pro">Da</td></tr>
+                    <tr><th scope="row">Regim rutier, cu amenda calculată<small>10 module, 1.015 fapte și proceduri</small></th><td className="cmp__no">—</td><td className="cmp__pro">Da</td></tr>
+                    <tr><th scope="row">Legislație integrală<small>65 de acte, în text complet</small></th><td>Da</td><td className="cmp__pro">Da</td></tr>
                     <tr><th scope="row">Căutare în toate fișele<small>din ecranul Acasă</small></th><td className="cmp__no">—</td><td className="cmp__pro">Da</td></tr>
                     <tr><th scope="row">Favorite</th><td>până la 5</td><td className="cmp__pro">nelimitat</td></tr>
                     <tr className="cmp__group"><th scope="rowgroup" colSpan="3">Pe teren</th></tr>
-                    <tr><th scope="row">Ghiduri vizuale<small>Basic: doar Fumat · PRO: Drone, Droguri, Pirotehnice, Stadion, Fumat și Câini periculoși</small></th><td>1</td><td className="cmp__pro">toate 6</td></tr>
+                    <tr><th scope="row">Ghiduri vizuale<small>Basic: doar Fumat · PRO: toate 12, de la Drone și Droguri la Arme, Adunări publice și Trotinete</small></th><td>1</td><td className="cmp__pro">toate 12</td></tr>
                     <tr><th scope="row">Ghidul operativ<small>15 capitole, spețe și tipizate</small></th><td className="cmp__no">—</td><td className="cmp__pro">Da</td></tr>
                     <tr className="cmp__group"><th scope="rowgroup" colSpan="3">Shiftr</th></tr>
                     <tr><th scope="row">Calendarul, norma și orele lucrate</th><td>Da</td><td className="cmp__pro">Da</td></tr>
+                    <tr><th scope="row">Programul generat, widgeturile și alarmele de tură</th><td>Da</td><td className="cmp__pro">Da</td></tr>
                     <tr><th scope="row">Soldul de ore suplimentare</th><td className="cmp__no">—</td><td className="cmp__pro">Da</td></tr>
                     <tr><th scope="row">Recuperări și ore aduse din altă aplicație</th><td className="cmp__no">—</td><td className="cmp__pro">Da</td></tr>
                     <tr><th scope="row">Concedii și medicale calculate automat</th><td className="cmp__no">—</td><td className="cmp__pro">Da</td></tr>
