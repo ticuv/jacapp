@@ -4,7 +4,7 @@ import Laurels from "@/components/Laurels";
 import PageEffects from "@/components/PageEffects";
 import { Phone, MainCta, PlayBanner } from "@/components/ui";
 
-const DESC = "JAC – Legislație și Ture: 36 de module offline, peste 4.600 de fișe, 65 de acte integrale, 12 ghiduri vizuale cu fotografii, ghidul operativ și planificatorul de ture Turili. Aplicație independentă pentru Android și iPhone.";
+const DESC = "JAC – Legislație și Ture: 36 de module offline, peste 4.600 de fișe, 65 de acte integrale, 12 ghiduri vizuale cu fotografii, ghidul operativ și planificatorul de ture ÎnGrafic. Aplicație independentă pentru Android și iPhone.";
 
 export const metadata = {
   title: "JAC – Legislație și Ture | Unicul instrument legislativ care le are pe toate",
@@ -17,7 +17,7 @@ export const metadata = {
     siteName: "JAC",
     locale: "ro_RO",
     type: "website",
-    images: [{ url: "https://aplicatiajac.ro/assets/img/og-jac-2026-11.jpg", width: 1200, height: 630, alt: "JAC, singurul instrument legislativ care le are pe toate: ecranele Acasă, Turili și ghidul vizual Drone." }],
+    images: [{ url: "https://aplicatiajac.ro/assets/img/og-jac-2026-11.jpg", width: 1200, height: 630, alt: "JAC, singurul instrument legislativ care le are pe toate: ecranele Acasă, ÎnGrafic și ghidul vizual Drone." }],
   },
   twitter: { card: "summary_large_image" },
 };
@@ -103,15 +103,15 @@ export default function HomePage() {
                 <Phone name="app-legi-speciale" className="chap__phone-m" sizes="70vw" alt="Lista Legi speciale din JAC: 19 pachete legislative și 1.161 de fapte, de la Legea 61/1991 (ordine și liniște publică) la Domeniul silvic (170 de fapte)." />
               </article>
               <article className="chap__item" aria-labelledby="ch-shiftr" data-shiftr2="" data-norm="160">
-                <h2 id="ch-shiftr" className="chap__num"><span className="sr-only">Turili, soldul de ore suplimentare: </span><span className="chap__mask"><span className="mono" data-o="bal" aria-live="polite">+12h</span></span></h2>
-                <p className="chap__text">Notezi turele, Turili calculează norma, orele peste normă și soldul după recuperări. Datele rămân pe telefon.</p>
-                <div className="calc2" role="group" aria-label="Exemplu de calcul Turili, noiembrie 2026">
+                <h2 id="ch-shiftr" className="chap__num"><span className="sr-only">ÎnGrafic, soldul de ore suplimentare: </span><span className="chap__mask"><span className="mono" data-o="bal" aria-live="polite">+12h</span></span></h2>
+                <p className="chap__text">Notezi turele, ÎnGrafic calculează norma, orele peste normă și soldul după recuperări. Datele rămân pe telefon.</p>
+                <div className="calc2" role="group" aria-label="Exemplu de calcul ÎnGrafic, noiembrie 2026">
                   <div className="calc2__row"><span>Normă</span><b className="mono">160h</b></div>
                   <div className="calc2__row"><span>Lucrate</span><b className="mono" data-o="lucrate">172h</b></div>
                   <label className="calc2__row calc2__check"><span>O noapte în plus, pe 23</span><span className="calc2__toggle"><input type="checkbox" data-extra="12" /><b className="mono">+12h</b></span></label>
                   <label className="calc2__row calc2__check"><span>Tura din 17 devine recuperare de 8h</span><span className="calc2__toggle"><input type="checkbox" data-rec="8" /><b className="mono">−8h</b></span></label>
                 </div>
-                <figure className="phone chap__phone-m shiftr-stack" data-ui=""><img className="shiftr-st is-on" data-st="a" src="/assets/img/screens/app-shiftr-a-800.webp" srcSet="/assets/img/screens/app-shiftr-a-800.webp 800w, /assets/img/screens/app-shiftr-a-1175.webp 1175w" sizes="70vw" width="1175" height="2560" alt="Turili, noiembrie 2026: 172h lucrate din 160h normă, sold ore suplimentare +12h, acumulate +12h." loading="lazy" decoding="async" /><img className="shiftr-st" data-st="b" src="/assets/img/screens/app-shiftr-b-800.webp" srcSet="/assets/img/screens/app-shiftr-b-800.webp 800w, /assets/img/screens/app-shiftr-b-1175.webp 1175w" sizes="70vw" width="1175" height="2560" alt="Turili, noiembrie 2026, cu tura de zi din 17 noiembrie trecută ca recuperare de 8h: 168h din 160h, sold 0h, acumulate +8h și 1 recuperare în lună −8h." loading="lazy" decoding="async" /><img className="shiftr-st" data-st="c" src="/assets/img/screens/app-shiftr-c-800.webp" srcSet="/assets/img/screens/app-shiftr-c-800.webp 800w, /assets/img/screens/app-shiftr-c-1175.webp 1175w" sizes="70vw" width="1175" height="2560" alt="Turili, noiembrie 2026, cu o noapte în plus pe 23 noiembrie: 184h din 160h, sold +24h." loading="lazy" decoding="async" /><img className="shiftr-st" data-st="d" src="/assets/img/screens/app-shiftr-d-800.webp" srcSet="/assets/img/screens/app-shiftr-d-800.webp 800w, /assets/img/screens/app-shiftr-d-1175.webp 1175w" sizes="70vw" width="1175" height="2560" alt="Turili, noiembrie 2026, cu o noapte în plus și o recuperare de 8h: 180h din 160h, sold +12h, acumulate +20h și 1 recuperare în lună −8h." loading="lazy" decoding="async" /></figure>
+                <figure className="phone chap__phone-m shiftr-stack" data-ui=""><img className="shiftr-st is-on" data-st="a" src="/assets/img/screens/app-shiftr-a-800.webp" srcSet="/assets/img/screens/app-shiftr-a-800.webp 800w, /assets/img/screens/app-shiftr-a-1175.webp 1175w" sizes="70vw" width="1175" height="2560" alt="ÎnGrafic, noiembrie 2026: 172h lucrate din 160h normă, sold ore suplimentare +12h, acumulate +12h." loading="lazy" decoding="async" /><img className="shiftr-st" data-st="b" src="/assets/img/screens/app-shiftr-b-800.webp" srcSet="/assets/img/screens/app-shiftr-b-800.webp 800w, /assets/img/screens/app-shiftr-b-1175.webp 1175w" sizes="70vw" width="1175" height="2560" alt="ÎnGrafic, noiembrie 2026, cu tura de zi din 17 noiembrie trecută ca recuperare de 8h: 168h din 160h, sold 0h, acumulate +8h și 1 recuperare în lună −8h." loading="lazy" decoding="async" /><img className="shiftr-st" data-st="c" src="/assets/img/screens/app-shiftr-c-800.webp" srcSet="/assets/img/screens/app-shiftr-c-800.webp 800w, /assets/img/screens/app-shiftr-c-1175.webp 1175w" sizes="70vw" width="1175" height="2560" alt="ÎnGrafic, noiembrie 2026, cu o noapte în plus pe 23 noiembrie: 184h din 160h, sold +24h." loading="lazy" decoding="async" /><img className="shiftr-st" data-st="d" src="/assets/img/screens/app-shiftr-d-800.webp" srcSet="/assets/img/screens/app-shiftr-d-800.webp 800w, /assets/img/screens/app-shiftr-d-1175.webp 1175w" sizes="70vw" width="1175" height="2560" alt="ÎnGrafic, noiembrie 2026, cu o noapte în plus și o recuperare de 8h: 180h din 160h, sold +12h, acumulate +20h și 1 recuperare în lună −8h." loading="lazy" decoding="async" /></figure>
               </article>
               <article className="chap__item" aria-labelledby="ch-ghid">
                 <h2 id="ch-ghid" className="chap__num"><span className="sr-only">Ghidul operativ: </span><span className="chap__mask"><span className="mono">15 capitole</span></span></h2>
@@ -130,7 +130,7 @@ export default function HomePage() {
             <div className="chap__tabs" role="group" aria-label="Alege capitolul">
               <button type="button" data-go="0" aria-pressed="true">Rutier</button>
               <button type="button" data-go="1" aria-pressed="false">Fișe</button>
-              <button type="button" data-go="2" aria-pressed="false">Turili</button>
+              <button type="button" data-go="2" aria-pressed="false">ÎnGrafic</button>
               <button type="button" data-go="3" aria-pressed="false">Ghid</button>
             </div>
             <div className="chap__stage" aria-hidden="true">
@@ -283,17 +283,17 @@ export default function HomePage() {
                   <div data-bill="an">
                     <p className="plans2__price"><span className="plans2__fig"><b className="mono">8,33 lei</b><sup className="plans2__off mono">−16,67%</sup></span><span>pe lună, plătit anual</span></p>
                     <p className="plans2__save"><b>100 lei pe an</b>· 27 de bani pe zi</p>
-                    <p className="plans2__text">Toate modulele PRO, ghidurile vizuale, ghidul operativ și calculele avansate din Turili. Plătit anual, economisești 20 de lei.</p>
+                    <p className="plans2__text">Toate modulele PRO, ghidurile vizuale, ghidul operativ și calculele avansate din ÎnGrafic. Plătit anual, economisești 20 de lei.</p>
                   </div>
                   <div data-bill="luna">
                     <p className="plans2__price"><span className="plans2__fig"><b className="mono">10 lei</b></span><span>pe lună</span></p>
                     <p className="plans2__save"><b>120 lei pe an</b>plătiți lună de lună</p>
-                    <p className="plans2__text">Toate modulele PRO, ghidurile vizuale, ghidul operativ și calculele avansate din Turili: soldul, recuperările, orele manuale, concediile și medicalele. Fără angajament.</p>
+                    <p className="plans2__text">Toate modulele PRO, ghidurile vizuale, ghidul operativ și calculele avansate din ÎnGrafic: soldul, recuperările, orele manuale, concediile și medicalele. Fără angajament.</p>
                   </div>
                 </section>
                 <section className="plans2__plan" data-for-plan="basic" aria-label="Basic">
                   <p className="plans2__price"><b className="mono">0 lei</b><span>gratuit, fără reclame</span></p>
-                  <p className="plans2__text">Cele 8 legi speciale de bază, legislația integrală, ghidul vizual Fumat și calendarul Turili, fără reclame. Fără celelalte ghiduri vizuale, fără calculele avansate din Turili, fără ghidul operativ și fără modulele PRO. Când vrei mai mult, PRO pornește de la 3,33 lei pe lună.</p>
+                  <p className="plans2__text">Cele 8 legi speciale de bază, legislația integrală, ghidul vizual Fumat și calendarul ÎnGrafic, fără reclame. Fără celelalte ghiduri vizuale, fără calculele avansate din ÎnGrafic, fără ghidul operativ și fără modulele PRO. Când vrei mai mult, PRO pornește de la 3,33 lei pe lună.</p>
                 </section>
               </div>
             </div>
@@ -321,7 +321,7 @@ export default function HomePage() {
                     <tr className="cmp__group"><th scope="rowgroup" colSpan="3">Pe teren</th></tr>
                     <tr><th scope="row">Ghiduri vizuale<small>Basic: doar Fumat · PRO: toate 12, de la Drone și Droguri la Arme, Adunări publice și Trotinete</small></th><td>1</td><td className="cmp__pro">toate 12</td></tr>
                     <tr><th scope="row">Ghidul operativ<small>15 capitole, spețe și tipizate</small></th><td className="cmp__no">—</td><td className="cmp__pro">Da</td></tr>
-                    <tr className="cmp__group"><th scope="rowgroup" colSpan="3">Turili</th></tr>
+                    <tr className="cmp__group"><th scope="rowgroup" colSpan="3">ÎnGrafic</th></tr>
                     <tr><th scope="row">Calendarul, norma și orele lucrate</th><td>Da</td><td className="cmp__pro">Da</td></tr>
                     <tr><th scope="row">Programul generat, widgeturile și alarmele de tură</th><td>Da</td><td className="cmp__pro">Da</td></tr>
                     <tr><th scope="row">Soldul de ore suplimentare</th><td className="cmp__no">—</td><td className="cmp__pro">Da</td></tr>

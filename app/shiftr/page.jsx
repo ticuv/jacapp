@@ -5,10 +5,10 @@ import PageEffects from "@/components/PageEffects";
 import { Stage, Chip, MainCta, CtaBand } from "@/components/ui";
 
 export const metadata = {
-  title: "Turili: turele, norma și orele suplimentare, calculate | JAC",
-  description: "Planificatorul de ture Turili din JAC: programul generat (12/24, 12/48, 24/72), widgeturi, alarme de tură, norma lunii cu sărbătorile legale, orele suplimentare și soldul calculate automat, raportul PDF lunar. Datele rămân pe telefon.",
+  title: "ÎnGrafic: turele, norma și orele suplimentare, calculate | JAC",
+  description: "Planificatorul de ture ÎnGrafic din JAC: programul generat (12/24, 12/48, 24/72), widgeturi, alarme de tură, norma lunii cu sărbătorile legale, orele suplimentare și soldul calculate automat, raportul PDF lunar. Datele rămân pe telefon.",
   alternates: { canonical: "https://aplicatiajac.ro/shiftr/" },
-  openGraph: { title: "Turili în JAC: norma și orele suplimentare, calculate", url: "https://aplicatiajac.ro/shiftr/", siteName: "JAC", locale: "ro_RO", type: "website", images: [{ url: "https://aplicatiajac.ro/assets/img/og-jac-2026-11.jpg", width: 1200, height: 630 }] },
+  openGraph: { title: "ÎnGrafic în JAC: norma și orele suplimentare, calculate", url: "https://aplicatiajac.ro/shiftr/", siteName: "JAC", locale: "ro_RO", type: "website", images: [{ url: "https://aplicatiajac.ro/assets/img/og-jac-2026-11.jpg", width: 1200, height: 630 }] },
 };
 
 const TYPES = [
@@ -46,7 +46,7 @@ const NEW = [
 
 const MARK = { y: ["Da", "inclus"], p: ["PRO", "inclus în PRO"], n: ["Nu", "nu e inclus"] };
 
-export default function TuriliPage() {
+export default function InGraficPage() {
   return (
     <>
       <SiteHeader current="shiftr" />
@@ -54,20 +54,20 @@ export default function TuriliPage() {
         <section className="phero">
           <div className="wrap split">
             <div className="copy">
-              <ol className="crumbs" aria-label="Unde ești"><li><Link href="/">Acasă</Link></li><li aria-current="page">Turili</li></ol>
-              <p className="eyebrow" data-r="">Turili · planificatorul de ture</p>
+              <ol className="crumbs" aria-label="Unde ești"><li><Link href="/">Acasă</Link></li><li aria-current="page">ÎnGrafic</li></ol>
+              <p className="eyebrow" data-r="">ÎnGrafic · planificatorul de ture</p>
               <h1 className="h1" data-r="">Orele se calculează <span className="soft">singure.</span></h1>
-              <p className="lead" data-r="">Notezi turele, iar Turili calculează norma, orele suplimentare și soldul după recuperări. Datele rămân pe telefon.</p>
+              <p className="lead" data-r="">Notezi turele, iar ÎnGrafic calculează norma, orele suplimentare și soldul după recuperări. Datele rămân pe telefon.</p>
               <div className="btns" data-r=""><MainCta /><a className="btn btn--glass" href="#calcul">Cum calculează</a></div>
-              <p className="fine" data-r="">Turili e și aplicație separată, pentru oricine lucrează în ture. <a href="/turili/">Vezi aplicația Turili →</a></p>
+              <p className="fine" data-r="">ÎnGrafic e și aplicație separată, pentru oricine lucrează în ture. <a href="/ingrafic/">Vezi aplicația ÎnGrafic →</a></p>
             </div>
             <Stage
               front="app-shiftr-a"
               back="app-shiftr-editare"
-              backAlt="Foaia Modifică tura din Turili pentru 20 noiembrie: șabloanele Zi (06:00–18:00) și Noapte (18:00–06:00), apoi programul fracționat 08:00–12:00 și al doilea interval 18:00–22:00, durata 8h și alarma pusă la 07:00."
+              backAlt="Foaia Modifică tura din ÎnGrafic pentru 20 noiembrie: șabloanele Zi (06:00–18:00) și Noapte (18:00–06:00), apoi programul fracționat 08:00–12:00 și al doilea interval 18:00–22:00, durata 8h și alarma pusă la 07:00."
               backRight
               priority
-              frontAlt="Calendarul Turili pentru noiembrie 2026: ture de zi (Z) și de noapte (N), zile libere, două zile de program, iar dedesubt 172h lucrate din 160h și soldul de ore suplimentare +12h."
+              frontAlt="Calendarul ÎnGrafic pentru noiembrie 2026: ture de zi (Z) și de noapte (N), zile libere, două zile de program, iar dedesubt 172h lucrate din 160h și soldul de ore suplimentare +12h."
             >
               <Chip pos="tl" k="Normă legală">160h</Chip>
               <Chip pos="mr" tone="red" k="Sold">+6h</Chip>
@@ -97,9 +97,9 @@ export default function TuriliPage() {
         <section className="sec sec--tight" id="nou" aria-labelledby="new-title">
           <div className="wrap">
             <div className="sec__head">
-              <p className="eyebrow" data-r="">Nou în Turili</p>
+              <p className="eyebrow" data-r="">Nou în ÎnGrafic</p>
               <h2 id="new-title" className="h2" data-r="">Programul se scrie singur. <span className="soft">Și se vede de pe ecran.</span></h2>
-              <p className="lead" data-r="">Alegi tiparul, iar Turili pune turele până la sfârșitul anului. Turele de azi și de mâine apar pe ecranul telefonului, iar înainte de fiecare tură primești o notificare.</p>
+              <p className="lead" data-r="">Alegi tiparul, iar ÎnGrafic pune turele până la sfârșitul anului. Turele de azi și de mâine apar pe ecranul telefonului, iar înainte de fiecare tură primești o notificare.</p>
             </div>
             <ul className="tiles tiles--4">
               {NEW.map(([t, d], i) => <li key={t} className="tile glass" data-r="" style={{ "--d": i % 4 }}><h3>{t}</h3><p>{d}</p></li>)}
@@ -115,14 +115,14 @@ export default function TuriliPage() {
               <ol className="formula" style={{ marginTop: 28 }}>
                 <li className="glass" data-r=""><b>Norma lunii</b><span><code>zile lucrătoare × 8h</code> minus sărbătorile legale. În noiembrie 2026: <code>21 × 8h − 1 sărbătoare = 160h</code>.</span></li>
                 <li className="glass" data-r="" style={{ "--d": 1 }}><b>Orele suplimentare</b><span>Se calculează singure: <code>ore lucrate − normă</code>.</span></li>
-                <li className="glass" data-r="" style={{ "--d": 2 }}><b>Concediile și medicalele</b><span>Fără bătăi de cap cu calcularea lor: Turili le calculează singur în normă, inclusiv când cad în weekend sau de sărbători.</span></li>
+                <li className="glass" data-r="" style={{ "--d": 2 }}><b>Concediile și medicalele</b><span>Fără bătăi de cap cu calcularea lor: ÎnGrafic le calculează singur în normă, inclusiv când cad în weekend sau de sărbători.</span></li>
                 <li className="glass" data-r="" style={{ "--d": 3 }}><b>Soldul</b><span>Scade cu recuperările acordate: <code>sold = peste normă − recuperări</code>. Recuperarea se socotește și când cade sâmbătă, duminică sau de sărbători.</span></li>
                 <li className="glass" data-r="" style={{ "--d": 4 }}><b>Ore din altă aplicație</b><span>Orele aduse din altă evidență se adaugă manual, cu butonul „+” de lângă sold.</span></li>
               </ol>
             </div>
             <div className="live" data-shiftr2="" data-norm="160">
               <p className="live__num mono" aria-live="polite"><span className="sr-only">Sold ore suplimentare: </span><span data-o="bal">+12h</span></p>
-              <div className="calc2" role="group" aria-label="Exemplu de calcul Turili, noiembrie 2026">
+              <div className="calc2" role="group" aria-label="Exemplu de calcul ÎnGrafic, noiembrie 2026">
                 <div className="calc2__row"><span>Normă</span><b className="mono">160h</b></div>
                 <div className="calc2__row"><span>Lucrate</span><b className="mono" data-o="lucrate">172h</b></div>
                 <label className="calc2__row calc2__check"><span>O noapte în plus, pe 23</span><span className="calc2__toggle"><input type="checkbox" data-extra="12" /><b className="mono">+12h</b></span></label>
@@ -130,9 +130,9 @@ export default function TuriliPage() {
               </div>
               <div className="live__phone">
                 <span className="hero__halo stage__halo" aria-hidden="true"></span>
-                <figure className="phone shiftr-stack" data-ui=""><img className="shiftr-st is-on" data-st="a" src="/assets/img/screens/app-shiftr-a-800.webp" srcSet="/assets/img/screens/app-shiftr-a-480.webp 480w, /assets/img/screens/app-shiftr-a-800.webp 800w, /assets/img/screens/app-shiftr-a-1175.webp 1175w" sizes="(min-width: 1024px) 300px, 64vw" width="1175" height="2560" alt="Turili, noiembrie 2026: 172h lucrate din 160h normă, sold ore suplimentare +12h, acumulate +12h." loading="lazy" decoding="async" /><img className="shiftr-st" data-st="b" src="/assets/img/screens/app-shiftr-b-800.webp" srcSet="/assets/img/screens/app-shiftr-b-480.webp 480w, /assets/img/screens/app-shiftr-b-800.webp 800w, /assets/img/screens/app-shiftr-b-1175.webp 1175w" sizes="(min-width: 1024px) 300px, 64vw" width="1175" height="2560" alt="Turili, noiembrie 2026, cu tura de zi din 17 noiembrie trecută ca recuperare de 8h: 168h din 160h, sold 0h, acumulate +8h și 1 recuperare în lună −8h." loading="lazy" decoding="async" /><img className="shiftr-st" data-st="c" src="/assets/img/screens/app-shiftr-c-800.webp" srcSet="/assets/img/screens/app-shiftr-c-480.webp 480w, /assets/img/screens/app-shiftr-c-800.webp 800w, /assets/img/screens/app-shiftr-c-1175.webp 1175w" sizes="(min-width: 1024px) 300px, 64vw" width="1175" height="2560" alt="Turili, noiembrie 2026, cu o noapte în plus pe 23 noiembrie: 184h din 160h, sold +24h." loading="lazy" decoding="async" /><img className="shiftr-st" data-st="d" src="/assets/img/screens/app-shiftr-d-800.webp" srcSet="/assets/img/screens/app-shiftr-d-480.webp 480w, /assets/img/screens/app-shiftr-d-800.webp 800w, /assets/img/screens/app-shiftr-d-1175.webp 1175w" sizes="(min-width: 1024px) 300px, 64vw" width="1175" height="2560" alt="Turili, noiembrie 2026, cu o noapte în plus și o recuperare de 8h: 180h din 160h, sold +12h, acumulate +20h și 1 recuperare în lună −8h." loading="lazy" decoding="async" /></figure>
+                <figure className="phone shiftr-stack" data-ui=""><img className="shiftr-st is-on" data-st="a" src="/assets/img/screens/app-shiftr-a-800.webp" srcSet="/assets/img/screens/app-shiftr-a-480.webp 480w, /assets/img/screens/app-shiftr-a-800.webp 800w, /assets/img/screens/app-shiftr-a-1175.webp 1175w" sizes="(min-width: 1024px) 300px, 64vw" width="1175" height="2560" alt="ÎnGrafic, noiembrie 2026: 172h lucrate din 160h normă, sold ore suplimentare +12h, acumulate +12h." loading="lazy" decoding="async" /><img className="shiftr-st" data-st="b" src="/assets/img/screens/app-shiftr-b-800.webp" srcSet="/assets/img/screens/app-shiftr-b-480.webp 480w, /assets/img/screens/app-shiftr-b-800.webp 800w, /assets/img/screens/app-shiftr-b-1175.webp 1175w" sizes="(min-width: 1024px) 300px, 64vw" width="1175" height="2560" alt="ÎnGrafic, noiembrie 2026, cu tura de zi din 17 noiembrie trecută ca recuperare de 8h: 168h din 160h, sold 0h, acumulate +8h și 1 recuperare în lună −8h." loading="lazy" decoding="async" /><img className="shiftr-st" data-st="c" src="/assets/img/screens/app-shiftr-c-800.webp" srcSet="/assets/img/screens/app-shiftr-c-480.webp 480w, /assets/img/screens/app-shiftr-c-800.webp 800w, /assets/img/screens/app-shiftr-c-1175.webp 1175w" sizes="(min-width: 1024px) 300px, 64vw" width="1175" height="2560" alt="ÎnGrafic, noiembrie 2026, cu o noapte în plus pe 23 noiembrie: 184h din 160h, sold +24h." loading="lazy" decoding="async" /><img className="shiftr-st" data-st="d" src="/assets/img/screens/app-shiftr-d-800.webp" srcSet="/assets/img/screens/app-shiftr-d-480.webp 480w, /assets/img/screens/app-shiftr-d-800.webp 800w, /assets/img/screens/app-shiftr-d-1175.webp 1175w" sizes="(min-width: 1024px) 300px, 64vw" width="1175" height="2560" alt="ÎnGrafic, noiembrie 2026, cu o noapte în plus și o recuperare de 8h: 180h din 160h, sold +12h, acumulate +20h și 1 recuperare în lună −8h." loading="lazy" decoding="async" /></figure>
               </div>
-              <p className="fine">Patru ecrane reale din aplicație, unul pentru fiecare combinație. Calculele Turili sunt orientative.</p>
+              <p className="fine">Patru ecrane reale din aplicație, unul pentru fiecare combinație. Calculele ÎnGrafic sunt orientative.</p>
             </div>
           </div>
         </section>
@@ -142,10 +142,10 @@ export default function TuriliPage() {
             <div className="sec__head">
               <p className="eyebrow" data-r="">Nou · raportul lunar</p>
               <h2 id="pdf-title" className="h2" data-r="">Luna întreagă, <span className="soft">într-un PDF.</span></h2>
-              <p className="lead" data-r="">Un buton deasupra calendarului: Turili scoate evidența lunii, gata de printat sau de trimis. Ziua, tura, intervalele lucrate și orele, cu turele de noapte împărțite corect pe cele două zile, weekendurile și sărbătorile marcate, legenda și observațiile. Luna se poate trimite și ca imagine.</p>
+              <p className="lead" data-r="">Un buton deasupra calendarului: ÎnGrafic scoate evidența lunii, gata de printat sau de trimis. Ziua, tura, intervalele lucrate și orele, cu turele de noapte împărțite corect pe cele două zile, weekendurile și sărbătorile marcate, legenda și observațiile. Luna se poate trimite și ca imagine.</p>
             </div>
             <figure className="glass" data-r="scale" style={{ margin: "36px auto 0", maxWidth: 1100, padding: 10, borderRadius: 28 }}>
-              <img src="/assets/img/screens/app-shiftr-pdf-1400.webp" srcSet="/assets/img/screens/app-shiftr-pdf-800.webp 800w, /assets/img/screens/app-shiftr-pdf-1400.webp 1400w, /assets/img/screens/app-shiftr-pdf-2000.webp 2000w" sizes="(min-width: 1180px) 1080px, 94vw" width="2000" height="1413" alt="Raportul PDF Evidența turelor pentru noiembrie 2026, generat de Turili: norma lunii 160h, ore lucrate 164h, ore suplimentare 4h, soldul la zi 16h, ore de noapte 56h, weekend și sărbători 60h, recuperări 8h; tabelul pe zile cu tura (Z, N, L, R, P), intervalele lucrate și orele, legenda turelor și observațiile (20.11 program fracționat, 30.11 Sfântul Andrei)." loading="lazy" decoding="async" style={{ display: "block", width: "100%", height: "auto", borderRadius: 20 }} />
+              <img src="/assets/img/screens/app-shiftr-pdf-1400.webp" srcSet="/assets/img/screens/app-shiftr-pdf-800.webp 800w, /assets/img/screens/app-shiftr-pdf-1400.webp 1400w, /assets/img/screens/app-shiftr-pdf-2000.webp 2000w" sizes="(min-width: 1180px) 1080px, 94vw" width="2000" height="1413" alt="Raportul PDF Evidența turelor pentru noiembrie 2026, generat de ÎnGrafic: norma lunii 160h, ore lucrate 164h, ore suplimentare 4h, soldul la zi 16h, ore de noapte 56h, weekend și sărbători 60h, recuperări 8h; tabelul pe zile cu tura (Z, N, L, R, P), intervalele lucrate și orele, legenda turelor și observațiile (20.11 program fracționat, 30.11 Sfântul Andrei)." loading="lazy" decoding="async" style={{ display: "block", width: "100%", height: "auto", borderRadius: 20 }} />
             </figure>
             <ul className="checks" data-r="" style={{ maxWidth: 820, margin: "28px auto 0" }}>
               <li><b>Ore pe fiecare zi.</b> Doar ce cade între 00:00 și 24:00, ca pe foaia de pontaj.</li>
@@ -168,7 +168,7 @@ export default function TuriliPage() {
             </div>
             <Stage
               front="app-shiftr-sold"
-              frontAlt="Foaia Cum se calculează soldul din Turili: patru pași — pornești de la soldul adus, ce lucrezi peste normă intră în sold, le recuperezi în 90 de zile, ce nu recuperezi se plătește — apoi soldul tău: ore suplimentare noi +16h, recuperări efective 0h, sold +16h și următorul termen de recuperare, 28 decembrie 2026."
+              frontAlt="Foaia Cum se calculează soldul din ÎnGrafic: patru pași — pornești de la soldul adus, ce lucrezi peste normă intră în sold, le recuperezi în 90 de zile, ce nu recuperezi se plătește — apoi soldul tău: ore suplimentare noi +16h, recuperări efective 0h, sold +16h și următorul termen de recuperare, 28 decembrie 2026."
               back="app-shiftr-a"
               backAlt=""
               backRight
@@ -189,7 +189,7 @@ export default function TuriliPage() {
             </div>
             <div data-r="">
               <table className="plan glass">
-                <caption className="sr-only">Ce e gratuit și ce e PRO în Turili</caption>
+                <caption className="sr-only">Ce e gratuit și ce e PRO în ÎnGrafic</caption>
                 <thead><tr><th scope="col">Funcție</th><th scope="col">Gratuit</th><th scope="col">PRO</th></tr></thead>
                 <tbody>
                   {ROWS.map(([t, a, b]) => (

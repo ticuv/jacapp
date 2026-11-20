@@ -6,7 +6,7 @@ const PAGES = [
   { key: "legislatie-rutiera", href: "/legislatie-rutiera/", label: "Regim rutier" },
   { key: "legi-speciale", href: "/legi-speciale/", label: "Legi speciale" },
   { key: "ghiduri-vizuale", href: "/ghiduri-vizuale/", label: "Ghiduri vizuale" },
-  { key: "shiftr", href: "/shiftr/", label: "Turili" },
+  { key: "shiftr", href: "/shiftr/", label: "ÎnGrafic" },
   { key: "ghid-operativ", href: "/ghid-operativ/", label: "Ghid operativ" },
   { key: "legislatie-penala", href: "/legislatie-penala/", label: "Penal și CPP" },
 ];
