@@ -167,7 +167,7 @@ export function Disclaimer() {
   return (
     <div className="disclaimer">
       <p><strong>JAC este o aplicație dezvoltată independent și NU reprezintă o instituție publică.</strong> Nu este afiliată, aprobată sau susținută de Guvernul României, MAI, Poliția Română, Jandarmeria Română ori alte autorități.</p>
-      <p>Textele legislative provin din actele publice de pe Portalul Legislativ (<a href="https://legislatie.just.ro" rel="noopener">https://legislatie.just.ro</a>). Aplicația are rol de orientare și nu înlocuiește forma oficială din Monitorul Oficial. Spețele și PV-urile model sunt exemple fictive. Calculele Shiftr sunt orientative.</p>
+      <p>Textele legislative provin din actele publice de pe Portalul Legislativ (<a href="https://legislatie.just.ro" rel="noopener">https://legislatie.just.ro</a>). Aplicația are rol de orientare și nu înlocuiește forma oficială din Monitorul Oficial. Spețele și PV-urile model sunt exemple fictive. Calculele Turili sunt orientative.</p>
     </div>
   );
 }
