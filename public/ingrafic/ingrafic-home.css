@@ -236,3 +236,18 @@ p { margin: 0; }
   .stats div { padding: 12px; }
   .ticker li { font-size: .82rem; padding: 6px 12px; }
 }
+
+/* Telefoane 3D randate (promo/site-mockups în repo-ul aplicației): rama, bara de stare și unghiul
+   sunt deja în imagine, deci fără rama CSS și fără rotirea de mai sus. */
+.phone.phone--3d { padding: 0; background: none; box-shadow: none; border-radius: 0; }
+.phone.phone--3d img { display: block; width: 100%; height: auto; filter: drop-shadow(0 30px 50px rgba(0, 0, 0, .45)); }
+.hero__art .phone--front.phone--3d { width: min(370px, 66%); left: 28%; top: 0; transform: none; }
+.hero__art .phone--back.phone--3d { width: min(310px, 54%); left: -2%; top: 10%; transform: none; }
+.split__art .phone.phone--3d { width: min(370px, 80%); transform: none; }
+.feat__art .phone.phone--3d, .feat--rev .feat__art .phone.phone--3d { width: min(340px, 72%); transform: none; }
+.duo__art .phone.phone--3d { width: min(290px, 50%); }
+.phone--tilt-l.phone--3d { transform: translateY(10px); }
+.phone--tilt-r.phone--3d { transform: translateY(40px); }
+@media (max-width: 720px) {
+  .feat__art .phone.phone--3d, .feat--rev .feat__art .phone.phone--3d { width: min(320px, 76%); }
+}
