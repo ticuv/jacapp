@@ -136,8 +136,8 @@ button { font: inherit; color: inherit; }
 .hero__phone { position: relative; width: min(70vw, 300px); }
 .hero__phone .phone { position: relative; z-index: 2; }
 .hero__halo-wrap { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
-.hero__blackout { position: absolute; inset: 2.6%; z-index: 4; border-radius: 11% / 5.1%; background: var(--black); pointer-events: none; opacity: 0; }
-.hero__screen-off { position: absolute; inset: 2.6%; z-index: 3; border-radius: 11% / 5.1%; background: var(--black); pointer-events: none; opacity: 0; }
+.hero__blackout { position: absolute; inset: .9%; z-index: 4; border-radius: 13.2% / 6.1%; background: var(--black); pointer-events: none; opacity: 0; }
+.hero__screen-off { position: absolute; inset: .9%; z-index: 3; border-radius: 13.2% / 6.1%; background: var(--black); pointer-events: none; opacity: 0; }
 /* the halo: the screen's own light spilling around the phone (a declared exception to the no-glow rule) */
 .hero__halo {
   position: absolute; z-index: 1; left: 50%; top: 42%; width: 260%; aspect-ratio: 1.15; transform: translate(-50%, -50%);
@@ -303,7 +303,7 @@ button { font: inherit; color: inherit; }
 .shiftr-stack { position: relative; }
 .shiftr-stack img { width: 100%; aspect-ratio: 1175 / 2560; border-radius: 11% / 5.1%; }
 .shiftr-stack img + img { position: absolute; top: 0; left: 0; }
-.phone.shiftr-stack img + img { top: 2.6%; left: 2.6%; width: 94.8%; }
+.phone.shiftr-stack img + img { top: .9%; left: .9%; width: 98.2%; }
 .shiftr-stack img:not(.is-on) { opacity: 0; }
 .shiftr-stack img { transition: opacity .35s var(--out); }
 /* in the desktop stage the Shiftr stack is one of the stacked screens, not a block below them */
@@ -647,11 +647,26 @@ button { -webkit-user-select: none; user-select: none; }
   .js .hero.is-risen .hero__halo { transition-delay: .6s; }
 }
 
-/* phone frames: graphite metal with a lit rim, so the device reads against the night ground (a product fragment) */
+/* phone frames: a real device, not a flat outline. Brushed titanium rim with a lit edge, a thin black
+   bezel, the body's thickness to the lower right, the keys on the left and a soft glare on the glass.
+   Same look as the rendered phones of the ÎnGrafic page; done in CSS so every screen swap and carousel keeps working. */
 .phone {
-  background: linear-gradient(150deg, #4a5262 0%, #262b35 22%, #171b23 55%, #2b313d 100%);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .22), inset 0 0 0 3px #0b0d12, 0 0 0 1px rgba(127, 166, 255, .14);
+  padding: .9%; border-radius: 14% / 6.4%;
+  background: linear-gradient(135deg, #c9cbd1 0%, #7c7f87 8%, #3a3c43 22%, #1c1d22 50%, #3a3c43 78%, #8a8d95 93%, #d8dadf 100%);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, .45), inset 0 0 0 2px #0b0b0d,
+    1px 1px 0 #7d8088, 2px 2px 0 #55575e, 3px 3px 0 #3a3c42,
+    14px 28px 50px rgba(0, 0, 0, .6);
 }
+.phone::before { /* volume and power keys on the left edge */
+  content: ""; position: absolute; left: -1.5px; top: 19%; width: 1.5px; height: 21%; border-radius: 3px 0 0 3px; pointer-events: none;
+  background: linear-gradient(to bottom, #8d9097 0 22%, transparent 22% 33%, #8d9097 33% 63%, transparent 63% 72%, #8d9097 72% 100%);
+}
+.phone::after { /* the glass: a soft diagonal glare over the screen */
+  content: ""; position: absolute; inset: .9%; z-index: 5; border-radius: 13.2% / 6.1%; pointer-events: none;
+  background: linear-gradient(115deg, rgba(255, 255, 255, .13) 0%, rgba(255, 255, 255, .04) 22%, rgba(255, 255, 255, 0) 38%, rgba(255, 255, 255, 0) 72%, rgba(255, 255, 255, .05) 100%);
+}
+.phone img, .chap__screens img, .shiftr-stack img { border-radius: 13.2% / 6.1%; }
 
 /* a closing line may be a full sentence: give it the measure for two lines */
 .cta .h2 { max-width: 24ch; }
@@ -846,8 +861,9 @@ button { -webkit-user-select: none; user-select: none; }
   .js .chap.is-carousel .chap__meta { display: none; }
   .js .chap.is-carousel .chap__num { font-size: clamp(2.25rem, 10vw, 4rem); }
   /* a thinner frame, so more of each screen shows */
-  .chap__car .phone { padding: 1.4%; border-radius: 12% / 5.6%; }
-  .chap__car .phone img { border-radius: 11% / 5.1%; }
+  .chap__car .phone { padding: .9%; border-radius: 14% / 6.4%; }
+  .chap__car .phone img { border-radius: 13.2% / 6.1%; }
+  .chap__car .phone::after { inset: .9%; border-radius: 13.2% / 6.1%; }
   .js .chap.is-carousel .chap__tabs {
     position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
     width: min(100%, 360px); margin: 14px auto 0; padding: 4px; border-radius: 999px; background: #0b1120;
