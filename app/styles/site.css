@@ -155,7 +155,7 @@ button { font: inherit; color: inherit; }
   .hero__title .ln + .ln, .hero__lit .ln + .ln { text-align: right; }
   .hero__lit { padding: 6vh var(--gut) 0; display: flex; flex-direction: column; justify-content: center; }
   .hero__stage { position: absolute; inset: 0; z-index: 3; margin: 0; align-items: flex-end; }
-  .hero__phone { width: auto; height: 80svh; aspect-ratio: 1175 / 2560; margin-bottom: 4svh; transform: translateY(6svh); }
+  .hero__phone { width: auto; height: 80svh; aspect-ratio: 1175 / 2535; margin-bottom: 4svh; transform: translateY(6svh); }
   .hero__phone .phone { height: 100%; width: auto; }
   .hero__phone .phone img { height: 100%; width: auto; }
   .hero__foot { position: absolute; z-index: 4; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: flex-end; margin: 0; padding: 0 var(--gut) 40px; }
@@ -249,7 +249,7 @@ button { font: inherit; color: inherit; }
   .chap__num { font-size: clamp(5rem, 8.4vw, 9.5rem); }
   .chap__phone-m { display: none; }
   .chap__stage { display: block; position: relative; }
-  .chap__device { position: relative; height: 80svh; aspect-ratio: 1175 / 2560; }
+  .chap__device { position: relative; height: 80svh; aspect-ratio: 1175 / 2535; } /* the screen plus the frame's .9% on each side */
   .chap__device .phone { position: relative; z-index: 2; height: 100%; }
   .chap__halo { top: 46%; }
 }
@@ -652,7 +652,7 @@ button { -webkit-user-select: none; user-select: none; }
    Same look as the rendered phones of the ÎnGrafic page; done in CSS so every screen swap and carousel keeps working. */
 .phone {
   padding: .9%; border-radius: 14% / 6.4%;
-  background: linear-gradient(135deg, #c9cbd1 0%, #7c7f87 8%, #3a3c43 22%, #1c1d22 50%, #3a3c43 78%, #8a8d95 93%, #d8dadf 100%);
+  background: linear-gradient(135deg, #b9bbc1 0%, #6f727a 8%, #34363d 22%, #1c1d22 50%, #2c2e34 80%, #4a4c53 94%, #6a6c73 100%);
   box-shadow:
     inset 0 0 0 1px rgba(255, 255, 255, .45), inset 0 0 0 2px #0b0b0d,
     1px 1px 0 #7d8088, 2px 2px 0 #55575e, 3px 3px 0 #3a3c42,
@@ -675,7 +675,7 @@ button { -webkit-user-select: none; user-select: none; }
 .chap__back { display: none; }
 @media (min-width: 1024px) {
   .chap__stage { position: relative; }
-  .chap__back { display: block; position: absolute; z-index: 0; top: 9svh; right: calc(100% - 8%); height: 68svh; aspect-ratio: 1175 / 2560; margin: 0;
+  .chap__back { display: block; position: absolute; z-index: 0; top: 9svh; right: calc(100% - 8%); height: 68svh; aspect-ratio: 1175 / 2535; margin: 0;
     filter: brightness(.7); transition: opacity .6s var(--out), transform .8s var(--out); }
   .chap__back img { height: 100%; width: auto; }
   .chap__device { z-index: 1; }
